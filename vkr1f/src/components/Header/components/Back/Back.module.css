@@ -1,0 +1,15 @@
+.back-container{
+    display: flex;
+    align-items: center;
+    padding-left: 10px;
+    padding-top: 10px;
+}
+
+.text{
+    padding-left: 10px;
+}
+
+.back-container :hover{
+    font-weight: bold;
+    cursor: pointer;
+}

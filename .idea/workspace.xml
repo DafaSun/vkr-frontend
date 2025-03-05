@@ -5,12 +5,59 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a233fea1-6de7-4fe8-a8b7-e2d3c128615f" name="Changes" comment="commit 02/03/2025 - немного поделала, создала файлы страниц, папки, верстку и компоненты еще не писала">
-      <change afterPath="$PROJECT_DIR$/vkr1f/src/pages/auth/AuthPage.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vkr1f/src/assets/svg/back.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vkr1f/src/assets/svg/exit.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vkr1f/src/assets/svg/iconCircle.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vkr1f/src/assets/svg/iconSquare.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vkr1f/src/assets/svg/logo.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vkr1f/src/assets/svg/right.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vkr1f/src/components/Header/Header.module.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vkr1f/src/components/Header/Header.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vkr1f/src/components/Header/components/Back/Back.module.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vkr1f/src/components/Header/components/Back/Back.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vkr1f/src/components/Header/components/Way/Way.module.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vkr1f/src/components/Header/components/Way/Way.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vkr1f/src/components/SideBar/SideBar.module.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vkr1f/src/components/SideBar/SideBar.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vkr1f/src/components/SideBar/components/Exit/Exit.module.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vkr1f/src/components/SideBar/components/Exit/Exit.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vkr1f/src/components/SideBar/components/Item/Item.module.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vkr1f/src/components/SideBar/components/Item/Item.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vkr1f/src/components/SideBar/components/Logo/Logo.module.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vkr1f/src/components/SideBar/components/Logo/Logo.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vkr1f/src/components/buttons/BasicButton/BasicButton.module.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vkr1f/src/components/buttons/BasicButton/BasicButton.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vkr1f/src/components/buttons/Button1/Button1.module.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vkr1f/src/components/buttons/Button1/Button1.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vkr1f/src/components/buttons/Button2/Button2.module.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vkr1f/src/components/buttons/Button2/Button2.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vkr1f/src/components/buttons/Button3/Button3.module.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vkr1f/src/components/buttons/Button3/Button3.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vkr1f/src/components/buttons/Button4/Button4.module.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vkr1f/src/components/buttons/Button4/Button4.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vkr1f/src/components/buttons/Button5/Button5.module.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vkr1f/src/components/buttons/Button5/Button5.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vkr1f/src/components/inputs/InputText/InputText.module.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vkr1f/src/components/inputs/InputText/InputText.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vkr1f/src/pages/auth/AuthPage.module.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vkr1f/src/pages/auth/components/LoginInput/LoginInput.module.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vkr1f/src/pages/auth/components/LoginInput/LoginInput.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vkr1f/src/pages/auth/components/PasswordInput/PasswordInput.module.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vkr1f/src/pages/auth/components/PasswordInput/PasswordInput.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vkr1f/src/pages/home.module.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vkr1f/src/pages/home.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vkr1f/src/styles/colors.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vkr1f/src/styles/sizes.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/vkr1f/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/vkr1f/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/vkr1f/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/vkr1f/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vkr1f/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/vkr1f/src/App.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/vkr1f/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/vkr1f/src/App.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vkr1f/src/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/vkr1f/src/index.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vkr1f/src/pages/auth/AuthPage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/vkr1f/src/pages/auth/AuthPage.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vkr1f/src/vite-env.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/vkr1f/src/vite-env.d.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vkr1f/vite.config.ts" beforeDir="false" afterPath="$PROJECT_DIR$/vkr1f/vite.config.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -20,29 +67,31 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="TypeScript File" />
         <option value="TypeScript JSX File" />
+        <option value="CSS File" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
-  "lastFilter": {
-    "state": "OPEN",
-    "assignee": "DafaSun"
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;DafaSun&quot;
   }
-}]]></component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/DafaSun/vkr-frontend.git",
-    "accountId": "c4015cc1-ded1-4b2f-8e99-ab3460fb5b64"
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/DafaSun/vkr-frontend.git&quot;,
+    &quot;accountId&quot;: &quot;c4015cc1-ded1-4b2f-8e99-ab3460fb5b64&quot;
   }
-}]]></component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "customColor": "",
-  "associatedIndex": 8
-}]]></component>
+}</component>
+  <component name="ProjectColorInfo">{
+  &quot;customColor&quot;: &quot;&quot;,
+  &quot;associatedIndex&quot;: 8
+}</component>
   <component name="ProjectId" id="2tkfJHVgrzOOhLEayRZNIFdemvW" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
@@ -51,19 +100,33 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "master",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "ts.external.directory.path": "D:\\Projects\\diplom\\vkr-frontend\\vkr1f\\node_modules\\typescript\\lib",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/Projects/diplom/vkr-frontend/vkr1f/src/components/buttons&quot;,
+    &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;D:\\Projects\\diplom\\vkr-frontend\\vkr1f\\node_modules\\typescript\\lib&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Projects\diplom\vkr-frontend\vkr1f\src\components\buttons" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Projects\diplom\vkr-frontend\vkr1f\src" />
+      <recent name="D:\Projects\diplom\vkr-frontend\vkr1f" />
+      <recent name="D:\Projects\diplom\vkr-frontend\vkr1f\src\assets\svg" />
+      <recent name="D:\Projects\diplom\vkr-frontend\vkr1f\src\components" />
+    </key>
+  </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
@@ -79,8 +142,26 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1740900922718</updated>
-      <workItem from="1740900924986" duration="8775000" />
+      <workItem from="1740900924986" duration="8896000" />
+      <workItem from="1740978378000" duration="679000" />
+      <workItem from="1740981263571" duration="2788000" />
+      <workItem from="1741008402998" duration="2321000" />
+      <workItem from="1741017400821" duration="5534000" />
+      <workItem from="1741067493125" duration="6414000" />
+      <workItem from="1741087253296" duration="2208000" />
+      <workItem from="1741091759805" duration="537000" />
+      <workItem from="1741092327787" duration="12240000" />
+      <workItem from="1741147864411" duration="8004000" />
     </task>
+    <task id="LOCAL-00001" summary="commit 02/03/2025 - немного поделала, создала файлы страниц, папки, верстку и компоненты еще не писала">
+      <option name="closed" value="true" />
+      <created>1740947163739</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1740947163739</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

@@ -1,0 +1,20 @@
+.header-container{
+    background-color: var(--light-blue);
+    width: 86vw;
+    height: fit-content;
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.person-info{
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    align-items: flex-end;
+}
+
+.text{
+    padding: 7px;
+}

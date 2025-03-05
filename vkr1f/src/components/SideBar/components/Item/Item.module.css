@@ -1,0 +1,18 @@
+.item-container, .item-container-active{
+    display: flex;
+    padding: 10px;
+    padding-bottom: 15px;
+}
+
+.item-container-active{
+    background-color: var(--light-blue);
+}
+
+.text{
+    padding-left: 10px;
+}
+
+.item-container :hover, .item-container-active :hover{
+    font-weight: bold;
+    cursor: pointer;
+}

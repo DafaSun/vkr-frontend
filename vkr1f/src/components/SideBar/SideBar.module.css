@@ -1,0 +1,15 @@
+.side-bar-container {
+    background-color: var(--sky-blue);
+    width: 14vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.exit-container {
+    margin-top: auto;
+    display: flex;
+    justify-content: flex-start;
+}

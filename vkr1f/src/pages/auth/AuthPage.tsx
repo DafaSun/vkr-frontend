@@ -1,71 +1,43 @@
-import React, { useState } from "react";
+import React, {useState} from "react";
+import {LoginInput} from "./components/LoginInput/LoginInput";
+import {PasswordInput} from "./components/PasswordInput/PasswordInput";
+import {Button1} from "../../components/buttons/Button1/Button1";
+import styles from './AuthPage.module.css'
+
 
 const AuthPage = () => {
-    const [email, setEmail] = useState("");
+    const [login, setLogin] = useState("");
     const [password, setPassword] = useState("");
-    const [loading, setLoading] = useState(false);
     const [error, setError] = useState("");
 
-    const handleLogin = async () => {
-        setLoading(true);
-        setError("");
+    const handleSubmit = (event: React.FormEvent) => {
+        event.preventDefault();
+    };
 
-        try {
-            const response = await fetch("http://localhost:8000/api/auth/login/", {
-                method: "POST",
-                headers: { "Content-Type": "application/json" },
-                body: JSON.stringify({ email, password }),
-            });
-
-            if (!response.ok) throw new Error("Ошибка входа");
-
-            const data = await response.json();
-            localStorage.setItem("token", data.access);
-            alert("Вход выполнен!");
-        } catch (err) {
-            setError("Неверный email или пароль");
-        } finally {
-            setLoading(false);
-        }
+    const handleChangeLogin = (event: React.ChangeEvent<HTMLInputElement>) => {
+        setLogin(event.target.value);
+    };
+    const handleChangePassword = (event: React.ChangeEvent<HTMLInputElement>) => {
+        setPassword(event.target.value);
     };
 
     return (
-        <div style={{ maxWidth: "400px", margin: "auto", textAlign: "center" }}>
-            <h2>Вход</h2>
-            {error && <p style={{ color: "red" }}>{error}</p>}
-            <div style={{ marginBottom: "10px" }}>
-                <label>Email</label>
-                <input
-                    type="email"
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
-                    style={{ width: "100%", padding: "8px", marginTop: "5px" }}
-                />
+        <>
+            <div className={styles['main-container']}>
+                <div className={styles['auth-container']}>
+                    <div className={styles['auth-title']}>Вход</div>
+                    <form onSubmit={handleSubmit} className={styles['auth-form']}>
+                        <div className={styles['auth-text']}>Логин</div>
+                        <LoginInput value={login} onChange={handleChangeLogin} autoFocus/>
+                        <br/>
+                        <div className={styles['auth-text']}>Пароль</div>
+                        <PasswordInput value={password} onChange={handleChangePassword} autoFocus/>
+                    </form>
+                    <div className={styles['error-text']}>{error}</div>
+                    <Button1 text={'Войти'}/>
+                </div>
             </div>
-            <div style={{ marginBottom: "10px" }}>
-                <label>Пароль</label>
-                <input
-                    type="password"
-                    value={password}
-                    onChange={(e) => setPassword(e.target.value)}
-                    style={{ width: "100%", padding: "8px", marginTop: "5px" }}
-                />
-            </div>
-            <button
-                onClick={handleLogin}
-                disabled={loading}
-                style={{
-                    backgroundColor: "#3498db",
-                    color: "white",
-                    padding: "10px",
-                    border: "none",
-                    width: "100%",
-                    cursor: "pointer",
-                }}
-            >
-                Войти
-            </button>
-        </div>
+        </>
     );
 };
 

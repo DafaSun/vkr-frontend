@@ -1,0 +1,51 @@
+@import "../../styles/colors.css";
+
+.main-container{
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 5vh;
+}
+
+.auth-container{
+    display: flex;
+    border-radius: 30px;
+    width: 400px;
+    height: fit-content;
+    flex-direction: column;
+    place-items: center;
+    background-color: var(--light-blue);
+    padding-left: 50px;
+    padding-right: 50px;
+    padding-bottom: 40px;
+    padding-top: 40px;
+}
+
+.auth-title{
+    color: var(--dark-blue);
+    font-size: 40px;
+    font-weight: bold;
+    margin: 20px;
+}
+
+.auth-text{
+    color: var(--dark-blue);
+    font-size: 20px;
+    align-self: start;
+    margin: 15px;
+    margin-left: 20px;
+    font-weight: bolder;
+}
+
+.auth-form{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.error-text{
+    color: var(--red);
+    font-size: 20px;
+    margin: 40px;
+}
