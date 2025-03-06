@@ -2,13 +2,14 @@ import React from "react";
 import styles from './Back.module.css'
 import BackSvg from "../../../../assets/svg/back.svg?react"
 
-type IWayProps = {
-    onClick?: (() => void);
-};
+interface IBackProps  {
+    onClick: (() => void);
+    isActive: boolean;
+}
 
-const Way: React.FC<IWayProps> = ({ onClick }) => {
+const Back: React.FC<IBackProps> = ({ onClick, isActive }) => {
     return (
-        <div className={styles['back-container']} onClick={onClick}>
+        <div className={isActive?styles['back-container']:styles['hidden']} onClick={onClick}>
         <BackSvg width={20} height={20} />
             <div className={styles['text']}>
                  Назад
@@ -17,4 +18,4 @@ const Way: React.FC<IWayProps> = ({ onClick }) => {
     );
 };
 
-export default Way;
+export default Back;

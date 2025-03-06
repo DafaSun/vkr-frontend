@@ -9,6 +9,10 @@
     padding-left: 10px;
 }
 
+.hidden{
+    display: none;
+}
+
 .back-container :hover{
     font-weight: bold;
     cursor: pointer;

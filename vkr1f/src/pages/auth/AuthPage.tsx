@@ -1,21 +1,42 @@
 import React, {useState} from "react";
+import { useNavigate } from "react-router-dom";
 import {LoginInput} from "./components/LoginInput/LoginInput";
 import {PasswordInput} from "./components/PasswordInput/PasswordInput";
 import {Button1} from "../../components/buttons/Button1/Button1";
 import styles from './AuthPage.module.css'
+import { login } from "../../services/authService";
 
 
 const AuthPage = () => {
-    const [login, setLogin] = useState("");
+    const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
     const [error, setError] = useState("");
+    const navigate = useNavigate();
 
-    const handleSubmit = (event: React.FormEvent) => {
+    const handleSubmit = async (event: React.FormEvent) => {
         event.preventDefault();
+        setError("");
+
+        if (!/^[a-zA-Z.-]+$/.test(username)) {
+            setError("Логин может содержать только латинские буквы, точку и дефис");
+            return;
+        }
+
+        try {
+            await login(username, password);
+            navigate("/dashboard"); // Перенаправляем после входа
+        } catch (err) {
+            setError(err);
+        }
     };
 
-    const handleChangeLogin = (event: React.ChangeEvent<HTMLInputElement>) => {
-        setLogin(event.target.value);
+    const handleChangeUserName = (event: React.ChangeEvent<HTMLInputElement>) => {
+        const value = event.target.value;
+
+        // if (/^[a-zA-Z.-]*$/.test(value)) {
+            setUsername(value);
+        //     setError("");
+        // }
     };
     const handleChangePassword = (event: React.ChangeEvent<HTMLInputElement>) => {
         setPassword(event.target.value);
@@ -28,13 +49,13 @@ const AuthPage = () => {
                     <div className={styles['auth-title']}>Вход</div>
                     <form onSubmit={handleSubmit} className={styles['auth-form']}>
                         <div className={styles['auth-text']}>Логин</div>
-                        <LoginInput value={login} onChange={handleChangeLogin} autoFocus/>
+                        <LoginInput value={username} onChange={handleChangeUserName} autoFocus/>
                         <br/>
                         <div className={styles['auth-text']}>Пароль</div>
                         <PasswordInput value={password} onChange={handleChangePassword} autoFocus/>
                     </form>
                     <div className={styles['error-text']}>{error}</div>
-                    <Button1 text={'Войти'}/>
+                    <Button1 text={'Войти'} onClick={handleSubmit} />
                 </div>
             </div>
         </>

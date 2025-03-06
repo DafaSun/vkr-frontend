@@ -2,7 +2,7 @@ import React from "react";
 import styles from './Way.module.css'
 import RightSvg from "../../../../assets/svg/right.svg?react"
 
-type IWayProps = {
+interface IWayProps {
     items: string[];
     onItemClick?: ((item: string, index: number) => void)[];
 };

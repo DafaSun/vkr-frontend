@@ -2,12 +2,10 @@ import React, {ReactElement} from 'react';
 import styles from './Exit.module.css'
 import ExitSvg from "../../../../assets/svg/exit.svg?react"
 
-interface IExitProps extends React.HTMLAttributes<HTMLButtonElement>{
-
+interface IExitProps{
 }
 
 export const Exit: React.FC<IExitProps> = () => {
-
 
     return (
         <div className={styles['exit-container']}>

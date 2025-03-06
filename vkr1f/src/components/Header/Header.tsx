@@ -1,30 +1,30 @@
-import React, {ReactElement} from 'react';
+import React from 'react';
 import styles from './Header.module.css'
 import Way from "./components/Way/Way.tsx";
 import Back from "./components/Back/Back.tsx";
 
-interface IHeaderProps extends React.HTMLAttributes<HTMLButtonElement>{
-    post?: string;
-    name?: string;
+interface IHeaderProps {
+    post: string;
+    name: string;
+    wayItems?: string[];
+    wayOnItemClick?: ((item: string, index: number) => void)[];
+    backOnClick?: (() => void);
+    hasBack?: boolean;
 }
 
 export const Header: React.FC<IHeaderProps> = (props) => {
 
-    const {post, name} = props
+    const {post, name, wayItems=[], wayOnItemClick=[], backOnClick=()=>{}, hasBack=false} = props
 
     return (
        <>
            <div className={styles['header-container']}>
                <div className={styles['page-info']}>
                    <Way
-                       items={["Один", "Два", "Три"]}
-                       onItemClick={[
-                           () => console.log("Клик по Один"),
-                           () => console.log("Клик по Два"),
-                           () => console.log("Клик по Три"),
-                       ]}
+                       items={wayItems}
+                       onItemClick={wayOnItemClick}
                    />
-                   <Back/>
+                   <Back onClick={backOnClick} isActive={hasBack}/>
                </div>
 
                <div className={styles['person-info']}>
