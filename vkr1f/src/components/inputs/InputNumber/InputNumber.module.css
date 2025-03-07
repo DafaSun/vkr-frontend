@@ -1,0 +1,22 @@
+.input-number-container{
+    margin: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.input-number{
+    height: calc(var(--button-height)*0.5);
+    border-radius: 15px;
+    padding: 20px;
+    border: 3px solid var(--grey-blue);
+    width: calc(var(--button-width)*0.88);
+    color: var(--dark-blue);
+    background-color: var(--white);
+    font-size: 25px;
+}
+
+.text{
+    margin-bottom: 15px;
+    margin-left: 10px;
+    font-size: 18px;
+}

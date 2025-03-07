@@ -10,6 +10,9 @@ import MaidIndex from "./pages/maid/IndexMaid";
 import ManagerIndex from "./pages/manager/IndexManager";
 
 import NurseIndex from "./pages/nurse/IndexNurse";
+import NurseTherapy from "./pages/nurse/TherapyNurse.tsx";
+import NurseAddCourseProcedure from "./pages/nurse/AddCourseProcedureNurse.tsx";
+import NurseAddOneProcedure from "./pages/nurse/AddOneProcedureNurse.tsx";
 
 import ReportsIndex from "./pages/reports/IndexReport";
 
@@ -30,6 +33,9 @@ function App() {
                 <Route path="/manager" element={<ManagerIndex />} />
 
                 <Route path="/nurse" element={<NurseIndex />} />
+                <Route path="/nurse/therapy" element={<NurseTherapy />} />
+                <Route path="/nurse/therapy/add-one-procedure" element={<NurseAddOneProcedure />} />
+                <Route path="/nurse/therapy/add-course-procedure" element={<NurseAddCourseProcedure />} />
 
                 <Route path="/reports" element={<ReportsIndex />} />
 
