@@ -1,22 +1,22 @@
 .dp{
     height: calc(var(--button-height)*0.5);
-    border-radius: 15px;
-    padding: 20px;
-    border: 3px solid var(--grey-blue);
+    border-radius:  var(--border-radius-size);
+    padding: var(--normal-padding-size);
+ border: 3px solid var(--grey-blue);
     width: calc(var(--button-width)*0.88);
     color: var(--dark-blue);
     background-color: var(--white);
-    font-size: 25px;
+    font-size: var(--normal-text-size);
 }
 
 .text{
-    margin-bottom: 15px;
+    margin-bottom: var(--normal-margin-size);
     margin-left: 10px;
-    font-size: 18px;
+    font-size: var(--normal-text-size);
 }
 
 .date-container{
-    margin: 20px;
+    margin:  var(--normal-margin-size);
     display: flex;
     flex-direction: column;
 }

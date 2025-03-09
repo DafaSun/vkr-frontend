@@ -1,7 +1,7 @@
 .btn1, .btn2, .btn3, .btn4, .btn5{
     height: var(--button-height);
     border-radius: 15px;
-    padding: 20px;
+    padding: var(--normal-text-size);
     border: none;
     margin: 20px;
     }
@@ -11,35 +11,35 @@
     color: var(--white);
     background-color: var(--grey-blue);
     font-weight: bold;
-    font-size: 30px;
+    font-size: var(--big-text-size);
 }
 
 .btn2{
     width: var(--button-width);
     color: var(--dark-blue);
     background-color: var(--white);
-    font-size: 25px;
+    font-size: var(--normal-text-size);
 }
 
 .btn3{
     width: var(--button-width);
     color: var(--white);
     background-color: var(--grey-blue);
-    font-size: 25px;
+    font-size: var(--normal-text-size);
 }
 
 .btn4{
     width: var(--button-width);
     color: var(--white);
     background-color: var(--sky-blue);
-    font-size: 25px;
+    font-size: var(--normal-text-size);
 }
 
 .btn5{
     width: var(--button-width);
     color: var(--dark-blue);
     background-color: var(--light-blue);
-    font-size: 25px;
+    font-size: var(--normal-text-size);
 }
 
 .btn1:hover, .btn2:hover, .btn3:hover, .btn4:hover, .btn5:hover{

@@ -3,19 +3,18 @@ import styles from "./InputNumber.module.css"
 
 interface NumberInputProps {
     text: string;
+    label: string;
     onChange: (value: number) => void;
     min?: number;
     max?: number;
-    placeholder?: string;
 }
 
-export const InputNumber: React.FC<NumberInputProps> = ({text, onChange, min = 1, max, placeholder = "Введите число" }) => {
+export const InputNumber: React.FC<NumberInputProps> = ({text, label, onChange, min = 1, max }) => {
     const [value, setValue] = useState<string>("");
 
     const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
         const inputValue = event.target.value;
 
-        // Проверяем, что введено только число и оно натуральное
         if (/^\d*$/.test(inputValue)) {
             const num = parseInt(inputValue, 10);
 
@@ -37,7 +36,7 @@ export const InputNumber: React.FC<NumberInputProps> = ({text, onChange, min = 1
             type="text"
             value={value}
             onChange={handleChange}
-            placeholder={placeholder}
+            placeholder={label}
         />
         </div>
     );

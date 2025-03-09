@@ -1,12 +1,12 @@
 .back-container{
     display: flex;
     align-items: center;
-    padding-left: 10px;
-    padding-top: 10px;
+    padding-left: var(--normal-padding-size);;
+    padding-top: var(--normal-padding-size);;
 }
 
 .text{
-    padding-left: 10px;
+    padding: var(--normal-padding-size);
 }
 
 .hidden{

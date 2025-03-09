@@ -16,14 +16,14 @@ const IndexManager = () => {
 
     const sideBarItems: OneItem[] = [
         {
-            onClick: () => {navigate('/manager/therapy')},
-            text: "Лечение",
-            label: "therapy"
+            onClick: () => {navigate('/manager/tour')},
+            text: "Путевки",
+            label: "tour"
         },
         {
-            onClick: () => {navigate('/manager/booking')},
-            text: "Бронирование",
-            label: "booking"
+            onClick: () => {navigate('/manager/hotel')},
+            text: "Гостиница",
+            label: "hotel"
         },
         {
             onClick: () => {navigate('/manager/placement')},
@@ -31,9 +31,19 @@ const IndexManager = () => {
             label: "placement"
         },
         {
-            onClick: () => {navigate('/manager/nutrition')},
-            text: "Питание",
-            label: "nutrition"
+            onClick: () => {navigate('/manager/registration')},
+            text: "Регистрация",
+            label: "registration"
+        },
+        {
+            onClick: () => {navigate('/manager/rooms')},
+            text: "Номера",
+            label: "rooms"
+        },
+        {
+            onClick: () => {navigate('/manager/info')},
+            text: "Информация",
+            label: "info"
         }
     ];
 

@@ -18,6 +18,11 @@
     align-items: center;
 }
 
+.row-container{
+    display: flex;
+    flex-direction: row;
+}
+
 .welcome{
     display: flex;
     justify-content: center;
@@ -28,5 +33,39 @@
 
 .filters-container{
     display: flex;
+    flex-direction: column;
     justify-content: space-between;
+}
+
+.category-room-container img {
+    width: 20vw;
+    object-fit: contain;
+    margin: var(--normal-margin-size);
+}
+
+.category-room-container{
+border: 1px solid var(--dark-blue);
+    width: 80vw;
+    height: fit-content;
+    display: flex;
+}
+
+.rooms-container{
+
+}
+
+.room-description{
+    margin-top: var(--normal-margin-size);
+    color: var(--dark-blue);
+}
+
+.room-title{
+    color: var(--dark-blue);
+    font-size: var(--big-text-size);
+}
+
+.price{
+    color: var(--dark-blue);
+    font-size: var(--big-text-size);
+    margin-top: var(--normal-margin-size);
 }

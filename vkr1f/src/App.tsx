@@ -5,13 +5,14 @@ import './App.css'
 
 import AdminIndex from "./pages/admin/IndexAdmin";
 
-import MaidIndex from "./pages/maid/IndexMaid";
-
 import ManagerIndex from "./pages/manager/IndexManager";
-import ManagerTherapy from "./pages/manager/TherapyManager.tsx";
+import ManagerTour from "./pages/manager/Tour/TourManager.tsx";
+import ManagerUsualTour from "./pages/manager/Tour/UsualTourManager.tsx";
+import ManagerSocialTour from "./pages/manager/Tour/SocialTourManager.tsx";
 import ManagerPlacement from "./pages/manager/PlacementManager.tsx";
-import ManagerBooking from "./pages/manager/BookingManager.tsx";
-import ManagerNutrition from "./pages/manager/NutritionManager.tsx";
+import ManagerHotel from "./pages/manager/HotelManager.tsx";
+import ManagerInfo from "./pages/manager/InfoManager.tsx";
+import ManagerRegistration from "./pages/manager/RegistrationManager.tsx";
 
 import NurseIndex from "./pages/nurse/IndexNurse";
 import NurseReports from "./pages/nurse/ReportsNurse.tsx";
@@ -34,13 +35,14 @@ function App() {
 
                 <Route path="/admin" element={<AdminIndex />} />
 
-                <Route path="/maid" element={<MaidIndex />} />
-
                 <Route path="/manager" element={<ManagerIndex />} />
-                <Route path="/manager/therapy" element={<ManagerTherapy />} />
-                <Route path="/manager/booking" element={<ManagerBooking />} />
+                <Route path="/manager/tour" element={<ManagerTour />} />
+                <Route path="/manager/tour/social" element={<ManagerSocialTour />} />
+                <Route path="/manager/tour/tour" element={<ManagerUsualTour />} />
+                <Route path="/manager/hotel" element={<ManagerHotel />} />
                 <Route path="/manager/placement" element={<ManagerPlacement />} />
-                <Route path="/manager/nutrition" element={<ManagerNutrition />} />
+                <Route path="/manager/registration" element={<ManagerRegistration />} />
+                <Route path="/manager/info" element={<ManagerInfo />} />
 
                 <Route path="/nurse" element={<NurseIndex />} />
                 <Route path="/nurse/reports" element={<NurseReports />} />

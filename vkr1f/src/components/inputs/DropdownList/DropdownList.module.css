@@ -1,22 +1,21 @@
-.dpd{
+.dpd {
     height: var(--button-height);
-    border-radius: 15px;
-    padding: 20px;
+    border-radius: var(--border-radius-size);
+    padding: var(--normal-padding-size);
     border: 3px solid var(--grey-blue);
     width: var(--button-width);
     color: var(--dark-blue);
     background-color: var(--white);
-    font-size: 25px;
+    font-size: var(--normal-text-size);
 }
 
-.text{
-    margin-bottom: 15px;
-    margin-left: 10px;
-    font-size: 18px;
+.text {
+    margin: var(--normal-margin-size);
+    font-size: var(--normal-text-size);
 }
 
-.dropdown-container{
-    margin: 20px;
+.dropdown-container {
+    margin: var(--normal-margin-size);
     display: flex;
     flex-direction: column;
 }

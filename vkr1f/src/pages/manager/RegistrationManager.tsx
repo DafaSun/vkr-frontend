@@ -11,19 +11,20 @@ import {InputText} from "../../components/inputs/InputText/InputText.tsx";
 import {OneItem} from "../../types/SideBarItem.tsx";
 import {useNavigate} from "react-router-dom";
 
-const IndexManager = () => {
+const InfoManager = () => {
     const navigate = useNavigate();
+
 
     const sideBarItems: OneItem[] = [
         {
-            onClick: () => {navigate('/manager/therapy')},
-            text: "Лечение",
-            label: "therapy"
+            onClick: () => {navigate('/manager/tour')},
+            text: "Путевки",
+            label: "tour"
         },
         {
-            onClick: () => {navigate('/manager/booking')},
-            text: "Бронирование",
-            label: "booking"
+            onClick: () => {navigate('/manager/hotel')},
+            text: "Гостиница",
+            label: "hotel"
         },
         {
             onClick: () => {navigate('/manager/placement')},
@@ -31,23 +32,27 @@ const IndexManager = () => {
             label: "placement"
         },
         {
-            onClick: () => {navigate('/manager/nutrition')},
-            text: "Питание",
-            label: "nutrition"
+            onClick: () => {navigate('/manager/registration')},
+            text: "Регистрация",
+            label: "registration"
+        },
+        {
+            onClick: () => {navigate('/manager/info')},
+            text: "Информация",
+            label: "info"
         }
     ];
-
 
     return (
         <div className={styles['page-style']}>
 
-            <SideBar activeItem={"therapy"} items={sideBarItems}/>
+            <SideBar activeItem={"registration"} items={sideBarItems}/>
             <div className={styles['content-container']}>
 
                 <Header name={'Иванова Анастасия Сергеевна'} post={'Менеджер'}/>
 
                 <div className={styles['main-container']}>
-                    <h1 className={styles['welcome']}>Therapy</h1>
+                    <h1 className={styles['welcome']}>Nutrition</h1>
 
 
 
@@ -60,4 +65,4 @@ const IndexManager = () => {
     );
 };
 
-export default IndexManager;
+export default InfoManager;

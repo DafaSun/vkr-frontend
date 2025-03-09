@@ -1,4 +1,13 @@
 :root {
-    --button-width: 380px;
-    --button-height: 80px;
+    --button-width: 300px;
+    --button-height: 60px;
+
+    --normal-text-size: 16px;
+    --big-text-size: 24px;
+
+    --normal-padding-size: 10px;
+
+    --normal-margin-size: 10px;
+
+    --border-radius-size: 15px;
 }
