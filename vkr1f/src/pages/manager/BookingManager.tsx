@@ -8,11 +8,23 @@ import {Button3} from "../../components/buttons/Button3/Button3.tsx";
 import {Button4} from "../../components/buttons/Button4/Button4.tsx";
 import {Button5} from "../../components/buttons/Button5/Button5.tsx";
 import {InputText} from "../../components/inputs/InputText/InputText.tsx";
+import {DatePicker} from "../../components/inputs/DatePicker/DatePicker.tsx";
+import {DropdownList} from "../../components/inputs/DropdownList/DpropdownList.tsx";
 import {OneItem} from "../../types/SideBarItem.tsx";
 import {useNavigate} from "react-router-dom";
 
 const IndexManager = () => {
+    const [arrivalDate, setArrivalDate] = useState(new Date());
+    const [departureDate, setDepartureDate] = useState(new Date());
+    const [roomType, setRoomType] = useState();
     const navigate = useNavigate();
+
+    const roomTypesList = [
+        { id: 1, fullName: "Одноместный" },
+        { id: 2, fullName: "Двуместный" },
+        { id: 3, fullName: "Люкс"}
+        ];
+
 
     const sideBarItems: OneItem[] = [
         {
@@ -37,16 +49,38 @@ const IndexManager = () => {
         }
     ];
 
+
+    const selectArrivalDate = (date: string) => {
+        setArrivalDate(new Date(date));
+    };
+
+
+    const selectDepartureDate = (date: string) => {
+        setDepartureDate(new Date(date));
+    };
+
     return (
         <div className={styles['page-style']}>
 
-            <SideBar activeItem={""} items={sideBarItems}/>
+            <SideBar activeItem={"booking"} items={sideBarItems}/>
             <div className={styles['content-container']}>
 
                 <Header name={'Иванова Анастасия Сергеевна'} post={'Менеджер'}/>
 
                 <div className={styles['main-container']}>
-                    <h1 className={styles['welcome']}>Добро пожаловать!</h1>
+                    <div className={styles['filters-container']}>
+                        <DatePicker text={"Выберите дату заезда"} onSelect={selectArrivalDate} />
+                        <DatePicker text={"Выберите дату отъезда"} onSelect={selectDepartureDate} />
+                        <DropdownList  options={roomTypesList} label={' Выберите тип номера'} text={'Выберите тип номера из списка'} onSelect={()=>{}} />
+                        <Button3 text={'Search'} onClick={()=>{}}/>/
+                    </div>
+                    <div className={styles['rooms-container']}>
+                        <div className={styles['one-room-container']}>
+
+                        </div>
+                    </div>
+
+                    <h1 className={styles['welcome']}>Booking</h1>
 
 
 

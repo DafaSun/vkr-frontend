@@ -8,6 +8,7 @@
 .content-container{
     display: flex;
     flex-direction: column;
+    margin-left: 14vw;
 }
 
 .main-container{
@@ -23,4 +24,9 @@
     align-items: center;
     margin-top: 100px;
     color: var(--dark-blue);
+}
+
+.filters-container{
+    display: flex;
+    justify-content: space-between;
 }

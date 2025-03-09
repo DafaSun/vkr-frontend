@@ -12,27 +12,25 @@ import {DropdownList} from "../../components/inputs/DropdownList/DpropdownList.t
 import {DatePicker} from "../../components/inputs/DatePicker/DatePicker.tsx";
 import {TimePicker} from "../../components/inputs/TimePicker/TimePicker.tsx";
 import {InputNumber} from "../../components/inputs/InputNumber/InputNumber.tsx";
-
-type OneItem = {
-    onClick: () => void;
-    text: string;
-    label: string;
-}
+import {useNavigate} from "react-router-dom";
+import {OneItem} from "../../types/SideBarItem.tsx";
 
 const AddCourseProcedureNurse = () => {
+    const navigate = useNavigate();
+
     const sideBarItems: OneItem[] = [
         {
-            onClick: () => {},
+            onClick: () => {navigate('/nurse/therapy')},
             text: "Лечение",
             label: "therapy"
         },
         {
-            onClick: () => {},
+            onClick: () => {navigate('/nurse/reports')},
             text: "Отчеты",
             label: "reports"
         },
         {
-            onClick: () => {},
+            onClick: () => {navigate('/nurse/employees')},
             text: "Сотрудники",
             label: "employees"
         }

@@ -1,4 +1,5 @@
 import React, {useState} from "react";
+import { useNavigate } from "react-router-dom";
 import styles from '../css/Index.module.css'
 import {SideBar} from "../../components/SideBar/SideBar.tsx";
 import {Header} from "../../components/Header/Header.tsx"
@@ -8,27 +9,24 @@ import {Button3} from "../../components/buttons/Button3/Button3.tsx";
 import {Button4} from "../../components/buttons/Button4/Button4.tsx";
 import {Button5} from "../../components/buttons/Button5/Button5.tsx";
 import {InputText} from "../../components/inputs/InputText/InputText.tsx";
-
-type OneItem = {
-    onClick: () => void;
-    text: string;
-    label: string;
-}
+import {OneItem} from "../../types/SideBarItem.tsx";
 
 const IndexNurse = () => {
+    const navigate = useNavigate();
+
     const sideBarItems: OneItem[] = [
         {
-            onClick: () => {},
+            onClick: () => {navigate('/nurse/therapy')},
             text: "Лечение",
             label: "therapy"
         },
         {
-            onClick: () => {},
+            onClick: () => {navigate('/nurse/reports')},
             text: "Отчеты",
             label: "reports"
         },
         {
-            onClick: () => {},
+            onClick: () => {navigate('/nurse/employees')},
             text: "Сотрудники",
             label: "employees"
         }

@@ -11,27 +11,29 @@ import {InputText} from "../../components/inputs/InputText/InputText.tsx";
 import {DropdownList} from "../../components/inputs/DropdownList/DpropdownList.tsx";
 import {DatePicker} from "../../components/inputs/DatePicker/DatePicker.tsx";
 import {TimePicker} from "../../components/inputs/TimePicker/TimePicker.tsx";
-
-type OneItem = {
-    onClick: () => void;
-    text: string;
-    label: string;
-}
+import {useNavigate} from "react-router-dom";
+import {OneItem} from "../../types/SideBarItem.tsx";
 
 const AddOneProcedureNurse = () => {
+    const navigate = useNavigate();
+    const [person, setPerson] = useState<number>();
+    const [procedure, setProcedure] = useState<number>();
+    const [date, setDate] = useState<Date | null>(null);
+    const [time, setTime] = useState<string>("");
+
     const sideBarItems: OneItem[] = [
         {
-            onClick: () => {},
+            onClick: () => {navigate('/nurse/therapy')},
             text: "Лечение",
             label: "therapy"
         },
         {
-            onClick: () => {},
+            onClick: () => {navigate('/nurse/reports')},
             text: "Отчеты",
             label: "reports"
         },
         {
-            onClick: () => {},
+            onClick: () => {navigate('/nurse/employees')},
             text: "Сотрудники",
             label: "employees"
         }
@@ -50,16 +52,20 @@ const AddOneProcedureNurse = () => {
         { id:4, fullName: "Гирудотерапия" }
     ];
 
-    const handleSelect = (id: number) => {
-        console.log("Выбран ID:", id);
+    const selectPerson = (personId: number) => {
+        setPerson(personId);
     };
 
-    const handleDateSelect = (date: string) => {
-        console.log("Выбранная дата:", date);
+    const selectProcedure = (procedureId: number) => {
+        setProcedure(procedureId);
     };
 
-    const handleTimeSelect = (time: string) => {
-        console.log("Выбранное время:", time);
+    const selectDate = (date: string) => {
+        setDate(new Date(date));
+    };
+
+    const selectTime = (time: string) => {
+        setTime(time);
     };
 
     return (
@@ -72,10 +78,10 @@ const AddOneProcedureNurse = () => {
 
                 <div className={styles['main-container']}>
                    <h1>Запись на 1 процедуру</h1>
-                    <DropdownList options={people} label={' Выберите человека'} text={'Выберите ФИО отдыхающего из списка'} onSelect={handleSelect} />
-                    <DropdownList options={procedures} label={' Выберите процедуру'} text={'Выберите тип процедуры из списка'} onSelect={handleSelect} />
-                    <DatePicker text={"Выберите дату процедуры"} onSelect={handleDateSelect} />
-                    <TimePicker text={"Выберите время процедуры"} onSelect={handleTimeSelect} />
+                    <DropdownList options={people} label={' Выберите человека'} text={'Выберите ФИО отдыхающего из списка'} onSelect={selectPerson} />
+                    <DropdownList options={procedures} label={' Выберите процедуру'} text={'Выберите тип процедуры из списка'} onSelect={selectProcedure} />
+                    <DatePicker text={"Выберите дату процедуры"} onSelect={selectDate} />
+                    <TimePicker text={"Выберите время процедуры"} onSelect={selectTime} />
                     <h3> Проверьте все поля </h3>
                     <Button3 text={'Записать'}></Button3>
 

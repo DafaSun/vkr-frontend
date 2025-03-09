@@ -1,6 +1,6 @@
 import React, {useState} from "react";
+import { useNavigate } from "react-router-dom";
 import styles from '../css/Index.module.css'
-import {useNavigate} from "react-router-dom";
 import {SideBar} from "../../components/SideBar/SideBar.tsx";
 import {Header} from "../../components/Header/Header.tsx"
 import {Button1} from "../../components/buttons/Button1/Button1.tsx";
@@ -11,7 +11,7 @@ import {Button5} from "../../components/buttons/Button5/Button5.tsx";
 import {InputText} from "../../components/inputs/InputText/InputText.tsx";
 import {OneItem} from "../../types/SideBarItem.tsx";
 
-const TherapyNurse = () => {
+const IndexNurse = () => {
     const navigate = useNavigate();
 
     const sideBarItems: OneItem[] = [
@@ -31,31 +31,27 @@ const TherapyNurse = () => {
             label: "employees"
         }
     ];
+
     return (
         <div className={styles['page-style']}>
 
-            <SideBar activeItem={"therapy"} items={sideBarItems}/>
-            <div className={styles['content-container']}>
+        <SideBar activeItem={"employees"} items={sideBarItems}/>
+    <div className={styles['content-container']}>
 
-                <Header name={'Иванова Анастасия Сергеевна'} post={'Медсестра'}/>
+    <Header name={'Иванова Анастасия Сергеевна'} post={'Медсестра'}/>
 
-                <div className={styles['main-container']}>
-
-                    <h1>Лечение. Запись на процедуры</h1>
-                   <Button3 text={'Записать на курс процедур'}  onClick={() => {
-                       navigate('/nurse/therapy/add-course-procedure')}}/>
-                   <Button3 text={'Записать на одну процедуру'} onClick={() => {
-                       navigate('/nurse/therapy/add-one-procedure')}}/>
+    <div className={styles['main-container']}>
+    <h1 className={styles['welcome']}>Employees</h1>
 
 
 
-                </div>
+    </div>
 
-            </div>
+    </div>
 
 
-        </div>
-    );
+    </div>
+);
 };
 
-export default TherapyNurse;
+export default IndexNurse;

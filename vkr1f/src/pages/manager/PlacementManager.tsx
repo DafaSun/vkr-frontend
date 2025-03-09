@@ -37,16 +37,17 @@ const IndexManager = () => {
         }
     ];
 
+
     return (
         <div className={styles['page-style']}>
 
-            <SideBar activeItem={""} items={sideBarItems}/>
+            <SideBar activeItem={"placement"} items={sideBarItems}/>
             <div className={styles['content-container']}>
 
                 <Header name={'Иванова Анастасия Сергеевна'} post={'Менеджер'}/>
 
                 <div className={styles['main-container']}>
-                    <h1 className={styles['welcome']}>Добро пожаловать!</h1>
+                    <h1 className={styles['welcome']}>Placement</h1>
 
 
 
