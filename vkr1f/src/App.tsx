@@ -7,12 +7,18 @@ import AdminIndex from "./pages/admin/IndexAdmin";
 
 import ManagerIndex from "./pages/manager/IndexManager";
 import ManagerTour from "./pages/manager/Tour/TourManager.tsx";
-import ManagerUsualTour from "./pages/manager/Tour/UsualTourManager.tsx";
+import ManagerUsualTour from "./pages/manager/Tour/UsualTour/UsualTourManager.tsx";
+import ManagerRoomsInCategoryUsualTour from "./pages/manager/Tour/UsualTour/RoomsInCategoryUsualTourManager.tsx";
+import ManagerBookingUsualTour from "./pages/manager/Tour/UsualTour/BookingUsualTourManager.tsx";
 import ManagerSocialTour from "./pages/manager/Tour/SocialTourManager.tsx";
-import ManagerPlacement from "./pages/manager/PlacementManager.tsx";
-import ManagerHotel from "./pages/manager/HotelManager.tsx";
-import ManagerInfo from "./pages/manager/InfoManager.tsx";
-import ManagerRegistration from "./pages/manager/RegistrationManager.tsx";
+import ManagerPlacement from "./pages/manager/Placement/PlacementManager.tsx";
+import ManagerPlacementInfo from "./pages/manager/Placement/PlacementInfoManager.tsx";
+import ManagerHotel from "./pages/manager/Hotel/HotelManager.tsx";
+import ManagerRoomsInCategoryHotel from "./pages/manager/Hotel/RoomsInCategoryHotelManager.tsx";
+import ManagerBookingHotel from "./pages/manager/Hotel/BookingHotelManager.tsx";
+import ManagerInfo from "./pages/manager/Info/InfoManager.tsx";
+import ManagerRegistration from "./pages/manager/Registration/RegistrationManager.tsx";
+import ManagerRooms from "./pages/manager/Rooms/RoomsManager.tsx";
 
 import NurseIndex from "./pages/nurse/IndexNurse";
 import NurseReports from "./pages/nurse/ReportsNurse.tsx";
@@ -39,10 +45,16 @@ function App() {
                 <Route path="/manager/tour" element={<ManagerTour />} />
                 <Route path="/manager/tour/social" element={<ManagerSocialTour />} />
                 <Route path="/manager/tour/tour" element={<ManagerUsualTour />} />
+                <Route path="/manager/tour/tour/rooms-in-category" element={<ManagerRoomsInCategoryUsualTour />} />
+                <Route path="/manager/tour/tour/rooms-in-category/booking" element={<ManagerBookingUsualTour />} />
                 <Route path="/manager/hotel" element={<ManagerHotel />} />
+                <Route path="/manager/hotel/rooms-in-category" element={<ManagerRoomsInCategoryHotel />} />
+                <Route path="/manager/hotel/rooms-in-category/booking" element={<ManagerBookingHotel />} />
                 <Route path="/manager/placement" element={<ManagerPlacement />} />
+                <Route path="/manager/placement/info" element={<ManagerPlacementInfo />} />
                 <Route path="/manager/registration" element={<ManagerRegistration />} />
                 <Route path="/manager/info" element={<ManagerInfo />} />
+                <Route path="/manager/rooms" element={<ManagerRooms />} />
 
                 <Route path="/nurse" element={<NurseIndex />} />
                 <Route path="/nurse/reports" element={<NurseReports />} />

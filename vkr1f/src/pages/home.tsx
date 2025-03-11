@@ -12,6 +12,8 @@ import {DropdownList} from "../components/inputs/DropdownList/DpropdownList.tsx"
 import {DatePicker} from "../components/inputs/DatePicker/DatePicker.tsx";
 import {TimePicker} from "../components/inputs/TimePicker/TimePicker.tsx";
 import {InputNumber} from "../components/inputs/InputNumber/InputNumber.tsx";
+import {Checkbox} from "../components/inputs/Checkbox/Checkbox.tsx"
+
 
 const Home = () => {
 
@@ -55,8 +57,8 @@ const Home = () => {
                     <DropdownList options={people} label={"DropdownList"} text={'Выберите ФИО отдыхающего из списка'} onSelect={handleSelect} />
                     <DatePicker text={"Выберите дату процедуры"} onSelect={handleDateSelect} />
                     <TimePicker text={"Выберите время процедуры"} onSelect={handleTimeSelect} />
-                    <InputNumber text={'Введите кол-во процедур'} onChange={handleNumberChange} min={1} max={100} />;
-
+                    <InputNumber text={'Введите кол-во процедур'} onChange={handleNumberChange} min={1} max={100} label={''} />
+<Checkbox text={'asdfgh;lmnbvcaertyu'}/>
 
                 </div>
 

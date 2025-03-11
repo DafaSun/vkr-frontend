@@ -45,4 +45,5 @@
 .btn1:hover, .btn2:hover, .btn3:hover, .btn4:hover, .btn5:hover{
     background-color: var(--bright-blue);
     font-weight: bold;
+    cursor: pointer;
 }

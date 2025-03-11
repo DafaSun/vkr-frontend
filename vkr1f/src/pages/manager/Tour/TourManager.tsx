@@ -37,6 +37,11 @@ const TourManager = () => {
             label: "registration"
         },
         {
+            onClick: () => {navigate('/manager/rooms')},
+            text: "Номера",
+            label: "rooms"
+        },
+        {
             onClick: () => {navigate('/manager/info')},
             text: "Информация",
             label: "info"

@@ -1,5 +1,5 @@
 import React, {useState} from "react";
-import styles from '../../css/Index.module.css'
+import styles from './TourManager.module.css';
 import {SideBar} from "../../../components/SideBar/SideBar.tsx";
 import {Header} from "../../../components/Header/Header.tsx"
 import {Button1} from "../../../components/buttons/Button1/Button1.tsx";
@@ -11,7 +11,7 @@ import {InputText} from "../../../components/inputs/InputText/InputText.tsx";
 import {OneItem} from "../../../types/SideBarItem.tsx";
 import {useNavigate} from "react-router-dom";
 
-const TourManager = () => {
+const SocialTourManager = () => {
     const navigate = useNavigate();
 
 
@@ -35,6 +35,11 @@ const TourManager = () => {
             onClick: () => {navigate('/manager/registration')},
             text: "Регистрация",
             label: "registration"
+        },
+        {
+            onClick: () => {navigate('/manager/rooms')},
+            text: "Номера",
+            label: "rooms"
         },
         {
             onClick: () => {navigate('/manager/info')},
@@ -65,4 +70,4 @@ const TourManager = () => {
     );
 };
 
-export default TourManager;
+export default SocialTourManager;

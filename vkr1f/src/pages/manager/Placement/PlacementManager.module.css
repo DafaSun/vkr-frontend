@@ -30,3 +30,18 @@
     margin-top: 100px;
     color: var(--dark-blue);
 }
+
+.booking-container{
+    display: flex;
+    font-size: var(--normal-text-size);
+    color: var(--dark-blue);
+    border: 1px solid var(--dark-blue);
+    width: 80vw;
+    padding: var(--normal-padding-size);
+}
+
+.text{
+    padding: var(--normal-padding-size);
+    color: var(--dark-blue);
+    font-size: var(--normal-text-size);
+}
