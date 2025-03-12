@@ -65,6 +65,7 @@ const IndexManager = () => {
 
     const [roomCategory, setRoomCategory] = useState(1);
     const [surname, setSurname] = useState('');
+    const [bookingId, setBookingId] = useState(0);
     const [arrivalDate, setArrivalDate] = useState('');
     const selectArrivalDate = (data: string) => {
         setArrivalDate(data);
@@ -76,6 +77,10 @@ const IndexManager = () => {
 
     const changeSurname = (data: string) => {
         setSurname(data);
+    };
+
+    const changeBookingId = (data: number) => {
+        setBookingId(data);
     };
 
     return (
@@ -98,7 +103,7 @@ const IndexManager = () => {
 
                     <div className={styles['bookings-list-container']}>
                         <div className={styles['booking-container']} >
-                            10.03.2026 - Фамилия - {roomCategory} <Button3 text={'Перейти'} onClick={() => navigate('/manager/placement/info')}/>
+                            10.03.2026 - Фамилия - {roomCategory} <Button3 text={'Перейти'} onClick={() => navigate(`/manager/placement/info?id=${bookingId}`)}/>
                         </div>
                     </div>
 

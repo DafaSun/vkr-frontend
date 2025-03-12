@@ -4,38 +4,26 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a233fea1-6de7-4fe8-a8b7-e2d3c128615f" name="Changes" comment="commit 09/03/2025 - изменила в менеджере, что-то пописала немного">
-      <change afterPath="$PROJECT_DIR$/vkr1f/src/components/inputs/InputText/InputText.module.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vkr1f/src/components/inputs/InputText/InputText.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vkr1f/src/pages/manager/Hotel/BookingHotelManager.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vkr1f/src/pages/manager/Hotel/HotelManager.module.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vkr1f/src/pages/manager/Hotel/HotelManager.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vkr1f/src/pages/manager/Hotel/RoomsInCategoryHotelManager.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vkr1f/src/pages/manager/Placement/PlacementInfoManager.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vkr1f/src/pages/manager/Placement/PlacementManager.module.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vkr1f/src/pages/manager/Placement/PlacementManager.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vkr1f/src/pages/manager/Tour/TourManager.module.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vkr1f/src/pages/manager/Tour/UsualTour/BookingUsualTourManager.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vkr1f/src/pages/manager/Tour/UsualTour/RoomsInCategoryUsualTourManager.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vkr1f/src/pages/manager/Tour/UsualTour/UsualTourManager.tsx" afterDir="false" />
+    <list default="true" id="a233fea1-6de7-4fe8-a8b7-e2d3c128615f" name="Changes" comment="commit 11/03/2025 - изменила в менеджере опять, добавила новых страничек">
+      <change afterPath="$PROJECT_DIR$/vkr1f/src/components/inputs/InputEmail/InputEmail.module.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vkr1f/src/components/inputs/InputEmail/InputEmail.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vkr1f/src/components/inputs/InputPhone/InputPhone.module.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vkr1f/src/components/inputs/InputPhone/InputPhone.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vkr1f/src/pages/manager/Info/FunInfoManager.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vkr1f/src/pages/manager/Info/NutritionInfoManager.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vkr1f/src/pages/manager/Info/TherapyInfoManager.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vkr1f/src/pages/manager/Registration/PeoplePageRegistrationManager.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vkr1f/src/pages/manager/Registration/Registration.module.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/vkr1f/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/vkr1f/src/App.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vkr1f/src/components/buttons/BasicButton/BasicButton.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/vkr1f/src/components/buttons/BasicButton/BasicButton.module.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vkr1f/src/components/inputs/DatePicker/DatePicker.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/vkr1f/src/components/inputs/DatePicker/DatePicker.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vkr1f/src/components/inputs/DropdownList/DpropdownList.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/vkr1f/src/components/inputs/DropdownList/DpropdownList.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vkr1f/src/components/inputs/InputNumber/InputNumber.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/vkr1f/src/components/inputs/InputNumber/InputNumber.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vkr1f/src/mocks/mockRooms.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/vkr1f/src/components/inputs/Checkbox/Checkbox.module.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vkr1f/src/pages/css/Index.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/vkr1f/src/pages/css/Index.module.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vkr1f/src/pages/home.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/vkr1f/src/pages/home.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vkr1f/src/pages/manager/HotelManager.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vkr1f/src/pages/manager/InfoManager.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/vkr1f/src/pages/manager/InfoManager.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vkr1f/src/pages/manager/PlacementManager.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/vkr1f/src/pages/manager/RoomsManager.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vkr1f/src/pages/manager/RegistrationManager.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/vkr1f/src/pages/manager/RegistrationManager.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vkr1f/src/pages/manager/Tour/Booking/BookingManager.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/vkr1f/src/components/inputs/Checkbox/Checkbox.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vkr1f/src/pages/manager/Tour/Booking/RoomsInCategoriManager.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/vkr1f/src/mocks/mock.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vkr1f/src/pages/manager/Tour/SocialTourManager.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/vkr1f/src/pages/manager/Tour/SocialTourManager.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vkr1f/src/pages/manager/Tour/TourManager.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/vkr1f/src/pages/manager/Tour/TourManager.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vkr1f/src/pages/manager/Tour/UsualTourManager.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vkr1f/src/pages/manager/Hotel/BookingHotelManager.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/vkr1f/src/pages/manager/Hotel/BookingHotelManager.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vkr1f/src/pages/manager/Info/InfoManager.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/vkr1f/src/pages/manager/Info/InfoManager.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vkr1f/src/pages/manager/Placement/PlacementInfoManager.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/vkr1f/src/pages/manager/Placement/PlacementInfoManager.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vkr1f/src/pages/manager/Placement/PlacementManager.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/vkr1f/src/pages/manager/Placement/PlacementManager.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vkr1f/src/pages/manager/Registration/RegistrationManager.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/vkr1f/src/pages/manager/Registration/RegistrationManager.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vkr1f/src/pages/manager/Rooms/RoomsManager.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/vkr1f/src/pages/manager/Rooms/RoomsManager.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vkr1f/src/pages/manager/Tour/UsualTour/BookingUsualTourManager.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/vkr1f/src/pages/manager/Tour/UsualTour/BookingUsualTourManager.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vkr1f/src/pages/manager/Tour/UsualTour/UsualTourManager.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/vkr1f/src/pages/manager/Tour/UsualTour/UsualTourManager.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,8 +34,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="TypeScript File" />
-        <option value="TypeScript JSX File" />
         <option value="CSS File" />
+        <option value="TypeScript JSX File" />
       </list>
     </option>
   </component>
@@ -83,7 +71,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
     "git-widget-placeholder": "master",
-    "last_opened_file_path": "D:/Projects/diplom/vkr-frontend/vkr1f/src/pages/manager/Placement",
+    "last_opened_file_path": "D:/Projects/diplom/vkr-frontend/vkr1f/src/pages/manager/Info",
     "list.type.of.created.stylesheet": "CSS",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
@@ -96,18 +84,18 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Projects\diplom\vkr-frontend\vkr1f\src\pages\manager\Info" />
+      <recent name="D:\Projects\diplom\vkr-frontend\vkr1f\src\components\inputs" />
       <recent name="D:\Projects\diplom\vkr-frontend\vkr1f\src\pages\manager\Placement" />
       <recent name="D:\Projects\diplom\vkr-frontend\vkr1f\src\pages\manager" />
       <recent name="D:\Projects\diplom\vkr-frontend\vkr1f\src\pages\manager\Hotel" />
-      <recent name="D:\Projects\diplom\vkr-frontend\vkr1f\src\components\inputs" />
-      <recent name="D:\Projects\diplom\vkr-frontend\vkr1f\src\pages\manager\Tour\Booking" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Projects\diplom\vkr-frontend\vkr1f\src\pages" />
+      <recent name="D:\Projects\diplom\vkr-frontend\vkr1f\src\pages\manager\Info" />
+      <recent name="D:\Projects\diplom\vkr-frontend\vkr1f\src\pages\manager\Rooms" />
+      <recent name="D:\Projects\diplom\vkr-frontend\vkr1f\src\pages\manager\Registration" />
       <recent name="D:\Projects\diplom\vkr-frontend\vkr1f\src\pages\manager\Placement" />
-      <recent name="D:\Projects\diplom\vkr-frontend\vkr1f\src\pages\manager\Hotel" />
-      <recent name="D:\Projects\diplom\vkr-frontend\vkr1f\src\pages\manager\Tour\UsualTour" />
-      <recent name="D:\Projects\diplom\vkr-frontend\vkr1f\public\images\rooms" />
-      <recent name="D:\Projects\diplom\vkr-frontend\vkr1f\src\pages\manager\Tour" />
     </key>
   </component>
   <component name="SharedIndexes">
@@ -142,7 +130,8 @@
       <workItem from="1741500705970" duration="12900000" />
       <workItem from="1741586401372" duration="1211000" />
       <workItem from="1741588541754" duration="7285000" />
-      <workItem from="1741702721365" duration="12914000" />
+      <workItem from="1741702721365" duration="13492000" />
+      <workItem from="1741762805575" duration="10164000" />
     </task>
     <task id="LOCAL-00001" summary="commit 02/03/2025 - немного поделала, создала файлы страниц, папки, верстку и компоненты еще не писала">
       <option name="closed" value="true" />
@@ -192,7 +181,15 @@
       <option name="project" value="LOCAL" />
       <updated>1741550241438</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="commit 11/03/2025 - изменила в менеджере опять, добавила новых страничек">
+      <option name="closed" value="true" />
+      <created>1741728328483</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1741728328483</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -205,7 +202,8 @@
     <MESSAGE value="commit 07/03/2025 - собрала странички для записи на процедуры через медсестру" />
     <MESSAGE value="commit 09/03/2025 - добавила немного страничек менеджеру" />
     <MESSAGE value="commit 09/03/2025 - изменила в менеджере, что-то пописала немного" />
-    <option name="LAST_COMMIT_MESSAGE" value="commit 09/03/2025 - изменила в менеджере, что-то пописала немного" />
+    <MESSAGE value="commit 11/03/2025 - изменила в менеджере опять, добавила новых страничек" />
+    <option name="LAST_COMMIT_MESSAGE" value="commit 11/03/2025 - изменила в менеджере опять, добавила новых страничек" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -213,73 +211,61 @@
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/vkr1f/src/mocks/mock.tsx</url>
           <line>56</line>
-          <properties lambdaOrdinal="-1" />
           <option name="timeStamp" value="7" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/vkr1f/src/mocks/mock.tsx</url>
           <line>57</line>
-          <properties lambdaOrdinal="-1" />
           <option name="timeStamp" value="8" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/vkr1f/src/mocks/mock.tsx</url>
           <line>58</line>
-          <properties lambdaOrdinal="-1" />
           <option name="timeStamp" value="9" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/vkr1f/src/mocks/mock.tsx</url>
           <line>59</line>
-          <properties lambdaOrdinal="-1" />
           <option name="timeStamp" value="10" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/vkr1f/src/mocks/mock.tsx</url>
           <line>51</line>
-          <properties lambdaOrdinal="-1" />
           <option name="timeStamp" value="13" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/vkr1f/src/mocks/mock.tsx</url>
           <line>52</line>
-          <properties lambdaOrdinal="-1" />
           <option name="timeStamp" value="14" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/vkr1f/src/mocks/mock.tsx</url>
           <line>53</line>
-          <properties lambdaOrdinal="-1" />
           <option name="timeStamp" value="15" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/vkr1f/src/mocks/mock.tsx</url>
           <line>54</line>
-          <properties lambdaOrdinal="-1" />
           <option name="timeStamp" value="16" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/vkr1f/src/mocks/mock.tsx</url>
           <line>67</line>
-          <properties lambdaOrdinal="-1" />
           <option name="timeStamp" value="18" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/vkr1f/src/mocks/mock.tsx</url>
           <line>66</line>
-          <properties lambdaOrdinal="-1" />
           <option name="timeStamp" value="19" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/vkr1f/src/mocks/mock.tsx</url>
           <line>68</line>
-          <properties lambdaOrdinal="-1" />
           <option name="timeStamp" value="20" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/vkr1f/src/mocks/mock.tsx</url>
           <line>69</line>
-          <properties lambdaOrdinal="-1" />
           <option name="timeStamp" value="21" />
         </line-breakpoint>
       </breakpoints>

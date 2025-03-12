@@ -57,10 +57,9 @@ const InfoManager = () => {
                 <Header name={'Иванова Анастасия Сергеевна'} post={'Менеджер'}/>
 
                 <div className={styles['main-container']}>
-                    <Button3 text={'Питание'} onClick={()=>{navigate('/manager/info/nutrition')}}/>
-                    <Button3 text={'Процедуры'} onClick={()=>{navigate('/manager/info/therapy')}}/>
-                    <Button3 text={'Досуг'} onClick={()=>{navigate('/manager/info/fun')}}/>
-
+                    <div className={styles['welcome']}>
+                        Therapy
+                    </div>
 
 
                 </div>

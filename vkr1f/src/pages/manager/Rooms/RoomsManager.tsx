@@ -10,10 +10,28 @@ import {Button5} from "../../../components/buttons/Button5/Button5.tsx";
 import {InputText} from "../../../components/inputs/InputText/InputText.tsx";
 import {OneItem} from "../../../types/SideBarItem.tsx";
 import {useNavigate} from "react-router-dom";
+import {DatePicker} from "../../../components/inputs/DatePicker/DatePicker.tsx";
+import {DropdownList} from "../../../components/inputs/DropdownList/DpropdownList.tsx";
+import {roomCategoryList} from "../../../mocks/mock.tsx";
+import {buildList} from "../../../mocks/mock.tsx";
 
 const InfoManager = () => {
     const navigate = useNavigate();
 
+    const [roomCategory, setRoomCategory] = useState(1);
+    const [building, setBuilding] = useState(0);
+    const [date, setDate] = useState('');
+    const selectDate = (data: string) => {
+        setDate(data);
+    };
+
+    const selectRoomCategory = (data: number) => {
+        setRoomCategory(data);
+    };
+
+    const selectBuilding = (data: number) => {
+        setBuilding(data);
+    };
 
     const sideBarItems: OneItem[] = [
         {
@@ -58,7 +76,14 @@ const InfoManager = () => {
 
                 <div className={styles['main-container']}>
 
-
+                    <div className={styles['filters-container']}>
+                        <div className={styles['row-container']} >
+                            <DatePicker text={"Выберите дату "} value={date} onSelect={selectDate}/>
+                            <DropdownList options={roomCategoryList} value={roomCategory} label={'Выберите категорию номера'} text={'Выберите категорию номера из списка'} onSelect={selectRoomCategory} />
+                            <DropdownList options={buildList} value={building} label={'Выберите корпус'} text={'Выберите корпус из списка'} onSelect={selectRoomCategory} />
+                            <Button3 text={'Применить'} onClick={()=>{}}/>
+                        </div>
+                    </div>
 
 
                 </div>

@@ -11,6 +11,8 @@ import {InputNumber} from "../../../components/inputs/InputNumber/InputNumber.ts
 import {InputText} from "../../../components/inputs/InputText/InputText.tsx";
 import {DisplayNumber} from "../../../components/displays/DisplayNumber.tsx";
 import {Checkbox} from "../../../components/inputs/Checkbox/Checkbox.tsx";
+import {InputPhone} from "../../../components/inputs/InputPhone/InputPhone.tsx";
+import {InputEmail} from "../../../components/inputs/InputEmail/InputEmail.tsx";
 
 const BookingUsualTourManager = () => {
     const navigate = useNavigate();
@@ -102,6 +104,19 @@ const BookingUsualTourManager = () => {
         {onClick: () => navigate('/manager/info'), text: "Информация", label: "info"}
     ];
 
+
+    const [phone, setPhone] = useState('');
+    const [email, setEmail] = useState('');
+
+    const changeEmail = (data: string) => {
+        setEmail(data);
+    }
+
+    const changePhone = (data: string) => {
+        setPhone(data);
+    }
+
+
     return (
         <div className={styles['page-style']}>
             <SideBar activeItem={"tour"} items={sideBarItems}/>
@@ -136,6 +151,8 @@ const BookingUsualTourManager = () => {
                     <Checkbox text={'Завтрак'} value={hasBreakfest} onChange={changeHasBreakfest} />
                     <Checkbox text={'Обед'} value={hasLunch} onChange={changeHasLunch} />
                     <Checkbox text={'Ужин'} value={hasDinner} onChange={changeHasDinner} />
+                    <InputPhone text={'Введите номер телефона'} onChange={changePhone} label={''}/>
+                    <InputEmail text={'Введите эл. почту'} onChange={changeEmail} label={''}/>
                     <h1>Итоговая стоимость  -  28 000 руб.</h1>
                 <Button3 text={'Забронировать' } onClick={()=>{}}/>
                 </div>

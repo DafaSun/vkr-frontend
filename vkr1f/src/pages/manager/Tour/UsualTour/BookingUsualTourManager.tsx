@@ -10,6 +10,8 @@ import {DropdownList} from "../../../../components/inputs/DropdownList/Dpropdown
 import {InputNumber} from "../../../../components/inputs/InputNumber/InputNumber.tsx";
 import {InputText} from "../../../../components/inputs/InputText/InputText.tsx";
 import {DisplayNumber} from "../../../../components/displays/DisplayNumber.tsx";
+import {InputPhone} from "../../../../components/inputs/InputPhone/InputPhone.tsx";
+import {InputEmail} from "../../../../components/inputs/InputEmail/InputEmail.tsx";
 
 const BookingUsualTourManager = () => {
     const navigate = useNavigate();
@@ -58,6 +60,19 @@ const BookingUsualTourManager = () => {
         }, {replace: true});
     };
 
+
+    const [phone, setPhone] = useState('');
+    const [email, setEmail] = useState('');
+
+    const changeEmail = (data: string) => {
+        setEmail(data);
+    }
+
+    const changePhone = (data: string) => {
+        setPhone(data);
+    }
+
+
     const sideBarItems: OneItem[] = [
         {onClick: () => navigate('/manager/tour'), text: "Путевки", label: "tour"},
         {onClick: () => navigate('/manager/hotel'), text: "Гостиница", label: "hotel"},
@@ -102,6 +117,8 @@ const BookingUsualTourManager = () => {
 <InputText text={'Введите имя'} onChange={()=>{}} label={''}/>
 <InputText text={'Введите отчество'} onChange={()=>{}} label={''}/>
                     <DatePicker text={"Выберите дату рождения"} value={departureDate} onSelect={()=>{}} />
+                    <InputPhone text={'Введите номер телефона'} onChange={changePhone} label={''}/>
+                    <InputEmail text={'Введите эл. почту'} onChange={changeEmail} label={''}/>
                 <Button3 text={'Забронировать' } onClick={()=>{}}/>
                 </div>
 

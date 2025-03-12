@@ -1,0 +1,47 @@
+.page-style{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: flex-start;
+}
+
+.content-container{
+    display: flex;
+    flex-direction: column;
+    margin-left: 14vw;
+}
+
+.main-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.row-container{
+    display: flex;
+    flex-direction: row;
+}
+
+.welcome{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 100px;
+    color: var(--dark-blue);
+}
+
+.people-container{
+    display: flex;
+    font-size: var(--normal-text-size);
+    color: var(--dark-blue);
+    border: 1px solid var(--dark-blue);
+    width: 80vw;
+    padding: var(--normal-padding-size);
+}
+
+.text{
+    padding: var(--normal-padding-size);
+    color: var(--dark-blue);
+    font-size: var(--normal-text-size);
+}

@@ -63,16 +63,7 @@ const IndexManager = () => {
         }
     ];
 
-    const [roomCategory, setRoomCategory] = useState(1);
     const [surname, setSurname] = useState('');
-    const [arrivalDate, setArrivalDate] = useState('');
-    const selectArrivalDate = (data: string) => {
-        setArrivalDate(data);
-    };
-
-    const selectRoomCategory = (data: number) => {
-        setRoomCategory(data);
-    };
 
     const changeSurname = (data: string) => {
         setSurname(data);

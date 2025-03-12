@@ -100,6 +100,7 @@ const UsualTourManager = () => {
         { onClick: () => navigate('/manager/info'), text: "Информация", label: "info" }
     ];
 
+
     return (
         <div className={styles['page-style']}>
             <SideBar activeItem={"tour"} items={sideBarItems} />

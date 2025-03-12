@@ -17,7 +17,11 @@ import ManagerHotel from "./pages/manager/Hotel/HotelManager.tsx";
 import ManagerRoomsInCategoryHotel from "./pages/manager/Hotel/RoomsInCategoryHotelManager.tsx";
 import ManagerBookingHotel from "./pages/manager/Hotel/BookingHotelManager.tsx";
 import ManagerInfo from "./pages/manager/Info/InfoManager.tsx";
+import ManagerInfoNutrition from "./pages/manager/Info/NutritionInfoManager.tsx";
+import ManagerInfoTherapy from "./pages/manager/Info/TherapyInfoManager.tsx";
+import ManagerInfoFun from "./pages/manager/Info/FunInfoManager.tsx";
 import ManagerRegistration from "./pages/manager/Registration/RegistrationManager.tsx";
+import ManagerRegistrationPeople from "./pages/manager/Registration/PeoplePageRegistrationManager.tsx";
 import ManagerRooms from "./pages/manager/Rooms/RoomsManager.tsx";
 
 import NurseIndex from "./pages/nurse/IndexNurse";
@@ -53,7 +57,11 @@ function App() {
                 <Route path="/manager/placement" element={<ManagerPlacement />} />
                 <Route path="/manager/placement/info" element={<ManagerPlacementInfo />} />
                 <Route path="/manager/registration" element={<ManagerRegistration />} />
+                <Route path="/manager/registration/people" element={<ManagerRegistrationPeople />} />
                 <Route path="/manager/info" element={<ManagerInfo />} />
+                <Route path="/manager/info/nutrition" element={<ManagerInfoNutrition />} />
+                <Route path="/manager/info/therapy" element={<ManagerInfoTherapy />} />
+                <Route path="/manager/info/fun" element={<ManagerInfoFun />} />
                 <Route path="/manager/rooms" element={<ManagerRooms />} />
 
                 <Route path="/nurse" element={<NurseIndex />} />
