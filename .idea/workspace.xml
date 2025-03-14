@@ -4,25 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a233fea1-6de7-4fe8-a8b7-e2d3c128615f" name="Changes" comment="commit 11/03/2025 - изменила в менеджере опять, добавила новых страничек">
-      <change afterPath="$PROJECT_DIR$/vkr1f/src/components/inputs/InputEmail/InputEmail.module.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vkr1f/src/components/inputs/InputEmail/InputEmail.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vkr1f/src/components/inputs/InputPhone/InputPhone.module.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vkr1f/src/components/inputs/InputPhone/InputPhone.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vkr1f/src/pages/manager/Info/FunInfoManager.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vkr1f/src/pages/manager/Info/NutritionInfoManager.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vkr1f/src/pages/manager/Info/TherapyInfoManager.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vkr1f/src/pages/manager/Registration/PeoplePageRegistrationManager.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vkr1f/src/pages/manager/Registration/Registration.module.css" afterDir="false" />
+    <list default="true" id="a233fea1-6de7-4fe8-a8b7-e2d3c128615f" name="Changes" comment="commit 12/03/2025 - плюс минус закончила с макетом интерфейса для бронирования номеров, осталось навести красоту, ну и логику сделать">
+      <change afterPath="$PROJECT_DIR$/vkr1f/src/services/managerTourTour.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vkr1f/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/vkr1f/src/App.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vkr1f/src/pages/manager/Hotel/BookingHotelManager.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/vkr1f/src/pages/manager/Hotel/BookingHotelManager.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vkr1f/src/pages/manager/Info/InfoManager.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/vkr1f/src/pages/manager/Info/InfoManager.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vkr1f/src/pages/manager/Placement/PlacementInfoManager.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/vkr1f/src/pages/manager/Placement/PlacementInfoManager.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vkr1f/src/pages/manager/Placement/PlacementManager.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/vkr1f/src/pages/manager/Placement/PlacementManager.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vkr1f/src/pages/manager/Registration/RegistrationManager.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/vkr1f/src/pages/manager/Registration/RegistrationManager.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vkr1f/src/pages/manager/Rooms/RoomsManager.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/vkr1f/src/pages/manager/Rooms/RoomsManager.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vkr1f/src/pages/manager/Tour/UsualTour/BookingUsualTourManager.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/vkr1f/src/pages/manager/Tour/UsualTour/BookingUsualTourManager.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vkr1f/src/mocks/mock.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/vkr1f/src/mocks/mock.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/vkr1f/src/pages/manager/Tour/UsualTour/UsualTourManager.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/vkr1f/src/pages/manager/Tour/UsualTour/UsualTourManager.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -33,9 +18,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="TypeScript File" />
         <option value="CSS File" />
         <option value="TypeScript JSX File" />
+        <option value="TypeScript File" />
       </list>
     </option>
   </component>
@@ -66,22 +51,22 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "master",
-    "last_opened_file_path": "D:/Projects/diplom/vkr-frontend/vkr1f/src/pages/manager/Info",
-    "list.type.of.created.stylesheet": "CSS",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "ts.external.directory.path": "D:\\Projects\\diplom\\vkr-frontend\\vkr1f\\node_modules\\typescript\\lib",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/Projects/diplom/vkr-frontend/vkr1f/src/pages/manager/Info&quot;,
+    &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;D:\\Projects\\diplom\\vkr-frontend\\vkr1f\\node_modules\\typescript\\lib&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\Projects\diplom\vkr-frontend\vkr1f\src\pages\manager\Info" />
@@ -131,7 +116,9 @@
       <workItem from="1741586401372" duration="1211000" />
       <workItem from="1741588541754" duration="7285000" />
       <workItem from="1741702721365" duration="13492000" />
-      <workItem from="1741762805575" duration="10164000" />
+      <workItem from="1741762805575" duration="11889000" />
+      <workItem from="1741861717847" duration="5375000" />
+      <workItem from="1741932682763" duration="8067000" />
     </task>
     <task id="LOCAL-00001" summary="commit 02/03/2025 - немного поделала, создала файлы страниц, папки, верстку и компоненты еще не писала">
       <option name="closed" value="true" />
@@ -189,7 +176,15 @@
       <option name="project" value="LOCAL" />
       <updated>1741728328483</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="commit 12/03/2025 - плюс минус закончила с макетом интерфейса для бронирования номеров, осталось навести красоту, ну и логику сделать">
+      <option name="closed" value="true" />
+      <created>1741809588327</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1741809588327</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -203,69 +198,70 @@
     <MESSAGE value="commit 09/03/2025 - добавила немного страничек менеджеру" />
     <MESSAGE value="commit 09/03/2025 - изменила в менеджере, что-то пописала немного" />
     <MESSAGE value="commit 11/03/2025 - изменила в менеджере опять, добавила новых страничек" />
-    <option name="LAST_COMMIT_MESSAGE" value="commit 11/03/2025 - изменила в менеджере опять, добавила новых страничек" />
+    <MESSAGE value="commit 12/03/2025 - плюс минус закончила с макетом интерфейса для бронирования номеров, осталось навести красоту, ну и логику сделать" />
+    <option name="LAST_COMMIT_MESSAGE" value="commit 12/03/2025 - плюс минус закончила с макетом интерфейса для бронирования номеров, осталось навести красоту, ну и логику сделать" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/vkr1f/src/mocks/mock.tsx</url>
-          <line>56</line>
+          <line>57</line>
           <option name="timeStamp" value="7" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/vkr1f/src/mocks/mock.tsx</url>
-          <line>57</line>
+          <line>58</line>
           <option name="timeStamp" value="8" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/vkr1f/src/mocks/mock.tsx</url>
-          <line>58</line>
+          <line>59</line>
           <option name="timeStamp" value="9" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/vkr1f/src/mocks/mock.tsx</url>
-          <line>59</line>
+          <line>60</line>
           <option name="timeStamp" value="10" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/vkr1f/src/mocks/mock.tsx</url>
-          <line>51</line>
+          <line>52</line>
           <option name="timeStamp" value="13" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/vkr1f/src/mocks/mock.tsx</url>
-          <line>52</line>
+          <line>53</line>
           <option name="timeStamp" value="14" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/vkr1f/src/mocks/mock.tsx</url>
-          <line>53</line>
+          <line>54</line>
           <option name="timeStamp" value="15" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/vkr1f/src/mocks/mock.tsx</url>
-          <line>54</line>
+          <line>55</line>
           <option name="timeStamp" value="16" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/vkr1f/src/mocks/mock.tsx</url>
-          <line>67</line>
+          <line>68</line>
           <option name="timeStamp" value="18" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/vkr1f/src/mocks/mock.tsx</url>
-          <line>66</line>
+          <line>67</line>
           <option name="timeStamp" value="19" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/vkr1f/src/mocks/mock.tsx</url>
-          <line>68</line>
+          <line>69</line>
           <option name="timeStamp" value="20" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/vkr1f/src/mocks/mock.tsx</url>
-          <line>69</line>
+          <line>70</line>
           <option name="timeStamp" value="21" />
         </line-breakpoint>
       </breakpoints>

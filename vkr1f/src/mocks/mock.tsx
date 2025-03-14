@@ -15,8 +15,9 @@ export const flourList = [
 ];
 
 export const buildList = [
-    { id: 1, fullName: "4 корпус" },
-    { id: 2, fullName: "6 корпус" }
+    { id: 4, fullName: "4 корпус" },
+    { id: 5, fullName: "5 корпус" },
+    { id: 6, fullName: "6 корпус" }
 ];
 
 export const roomCategoryList = [
@@ -26,7 +27,7 @@ export const roomCategoryList = [
     { id: 4, fullName: "Одноместный номер на 1 этаже в 4 корпусе с удобствами в номере" },
     { id: 5, fullName: "Двухместный номер на 2 этаже в 4 корпусе с удобствами в блоке" },
     { id: 6, fullName: "Двухместный номер на 1 этаже в 6 корпусе с удобствами в номере" },
-    { id: 6, fullName: "Двухместный номер на 2 этаже в 6 корпусе с удобствами в номере" }
+    { id: 7, fullName: "Двухместный номер на 2 этаже в 6 корпусе с удобствами в номере" }
 ];
 
 export const genderRoomList = [
