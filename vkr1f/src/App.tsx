@@ -7,10 +7,10 @@ import AdminIndex from "./pages/admin/IndexAdmin";
 
 import ManagerIndex from "./pages/manager/IndexManager";
 import ManagerTour from "./pages/manager/Tour/TourManager.tsx";
-import ManagerUsualTour from "./pages/manager/Tour/UsualTour/UsualTourManager.tsx";
-import ManagerRoomsInCategoryUsualTour from "./pages/manager/Tour/UsualTour/RoomsInCategoryUsualTourManager.tsx";
-import ManagerBookingUsualTour from "./pages/manager/Tour/UsualTour/BookingUsualTourManager.tsx";
-import ManagerSocialTour from "./pages/manager/Tour/SocialTourManager.tsx";
+import ManagerUsualTour from "./pages/manager/Tour/UsualTour/UsualTourCategoriesManager.tsx";
+import ManagerRoomsInCategoryUsualTour from "./pages/manager/Tour/UsualTour/UsualTourRoomsManager.tsx";
+import ManagerBookingUsualTour from "./pages/manager/Tour/UsualTour/BookingNewUsualTourManager.tsx";
+import ManagerSocialTour from "./pages/manager/Tour/SocialTour/SocialTourManager.tsx";
 import ManagerPlacement from "./pages/manager/Placement/PlacementManager.tsx";
 import ManagerPlacementInfo from "./pages/manager/Placement/PlacementInfoManager.tsx";
 import ManagerHotel from "./pages/manager/Hotel/HotelManager.tsx";

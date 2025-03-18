@@ -13,7 +13,7 @@ import {DisplayNumber} from "../../../../components/displays/DisplayNumber.tsx";
 import {InputPhone} from "../../../../components/inputs/InputPhone/InputPhone.tsx";
 import {InputEmail} from "../../../../components/inputs/InputEmail/InputEmail.tsx";
 
-const BookingUsualTourManager = () => {
+const BookingNewUsualTourManager = () => {
     const navigate = useNavigate();
     const [searchParams, setSearchParams] = useSearchParams();
 
@@ -128,4 +128,4 @@ const BookingUsualTourManager = () => {
         ;
 };
 
-export default BookingUsualTourManager;
+export default BookingNewUsualTourManager;

@@ -1,14 +1,14 @@
 import React, {useState} from "react";
-import styles from './TourManager.module.css';
-import {SideBar} from "../../../components/SideBar/SideBar.tsx";
-import {Header} from "../../../components/Header/Header.tsx"
-import {Button1} from "../../../components/buttons/Button1/Button1.tsx";
-import {Button2} from "../../../components/buttons/Button2/Button2.tsx";
-import {Button3} from "../../../components/buttons/Button3/Button3.tsx";
-import {Button4} from "../../../components/buttons/Button4/Button4.tsx";
-import {Button5} from "../../../components/buttons/Button5/Button5.tsx";
-import {InputText} from "../../../components/inputs/InputText/InputText.tsx";
-import {OneItem} from "../../../types/SideBarItem.tsx";
+import styles from '../TourManager.module.css';
+import {SideBar} from "../../../../components/SideBar/SideBar.tsx";
+import {Header} from "../../../../components/Header/Header.tsx"
+import {Button1} from "../../../../components/buttons/Button1/Button1.tsx";
+import {Button2} from "../../../../components/buttons/Button2/Button2.tsx";
+import {Button3} from "../../../../components/buttons/Button3/Button3.tsx";
+import {Button4} from "../../../../components/buttons/Button4/Button4.tsx";
+import {Button5} from "../../../../components/buttons/Button5/Button5.tsx";
+import {InputText} from "../../../../components/inputs/InputText/InputText.tsx";
+import {OneItem} from "../../../../types/SideBarItem.tsx";
 import {useNavigate} from "react-router-dom";
 
 const SocialTourManager = () => {

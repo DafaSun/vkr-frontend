@@ -10,7 +10,7 @@ import {DropdownList} from "../../../../components/inputs/DropdownList/Dpropdown
 import {InputNumber} from "../../../../components/inputs/InputNumber/InputNumber.tsx";
 import {DisplayNumber} from "../../../../components/displays/DisplayNumber.tsx";
 
-const RoomsInCategoryUsualTourManager = () => {
+const UsualTourRoomsManager = () => {
     const navigate = useNavigate();
     const [searchParams, setSearchParams] = useSearchParams();
 
@@ -112,4 +112,4 @@ const RoomsInCategoryUsualTourManager = () => {
     ;
 };
 
-export default RoomsInCategoryUsualTourManager;
+export default UsualTourRoomsManager;
