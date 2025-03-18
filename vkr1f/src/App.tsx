@@ -54,10 +54,10 @@ function App() {
                 <Route path="/manager/hotel" element={<ManagerHotel />} />
                 <Route path="/manager/hotel/rooms-in-category" element={<ManagerRoomsInCategoryHotel />} />
                 <Route path="/manager/hotel/rooms-in-category/booking" element={<ManagerBookingHotel />} />
-                <Route path="/manager/placement" element={<ManagerPlacement />} />
-                <Route path="/manager/placement/info" element={<ManagerPlacementInfo />} />
-                <Route path="/manager/registration" element={<ManagerRegistration />} />
-                <Route path="/manager/registration/people" element={<ManagerRegistrationPeople />} />
+                <Route path="/manager/bookings" element={<ManagerPlacement />} />
+                <Route path="/manager/bookings/info" element={<ManagerPlacementInfo />} />
+                <Route path="/manager/guests" element={<ManagerRegistration />} />
+                <Route path="/manager/guests/people" element={<ManagerRegistrationPeople />} />
                 <Route path="/manager/info" element={<ManagerInfo />} />
                 <Route path="/manager/info/nutrition" element={<ManagerInfoNutrition />} />
                 <Route path="/manager/info/therapy" element={<ManagerInfoTherapy />} />

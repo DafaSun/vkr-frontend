@@ -4,17 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a233fea1-6de7-4fe8-a8b7-e2d3c128615f" name="Changes" comment="commit 14/03/2025 - есть один работающий эндпоинт">
-      <change afterPath="$PROJECT_DIR$/vkr1f/src/pages/manager/Tour/UsualTour/UsualTourCategoriesManager.tsx" afterDir="false" />
+    <list default="true" id="a233fea1-6de7-4fe8-a8b7-e2d3c128615f" name="Changes" comment="commit 18/03/2025 - что-то я тут натворила, страница с подходящими категориями работает нормально для обычных туров, иду страницу с номерами смотреть">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/vkr1f/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/vkr1f/src/App.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vkr1f/src/components/inputs/DropdownList/DpropdownList.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/vkr1f/src/components/inputs/DropdownList/DpropdownList.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vkr1f/src/pages/manager/Tour/SocialTourManager.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/vkr1f/src/pages/manager/Tour/SocialTour/SocialTourManager.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vkr1f/src/pages/manager/Tour/TourManager.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/vkr1f/src/pages/manager/Tour/TourManager.module.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vkr1f/src/pages/manager/Tour/UsualTour/BookingUsualTourManager.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/vkr1f/src/pages/manager/Tour/UsualTour/BookingNewUsualTourManager.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vkr1f/src/pages/manager/Tour/UsualTour/RoomsInCategoryUsualTourManager.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/vkr1f/src/pages/manager/Tour/UsualTour/UsualTourRoomsManager.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vkr1f/src/pages/manager/Tour/UsualTour/UsualTourManager.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vkr1f/src/services/managerTourTour.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vkr1f/src/pages/manager/Tour/UsualTour/UsualTourRoomsManager.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/vkr1f/src/pages/manager/Tour/UsualTour/UsualTourRoomsManager.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -130,7 +123,7 @@
       <workItem from="1742156933525" duration="3598000" />
       <workItem from="1742218536394" duration="423000" />
       <workItem from="1742225923447" duration="703000" />
-      <workItem from="1742282568685" duration="7791000" />
+      <workItem from="1742282568685" duration="10230000" />
     </task>
     <task id="LOCAL-00001" summary="commit 02/03/2025 - немного поделала, создала файлы страниц, папки, верстку и компоненты еще не писала">
       <option name="closed" value="true" />
@@ -204,7 +197,15 @@
       <option name="project" value="LOCAL" />
       <updated>1741985555753</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="commit 18/03/2025 - что-то я тут натворила, страница с подходящими категориями работает нормально для обычных туров, иду страницу с номерами смотреть">
+      <option name="closed" value="true" />
+      <created>1742291597472</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1742291597472</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -220,7 +221,8 @@
     <MESSAGE value="commit 11/03/2025 - изменила в менеджере опять, добавила новых страничек" />
     <MESSAGE value="commit 12/03/2025 - плюс минус закончила с макетом интерфейса для бронирования номеров, осталось навести красоту, ну и логику сделать" />
     <MESSAGE value="commit 14/03/2025 - есть один работающий эндпоинт" />
-    <option name="LAST_COMMIT_MESSAGE" value="commit 14/03/2025 - есть один работающий эндпоинт" />
+    <MESSAGE value="commit 18/03/2025 - что-то я тут натворила, страница с подходящими категориями работает нормально для обычных туров, иду страницу с номерами смотреть" />
+    <option name="LAST_COMMIT_MESSAGE" value="commit 18/03/2025 - что-то я тут натворила, страница с подходящими категориями работает нормально для обычных туров, иду страницу с номерами смотреть" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
