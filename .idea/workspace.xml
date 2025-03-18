@@ -4,9 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a233fea1-6de7-4fe8-a8b7-e2d3c128615f" name="Changes" comment="commit 18/03/2025 - что-то я тут натворила, страница с подходящими категориями работает нормально для обычных туров, иду страницу с номерами смотреть">
+    <list default="true" id="a233fea1-6de7-4fe8-a8b7-e2d3c128615f" name="Changes" comment="commit 18/03/2025 - страница с номерами обычного тура">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/vkr1f/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/vkr1f/src/App.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vkr1f/src/mocks/mock.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/vkr1f/src/mocks/mock.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vkr1f/src/pages/manager/Rooms/RoomsManager.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/vkr1f/src/pages/manager/Rooms/RoomsManager.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vkr1f/src/pages/manager/Tour/UsualTour/BookingNewUsualTourManager.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/vkr1f/src/pages/manager/Tour/UsualTour/UsualTourBookingNewManager.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vkr1f/src/pages/manager/Tour/UsualTour/UsualTourCategoriesManager.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/vkr1f/src/pages/manager/Tour/UsualTour/UsualTourCategoriesManager.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/vkr1f/src/pages/manager/Tour/UsualTour/UsualTourRoomsManager.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/vkr1f/src/pages/manager/Tour/UsualTour/UsualTourRoomsManager.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -123,7 +127,7 @@
       <workItem from="1742156933525" duration="3598000" />
       <workItem from="1742218536394" duration="423000" />
       <workItem from="1742225923447" duration="703000" />
-      <workItem from="1742282568685" duration="10230000" />
+      <workItem from="1742282568685" duration="25458000" />
     </task>
     <task id="LOCAL-00001" summary="commit 02/03/2025 - немного поделала, создала файлы страниц, папки, верстку и компоненты еще не писала">
       <option name="closed" value="true" />
@@ -205,7 +209,15 @@
       <option name="project" value="LOCAL" />
       <updated>1742291597472</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="commit 18/03/2025 - страница с номерами обычного тура">
+      <option name="closed" value="true" />
+      <created>1742295339765</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1742295339765</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -222,7 +234,8 @@
     <MESSAGE value="commit 12/03/2025 - плюс минус закончила с макетом интерфейса для бронирования номеров, осталось навести красоту, ну и логику сделать" />
     <MESSAGE value="commit 14/03/2025 - есть один работающий эндпоинт" />
     <MESSAGE value="commit 18/03/2025 - что-то я тут натворила, страница с подходящими категориями работает нормально для обычных туров, иду страницу с номерами смотреть" />
-    <option name="LAST_COMMIT_MESSAGE" value="commit 18/03/2025 - что-то я тут натворила, страница с подходящими категориями работает нормально для обычных туров, иду страницу с номерами смотреть" />
+    <MESSAGE value="commit 18/03/2025 - страница с номерами обычного тура" />
+    <option name="LAST_COMMIT_MESSAGE" value="commit 18/03/2025 - страница с номерами обычного тура" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -269,22 +282,22 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/vkr1f/src/mocks/mock.tsx</url>
-          <line>68</line>
+          <line>70</line>
           <option name="timeStamp" value="18" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/vkr1f/src/mocks/mock.tsx</url>
-          <line>67</line>
+          <line>69</line>
           <option name="timeStamp" value="19" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/vkr1f/src/mocks/mock.tsx</url>
-          <line>69</line>
+          <line>71</line>
           <option name="timeStamp" value="20" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/vkr1f/src/mocks/mock.tsx</url>
-          <line>70</line>
+          <line>72</line>
           <option name="timeStamp" value="21" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">

@@ -14,22 +14,37 @@ import {DatePicker} from "../../../components/inputs/DatePicker/DatePicker.tsx";
 import {DropdownList} from "../../../components/inputs/DropdownList/DpropdownList.tsx";
 import {roomCategoryList} from "../../../mocks/mock.tsx";
 import {buildList} from "../../../mocks/mock.tsx";
+import axios from "axios";
 
-const InfoManager = () => {
+type BookingData = {
+    places: string[];
+    dates: string[];
+    bookings: Record<string, Record<string, "free" | "booked">>;
+};
+
+const RoomsManager = () => {
     const navigate = useNavigate();
 
-    const [roomCategory, setRoomCategory] = useState(1);
-    const [building, setBuilding] = useState(0);
+    const [roomCategory, setRoomCategory] = useState('');
+    const [building, setBuilding] = useState('');
     const [date, setDate] = useState('');
+    const [placeTable, setPlaceTable] = useState<BookingData>({
+        places: [],
+        dates: [],
+        bookings: {}
+    });
+    const [loading, setLoading] = useState(false);
+    const [error_r, setError_r] = useState<string | null>(null);
+
     const selectDate = (data: string) => {
         setDate(data);
     };
 
-    const selectRoomCategory = (data: number) => {
+    const selectRoomCategory = (data: string) => {
         setRoomCategory(data);
     };
 
-    const selectBuilding = (data: number) => {
+    const selectBuilding = (data: string) => {
         setBuilding(data);
     };
 
@@ -66,6 +81,22 @@ const InfoManager = () => {
         }
     ];
 
+    const getPlacesTable = async () => {
+        setLoading(true);
+        try {
+            const response = await axios.get(`http://localhost:8000/api/manager/rooms/?building=${building}&category=${roomCategory}&date=${date}`);
+            setPlaceTable(response.data);
+        } catch (error) {
+            if (error instanceof Error) {
+                setError_r(error.response.data.error);
+            } else {
+                setError_r("Произошла ошибка");
+            }
+        } finally {
+            setLoading(false);
+        }
+    };
+
     return (
         <div className={styles['page-style']}>
 
@@ -80,19 +111,51 @@ const InfoManager = () => {
                         <div className={styles['row-container']} >
                             <DatePicker text={"Выберите дату "} value={date} onSelect={selectDate}/>
                             <DropdownList options={roomCategoryList} value={roomCategory} label={'Выберите категорию номера'} text={'Выберите категорию номера из списка'} onSelect={selectRoomCategory} />
-                            <DropdownList options={buildList} value={building} label={'Выберите корпус'} text={'Выберите корпус из списка'} onSelect={selectRoomCategory} />
-                            <Button3 text={'Применить'} onClick={()=>{}}/>
+                            <DropdownList options={buildList} value={building} label={'Выберите корпус'} text={'Выберите корпус из списка'} onSelect={selectBuilding} />
+                            <Button3 text={'Применить'} onClick={getPlacesTable}/>
                         </div>
                     </div>
 
+                    <div className="overflow-auto">
+                        <table className="border-collapse border border-gray-500">
+                            <thead>
+                            <tr>
+                                <th className="border border-gray-500 px-2">Места</th>
+                                {placeTable.dates.map((date) => (
+                                    <th key={date} className="border border-gray-500 px-2">
+                                        {date}
+                                    </th>
+                                ))}
+                            </tr>
+                            </thead>
+                            <tbody>
+                            {placeTable.places.map((place) => (
+                                <tr key={place}>
+                                    <td className="border border-gray-500 px-2">{place}</td>
+                                    {placeTable.dates.map((date) => (
+                                        <td
+                                            key={date}
+                                            className={`border border-gray-500 px-2 ${
+                                                placeTable.bookings[place]?.[date] === "free"
+                                                    ? "bg-green-500 text-black"
+                                                    : "bg-red-500 text-white"
+                                            }`}
+                                        >
+                                            {placeTable.bookings[place]?.[date] === "free"
+                                                ? "Свободно"
+                                                : "Занято"}
+                                        </td>
+                                    ))}
+                                </tr>
+                            ))}
+                            </tbody>
+                        </table>
+                    </div>
 
                 </div>
-
             </div>
-
-
         </div>
     );
 };
 
-export default InfoManager;
+export default RoomsManager;

@@ -28,14 +28,12 @@ const UsualTourRoomsManager = () => {
         checkin: new Date().toISOString().split("T")[0],
         checkout: new Date(Date.now() + 86400000 * 7).toISOString().split("T")[0],
         guests: "1",
-        roomType: "in_room",
         category: "1cat",
         gender: "male",
     };
 
     const [checkin, setCheckin] = useState(searchParams.get("checkin") || defaultParams.checkin);
     const [checkout, setCheckout] = useState(searchParams.get("checkout") || defaultParams.checkout);
-    const [roomType, setRoomType] = useState(searchParams.get("roomType") || defaultParams.roomType);
     const [guests, setGuests] = useState(Number(searchParams.get("guests")) || Number(defaultParams.guests));
     const [category, setCategory] = useState(searchParams.get("category") || defaultParams.category);
     const [gender, setGender] = useState(searchParams.get("gender") || defaultParams.gender);
@@ -47,20 +45,22 @@ const UsualTourRoomsManager = () => {
     useEffect(() => {
         setCheckin(searchParams.get("checkin") || defaultParams.checkin);
         setCheckout(searchParams.get("checkout") || defaultParams.checkout);
-        setRoomType(searchParams.get("roomType") || defaultParams.roomType);
         setGuests(Number(searchParams.get("guests")) || Number(defaultParams.guests));
         setCategory(searchParams.get("category") || defaultParams.category);
         setGender(searchParams.get("gender") || defaultParams.gender);
     }, [searchParams]);
 
     useEffect(() => {
-        if (!searchParams.get("checkin") || !searchParams.get("checkout") || !searchParams.get("guests") || !searchParams.get("roomType") || !searchParams.get("category") || !searchParams.get("gendery")) {
+        if (!searchParams.get("checkin") || !searchParams.get("checkout") || !searchParams.get("guests") || !searchParams.get("category")) {
             setSearchParams(defaultParams, {replace: true});
         }
-        setLoading(true);
-        searchPlaces()
 
     }, [searchParams, setSearchParams]);
+
+    useEffect(() => {
+        setLoading(true);
+        searchPlaces()
+    }, []);
 
     const sideBarItems: OneItem[] = [
         {onClick: () => navigate('/manager/tour'), text: "Путевки", label: "tour"},
@@ -102,7 +102,6 @@ const UsualTourRoomsManager = () => {
                                 дней: {((new Date(checkout)).getTime() - (new Date(checkin)).getTime()) / 86400000}</p>
                         </div>
                         <div className={self_styles['columns-container']}>
-                            <p>Тип размещения: {roomType}</p>
                             <p>Кол-во человек: {guests}</p>
                             <p>Пол: {gender}</p>
                             <p>Категория: {category}</p>
@@ -129,7 +128,7 @@ const UsualTourRoomsManager = () => {
                                             {place.price} руб.
                                         </div>
                                         <Button3 text={'Забронировать'} onClick={() => {
-                                            navigate(`/manager/tour/tour/rooms-in-category/booking?checkin=${checkin}&checkout=${checkout}&guests=${guests}&roomType=${roomType}&category=${category}&place=${place.place_id}`);
+                                            navigate(`/manager/tour/tour/rooms-in-category/booking?checkin=${checkin}&checkout=${checkout}&guests=${guests}&category=${category}&place=${place.place_id}&place_name=${place.place_name}&gender=${gender}&price=${place.price}`);
                                         }}/>
                                     </div>
                                 </div>

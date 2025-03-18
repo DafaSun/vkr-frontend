@@ -105,7 +105,7 @@ const UsualTourCategoriesManager = () => {
                                         <div className={self_styles['room-title']}>{category.category_name} - {category.available_places}</div>
                                         <div className={self_styles['price']}>От {category.price} руб.</div>
                                         <Button3 text={'Все номера категории'} onClick={() => {
-                                            navigate(`/manager/tour/tour/rooms-in-category?checkin=${checkin}&checkout=${checkout}&guests=${guests}&roomType=${roomType}&category=${category.category_label}`);
+                                            navigate(`/manager/tour/tour/rooms-in-category?checkin=${checkin}&checkout=${checkout}&guests=${guests}&category=${category.category_label}&gender=${gender}`);
                                         }} />
                                     </div>
                                 </div>

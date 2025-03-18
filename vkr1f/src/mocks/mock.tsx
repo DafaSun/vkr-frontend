@@ -1,33 +1,33 @@
 export const genderList = [
-    { id: 1, fullName: "Мужской" },
-    { id: 2, fullName: "Женский" },
-    { id: 3, fullName: "Не выбрано" }
+    { id: 'male', fullName: "Мужской" },
+    { id: 'female', fullName: "Женский" },
+    { id: 'undefined', fullName: "Не выбрано" }
 ];
 
 export const roomTypeList = [
-    { id: 1, fullName: "Удобства в номере" },
-    { id: 2, fullName: "Удобства в блоке" }
+    { id: 'in_room', fullName: "Удобства в номере" },
+    { id: 'in_block', fullName: "Удобства в блоке" }
 ];
 
 export const flourList = [
-    { id: 1, fullName: "1 этаж" },
-    { id: 2, fullName: "2 этаж" }
+    { id: '1floor', fullName: "1 этаж" },
+    { id: '2floor', fullName: "2 этаж" }
 ];
 
 export const buildList = [
-    { id: 4, fullName: "4 корпус" },
-    { id: 5, fullName: "5 корпус" },
-    { id: 6, fullName: "6 корпус" }
+    { id: '4building', fullName: "4 корпус" },
+    { id: '5building', fullName: "5 корпус" },
+    { id: '6building', fullName: "6 корпус" }
 ];
 
 export const roomCategoryList = [
-    { id: 1, fullName: "Двухкомнатный номер на 1 этаже в 4 корпусе с удобствами в номере" },
-    { id: 2, fullName: "Двухместный номер на 1 этаже в 4 корпусе с удобствами в блоке" },
-    { id: 3, fullName: "Двухместный номер на 1 этаже в 4 корпусе с удобствами в номере" },
-    { id: 4, fullName: "Одноместный номер на 1 этаже в 4 корпусе с удобствами в номере" },
-    { id: 5, fullName: "Двухместный номер на 2 этаже в 4 корпусе с удобствами в блоке" },
-    { id: 6, fullName: "Двухместный номер на 1 этаже в 6 корпусе с удобствами в номере" },
-    { id: 7, fullName: "Двухместный номер на 2 этаже в 6 корпусе с удобствами в номере" }
+    { id: '1cat', fullName: "Двухкомнатный номер на 1 этаже в 4 корпусе с удобствами в номере" },
+    { id: '2cat', fullName: "Двухместный номер на 1 этаже в 4 корпусе с удобствами в блоке" },
+    { id: '3cat', fullName: "Двухместный номер на 1 этаже в 4 корпусе с удобствами в номере" },
+    { id: '4cat', fullName: "Одноместный номер на 1 этаже в 4 корпусе с удобствами в номере" },
+    { id: '5cat', fullName: "Двухместный номер на 2 этаже в 4 корпусе с удобствами в блоке" },
+    { id: '6cat', fullName: "Двухместный номер на 1 этаже в 6 корпусе с удобствами в номере" },
+    { id: '7cat', fullName: "Двухместный номер на 2 этаже в 6 корпусе с удобствами в номере" }
 ];
 
 export const genderRoomList = [
@@ -61,8 +61,10 @@ export const procedureLocalisationList= [
 ];
 
 export const typeTourList= [
-    { id: 1, fullName: "По контракту (льгота)" },
-    { id: 2, fullName: "За свои деньги" }
+    { id: 'social', fullName: "По контракту (льгота)" },
+    { id: 'usual', fullName: "За свои деньги" },
+    { id: 'hotel', fullName: "Только проживание" },
+    { id: 'therapy', fullName: "Только лечение" }
 ];
 
 export const sportGroupList= [
