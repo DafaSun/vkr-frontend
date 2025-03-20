@@ -1,4 +1,4 @@
-import { useState } from "react";
+import {useState} from "react";
 import styles from "./Checkbox.module.css"
 
 type CheckboxProps = {
@@ -7,7 +7,7 @@ type CheckboxProps = {
     onChange?: (checked: boolean) => void;
 };
 
-export function Checkbox({ text, value = false, onChange }: CheckboxProps) {
+export function Checkbox({text, value = false, onChange}: CheckboxProps) {
     const [isChecked, setIsChecked] = useState(value);
 
     const handleChange = () => {

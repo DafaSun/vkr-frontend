@@ -15,7 +15,7 @@ import {InputEmail} from "../../../../components/inputs/InputEmail/InputEmail.ts
 import axios from "axios";
 import {genderList, roomCategoryList} from "../../../../mocks/mock.tsx";
 
-const UsualTourBookingNewManager = () => {
+const SocialTourBookingNewManager = () => {
     const navigate = useNavigate();
     const [searchParams, setSearchParams] = useSearchParams();
 
@@ -33,12 +33,11 @@ const UsualTourBookingNewManager = () => {
     const [birthday, setBirthday] = useState('');
     const [phone, setPhone] = useState('');
     const [email, setEmail] = useState('');
-
-    const [errors, setErrors] = useState<{ [key: string]: string }>({});
-    const [generalError, setGeneralError] = useState<string | null>(null);
     const [error_r, setError_r] = useState<string | null>(null);
     const [message, setMessage] = useState<string | null>(null);
     const [loading, setLoading] = useState(false);
+    const [errors, setErrors] = useState<{ [key: string]: string }>({});
+    const [generalError, setGeneralError] = useState<string | null>(null);
 
     const defaultParams = {
         checkin: new Date().toISOString().split("T")[0],
@@ -52,7 +51,6 @@ const UsualTourBookingNewManager = () => {
 
     useEffect(() => {
         getPlaceName()
-
     }, []);
 
     useEffect(() => {
@@ -76,27 +74,22 @@ const UsualTourBookingNewManager = () => {
         setErrors({});
         setGeneralError(null);
     }
-
     const changeName = (data: string) => {
         setName(data);
         setErrors({});
         setGeneralError(null);
     }
-
     const changePatronymic = (data: string) => {
         setPatronymic(data);
     }
-
     const changeBirthday = (data: string) => {
         setBirthday(data);
         setErrors({});
         setGeneralError(null);
     }
-
     const changeEmail = (data: string) => {
         setEmail(data);
     }
-
     const changePhone = (data: string) => {
         setPhone(data);
         setErrors({});
@@ -143,7 +136,7 @@ const UsualTourBookingNewManager = () => {
                 'phone': phone,
                 'email': email,
                 'gender': gender,
-                'tour_type': "usual",
+                'tour_type': "social",
                 'breakfast': false,
                 'lunch': false,
                 'dinner': false,
@@ -200,15 +193,16 @@ const UsualTourBookingNewManager = () => {
                         </div>
                     </div>
                     <h1>Ввод данных</h1>
-                    <InputText text={'Введите фамилию*'} onChange={changeSurname} label={''} required/>
-                    <InputText text={'Введите имя*'} onChange={changeName} label={''} required/>
+                    <InputText text={'Введите фамилию*'} onChange={changeSurname} label={''}/>
+                    <InputText text={'Введите имя*'} onChange={changeName} label={''}/>
                     <InputText text={'Введите отчество'} onChange={changePatronymic} label={''}/>
                     <DropdownList options={genderList}
-                                  value={gender} label={'Выберите пол'} text={'Выберите пол*'} isEdit={false} required/>
+                                  value={gender} label={'Выберите пол'} text={'Выберите пол*'}
+                                  isEdit={false}/>
                     <DatePicker text={"Выберите дату рождения*"}
                                 minDate={minDate}
-                                maxDate={maxDate} value={birthday} onSelect={changeBirthday} required/>
-                    <InputPhone text={'Введите номер телефона*'} onChange={changePhone} label={''} required/>
+                                maxDate={maxDate} value={birthday} onSelect={changeBirthday}/>
+                    <InputPhone text={'Введите номер телефона*'} onChange={changePhone} label={''}/>
                     <InputEmail text={'Введите эл. почту'} onChange={changeEmail} label={''}/>
                     <div className={self_styles['price']}>{price} руб.</div>
                     {loading ? (
@@ -227,4 +221,4 @@ const UsualTourBookingNewManager = () => {
     );
 };
 
-export default UsualTourBookingNewManager;
+export default SocialTourBookingNewManager;

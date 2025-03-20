@@ -1,18 +1,18 @@
 import {useEffect, useState} from "react";
-import styles from '../../../css/Index.module.css';
-import self_styles from '../TourManager.module.css';
-import {SideBar} from "../../../../components/SideBar/SideBar.tsx";
-import {Header} from "../../../../components/Header/Header.tsx";
-import {Button3} from "../../../../components/buttons/Button3/Button3.tsx";
-import {OneItem} from "../../../../types/SideBarItem.tsx";
+import styles from '../../css/Index.module.css';
+import self_styles from './HotelManager.module.css';
+import {SideBar} from "../../../components/SideBar/SideBar.tsx";
+import {Header} from "../../../components/Header/Header.tsx";
+import {Button3} from "../../../components/buttons/Button3/Button3.tsx";
+import {OneItem} from "../../../types/SideBarItem.tsx";
 import {useNavigate, useSearchParams} from "react-router-dom";
-import {DatePicker} from "../../../../components/inputs/DatePicker/DatePicker.tsx";
-import {DropdownList} from "../../../../components/inputs/DropdownList/DpropdownList.tsx";
-import {InputNumber} from "../../../../components/inputs/InputNumber/InputNumber.tsx";
+import {DatePicker} from "../../../components/inputs/DatePicker/DatePicker.tsx";
+import {DropdownList} from "../../../components/inputs/DropdownList/DpropdownList.tsx";
+import {InputNumber} from "../../../components/inputs/InputNumber/InputNumber.tsx";
 import axios from "axios";
-import {genderList, roomCategoryList} from "../../../../mocks/mock.tsx";
+import {genderList, roomCategoryList} from "../../../mocks/mock.tsx";
 
-interface TourPlace {
+interface HotelPlace {
     place_id: number
     place_name: string
     room_name: string
@@ -20,7 +20,7 @@ interface TourPlace {
     category_name: string
 }
 
-const UsualTourRoomsManager = () => {
+const HotelRoomsManager = () => {
     const navigate = useNavigate();
     const [searchParams, setSearchParams] = useSearchParams();
 
@@ -29,7 +29,7 @@ const UsualTourRoomsManager = () => {
     const [guests, setGuests] = useState(Number(searchParams.get("guests")) || Number(defaultParams.guests));
     const [category, setCategory] = useState(searchParams.get("category") || defaultParams.category);
     const [gender, setGender] = useState(searchParams.get("gender") || defaultParams.gender);
-    const [places, setPlaces] = useState<TourPlace[]>([]);
+    const [places, setPlaces] = useState<HotelPlace[]>([]);
     const [loading, setLoading] = useState(false);
     const [error_r, setError_r] = useState<string | null>(null);
 
@@ -53,6 +53,7 @@ const UsualTourRoomsManager = () => {
         if (!searchParams.get("checkin") || !searchParams.get("checkout") || !searchParams.get("guests") || !searchParams.get("category")) {
             setSearchParams(defaultParams, {replace: true});
         }
+
     }, [searchParams, setSearchParams]);
 
     useEffect(() => {
@@ -62,7 +63,7 @@ const UsualTourRoomsManager = () => {
 
     const searchPlaces = async () => {
         try {
-            const response = await axios.get(`http://localhost:8000/api/manager/categories/places/?checkin=${checkin}&checkout=${checkout}&gender=${gender}&guests=${guests}&category=${category}&tour_type=usual`);
+            const response = await axios.get(`http://localhost:8000/api/manager/categories/places/?checkin=${checkin}&checkout=${checkout}&gender=${gender}&guests=${guests}&category=${category}&tour_type=hotel`);
             setPlaces(response.data);
         } catch (error) {
             if (error instanceof Error) {
@@ -86,7 +87,7 @@ const UsualTourRoomsManager = () => {
 
     return (
         <div className={styles['page-style']}>
-            <SideBar activeItem={"tour"} items={sideBarItems}/>
+            <SideBar activeItem={"hotel"} items={sideBarItems}/>
             <div className={styles['content-container']}>
 
                 <Header name={'Иванова Анастасия Сергеевна'} post={'Менеджер'}/>
@@ -127,7 +128,7 @@ const UsualTourRoomsManager = () => {
                                             {place.price} руб.
                                         </div>
                                         <Button3 text={'Забронировать'} onClick={() => {
-                                            navigate(`/manager/tour/tour/rooms-in-category/booking?checkin=${checkin}&checkout=${checkout}&guests=${guests}&category=${category}&place=${place.place_id}&place_name=${place.place_name}&gender=${gender}&price=${place.price}`);
+                                            navigate(`/manager/hotel/rooms-in-category/booking?checkin=${checkin}&checkout=${checkout}&guests=${guests}&category=${category}&place=${place.place_id}&place_name=${place.place_name}&gender=${gender}&price=${place.price}`);
                                         }}/>
                                     </div>
                                 </div>
@@ -143,4 +144,4 @@ const UsualTourRoomsManager = () => {
         ;
 };
 
-export default UsualTourRoomsManager;
+export default HotelRoomsManager;

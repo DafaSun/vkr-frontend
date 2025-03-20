@@ -1,13 +1,11 @@
 import React, {useState} from "react";
 import styles from './home.module.css'
 
-import {SideBar} from "../components/SideBar/SideBar.tsx";
+
 import {Header} from "../components/Header/Header.tsx"
 import {Button1} from "../components/buttons/Button1/Button1.tsx";
 import {Button2} from "../components/buttons/Button2/Button2.tsx";
 import {Button3} from "../components/buttons/Button3/Button3.tsx";
-import {Button4} from "../components/buttons/Button4/Button4.tsx";
-import {Button5} from "../components/buttons/Button5/Button5.tsx";
 import {DropdownList} from "../components/inputs/DropdownList/DpropdownList.tsx"
 import {DatePicker} from "../components/inputs/DatePicker/DatePicker.tsx";
 import {TimePicker} from "../components/inputs/TimePicker/TimePicker.tsx";
@@ -49,12 +47,10 @@ const Home = () => {
 
                 <div className={styles['main-container']}>
 
-                    <Button1 text={'Button1'}/>
-                    <Button2 text={'Button2'}/>
-                    <Button3 text={'Button3'}/>
-                    <Button4 text={'Button4'}/>
-                    <Button5 text={'Button5'}/>
-                    <DropdownList options={people} label={"DropdownList"} text={'Выберите ФИО отдыхающего из списка'} onSelect={handleSelect} />
+                    {/*<Button1 text={'Button1'}/>*/}
+                    {/*<Button2 text={'Button2'}/>*/}
+                    {/*<Button3 text={'Button3'}/>*/}
+                    {/*<DropdownList options={people} label={"DropdownList"} text={'Выберите ФИО отдыхающего из списка'} onSelect={handleSelect} />*/}
                     <DatePicker text={"Выберите дату процедуры"} onSelect={handleDateSelect} />
                     <TimePicker text={"Выберите время процедуры"} onSelect={handleTimeSelect} />
                     <InputNumber text={'Введите кол-во процедур'} onChange={handleNumberChange} min={1} max={100} label={''} />

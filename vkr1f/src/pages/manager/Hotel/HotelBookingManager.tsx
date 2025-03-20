@@ -1,24 +1,24 @@
 import {useEffect, useState} from "react";
-import styles from '../../../css/Index.module.css';
-import self_styles from '../TourManager.module.css';
-import {SideBar} from "../../../../components/SideBar/SideBar.tsx";
-import {Header} from "../../../../components/Header/Header.tsx";
-import {Button3} from "../../../../components/buttons/Button3/Button3.tsx";
-import {OneItem} from "../../../../types/SideBarItem.tsx";
+import styles from '../../css/Index.module.css';
+import self_styles from './HotelManager.module.css';
+import {SideBar} from "../../../components/SideBar/SideBar.tsx";
+import {Header} from "../../../components/Header/Header.tsx";
+import {Button3} from "../../../components/buttons/Button3/Button3.tsx";
+import {OneItem} from "../../../types/SideBarItem.tsx";
 import {useNavigate, useSearchParams} from "react-router-dom";
-import {DatePicker} from "../../../../components/inputs/DatePicker/DatePicker.tsx";
-import {DropdownList} from "../../../../components/inputs/DropdownList/DpropdownList.tsx";
-import {InputNumber} from "../../../../components/inputs/InputNumber/InputNumber.tsx";
-import {InputText} from "../../../../components/inputs/InputText/InputText.tsx";
-import {InputPhone} from "../../../../components/inputs/InputPhone/InputPhone.tsx";
-import {InputEmail} from "../../../../components/inputs/InputEmail/InputEmail.tsx";
+import {DatePicker} from "../../../components/inputs/DatePicker/DatePicker.tsx";
+import {DropdownList} from "../../../components/inputs/DropdownList/DpropdownList.tsx";
+import {InputText} from "../../../components/inputs/InputText/InputText.tsx";
+import {Checkbox} from "../../../components/inputs/Checkbox/Checkbox.tsx";
+import {InputPhone} from "../../../components/inputs/InputPhone/InputPhone.tsx";
+import {InputEmail} from "../../../components/inputs/InputEmail/InputEmail.tsx";
 import axios from "axios";
-import {genderList, roomCategoryList} from "../../../../mocks/mock.tsx";
+import {InputNumber} from "../../../components/inputs/InputNumber/InputNumber.tsx";
+import {genderList, roomCategoryList} from "../../../mocks/mock.tsx";
 
-const UsualTourBookingNewManager = () => {
+const HotelBookingNewManager = () => {
     const navigate = useNavigate();
     const [searchParams, setSearchParams] = useSearchParams();
-
     const [checkin, setCheckin] = useState(searchParams.get("checkin") || defaultParams.checkin);
     const [checkout, setCheckout] = useState(searchParams.get("checkout") || defaultParams.checkout);
     const [guests, setGuests] = useState(Number(searchParams.get("guests")) || Number(defaultParams.guests));
@@ -31,14 +31,16 @@ const UsualTourBookingNewManager = () => {
     const [name, setName] = useState('');
     const [patronymic, setPatronymic] = useState('');
     const [birthday, setBirthday] = useState('');
+    const [breakfast, setBreakfast] = useState(false);
+    const [lunch, setLunch] = useState(false);
+    const [dinner, setDinner] = useState(false);
     const [phone, setPhone] = useState('');
     const [email, setEmail] = useState('');
-
-    const [errors, setErrors] = useState<{ [key: string]: string }>({});
-    const [generalError, setGeneralError] = useState<string | null>(null);
     const [error_r, setError_r] = useState<string | null>(null);
     const [message, setMessage] = useState<string | null>(null);
     const [loading, setLoading] = useState(false);
+    const [errors, setErrors] = useState<{ [key: string]: string }>({});
+    const [generalError, setGeneralError] = useState<string | null>(null);
 
     const defaultParams = {
         checkin: new Date().toISOString().split("T")[0],
@@ -52,7 +54,6 @@ const UsualTourBookingNewManager = () => {
 
     useEffect(() => {
         getPlaceName()
-
     }, []);
 
     useEffect(() => {
@@ -75,33 +76,34 @@ const UsualTourBookingNewManager = () => {
         setSurname(data);
         setErrors({});
         setGeneralError(null);
-    }
-
+    };
     const changeName = (data: string) => {
         setName(data);
         setErrors({});
         setGeneralError(null);
-    }
-
-    const changePatronymic = (data: string) => {
-        setPatronymic(data);
-    }
-
+    };
+    const changePatronymic = (data: string) => setPatronymic(data);
     const changeBirthday = (data: string) => {
         setBirthday(data);
         setErrors({});
         setGeneralError(null);
-    }
-
+    };
+    const changeGender = (data: string) => {
+        setGender(data);
+        setErrors({});
+        setGeneralError(null);
+    };
+    const changeBreakfast = (data: boolean) => setBreakfast(data);
+    const changeLunch = (data: boolean) => setLunch(data);
+    const changeDinner = (data: boolean) => setDinner(data);
     const changeEmail = (data: string) => {
         setEmail(data);
-    }
-
+    };
     const changePhone = (data: string) => {
         setPhone(data);
         setErrors({});
         setGeneralError(null);
-    }
+    };
 
     const validateFields = () => {
         let tempErrors: { [key: string]: string } = {};
@@ -113,16 +115,6 @@ const UsualTourBookingNewManager = () => {
         setErrors(tempErrors);
         return Object.keys(tempErrors).length === 0;
     };
-
-    const getPlaceName = async () => {
-        try {
-            const response = await axios.get(`http://localhost:8000/api/manager/booking/place_name/?place_id=${place}`)
-            const r = response.data;
-            setPlaceName(r.place_name);
-        } catch (error) {
-            setError_r("Произошла ошибка");
-        }
-    }
 
     const createBooking = async () => {
         if (!validateFields()) {
@@ -143,10 +135,10 @@ const UsualTourBookingNewManager = () => {
                 'phone': phone,
                 'email': email,
                 'gender': gender,
-                'tour_type': "usual",
-                'breakfast': false,
-                'lunch': false,
-                'dinner': false,
+                'tour_type': "hotel",
+                'breakfast': breakfast,
+                'lunch': lunch,
+                'dinner': dinner,
                 'price': price,
             });
             setMessage(response.data.message);
@@ -160,6 +152,16 @@ const UsualTourBookingNewManager = () => {
             setLoading(false);
         }
     };
+
+    const getPlaceName = async () => {
+        try {
+            const response = await axios.get(`http://localhost:8000/api/manager/booking/place_name/?place_id=${place}`)
+            const r = response.data;
+            setPlaceName(r.place_name);
+        } catch (error) {
+            setError_r("Произошла ошибка");
+        }
+    }
 
     const sideBarItems: OneItem[] = [
         {onClick: () => navigate('/manager/tour'), text: "Путевки", label: "tour"},
@@ -177,7 +179,7 @@ const UsualTourBookingNewManager = () => {
 
     return (
         <div className={styles['page-style']}>
-            <SideBar activeItem={"tour"} items={sideBarItems}/>
+            <SideBar activeItem={"hotel"} items={sideBarItems}/>
             <div className={styles['content-container']}>
 
                 <Header name={'Иванова Анастасия Сергеевна'} post={'Менеджер'}/>
@@ -200,16 +202,18 @@ const UsualTourBookingNewManager = () => {
                         </div>
                     </div>
                     <h1>Ввод данных</h1>
-                    <InputText text={'Введите фамилию*'} onChange={changeSurname} label={''} required/>
-                    <InputText text={'Введите имя*'} onChange={changeName} label={''} required/>
+                    <InputText text={'Введите фамилию*'} onChange={changeSurname} label={''}/>
+                    <InputText text={'Введите имя*'} onChange={changeName} label={''}/>
                     <InputText text={'Введите отчество'} onChange={changePatronymic} label={''}/>
-                    <DropdownList options={genderList}
-                                  value={gender} label={'Выберите пол'} text={'Выберите пол*'} isEdit={false} required/>
-                    <DatePicker text={"Выберите дату рождения*"}
-                                minDate={minDate}
-                                maxDate={maxDate} value={birthday} onSelect={changeBirthday} required/>
-                    <InputPhone text={'Введите номер телефона*'} onChange={changePhone} label={''} required/>
+                    <DropdownList options={[{id: 'male', fullName: "Male"}, {id: 'female', fullName: "Female"}]}
+                                  value={gender} label={'Выберите пол'} text={'Выберите пол*'} onSelect={changeGender}/>
+                    <DatePicker text={"Выберите дату рождения*"} minDate={minDate} maxDate={maxDate} value={birthday}
+                                onSelect={changeBirthday}/>
+                    <InputPhone text={'Введите номер телефона*'} onChange={changePhone} label={''}/>
                     <InputEmail text={'Введите эл. почту'} onChange={changeEmail} label={''}/>
+                    <Checkbox text={'Завтрак'} value={breakfast} onChange={changeBreakfast}/>
+                    <Checkbox text={'Обед'} value={lunch} onChange={changeLunch}/>
+                    <Checkbox text={'Ужин'} value={dinner} onChange={changeDinner}/>
                     <div className={self_styles['price']}>{price} руб.</div>
                     {loading ? (
                             <p>Загрузка...</p>
@@ -227,4 +231,4 @@ const UsualTourBookingNewManager = () => {
     );
 };
 
-export default UsualTourBookingNewManager;
+export default HotelBookingNewManager;

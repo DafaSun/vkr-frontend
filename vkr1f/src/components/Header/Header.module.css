@@ -3,6 +3,7 @@
     width: 86vw;
     height: fit-content;
     display: flex;
+    position: fixed;
     justify-content: space-between;
     padding: var(--normal-padding-size);
   box-sizing: border-box;

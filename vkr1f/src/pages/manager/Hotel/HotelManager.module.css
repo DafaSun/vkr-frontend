@@ -94,3 +94,21 @@
     flex-direction: column;
 }
 
+.input-container {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+}
+
+.input-container input,
+.input-container select,
+.input-container .datepicker {
+    margin-bottom: 5px;
+}
+
+.input-container .error-text {
+    color: red;
+    font-size: 12px;
+    margin-top: 5px;
+}
+

@@ -1,20 +1,25 @@
-import React, {useState} from "react";
+import {useEffect, useState} from "react";
 import styles from '../../css/Index.module.css'
 import {SideBar} from "../../../components/SideBar/SideBar.tsx";
 import {Header} from "../../../components/Header/Header.tsx"
-import {Button1} from "../../../components/buttons/Button1/Button1.tsx";
-import {Button2} from "../../../components/buttons/Button2/Button2.tsx";
 import {Button3} from "../../../components/buttons/Button3/Button3.tsx";
-import {Button4} from "../../../components/buttons/Button4/Button4.tsx";
-import {Button5} from "../../../components/buttons/Button5/Button5.tsx";
-import {InputText} from "../../../components/inputs/InputText/InputText.tsx";
 import {OneItem} from "../../../types/SideBarItem.tsx";
-import {useNavigate} from "react-router-dom";
+import { useNavigate, useSearchParams } from "react-router-dom";
 import {DatePicker} from "../../../components/inputs/DatePicker/DatePicker.tsx";
 import {DropdownList} from "../../../components/inputs/DropdownList/DpropdownList.tsx";
 import {roomCategoryList} from "../../../mocks/mock.tsx";
 import {buildList} from "../../../mocks/mock.tsx";
 import axios from "axios";
+
+const categoryToBuildingMap: Record<string, string> = {
+    "1cat": "4building",
+    "2cat": "4building",
+    "3cat": "4building",
+    "4cat": "4building",
+    "5cat": "4building",
+    "6cat": "6building",
+    "7cat": "6building",
+};
 
 type BookingData = {
     places: string[];
@@ -24,17 +29,33 @@ type BookingData = {
 
 const RoomsManager = () => {
     const navigate = useNavigate();
+    const [searchParams, setSearchParams] = useSearchParams();
 
     const [roomCategory, setRoomCategory] = useState('');
     const [building, setBuilding] = useState('');
     const [date, setDate] = useState('');
+    const [loading, setLoading] = useState(false);
+    const [error_r, setError_r] = useState<string | null>(null);
     const [placeTable, setPlaceTable] = useState<BookingData>({
         places: [],
         dates: [],
         bookings: {}
     });
-    const [loading, setLoading] = useState(false);
-    const [error_r, setError_r] = useState<string | null>(null);
+
+    useEffect(() => {
+        setSearchParams({ building, category: roomCategory, date });
+    }, [building, roomCategory, date, setSearchParams]);
+
+    useEffect(() => {
+        if (roomCategory) {
+            setBuilding(categoryToBuildingMap[roomCategory] || "");
+        }
+    }, [roomCategory]);
+
+    useEffect(() => {
+        getPlacesTable()
+    }, []);
+
 
     const selectDate = (data: string) => {
         setDate(data);
@@ -45,41 +66,10 @@ const RoomsManager = () => {
     };
 
     const selectBuilding = (data: string) => {
-        setBuilding(data);
-    };
-
-    const sideBarItems: OneItem[] = [
-        {
-            onClick: () => {navigate('/manager/tour')},
-            text: "Путевки",
-            label: "tour"
-        },
-        {
-            onClick: () => {navigate('/manager/hotel')},
-            text: "Гостиница",
-            label: "hotel"
-        },
-        {
-            onClick: () => {navigate('/manager/placement')},
-            text: "Размещение",
-            label: "placement"
-        },
-        {
-            onClick: () => {navigate('/manager/registration')},
-            text: "Регистрация",
-            label: "registration"
-        },
-        {
-            onClick: () => {navigate('/manager/rooms')},
-            text: "Номера",
-            label: "rooms"
-        },
-        {
-            onClick: () => {navigate('/manager/info')},
-            text: "Информация",
-            label: "info"
+        if (!roomCategory) {
+            setBuilding(data);
         }
-    ];
+    };
 
     const getPlacesTable = async () => {
         setLoading(true);
@@ -97,6 +87,25 @@ const RoomsManager = () => {
         }
     };
 
+    const sideBarItems: OneItem[] = [
+        { onClick: () => navigate('/manager/tour'), text: "Путевки", label: "tour" },
+        { onClick: () => navigate('/manager/hotel'), text: "Гостиница", label: "hotel" },
+        { onClick: () => navigate('/manager/bookings'), text: "Брони", label: "bookings" },
+        { onClick: () => navigate('/manager/guests'), text: "Отдыхающие", label: "guests" },
+        { onClick: () => navigate('/manager/rooms'), text: "Номера", label: "rooms" },
+        { onClick: () => navigate('/manager/info'), text: "Информация", label: "info" }
+    ];
+
+    const currentDate = new Date();
+
+    const minDate0 = new Date(currentDate);
+    minDate0.setMonth(minDate0.getMonth() - 6);
+    const minDate = minDate0.toISOString().split("T")[0];
+
+    const maxDate0 = new Date(currentDate);
+    maxDate0.setMonth(maxDate0.getMonth() + 18);
+    const maxDate = maxDate0.toISOString().split("T")[0];
+
     return (
         <div className={styles['page-style']}>
 
@@ -109,7 +118,7 @@ const RoomsManager = () => {
 
                     <div className={styles['filters-container']}>
                         <div className={styles['row-container']} >
-                            <DatePicker text={"Выберите дату "} value={date} onSelect={selectDate}/>
+                            <DatePicker text={"Выберите дату "} value={date} onSelect={selectDate}  minDate={minDate} maxDate={maxDate}/>
                             <DropdownList options={roomCategoryList} value={roomCategory} label={'Выберите категорию номера'} text={'Выберите категорию номера из списка'} onSelect={selectRoomCategory} />
                             <DropdownList options={buildList} value={building} label={'Выберите корпус'} text={'Выберите корпус из списка'} onSelect={selectBuilding} />
                             <Button3 text={'Применить'} onClick={getPlacesTable}/>

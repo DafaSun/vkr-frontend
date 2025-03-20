@@ -1,16 +1,18 @@
-import React, {ReactElement} from 'react';
+import React from 'react';
 import {BasicButton} from "../BasicButton/BasicButton";
 
 interface IButtonProps extends React.HTMLAttributes<HTMLButtonElement>{
-    text?: string
-    onClick?: () => void;
+    text: string
+    onClick: () => void;
+    width?: number;
+    height?: number;
 }
 
 export const Button2: React.FC<IButtonProps> = (props) => {
 
-    const {text, onClick=()=>{}} = props
+    const {width, height ,text, onClick=()=>{}} = props
 
     return (
-        <BasicButton onClick={onClick} text={text} this_style={2}/>
+        <BasicButton width={width} height={height}  onClick={onClick} text={text} this_style={2}/>
     );
 };

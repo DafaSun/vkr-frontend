@@ -1,14 +1,28 @@
-import React, { useEffect, useState } from "react";
+import React, {useEffect, useState} from "react";
 import styles from "./InputEmail.module.css";
 
 interface EmailInputProps {
     text: string;
-    label: string;
-    value?: string; // Исправил тип на строку
-    onChange: (value: string) => void;
+    label?: string;
+    isEdit?: boolean;
+    value?: string;
+    width?: number;
+    height?: number;
+    onChange?: (value: string) => void;
 }
 
-export const InputEmail: React.FC<EmailInputProps> = ({ text, label, value = "", onChange }) => {
+export const InputEmail: React.FC<EmailInputProps> = ({
+                                                          text,
+                                                          label = '',
+                                                          value = "",
+                                                          width,
+                                                          height,
+                                                          onChange = (() => {
+                                                          }),
+                                                          isEdit = true
+                                                      }) => {
+
+    if (!isEdit) return;
     const [inputValue, setInputValue] = useState<string>(value);
 
     useEffect(() => {
@@ -17,15 +31,17 @@ export const InputEmail: React.FC<EmailInputProps> = ({ text, label, value = "",
 
     const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
         const inputValue = event.target.value;
+        if (!isEdit) return;
 
-            setInputValue(inputValue);
-            onChange(inputValue);
+        setInputValue(inputValue);
+        onChange(inputValue);
     };
 
     return (
         <div className={styles['input-text-container']}>
             <div className={styles['text']}>{text}</div>
             <input
+                style={{width, height}}
                 className={styles['input-text']}
                 type="email"
                 value={inputValue}
