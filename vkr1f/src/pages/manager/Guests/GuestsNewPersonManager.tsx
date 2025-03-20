@@ -15,8 +15,6 @@ import {OneItem} from "../../../types/SideBarItem.tsx";
 
 const GuestNewPersonManager = () => {
     const navigate = useNavigate();
-    const [loading, setLoading] = useState(false);
-    const [error_r, setError_r] = useState<string | null>(null);
 
     const [surname, setSurname] = useState<string>();
     const [name, setName] = useState<string>();
@@ -30,6 +28,8 @@ const GuestNewPersonManager = () => {
     const [homeAddressStreet, setHomeAddressStreet] = useState<string>();
     const [workplace, setWorkplace] = useState<string>();
     const [gender, setGender] = useState<string>();
+    const [loading, setLoading] = useState(false);
+    const [error_r, setError_r] = useState<string | null>(null);
 
     const [errors, setErrors] = useState({
         surname: false,
@@ -38,11 +38,6 @@ const GuestNewPersonManager = () => {
         gender: false,
         phone: false,
     });
-
-    const minDate = "1907-03-04";
-    const yesterday = new Date();
-    yesterday.setDate(yesterday.getDate() - 1);
-    const maxDate = yesterday.toISOString().split("T")[0];
 
     const createGuestPerson = async () => {
         const newErrors = {
@@ -94,6 +89,11 @@ const GuestNewPersonManager = () => {
         {onClick: () => navigate('/manager/rooms'), text: "Номера", label: "rooms"},
         {onClick: () => navigate('/manager/info'), text: "Информация", label: "info"}
     ];
+
+    const minDate = "1907-03-04";
+    const yesterday = new Date();
+    yesterday.setDate(yesterday.getDate() - 1);
+    const maxDate = yesterday.toISOString().split("T")[0];
 
     return (
         <div className={styles['page-style']}>

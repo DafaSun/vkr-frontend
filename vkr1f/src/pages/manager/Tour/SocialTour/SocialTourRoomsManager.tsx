@@ -25,6 +25,14 @@ const UsualTourRoomsManager = () => {
     const navigate = useNavigate();
     const [searchParams, setSearchParams] = useSearchParams();
 
+    const defaultParams = {
+        checkin: new Date().toISOString().split("T")[0],
+        checkout: new Date(Date.now() + 86400000 * 7).toISOString().split("T")[0],
+        guests: "1",
+        category: "1cat",
+        gender: "male",
+    };
+
     const [checkin, setCheckin] = useState(searchParams.get("checkin") || defaultParams.checkin);
     const [checkout, setCheckout] = useState(searchParams.get("checkout") || defaultParams.checkout);
     const [guests, setGuests] = useState(Number(searchParams.get("guests")) || Number(defaultParams.guests));
@@ -33,14 +41,6 @@ const UsualTourRoomsManager = () => {
     const [places, setPlaces] = useState<TourPlace[]>([]);
     const [loading, setLoading] = useState(false);
     const [error_r, setError_r] = useState<string | null>(null);
-
-    const defaultParams = {
-        checkin: new Date().toISOString().split("T")[0],
-        checkout: new Date(Date.now() + 86400000 * 7).toISOString().split("T")[0],
-        guests: "1",
-        category: "1cat",
-        gender: "male",
-    };
 
     useEffect(() => {
         setCheckin(searchParams.get("checkin") || defaultParams.checkin);

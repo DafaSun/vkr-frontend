@@ -21,14 +21,6 @@ interface HotelCategory {
 const HotelCategoriesManager = () => {
     const navigate = useNavigate();
     const [searchParams, setSearchParams] = useSearchParams();
-    const [checkin, setCheckin] = useState(searchParams.get("checkin") || defaultParams.checkin);
-    const [checkout, setCheckout] = useState(searchParams.get("checkout") || defaultParams.checkout);
-    const [roomType, setRoomType] = useState<string>(searchParams.get("roomType") || defaultParams.roomType);
-    const [guests, setGuests] = useState(Number(searchParams.get("guests")) || Number(defaultParams.guests));
-    const [gender, setGender] = useState<string>(searchParams.get("gender") || defaultParams.gender);
-    const [categories, setCategories] = useState<HotelCategory[]>([]);
-    const [loading, setLoading] = useState(false);
-    const [error_r, setError_r] = useState<string | null>(null);
 
     const defaultParams = {
         checkin: new Date().toISOString().split("T")[0],
@@ -37,6 +29,15 @@ const HotelCategoriesManager = () => {
         roomType: "in_block",
         gender: "male"
     };
+
+    const [checkin, setCheckin] = useState(searchParams.get("checkin") || defaultParams.checkin);
+    const [checkout, setCheckout] = useState(searchParams.get("checkout") || defaultParams.checkout);
+    const [roomType, setRoomType] = useState<string>(searchParams.get("roomType") || defaultParams.roomType);
+    const [guests, setGuests] = useState(Number(searchParams.get("guests")) || Number(defaultParams.guests));
+    const [gender, setGender] = useState<string>(searchParams.get("gender") || defaultParams.gender);
+    const [categories, setCategories] = useState<HotelCategory[]>([]);
+    const [loading, setLoading] = useState(false);
+    const [error_r, setError_r] = useState<string | null>(null);
 
     useEffect(() => {
         const params = new URLSearchParams();

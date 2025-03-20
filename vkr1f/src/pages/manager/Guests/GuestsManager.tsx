@@ -20,8 +20,9 @@ type GuestsData = {
 
 const InfoManager = () => {
     const navigate = useNavigate();
-    const [surname, setSurname] = useState('');
     const [searchParams, setSearchParams] = useSearchParams();
+
+    const [surname, setSurname] = useState('');
     const [guests, setGuests] = useState<GuestsData[]>([]);
     const [loading, setLoading] = useState(false);
     const [error_r, setError_r] = useState<string | null>(null);

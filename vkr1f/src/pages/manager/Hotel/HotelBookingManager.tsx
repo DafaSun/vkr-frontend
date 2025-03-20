@@ -19,6 +19,17 @@ import {genderList, roomCategoryList} from "../../../mocks/mock.tsx";
 const HotelBookingNewManager = () => {
     const navigate = useNavigate();
     const [searchParams, setSearchParams] = useSearchParams();
+
+    const defaultParams = {
+        checkin: new Date().toISOString().split("T")[0],
+        checkout: new Date(Date.now() + 86400000 * 7).toISOString().split("T")[0],
+        guests: "1",
+        price: "1000",
+        category: "1cat",
+        place: "1",
+        gender: "male",
+    };
+
     const [checkin, setCheckin] = useState(searchParams.get("checkin") || defaultParams.checkin);
     const [checkout, setCheckout] = useState(searchParams.get("checkout") || defaultParams.checkout);
     const [guests, setGuests] = useState(Number(searchParams.get("guests")) || Number(defaultParams.guests));
@@ -41,16 +52,6 @@ const HotelBookingNewManager = () => {
     const [loading, setLoading] = useState(false);
     const [errors, setErrors] = useState<{ [key: string]: string }>({});
     const [generalError, setGeneralError] = useState<string | null>(null);
-
-    const defaultParams = {
-        checkin: new Date().toISOString().split("T")[0],
-        checkout: new Date(Date.now() + 86400000 * 7).toISOString().split("T")[0],
-        guests: "1",
-        price: "1000",
-        category: "1cat",
-        place: "1",
-        gender: "male",
-    };
 
     useEffect(() => {
         getPlaceName()

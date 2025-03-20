@@ -23,6 +23,14 @@ const UsualTourCategoriesManager = () => {
     const navigate = useNavigate();
     const [searchParams, setSearchParams] = useSearchParams();
 
+    const defaultParams = {
+        checkin: new Date().toISOString().split("T")[0],
+        checkout: new Date(Date.now() + 86400000 * 7).toISOString().split("T")[0],
+        guests: "1",
+        roomType: "in_block",
+        gender: "male"
+    };
+
     const [checkin, setCheckin] = useState(searchParams.get("checkin") || defaultParams.checkin);
     const [checkout, setCheckout] = useState(searchParams.get("checkout") || defaultParams.checkout);
     const [roomType, setRoomType] = useState<string>(searchParams.get("roomType") || defaultParams.roomType);
@@ -31,14 +39,6 @@ const UsualTourCategoriesManager = () => {
     const [categories, setCategories] = useState<TourCategory[]>([]);
     const [loading, setLoading] = useState(false);
     const [error_r, setError_r] = useState<string | null>(null);
-
-    const defaultParams = {
-        checkin: new Date().toISOString().split("T")[0],
-        checkout: new Date(Date.now() + 86400000 * 7).toISOString().split("T")[0],
-        guests: "1",
-        roomType: "in_block",
-        gender: "male"
-    };
 
     useEffect(() => {
         const params = new URLSearchParams();

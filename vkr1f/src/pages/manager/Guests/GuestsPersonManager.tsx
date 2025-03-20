@@ -40,6 +40,11 @@ type GuestData = {
 const GuestPersonManager = () => {
     const navigate = useNavigate();
     const [searchParams, setSearchParams] = useSearchParams();
+
+    const defaultParams = {
+        id: '1',
+    };
+
     const [guestId, setGuestId] = useState<number>();
     const [loading, setLoading] = useState(false);
     const [error_r, setError_r] = useState<string | null>(null);
@@ -83,10 +88,6 @@ const GuestPersonManager = () => {
         birthday: false,
         phone: false,
     });
-
-    const defaultParams = {
-        id: '1',
-    };
 
     useEffect(() => {
         setLoading(true);

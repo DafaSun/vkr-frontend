@@ -28,6 +28,7 @@ type BookingData = {
 const BookingManager = () => {
     const navigate = useNavigate();
     const [searchParams, setSearchParams] = useSearchParams();
+
     const [bookings, setBookings] = useState<BookingData[]>([]);
     const [roomCategory, setRoomCategory] = useState('');
     const [surname, setSurname] = useState('');

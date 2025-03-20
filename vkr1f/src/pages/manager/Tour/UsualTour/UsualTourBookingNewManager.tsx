@@ -19,6 +19,16 @@ const UsualTourBookingNewManager = () => {
     const navigate = useNavigate();
     const [searchParams, setSearchParams] = useSearchParams();
 
+    const defaultParams = {
+        checkin: new Date().toISOString().split("T")[0],
+        checkout: new Date(Date.now() + 86400000 * 7).toISOString().split("T")[0],
+        guests: "1",
+        price: "1000",
+        category: "1cat",
+        place: "1",
+        gender: "male",
+    };
+
     const [checkin, setCheckin] = useState(searchParams.get("checkin") || defaultParams.checkin);
     const [checkout, setCheckout] = useState(searchParams.get("checkout") || defaultParams.checkout);
     const [guests, setGuests] = useState(Number(searchParams.get("guests")) || Number(defaultParams.guests));
@@ -39,16 +49,6 @@ const UsualTourBookingNewManager = () => {
     const [error_r, setError_r] = useState<string | null>(null);
     const [message, setMessage] = useState<string | null>(null);
     const [loading, setLoading] = useState(false);
-
-    const defaultParams = {
-        checkin: new Date().toISOString().split("T")[0],
-        checkout: new Date(Date.now() + 86400000 * 7).toISOString().split("T")[0],
-        guests: "1",
-        price: "1000",
-        category: "1cat",
-        place: "1",
-        gender: "male",
-    };
 
     useEffect(() => {
         getPlaceName()

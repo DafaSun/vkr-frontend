@@ -29,6 +29,11 @@ type BookingData = {
 const BookingInfoManager = () => {
     const navigate = useNavigate();
     const [searchParams, setSearchParams] = useSearchParams();
+
+    const defaultParams = {
+        id: '1',
+    };
+
     const [prepay_percent, setPrepay_percent] = useState(0);
     const [prepay_money, setPrepay_money] = useState(0);
     const [status, setStatus] = useState();
@@ -51,10 +56,6 @@ const BookingInfoManager = () => {
         prepayment_percent: 0,
         prepayment_money: 0
     });
-
-    const defaultParams = {
-        id: '1',
-    };
 
     useEffect(() => {
         setLoading(true);
