@@ -3,3 +3,8 @@ export type OneItem = {
     text: string;
     label: string;
 }
+
+export type InfoList = {
+    id: string;
+    fullName: string;
+}

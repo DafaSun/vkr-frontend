@@ -30,6 +30,7 @@ const GuestNewPersonManager = () => {
     const [gender, setGender] = useState<string>();
     const [loading, setLoading] = useState(false);
     const [error_r, setError_r] = useState<string | null>(null);
+    const [generalError, setGeneralError] = useState<string | null>(null);
 
     const [errors, setErrors] = useState({
         surname: false,
@@ -39,18 +40,20 @@ const GuestNewPersonManager = () => {
         phone: false,
     });
 
+    const validateFields = () => {
+        let tempErrors: { [key: string]: string } = {};
+        if (!surname) tempErrors.surname = "Фамилия обязательна";
+        if (!name) tempErrors.name = "Имя обязательно";
+        if (!birthday) tempErrors.birthday = "Дата рождения обязательна";
+        if (!phone) tempErrors.phone = "Телефон обязателен";
+        if (!gender) tempErrors.gender = "Пол обязателен";
+        setErrors(tempErrors);
+        return Object.keys(tempErrors).length === 0;
+    };
+
     const createGuestPerson = async () => {
-        const newErrors = {
-            surname: !surname,
-            name: !name,
-            birthday: !birthday,
-            gender: !gender,
-            phone: !phone,
-        };
-
-        setErrors(newErrors);
-
-        if (Object.values(newErrors).includes(true)) {
+        if (!validateFields()) {
+            setGeneralError("Пожалуйста, заполните все обязательные поля!");
             return;
         }
 
@@ -132,6 +135,7 @@ const GuestNewPersonManager = () => {
                     <InputText text={'Место работы'} value={workplace} label={''} onChange={setWorkplace}/>
 
                     <Button3 text={'Сохранить'} onClick={createGuestPerson}/>
+                    {generalError && <p style={{color: "red"}}>{generalError}</p>}
                 </div>
             </div>
         </div>

@@ -6,17 +6,22 @@
 }
 
 .content-container{
+    width: fit-content;
     display: flex;
     flex-direction: column;
-    margin-left: 14vw;
+    justify-content: flex-start;
+    margin-left: var(--left-margin-size);
+    box-sizing: border-box;
 }
 
 .main-container{
+    width: 100%;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
-    margin-top: 15vh;
+    margin-top: calc(var(--top-margin-size)*2);
+    margin-left: var(--big-margin-size);
 }
 
 .row-container{

@@ -1,0 +1,19 @@
+.dpd {
+    height: var(--small-height);
+    border-radius: var(--small-border-radius-size);
+    border: 3px solid var(--grey-blue);
+    width: var(--small-width);
+    color: var(--dark-blue);
+    background-color: var(--white);
+    font-size: var(--normal-text-size);
+}
+
+.text {
+    margin: var(--normal-margin-size);
+    font-size: var(--normal-text-size);
+}
+
+.dropdown-container {
+    margin: var(--normal-margin-size);
+    display: flex;
+}

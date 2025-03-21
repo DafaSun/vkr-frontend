@@ -1,0 +1,24 @@
+.input-text-container{
+    width: 100%;
+    margin: var(--normal-margin-size);
+    display: flex;
+    flex-direction: column;
+}
+
+.input-text{
+    width: 100%;
+    height: var(--text-height-size);
+    border-radius: var(--small-border-radius-size);
+    padding: var(--normal-padding-size);
+    border: 3px solid var(--grey-blue);
+    /*width: var(--small-width);*/
+    color: var(--dark-blue);
+    background-color: var(--white);
+    font-size: var(--normal-text-size);
+}
+
+.text{
+    width: 100%;
+    margin: var(--normal-margin-size);
+    font-size: var(--normal-text-size);
+}

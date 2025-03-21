@@ -32,6 +32,16 @@ import ManagerGuestsPerson from "./pages/manager/Guests/GuestsPersonManager.tsx"
 import ManagerGuestsNewPerson from "./pages/manager/Guests/GuestsNewPersonManager.tsx";
 import ManagerRooms from "./pages/manager/Rooms/RoomsManager.tsx";
 
+import DoctorIndex from "./pages/doctor/IndexDoctor.tsx";
+import DoctorFirstVisit from "./pages/doctor/FirstVisit/FirstVisitDoctor.tsx";
+import DoctorFirstVisitPerson from "./pages/doctor/FirstVisit/FirstVisitPersonDoctor.tsx";
+import DoctorSecondVisit from "./pages/doctor/SecondVisit/SecondVisitDoctor.tsx";
+import DoctorDiaries from "./pages/doctor/Dairies/DiariesDoctor.tsx";
+import DoctorTimetable from "./pages/doctor/Timetable/TimetableDoctor.tsx";
+import DoctorMedicalStories from "./pages/doctor/MedicalStories/MedicalStoriesDoctor.tsx";
+
+
+
 import NurseIndex from "./pages/nurse/IndexNurse";
 import NurseReports from "./pages/nurse/ReportsNurse.tsx";
 import NurseEmployees from "./pages/nurse/EmployeesNurse.tsx";
@@ -81,6 +91,14 @@ function App() {
                 <Route path="/manager/info/fun" element={<ManagerInfoFun/>}/>
 
                 <Route path="/manager/rooms" element={<ManagerRooms/>}/>
+
+                <Route path="/doctor" element={<DoctorIndex/>}/>
+                <Route path="/doctor/first_visit" element={<DoctorFirstVisit/>}/>
+                <Route path="/doctor/first_visit/person" element={<DoctorFirstVisitPerson/>}/>
+                <Route path="/doctor/second_visit" element={<DoctorSecondVisit/>}/>
+                <Route path="/doctor/dairies" element={<DoctorDiaries/>}/>
+                <Route path="/doctor/timetable" element={<DoctorTimetable/>}/>
+                <Route path="/doctor/medical_stories" element={<DoctorMedicalStories/>}/>
 
                 <Route path="/nurse" element={<NurseIndex/>}/>
                 <Route path="/nurse/reports" element={<NurseReports/>}/>

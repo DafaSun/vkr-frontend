@@ -6,7 +6,7 @@
     position: fixed;
     justify-content: space-between;
     padding: var(--normal-padding-size);
-  box-sizing: border-box;
+    box-sizing: border-box;
 }
 
 .person-info{
