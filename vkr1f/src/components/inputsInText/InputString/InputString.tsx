@@ -38,11 +38,11 @@ export const InputString: React.FC<TextInputProps> = ({
     };
 
     return (
-        <div className={styles['input-text-container']}>
+        <div className={!isHidden?  styles['input-text-container']:styles['hidden']}>
             <div className={styles['text']}>{text}</div>
             <input
                 style={{width, height}}
-                className={!isHidden?  styles['input-text']:styles['hidden']}
+                className={styles['input-text']}
                 type="text"
                 value={inputValue}
                 onChange={handleChange}
