@@ -32,7 +32,7 @@ const GuestNewPersonManager = () => {
     const [error_r, setError_r] = useState<string | null>(null);
     const [generalError, setGeneralError] = useState<string | null>(null);
 
-    const [errors, setErrors] = useState({
+    const [errors, seterrors] = useState({
         surname: false,
         name: false,
         birthday: false,
@@ -47,7 +47,7 @@ const GuestNewPersonManager = () => {
         if (!birthday) tempErrors.birthday = "Дата рождения обязательна";
         if (!phone) tempErrors.phone = "Телефон обязателен";
         if (!gender) tempErrors.gender = "Пол обязателен";
-        setErrors(tempErrors);
+        seterrors(tempErrors);
         return Object.keys(tempErrors).length === 0;
     };
 
@@ -134,8 +134,8 @@ const GuestNewPersonManager = () => {
                                onChange={setHomeAddressStreet}/>
                     <InputText text={'Место работы'} value={workplace} label={''} onChange={setWorkplace}/>
 
-                    <Button3 text={'Сохранить'} onClick={createGuestPerson}/>
                     {generalError && <p style={{color: "red"}}>{generalError}</p>}
+                    <Button3 text={'Сохранить'} onClick={createGuestPerson}/>
                 </div>
             </div>
         </div>

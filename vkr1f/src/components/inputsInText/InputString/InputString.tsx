@@ -33,10 +33,8 @@ export const InputString: React.FC<TextInputProps> = ({
         const inputValue = event.target.value;
         if (!isEdit) return;
 
-        if (/^[A-Za-zА-Яа-яЁё\s]*$/.test(inputValue)) { // Разрешаем только буквы и пробел
             setInputValue(inputValue);
             onChange(inputValue);
-        }
     };
 
     return (

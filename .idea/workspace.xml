@@ -4,38 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a233fea1-6de7-4fe8-a8b7-e2d3c128615f" name="Changes" comment="commit 20/03/2025 - небольшие поправки">
-      <change afterPath="$PROJECT_DIR$/vkr1f/src/components/inputsInText/Checkbox/Checkbox.module.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vkr1f/src/components/inputsInText/Checkbox/Checkbox.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vkr1f/src/components/inputsInText/DatePicker/DatePicker.module.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vkr1f/src/components/inputsInText/DatePicker/DatePicker.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vkr1f/src/components/inputsInText/DropdownList/DpropdownList.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vkr1f/src/components/inputsInText/DropdownList/DropdownList.module.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vkr1f/src/components/inputsInText/InputNumber/InputNumber.module.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vkr1f/src/components/inputsInText/InputNumber/InputNumber.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vkr1f/src/components/inputsInText/InputString/InputString.module.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vkr1f/src/components/inputsInText/InputString/InputString.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vkr1f/src/components/inputsInText/InputText/InputText.module.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vkr1f/src/components/inputsInText/InputText/InputText.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vkr1f/src/components/inputsInText/TimePicker/TimePicker.module.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vkr1f/src/components/inputsInText/TimePicker/TimePicker.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vkr1f/src/pages/doctor/Dairies/DiariesDoctor.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vkr1f/src/pages/doctor/FirstVisit/FirstVisitDoctor.module.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vkr1f/src/pages/doctor/FirstVisit/FirstVisitDoctor.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vkr1f/src/pages/doctor/FirstVisit/FirstVisitPersonDoctor.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vkr1f/src/pages/doctor/IndexDoctor.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vkr1f/src/pages/doctor/MedicalStories/MedicalStoriesDoctor.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vkr1f/src/pages/doctor/SecondVisit/SecondVisitDoctor.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vkr1f/src/pages/doctor/Timetable/TimetableDoctor.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vkr1f/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/vkr1f/src/App.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vkr1f/src/components/Header/Header.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/vkr1f/src/components/Header/Header.module.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vkr1f/src/pages/css/Index.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/vkr1f/src/pages/css/Index.module.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vkr1f/src/pages/manager/Guests/GuestsManager.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/vkr1f/src/pages/manager/Guests/GuestsManager.module.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vkr1f/src/pages/manager/Guests/GuestsNewPersonManager.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/vkr1f/src/pages/manager/Guests/GuestsNewPersonManager.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vkr1f/src/styles/sizes.css" beforeDir="false" afterPath="$PROJECT_DIR$/vkr1f/src/styles/sizes.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vkr1f/src/types/SideBarItem.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/vkr1f/src/types/SideBarItem.tsx" afterDir="false" />
-    </list>
+    <list default="true" id="a233fea1-6de7-4fe8-a8b7-e2d3c128615f" name="Changes" comment="commit 21/03/2025 - поделала раздел врача, страницу первичного приема" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -154,7 +123,7 @@
       <workItem from="1742365229755" duration="16885000" />
       <workItem from="1742398694892" duration="1877000" />
       <workItem from="1742403021531" duration="27688000" />
-      <workItem from="1742539258102" duration="19695000" />
+      <workItem from="1742539258102" duration="19829000" />
     </task>
     <task id="LOCAL-00001" summary="commit 02/03/2025 - немного поделала, создала файлы страниц, папки, верстку и компоненты еще не писала">
       <option name="closed" value="true" />
@@ -268,7 +237,15 @@
       <option name="project" value="LOCAL" />
       <updated>1742507019759</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="commit 21/03/2025 - поделала раздел врача, страницу первичного приема">
+      <option name="closed" value="true" />
+      <created>1742591196591</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1742591196591</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -289,6 +266,7 @@
     <MESSAGE value="commit 18/03/2025 - что-то еще поделала, но не эффективно" />
     <MESSAGE value="commit 20/03/2025 - приделала бэкенд к фронтенду в разделе менеджера, поправила типы полей, обязательность заполнения, возможные вводимые значения" />
     <MESSAGE value="commit 20/03/2025 - небольшие поправки" />
-    <option name="LAST_COMMIT_MESSAGE" value="commit 20/03/2025 - небольшие поправки" />
+    <MESSAGE value="commit 21/03/2025 - поделала раздел врача, страницу первичного приема" />
+    <option name="LAST_COMMIT_MESSAGE" value="commit 21/03/2025 - поделала раздел врача, страницу первичного приема" />
   </component>
 </project>

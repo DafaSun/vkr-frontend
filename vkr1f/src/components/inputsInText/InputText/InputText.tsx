@@ -25,25 +25,22 @@ export const InputText: React.FC<TextInputProps> = ({
 
     useEffect(() => {
         setInputValue(value);
-    }, [value]); // Следим за изменением value и обновляем inputValue
+    }, [value]);
 
-    const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const handleChange = (event: React.ChangeEvent<HTMLTextAreaElement>) => {
         const inputValue = event.target.value;
         if (!isEdit) return;
 
-        if (/^[A-Za-zА-Яа-яЁё\s]*$/.test(inputValue)) { // Разрешаем только буквы и пробел
-            setInputValue(inputValue);
-            onChange(inputValue);
-        }
+        setInputValue(inputValue);
+        onChange?.(inputValue);
     };
 
     return (
         <div className={styles['input-text-container']}>
             <div className={styles['text']}>{text}</div>
-            <input
+            <textarea
                 style={{width, height}}
                 className={styles['input-text']}
-                type="text"
                 value={inputValue}
                 onChange={handleChange}
                 placeholder={label}

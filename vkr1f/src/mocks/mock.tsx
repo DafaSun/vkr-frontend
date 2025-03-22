@@ -1,3 +1,5 @@
+import {InfoList} from "../types/SideBarItem.tsx";
+
 export const genderList = [
     // { id: "", fullName: "Не указано"},
     {id: 'male', fullName: "Мужской"},
@@ -29,6 +31,38 @@ export const roomCategoryList = [
     {id: '5cat', fullName: "Двухместный номер на 2 этаже в 4 корпусе с удобствами в блоке"},
     {id: '6cat', fullName: "Двухместный номер на 1 этаже в 6 корпусе с удобствами в номере"},
     {id: '7cat', fullName: "Двухместный номер на 2 этаже в 6 корпусе с удобствами в номере"}
+];
+
+export const hepatitisList: InfoList[] = [
+    {id: 'not', fullName: "Не болел"},
+    {id: 'a_hep', fullName: "Гепатит A"},
+    {id: 'b_hep', fullName: "Гепатит B"},
+    {id: 'c_hep', fullName: "Гепатит C"},
+    {id: 'd_hep', fullName: "Гепатит D"},
+    {id: 'e_hep', fullName: "Гепатит E"},
+    {id: 'g_hep', fullName: "Гепатит G"},
+];
+
+export const statesList: InfoList[] = [
+    {id: 'good', fullName: "Удовлетворительное"},
+    {id: 'middle', fullName: "Средней степени тяжести"},
+    {id: 'serve', fullName: "Тяжелое"},
+    {id: 'extreme', fullName: "Крайней степени тяжести"},
+];
+
+export const bodiesList: InfoList[] = [
+    {id: 'asthenic', fullName: "Астеническое"},
+    {id: 'normal', fullName: "Нормостеническое"},
+    {id: 'hypersthenic', fullName: "Гиперстеническое"},
+];
+
+export const painList: InfoList[] =
+    [{id: 'painful', fullName: "Болезненный"},
+        {id: 'painless', fullName: "Безболезнненый"}];
+
+export const deformList: InfoList[] = [
+    {id: 'has', fullName: "С видимыми деформациями"},
+    {id: 'not', fullName: "Без видимых деформаций"}
 ];
 
 export const dietList = [
