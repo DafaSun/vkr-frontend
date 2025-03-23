@@ -9,10 +9,12 @@ interface TextInputProps {
     width?: number;
     height?: number;
     onChange?: (value: string) => void;
+    isHidden?: boolean;
 }
 
 export const InputText: React.FC<TextInputProps> = ({
                                                         text,
+    isHidden=false,
                                                         label = '',
                                                         value = "",
                                                         isEdit = true,
@@ -36,7 +38,7 @@ export const InputText: React.FC<TextInputProps> = ({
     };
 
     return (
-        <div className={styles['input-text-container']}>
+        <div className={!isHidden?  styles['input-text-container']:styles['hidden']}>
             <div className={styles['text']}>{text}</div>
             <textarea
                 style={{width, height}}

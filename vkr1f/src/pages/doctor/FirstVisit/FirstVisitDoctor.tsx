@@ -9,7 +9,7 @@ import {Button3} from "../../../components/buttons/Button3/Button3.tsx";
 import {useEffect, useState} from "react";
 import axios from "axios";
 
-type GuestsData = {
+type PatientData = {
     guest_id: number,
     surname: string,
     name: string,
@@ -22,7 +22,7 @@ const FirstVisitDoctor = () => {
     const [searchParams, setSearchParams] = useSearchParams();
 
     const [surname, setSurname] = useState('');
-    const [guests, setGuests] = useState<GuestsData[]>([]);
+    const [guests, setGuests] = useState<PatientData[]>([]);
     const [loading, setLoading] = useState(false);
     const [error_r, setError_r] = useState<string | null>(null);
 
@@ -57,7 +57,7 @@ const FirstVisitDoctor = () => {
     const sideBarItems: OneItem[] = [
         {onClick: () => navigate('/doctor/timetable'), text: "Расписание", label: "timetable"},
         {onClick: () => navigate('/doctor/first_visit'), text: "Первичный прием", label: "first_visit"},
-        {onClick: () => navigate('/doctor/second_visit'), text: "Вторичный прием", label: "second_visit"},
+        {onClick: () => navigate('/doctor/second_visit'), text: "Заключительный прием", label: "second_visit"},
         {onClick: () => navigate('/doctor/dairies'), text: "Дневники", label: "dairies"},
         {onClick: () => navigate('/doctor/medical_stories'), text: "Истории болезни", label: "medical_stories"}
     ];

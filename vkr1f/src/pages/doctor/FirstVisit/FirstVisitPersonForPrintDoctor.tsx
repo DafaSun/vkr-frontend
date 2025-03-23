@@ -574,7 +574,7 @@ const FirstVisitPersonDoctor = () => {
                         <Button3 text={'Сохранить'} onClick={() => {
                         }}/>
 
-                        <Button3 text={'На печать'} onClick={() => {
+                        <Button3 text={'Распечатать'} onClick={() => {
                         }}/>
 
                     </div>

@@ -22,3 +22,7 @@
     margin: var(--normal-margin-size);
     font-size: var(--normal-text-size);
 }
+
+.hidden{
+    display: none;
+}

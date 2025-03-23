@@ -33,12 +33,23 @@ import ManagerGuestsNewPerson from "./pages/manager/Guests/GuestsNewPersonManage
 import ManagerRooms from "./pages/manager/Rooms/RoomsManager.tsx";
 
 import DoctorIndex from "./pages/doctor/IndexDoctor.tsx";
+
 import DoctorFirstVisit from "./pages/doctor/FirstVisit/FirstVisitDoctor.tsx";
 import DoctorFirstVisitPerson from "./pages/doctor/FirstVisit/FirstVisitPersonDoctor.tsx";
+import DoctorFirstVisitPersonForPrint from "./pages/doctor/FirstVisit/FirstVisitPersonForPrintDoctor.tsx";
+
 import DoctorSecondVisit from "./pages/doctor/SecondVisit/SecondVisitDoctor.tsx";
+import DoctorSecondVisitPerson from "./pages/doctor/SecondVisit/SecondVisitPersonDoctor.tsx";
+import DoctorSecondVisitPersonForPrint from "./pages/doctor/SecondVisit/SecondVisitPersonForPrintDoctor.tsx";
+
 import DoctorDiaries from "./pages/doctor/Dairies/DiariesDoctor.tsx";
+import DoctorDiariesPerson from "./pages/doctor/Dairies/DiariesPersonDoctor.tsx";
+
 import DoctorTimetable from "./pages/doctor/Timetable/TimetableDoctor.tsx";
+
 import DoctorMedicalStories from "./pages/doctor/MedicalStories/MedicalStoriesDoctor.tsx";
+import DoctorMedicalStoriesPerson from "./pages/doctor/MedicalStories/MedicalStoriesPersonDoctor.tsx";
+import DoctorMedicalStoriesPersonForPrint from "./pages/doctor/MedicalStories/MedicalStoriesPersonForPrintDoctor.tsx";
 
 
 
@@ -60,8 +71,9 @@ function App() {
             <Routes>
                 <Route path="/login" element={<AuthPage/>}/>
                 <Route path="/" element={<Home/>}/>
-
                 <Route path="/admin" element={<AdminIndex/>}/>
+
+
 
                 <Route path="/manager" element={<ManagerIndex/>}/>
                 <Route path="/manager/tour" element={<ManagerTour/>}/>
@@ -92,13 +104,28 @@ function App() {
 
                 <Route path="/manager/rooms" element={<ManagerRooms/>}/>
 
+
+
                 <Route path="/doctor" element={<DoctorIndex/>}/>
+
                 <Route path="/doctor/first_visit" element={<DoctorFirstVisit/>}/>
                 <Route path="/doctor/first_visit/person" element={<DoctorFirstVisitPerson/>}/>
+                <Route path="/doctor/first_visit/person/print" element={<DoctorFirstVisitPersonForPrint/>}/>
+
                 <Route path="/doctor/second_visit" element={<DoctorSecondVisit/>}/>
+                <Route path="/doctor/second_visit/person" element={<DoctorSecondVisitPerson/>}/>
+                <Route path="/doctor/second_visit/person/print" element={<DoctorSecondVisitPersonForPrint/>}/>
+
                 <Route path="/doctor/dairies" element={<DoctorDiaries/>}/>
+                <Route path="/doctor/dairies/person" element={<DoctorDiariesPerson/>}/>
+
                 <Route path="/doctor/timetable" element={<DoctorTimetable/>}/>
+
                 <Route path="/doctor/medical_stories" element={<DoctorMedicalStories/>}/>
+                <Route path="/doctor/medical_stories/person" element={<DoctorMedicalStoriesPerson/>}/>
+                <Route path="/doctor/medical_stories/person/print" element={<DoctorMedicalStoriesPersonForPrint/>}/>
+
+
 
                 <Route path="/nurse" element={<NurseIndex/>}/>
                 <Route path="/nurse/reports" element={<NurseReports/>}/>
