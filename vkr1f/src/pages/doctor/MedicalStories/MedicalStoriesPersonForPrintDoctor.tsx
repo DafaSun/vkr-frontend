@@ -12,7 +12,7 @@ import {TimePicker} from "../../../components/inputsInText/TimePicker/TimePicker
 import {Checkbox} from "../../../components/inputsInText/Checkbox/Checkbox.tsx";
 import {InputString} from "../../../components/inputsInText/InputString/InputString.tsx";
 import {InputNumber} from "../../../components/inputsInText/InputNumber/InputNumber.tsx";
-import {Button3} from "../../../components/buttons/Button3/Button3.tsx";
+import {Button} from "../../../components/buttons/Button/Button.tsx";
 import {painList, deformList, bodiesList, hepatitisList, statesList, genderList} from "../../../mocks/mock.tsx";
 
 const MedicalStoriesPersonDoctor = () => {
@@ -503,7 +503,7 @@ const MedicalStoriesPersonDoctor = () => {
 
                     <Checkbox text={'Лечащий врач все проверил'} value={doctorCheck} onChange={setDoctorCheck}/>
                     {generalError && <p style={{color: "red"}}>{generalError}</p>}
-                    <Button3 text={'Сохранить'} onClick={() => {
+                    <Button color={'orange'} text={'Сохранить'} onClick={() => {
                     }}/>
 
                 </div>

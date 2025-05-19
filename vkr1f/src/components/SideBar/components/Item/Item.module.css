@@ -1,12 +1,13 @@
 .item-container, .item-container-active{
+    font-size: var(--sidebar-text-size);
     display: flex;
     padding: 10px;
+    padding-left: var(--sidebar-padding-left);
     padding-bottom: 15px;
 }
 
 .item-container-active{
-    background-color: var(--light-blue);
-    font-weight: bold;
+    background-color: var(--sidebar-active);
 }
 
 .text{
@@ -14,6 +15,5 @@
 }
 
 .item-container :hover, .item-container-active :hover{
-    font-weight: bold;
     cursor: pointer;
 }

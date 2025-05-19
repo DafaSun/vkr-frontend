@@ -2,7 +2,7 @@ import {useState} from "react";
 import styles from '../../css/Index.module.css'
 import {SideBar} from "../../../components/SideBar/SideBar.tsx";
 import {Header} from "../../../components/Header/Header.tsx";
-import {Button3} from "../../../components/buttons/Button3/Button3.tsx";
+import {Button} from "../../../components/buttons/Button/Button.tsx";
 import {InputText} from "../../../components/inputs/InputText/InputText.tsx";
 import {DatePicker} from "../../../components/inputs/DatePicker/DatePicker.tsx";
 import {DropdownList} from "../../../components/inputs/DropdownList/DpropdownList.tsx";
@@ -135,7 +135,7 @@ const GuestNewPersonManager = () => {
                     <InputText text={'Место работы'} value={workplace} label={''} onChange={setWorkplace}/>
 
                     {generalError && <p style={{color: "red"}}>{generalError}</p>}
-                    <Button3 text={'Сохранить'} onClick={createGuestPerson}/>
+                    <Button color={'orange'} text={'Сохранить'} onClick={createGuestPerson}/>
                 </div>
             </div>
         </div>

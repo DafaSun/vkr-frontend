@@ -2,7 +2,7 @@ import {useEffect, useState} from "react";
 import styles from '../../css/Index.module.css'
 import {SideBar} from "../../../components/SideBar/SideBar.tsx";
 import {Header} from "../../../components/Header/Header.tsx"
-import {Button3} from "../../../components/buttons/Button3/Button3.tsx";
+import {Button} from "../../../components/buttons/Button/Button.tsx";
 import {InputText} from "../../../components/inputs/InputText/InputText.tsx";
 import {InputNumber} from "../../../components/inputs/InputNumber/InputNumber.tsx";
 import {OneItem} from "../../../types/SideBarItem.tsx";
@@ -167,11 +167,11 @@ const BookingInfoManager = () => {
                                  onChange={() => {
                                  }}/>
 
-                    <Button3 text={'Редактировать'} onClick={() => {
+                    <Button color={'orange'} text={'Редактировать'} onClick={() => {
                         setIsEdit(!isEdit)
                     }}/>
-                    <Button3 text={'Сохранить'} onClick={updateBooking}/>
-                    <Button3 text={'Удалить'} onClick={deleteBooking}/>
+                    <Button color={'violet'} text={'Сохранить'} onClick={updateBooking}/>
+                    <Button color={'green'} text={'Удалить'} onClick={deleteBooking}/>
                 </div>
             </div>
         </div>

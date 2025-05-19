@@ -1,4 +1,14 @@
 :root {
+    --sidebar-text-size: 20px;
+    --sidebar-padding-left: 30px;
+
+    --header-text-size: 18px;
+
+    --border-radius-size: 0;
+
+    --button-text-size:18px;
+
+
     --button-width: 300px;
     --button-height: 60px;
 
@@ -13,8 +23,6 @@
     --top-margin-size: 10vh;
     --normal-margin-size: 10px;
     --big-margin-size: 30px;
-
-    --border-radius-size: 15px;
 
     --text-height-size: 150px;
 

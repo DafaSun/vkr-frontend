@@ -5,7 +5,7 @@ import {Header} from "../../../components/Header/Header.tsx"
 import {OneItem} from "../../../types/SideBarItem.tsx";
 import {useNavigate, useSearchParams} from "react-router-dom";
 import {InputText} from "../../../components/inputs/InputText/InputText.tsx";
-import {Button3} from "../../../components/buttons/Button3/Button3.tsx";
+import {Button} from "../../../components/buttons/Button/Button.tsx";
 import {useEffect, useState} from "react";
 import axios from "axios";
 
@@ -75,7 +75,7 @@ const MedicalStoriesDoctor = () => {
                         <div className={self_styles['row-container']}>
                             <InputText text={'Введите фамилию'} label={'Введите фамилию'} value={surname}
                                        onChange={changeSurname}/>
-                            <Button3 text={'Применить'} onClick={SearchClick}/>
+                            <Button color={'violet'} text={'Применить'} onClick={SearchClick}/>
                         </div>
                     </div>
 
@@ -88,7 +88,7 @@ const MedicalStoriesDoctor = () => {
                             guests.map(guest => (
                                 <div className={self_styles['people-container']}>
                                     {guest.surname} {guest.name} {guest.patronymic} - {guest.birthday}
-                                    <Button3 text={'Перейти'}
+                                    <Button color={'green'} text={'Перейти'}
                                              onClick={() => navigate(`/doctor/medical_stories/person?id=${guest.guest_id}`)}/>
                                 </div>
                             ))

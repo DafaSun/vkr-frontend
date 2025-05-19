@@ -4,7 +4,7 @@ import {SideBar} from "../../../components/SideBar/SideBar.tsx";
 import {Header} from "../../../components/Header/Header.tsx"
 import {OneItem} from "../../../types/SideBarItem.tsx";
 import {useNavigate, useSearchParams} from "react-router-dom";
-import {Button3} from "../../../components/buttons/Button3/Button3.tsx";
+import {Button} from "../../../components/buttons/Button/Button.tsx";
 import {useEffect, useState} from "react";
 import axios from "axios";
 import {DatePicker} from "../../../components/inputsInText/DatePicker/DatePicker.tsx";
@@ -60,7 +60,7 @@ const DiariesPersonDoctor = () => {
 
                     <InputText text={''} value={description} onChange={setDescription}/>
 
-                    <Button3 text={'Сохранить'} onClick={() => {
+                    <Button color={'orange'} text={'Сохранить'} onClick={() => {
                     }}/>
 
 

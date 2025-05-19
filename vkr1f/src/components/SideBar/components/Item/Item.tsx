@@ -17,7 +17,7 @@ export const Item: React.FC<IItemProps> = (props) => {
     return (
         <>
             <div className={isActive ? styles['item-container-active'] : styles['item-container']} onClick={onClick}>
-                <IconSquare width={20} height={20}/>
+                <IconCircle width={20} height={20}/>
                 <div className={styles['text']}>{text}</div>
             </div>
         </>

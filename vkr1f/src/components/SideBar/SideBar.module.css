@@ -1,15 +1,22 @@
 .side-bar-container {
-    background-color: var(--sky-blue);
+    background-color: var(--sidebar-not-active);
     width: 14vw;
     height: 100vh;
     display: flex;
     position: fixed;
     flex-direction: column;
-    padding: 20px;
     box-sizing: border-box;
+    color: white;
+}
+
+.logo-container {
+    height: 12vh;
+    background-color: var(--bright-blue);
+    margin-bottom: 4vh;
 }
 
 .exit-container {
+    font-size: var(--sidebar-text-size);
     margin-top: auto;
     display: flex;
     justify-content: flex-start;

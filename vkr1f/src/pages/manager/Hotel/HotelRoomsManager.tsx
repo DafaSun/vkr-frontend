@@ -3,7 +3,7 @@ import styles from '../../css/Index.module.css';
 import self_styles from './HotelManager.module.css';
 import {SideBar} from "../../../components/SideBar/SideBar.tsx";
 import {Header} from "../../../components/Header/Header.tsx";
-import {Button3} from "../../../components/buttons/Button3/Button3.tsx";
+import {Button} from "../../../components/buttons/Button/Button.tsx";
 import {OneItem} from "../../../types/SideBarItem.tsx";
 import {useNavigate, useSearchParams} from "react-router-dom";
 import {DatePicker} from "../../../components/inputs/DatePicker/DatePicker.tsx";
@@ -127,7 +127,7 @@ const HotelRoomsManager = () => {
                                         <div className={self_styles['price']}>
                                             {place.price} руб.
                                         </div>
-                                        <Button3 text={'Забронировать'} onClick={() => {
+                                        <Button color={'green'} text={'Забронировать'} onClick={() => {
                                             navigate(`/manager/hotel/rooms-in-category/booking?checkin=${checkin}&checkout=${checkout}&guests=${guests}&category=${category}&place=${place.place_id}&place_name=${place.place_name}&gender=${gender}&price=${place.price}`);
                                         }}/>
                                     </div>

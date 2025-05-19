@@ -22,7 +22,8 @@ export const SideBar: React.FC<ISideBarProps> = (props) => {
     return (
         <div className={styles['side-bar-container']}>
 
-            <Logo/>
+            <div className={styles['logo-container']}>
+            </div>
 
             {items.map((dataItem) => (
                 <Item text={dataItem?.text} isActive={curItem == dataItem?.label}

@@ -9,7 +9,6 @@ export const Exit: React.FC<IExitProps> = () => {
 
     return (
         <div className={styles['exit-container']}>
-            <ExitSvg width={50}/>
             <div className={styles['text']}>Выйти</div>
         </div>
     );

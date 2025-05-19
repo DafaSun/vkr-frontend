@@ -3,7 +3,7 @@ import styles from '../../css/Index.module.css'
 import self_styles from './GuestsManager.module.css'
 import {SideBar} from "../../../components/SideBar/SideBar.tsx";
 import {Header} from "../../../components/Header/Header.tsx"
-import {Button3} from "../../../components/buttons/Button3/Button3.tsx";
+import {Button} from "../../../components/buttons/Button/Button.tsx";
 import {InputText} from "../../../components/inputs/InputText/InputText.tsx";
 import {OneItem} from "../../../types/SideBarItem.tsx";
 import {useNavigate, useSearchParams} from "react-router-dom";
@@ -77,8 +77,8 @@ const InfoManager = () => {
                         <div className={self_styles['row-container']}>
                             <InputText text={'Введите фамилию'} label={'Введите фамилию'} value={surname}
                                        onChange={changeSurname}/>
-                            <Button3 text={'Применить'} onClick={SearchClick}/>
-                            <Button3 text={'Добавить человека'} onClick={() => navigate(`/manager/guests/new`)}/>
+                            <Button color={'violet'} text={'Применить'} onClick={SearchClick}/>
+                            <Button color={'blue'} text={'Добавить человека'} onClick={() => navigate(`/manager/guests/new`)}/>
                         </div>
                     </div>
 
@@ -90,7 +90,8 @@ const InfoManager = () => {
                         ) : guests.length > 0 ? (
                             guests.map(guest => (
                                 <div className={self_styles['people-container']}>
-                                    {guest.surname} {guest.name} {guest.patronymic} - {guest.birthday} <Button3
+                                    {guest.surname} {guest.name} {guest.patronymic} - {guest.birthday}
+                                    <Button color={'green'}
                                     text={'Перейти'}
                                     onClick={() => navigate(`/manager/guests/person?id=${guest.guest_id}`)}/>
                                 </div>

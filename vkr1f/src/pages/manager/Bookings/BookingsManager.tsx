@@ -3,7 +3,7 @@ import styles from './../../css/Index.module.css'
 import self_styles from './BookingsManager.module.css'
 import {SideBar} from "../../../components/SideBar/SideBar.tsx";
 import {Header} from "../../../components/Header/Header.tsx"
-import {Button3} from "../../../components/buttons/Button3/Button3.tsx";
+import {Button} from "../../../components/buttons/Button/Button.tsx";
 import {InputText} from "../../../components/inputs/InputText/InputText.tsx";
 import {OneItem} from "../../../types/SideBarItem.tsx";
 import {DatePicker} from "../../../components/inputs/DatePicker/DatePicker.tsx";
@@ -109,7 +109,7 @@ const BookingManager = () => {
                                           text={'Выберите категорию номера из списка'} onSelect={selectRoomCategory}/>
                             <InputText text={'Введите фамилию'} label={'Введите фамилию'} value={surname}
                                        onChange={changeSurname}/>
-                            <Button3 text={'Применить'} onClick={SearchClick}/>
+                            <Button color={'green'} text={'Применить'} onClick={SearchClick}/>
                         </div>
                     </div>
 
@@ -122,7 +122,7 @@ const BookingManager = () => {
                             bookings.map(book => (
                                 <div className={self_styles['booking-container']}>
                                     {book.checkin_date} - {book.surname} {book.name} {book.patronymic} - {book.place_name}
-                                    <Button3 text={'Перейти'}
+                                    <Button color={'blue'} text={'Перейти'}
                                              onClick={() => navigate(`/manager/bookings/info?id=${book.booking_id}`)}/>
                                 </div>
                             ))

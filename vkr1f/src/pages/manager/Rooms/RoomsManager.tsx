@@ -2,7 +2,7 @@ import {useEffect, useState} from "react";
 import styles from '../../css/Index.module.css'
 import {SideBar} from "../../../components/SideBar/SideBar.tsx";
 import {Header} from "../../../components/Header/Header.tsx"
-import {Button3} from "../../../components/buttons/Button3/Button3.tsx";
+import {Button} from "../../../components/buttons/Button/Button.tsx";
 import {OneItem} from "../../../types/SideBarItem.tsx";
 import { useNavigate, useSearchParams } from "react-router-dom";
 import {DatePicker} from "../../../components/inputs/DatePicker/DatePicker.tsx";
@@ -121,7 +121,7 @@ const RoomsManager = () => {
                             <DatePicker text={"Выберите дату "} value={date} onSelect={selectDate}  minDate={minDate} maxDate={maxDate}/>
                             <DropdownList options={roomCategoryList} value={roomCategory} label={'Выберите категорию номера'} text={'Выберите категорию номера из списка'} onSelect={selectRoomCategory} />
                             <DropdownList options={buildList} value={building} label={'Выберите корпус'} text={'Выберите корпус из списка'} onSelect={selectBuilding} />
-                            <Button3 text={'Применить'} onClick={getPlacesTable}/>
+                            <Button color={'blue'} text={'Применить'} onClick={getPlacesTable}/>
                         </div>
                     </div>
 

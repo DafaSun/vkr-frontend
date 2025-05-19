@@ -12,7 +12,7 @@ import {TimePicker} from "../../../components/inputsInText/TimePicker/TimePicker
 import {Checkbox} from "../../../components/inputsInText/Checkbox/Checkbox.tsx";
 import {InputString} from "../../../components/inputsInText/InputString/InputString.tsx";
 import {InputNumber} from "../../../components/inputsInText/InputNumber/InputNumber.tsx";
-import {Button3} from "../../../components/buttons/Button3/Button3.tsx";
+import {Button} from "../../../components/buttons/Button/Button.tsx";
 import {statesList, genderList} from "../../../mocks/mock.tsx";
 
 const FirstVisitPersonDoctor = () => {
@@ -116,7 +116,7 @@ const FirstVisitPersonDoctor = () => {
                         <div className={self_styles['row-container']}>
                             <InputString text={'МКБ-10'} value={mainDiagnosisMKB} label={''}
                                          onChange={setMainDiagnosisMKB}/>
-                            <Button3 text={'Скопировать диагноз при поступлении'} onClick={() => {
+                            <Button color={'blue'} text={'Скопировать диагноз при поступлении'} onClick={() => {
                             }}/>
                         </div>
                         <InputText text={''} value={mainDiagnosis} onChange={setMainDiagnosis}/>
@@ -129,7 +129,7 @@ const FirstVisitPersonDoctor = () => {
                         <div className={self_styles['row-container']}>
                             <InputString text={'МКБ-10'} value={concomitantDiagnosisMKB} label={''}
                                          onChange={setConcomitantDiagnosisMKB}/>
-                            <Button3 text={'Скопировать диагноз при поступлении'} onClick={() => {
+                            <Button color={'green'} text={'Скопировать диагноз при поступлении'} onClick={() => {
                             }}/>
                         </div>
 
@@ -169,10 +169,10 @@ const FirstVisitPersonDoctor = () => {
                     {generalError && <p style={{color: "red"}}>{generalError}</p>}
 
                     <div className={self_styles['row-container']}>
-                        <Button3 text={'Сохранить'} onClick={() => {
+                        <Button color={'orange'} text={'Сохранить'} onClick={() => {
                         }}/>
 
-                        <Button3 text={'На печать'} onClick={() => {
+                        <Button color={'violet'} text={'На печать'} onClick={() => {
                         }}/>
 
                     </div>

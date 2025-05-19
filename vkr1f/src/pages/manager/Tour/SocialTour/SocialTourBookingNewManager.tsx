@@ -3,7 +3,7 @@ import styles from '../../../css/Index.module.css';
 import self_styles from '../TourManager.module.css';
 import {SideBar} from "../../../../components/SideBar/SideBar.tsx";
 import {Header} from "../../../../components/Header/Header.tsx";
-import {Button3} from "../../../../components/buttons/Button3/Button3.tsx";
+import {Button} from "../../../../components/buttons/Button/Button.tsx";
 import {OneItem} from "../../../../types/SideBarItem.tsx";
 import {useNavigate, useSearchParams} from "react-router-dom";
 import {DatePicker} from "../../../../components/inputs/DatePicker/DatePicker.tsx";
@@ -214,7 +214,7 @@ const SocialTourBookingNewManager = () => {
                             (<p style={{color: "green"}}>{message}</p>)
                     }
                     {generalError && <p style={{color: "red"}}>{generalError}</p>}
-                    <Button3 text={`Забронировать`} onClick={createBooking}/>
+                    <Button color={'green'} text={`Забронировать`} onClick={createBooking}/>
                 </div>
             </div>
         </div>

@@ -2,10 +2,10 @@
     height: calc(var(--button-height)*0.5);
     border-radius:  var(--border-radius-size);
     padding: var(--normal-padding-size);
- border: 3px solid var(--grey-blue);
+ border: 3px solid var(--bright-blue);
     width: calc(var(--button-width)*0.88);
-    color: var(--dark-blue);
-    background-color: var(--white);
+    color: black;
+    background-color: white;
     font-size: var(--normal-text-size);
 }
 

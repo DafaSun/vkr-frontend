@@ -1,7 +1,7 @@
 import styles from '../../css/Index.module.css'
 import {SideBar} from "../../../components/SideBar/SideBar.tsx";
 import {Header} from "../../../components/Header/Header.tsx"
-import {Button3} from "../../../components/buttons/Button3/Button3.tsx";
+import {Button} from "../../../components/buttons/Button/Button.tsx";
 import {OneItem} from "../../../types/SideBarItem.tsx";
 import {useNavigate} from "react-router-dom";
 
@@ -26,10 +26,10 @@ const TourManager = () => {
                 <Header name={'Иванова Анастасия Сергеевна'} post={'Менеджер'}/>
 
                 <div className={styles['main-container']}>
-                    <Button3 text={'Социальная путевка (льготная)'} onClick={() => {
+                    <Button text={'Социальная путевка (льготная)'} color={'violet'} onClick={() => {
                         navigate('/manager/tour/social')
                     }}/>
-                    <Button3 text={'Обычная за свои деньги'} onClick={() => {
+                    <Button text={'Обычная за свои деньги'} color={'green'} onClick={() => {
                         navigate('/manager/tour/tour')
                     }}/>
                 </div>

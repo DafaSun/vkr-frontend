@@ -4,7 +4,7 @@ import styles from '../../css/Index.module.css';
 import self_styles from './HotelManager.module.css';
 import {SideBar} from "../../../components/SideBar/SideBar.tsx";
 import {Header} from "../../../components/Header/Header.tsx";
-import {Button3} from "../../../components/buttons/Button3/Button3.tsx";
+import {Button} from "../../../components/buttons/Button/Button.tsx";
 import {useNavigate, useSearchParams} from "react-router-dom";
 import {DatePicker} from "../../../components/inputs/DatePicker/DatePicker.tsx";
 import {DropdownList} from "../../../components/inputs/DropdownList/DpropdownList.tsx";
@@ -135,7 +135,7 @@ const HotelCategoriesManager = () => {
                                 setGuests(data);
                                 updateUrl("guests", data);
                             }} min={1} max={3} label={''}/>
-                            <Button3 text={'Search'} onClick={searchClick}/>
+                            <Button color={'blue'} text={'Search'} onClick={searchClick}/>
                         </div>
                     </div>
                     <div className={self_styles['rooms-container']}>
@@ -151,7 +151,7 @@ const HotelCategoriesManager = () => {
                                         <div
                                             className={self_styles['room-title']}>{category.category_name} - {category.available_places}</div>
                                         <div className={self_styles['price']}>От {category.price} руб.</div>
-                                        <Button3 text={'Все номера категории'} onClick={() => {
+                                        <Button color={'green'} text={'Все номера категории'} onClick={() => {
                                             navigate(`/manager/hotel/rooms-in-category?checkin=${checkin}&checkout=${checkout}&guests=${guests}&category=${category.category_label}&gender=${gender}`);
                                         }}/>
                                     </div>

@@ -2,7 +2,8 @@
     width: 100%;
     display: flex;
     padding: 10px;
-    padding-bottom: 15px;
+    padding-left: calc(var(--sidebar-padding-left)*1.5);
+    padding-bottom: 25px;
     justify-content: flex-start;
     align-items: center;
     gap: 10px;

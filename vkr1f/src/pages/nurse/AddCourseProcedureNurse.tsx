@@ -1,7 +1,7 @@
 import styles from '../css/Index.module.css'
 import {SideBar} from "../../components/SideBar/SideBar.tsx";
 import {Header} from "../../components/Header/Header.tsx"
-import {Button3} from "../../components/buttons/Button3/Button3.tsx";
+import {Button} from "../../components/buttons/Button/Button.tsx";
 import {DropdownList} from "../../components/inputs/DropdownList/DpropdownList.tsx";
 import {DatePicker} from "../../components/inputs/DatePicker/DatePicker.tsx";
 import {InputNumber} from "../../components/inputs/InputNumber/InputNumber.tsx";
@@ -76,7 +76,7 @@ const AddCourseProcedureNurse = () => {
                     <DropdownList options={proceduresTime} label={' Выберите частоту процедур'} text={'Выберите частоту процедур из списка'} onSelect={handleSelect} />
                     <InputNumber text={'Введите кол-во процедур'} onChange={handleNumberChange} min={1} max={100} />
                     <h3> Проверьте все поля </h3>
-                    <Button3 text={'Записать'}></Button3>
+                    <Button color={'violet'} text={'Записать'} onClick={()=>{}}/>
 
                 </div>
 

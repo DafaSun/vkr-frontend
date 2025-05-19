@@ -1,10 +1,10 @@
 .dpd {
     height: var(--small-height);
     border-radius: var(--small-border-radius-size);
-    border: 3px solid var(--grey-blue);
+    border: 3px solid var(--violet);
     width: var(--small-width);
-    color: var(--dark-blue);
-    background-color: var(--white);
+    color: black;
+    background-color: white;
     font-size: var(--normal-text-size);
 }
 

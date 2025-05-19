@@ -12,7 +12,7 @@ import {TimePicker} from "../../../components/inputsInText/TimePicker/TimePicker
 import {Checkbox} from "../../../components/inputsInText/Checkbox/Checkbox.tsx";
 import {InputString} from "../../../components/inputsInText/InputString/InputString.tsx";
 import {InputNumber} from "../../../components/inputsInText/InputNumber/InputNumber.tsx";
-import {Button3} from "../../../components/buttons/Button3/Button3.tsx";
+import {Button} from "../../../components/buttons/Button/Button.tsx";
 import {painList, deformList, bodiesList, hepatitisList, statesList, genderList} from "../../../mocks/mock.tsx";
 
 const FirstVisitPersonDoctor = () => {
@@ -571,10 +571,10 @@ const FirstVisitPersonDoctor = () => {
                     {generalError && <p style={{color: "red"}}>{generalError}</p>}
 
                     <div className={self_styles['rowContainer']}>
-                        <Button3 text={'Сохранить'} onClick={() => {
+                        <Button color={'violet'} text={'Сохранить'} onClick={() => {
                         }}/>
 
-                        <Button3 text={'На печать'} onClick={() => {
+                        <Button color={'blue'} text={'На печать'} onClick={() => {
                         }}/>
 
                     </div>

@@ -2,12 +2,7 @@ import React, {useState} from "react";
 import styles from '../css/Index.module.css'
 import {SideBar} from "../../components/SideBar/SideBar.tsx";
 import {Header} from "../../components/Header/Header.tsx"
-import {Button1} from "../../components/buttons/Button1/Button1.tsx";
-import {Button2} from "../../components/buttons/Button2/Button2.tsx";
-import {Button3} from "../../components/buttons/Button3/Button3.tsx";
-import {Button4} from "../../components/buttons/Button4/Button4.tsx";
-import {Button5} from "../../components/buttons/Button5/Button5.tsx";
-import {InputText} from "../../components/inputs/InputText/InputText.tsx";
+import {Button} from "../../components/buttons/Button/Button.tsx";
 import {DropdownList} from "../../components/inputs/DropdownList/DpropdownList.tsx";
 import {DatePicker} from "../../components/inputs/DatePicker/DatePicker.tsx";
 import {TimePicker} from "../../components/inputs/TimePicker/TimePicker.tsx";
@@ -83,7 +78,7 @@ const AddOneProcedureNurse = () => {
                     <DatePicker text={"Выберите дату процедуры"} onSelect={selectDate} />
                     <TimePicker text={"Выберите время процедуры"} onSelect={selectTime} />
                     <h3> Проверьте все поля </h3>
-                    <Button3 text={'Записать'}></Button3>
+                    <Button color={'blue'} text={'Записать'} onClick={()=>{}}/>
 
 
                 </div>

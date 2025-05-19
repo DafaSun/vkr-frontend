@@ -1,7 +1,7 @@
 import styles from '../../css/Index.module.css'
 import {SideBar} from "../../../components/SideBar/SideBar.tsx";
 import {Header} from "../../../components/Header/Header.tsx"
-import {Button3} from "../../../components/buttons/Button3/Button3.tsx";
+import {Button} from "../../../components/buttons/Button/Button.tsx";
 import {OneItem} from "../../../types/SideBarItem.tsx";
 import {useNavigate} from "react-router-dom";
 
@@ -26,13 +26,13 @@ const InfoManager = () => {
                 <Header name={'Иванова Анастасия Сергеевна'} post={'Менеджер'}/>
 
                 <div className={styles['main-container']}>
-                    <Button3 text={'Питание'} onClick={() => {
+                    <Button color={'green'} text={'Питание'} onClick={() => {
                         navigate('/manager/info/nutrition')
                     }}/>
-                    <Button3 text={'Процедуры'} onClick={() => {
+                    <Button color={'blue'} text={'Процедуры'} onClick={() => {
                         navigate('/manager/info/therapy')
                     }}/>
-                    <Button3 text={'Досуг'} onClick={() => {
+                    <Button color={'orange'} text={'Досуг'} onClick={() => {
                         navigate('/manager/info/fun')
                     }}/>
 

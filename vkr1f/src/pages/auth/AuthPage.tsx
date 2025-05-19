@@ -2,7 +2,7 @@ import React, {useState} from "react";
 import { useNavigate } from "react-router-dom";
 import {LoginInput} from "./components/LoginInput/LoginInput";
 import {PasswordInput} from "./components/PasswordInput/PasswordInput";
-import {Button1} from "../../components/buttons/Button1/Button1";
+import {Button} from "../../components/buttons/Button/Button";
 import styles from './AuthPage.module.css'
 import { login } from "../../services/authService";
 
@@ -55,7 +55,7 @@ const AuthPage = () => {
                         <PasswordInput value={password} onChange={handleChangePassword} autoFocus/>
                     </form>
                     <div className={styles['error-text']}>{error}</div>
-                    <Button1 text={'Войти'} onClick={handleSubmit} />
+                    <Button color={'orange'} text={'Войти'} onClick={handleSubmit} />
                 </div>
             </div>
         </>
