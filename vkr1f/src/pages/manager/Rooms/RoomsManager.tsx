@@ -1,10 +1,10 @@
 import {useEffect, useState} from "react";
-import styles from '../../css/Index.module.css'
+import styles from './roomsManager.module.css'
 import {SideBar} from "../../../components/SideBar/SideBar.tsx";
 import {Header} from "../../../components/Header/Header.tsx"
 import {Button} from "../../../components/buttons/Button/Button.tsx";
 import {OneItem} from "../../../types/SideBarItem.tsx";
-import { useNavigate, useSearchParams } from "react-router-dom";
+import {useNavigate, useSearchParams} from "react-router-dom";
 import {DatePicker} from "../../../components/inputs/DatePicker/DatePicker.tsx";
 import {DropdownList} from "../../../components/inputs/DropdownList/DpropdownList.tsx";
 import {roomCategoryList} from "../../../mocks/mock.tsx";
@@ -43,7 +43,7 @@ const RoomsManager = () => {
     });
 
     useEffect(() => {
-        setSearchParams({ building, category: roomCategory, date });
+        setSearchParams({building, category: roomCategory, date});
     }, [building, roomCategory, date, setSearchParams]);
 
     useEffect(() => {
@@ -88,12 +88,13 @@ const RoomsManager = () => {
     };
 
     const sideBarItems: OneItem[] = [
-        { onClick: () => navigate('/manager/tour'), text: "Путевки", label: "tour" },
-        { onClick: () => navigate('/manager/hotel'), text: "Гостиница", label: "hotel" },
-        { onClick: () => navigate('/manager/bookings'), text: "Брони", label: "bookings" },
-        { onClick: () => navigate('/manager/guests'), text: "Отдыхающие", label: "guests" },
-        { onClick: () => navigate('/manager/rooms'), text: "Номера", label: "rooms" },
-        { onClick: () => navigate('/manager/info'), text: "Информация", label: "info" }
+        {onClick: () => navigate('/manager/tour'), text: "Путевки", label: "tour"},
+        {onClick: () => navigate('/manager/hotel'), text: "Гостиница", label: "hotel"},
+        {onClick: () => navigate('/manager/bookings'), text: "Брони", label: "bookings"},
+        {onClick: () => navigate('/manager/guests'), text: "Отдыхающие", label: "guests"},
+        {onClick: () => navigate('/manager/rooms'), text: "Номера", label: "rooms"},
+        {onClick: () => navigate('/manager/timetable'), text: "Расписания", label: "timetable"},
+        {onClick: () => navigate('/manager/info'), text: "Информация", label: "info"},
     ];
 
     const currentDate = new Date();
@@ -116,43 +117,41 @@ const RoomsManager = () => {
 
                 <div className={styles['main-container']}>
 
-                    <div className={styles['filters-container']}>
-                        <div className={styles['row-container']} >
-                            <DatePicker text={"Выберите дату "} value={date} onSelect={selectDate}  minDate={minDate} maxDate={maxDate}/>
-                            <DropdownList options={roomCategoryList} value={roomCategory} label={'Выберите категорию номера'} text={'Выберите категорию номера из списка'} onSelect={selectRoomCategory} />
-                            <DropdownList options={buildList} value={building} label={'Выберите корпус'} text={'Выберите корпус из списка'} onSelect={selectBuilding} />
-                            <Button color={'blue'} text={'Применить'} onClick={getPlacesTable}/>
-                        </div>
+                    <div className={styles['row-container']}>
+                        <DatePicker text={"Выберите дату "} value={date} onSelect={selectDate} minDate={minDate}
+                                    maxDate={maxDate}/>
+                        <DropdownList options={roomCategoryList} value={roomCategory}
+                                      label={'Выберите категорию номера'} text={'Выберите категорию номера из списка'}
+                                      onSelect={selectRoomCategory}/>
+                        <DropdownList options={buildList} value={building} label={'Выберите корпус'}
+                                      text={'Выберите корпус из списка'} onSelect={selectBuilding}/>
+                        <Button color={'blue'} text={'Применить'}  onClick={getPlacesTable}/>
                     </div>
 
-                    <div className="overflow-auto">
-                        <table className="border-collapse border border-gray-500">
+                    <div className={styles['table-title']}>Заполненность номеров/мест</div>
+                    <div className={styles["table-container"]}>
+                        <table>
                             <thead>
                             <tr>
                                 <th className="border border-gray-500 px-2">Места</th>
                                 {placeTable.dates.map((date) => (
-                                    <th key={date} className="border border-gray-500 px-2">
+                                    <th key={date} className="border border-gray-500 px-1" style={{ writingMode: 'vertical-rl', transform: 'rotate(180deg)', whiteSpace: 'nowrap' }}>
                                         {date}
                                     </th>
                                 ))}
                             </tr>
                             </thead>
                             <tbody>
-                            {placeTable.places.map((place) => (
+                            {placeTable.places.map((place, i) => (
                                 <tr key={place}>
-                                    <td className="border border-gray-500 px-2">{place}</td>
-                                    {placeTable.dates.map((date) => (
-                                        <td
-                                            key={date}
-                                            className={`border border-gray-500 px-2 ${
-                                                placeTable.bookings[place]?.[date] === "free"
-                                                    ? "bg-green-500 text-black"
-                                                    : "bg-red-500 text-white"
-                                            }`}
-                                        >
-                                            {placeTable.bookings[place]?.[date] === "free"
-                                                ? "Свободно"
-                                                : "Занято"}
+                                    <td className="border border-gray-500 px-2"><b>{place.replace('Место ', '')}</b></td>
+                                    {placeTable.dates.map((date, j) => (
+                                        <td key={date}>
+                                            {placeTable.bookings[i][j] === "free" ? (
+                                                <div className={styles['free-room']} />
+                                            ) : (
+                                                <div className={styles['occupered-room']} />
+                                            )}
                                         </td>
                                     ))}
                                 </tr>

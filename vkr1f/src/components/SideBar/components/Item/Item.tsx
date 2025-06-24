@@ -1,6 +1,5 @@
 import React from 'react';
 import styles from './Item.module.css'
-import IconSquare from "../../../../assets/svg/iconSquare.svg?react"
 import IconCircle from "../../../../assets/svg/iconCircle.svg?react"
 
 interface IItemProps {

@@ -8,14 +8,7 @@ import {InputText} from "../../../components/inputs/InputText/InputText.tsx";
 import {Button} from "../../../components/buttons/Button/Button.tsx";
 import {useEffect, useState} from "react";
 import axios from "axios";
-
-type PatientData = {
-    guest_id: number,
-    surname: string,
-    name: string,
-    patronymic: string,
-    birthday: string,
-};
+import {PatientData} from "../../../types/datas.tsx";
 
 const DairiesDoctor = () => {
     const navigate = useNavigate();
@@ -68,7 +61,7 @@ const DairiesDoctor = () => {
             <SideBar activeItem={"dairies"} items={sideBarItems}/>
             <div className={styles['content-container']}>
 
-                <Header name={'Иванова Анастасия Сергеевна'} post={'Врач'}/>
+                <Header name={'Фролова Клавдия Алексеевна'} post={'Врач'}/>
 
                 <div className={styles['main-container']}>
                     <div className={self_styles['filters-container']}>

@@ -1,7 +1,6 @@
 import {useEffect, useState} from "react";
 import axios from "axios";
-import styles from '../../css/Index.module.css';
-import self_styles from './HotelManager.module.css';
+import styles from './HotelCategoriesManager.module.css';
 import {SideBar} from "../../../components/SideBar/SideBar.tsx";
 import {Header} from "../../../components/Header/Header.tsx";
 import {Button} from "../../../components/buttons/Button/Button.tsx";
@@ -10,6 +9,7 @@ import {DatePicker} from "../../../components/inputs/DatePicker/DatePicker.tsx";
 import {DropdownList} from "../../../components/inputs/DropdownList/DpropdownList.tsx";
 import {InputNumber} from "../../../components/inputs/InputNumber/InputNumber.tsx";
 import {genderList, roomTypeList} from "../../../mocks/mock.tsx";
+import {OneItem} from "../../../types/SideBarItem.tsx";
 
 interface HotelCategory {
     category_label: string;
@@ -21,6 +21,7 @@ interface HotelCategory {
 const HotelCategoriesManager = () => {
     const navigate = useNavigate();
     const [searchParams, setSearchParams] = useSearchParams();
+
 
     const defaultParams = {
         checkin: new Date().toISOString().split("T")[0],
@@ -35,7 +36,18 @@ const HotelCategoriesManager = () => {
     const [roomType, setRoomType] = useState<string>(searchParams.get("roomType") || defaultParams.roomType);
     const [guests, setGuests] = useState(Number(searchParams.get("guests")) || Number(defaultParams.guests));
     const [gender, setGender] = useState<string>(searchParams.get("gender") || defaultParams.gender);
-    const [categories, setCategories] = useState<HotelCategory[]>([]);
+    const [categories, setCategories] = useState<HotelCategory[]>([{
+        category_label: "cat3",
+        category_name: "3 - Двухместный номер на 1 этаже в 4 корпусе с удобствами в номере",
+        available_places: 5,
+        price: 6000,
+    },
+        {
+            category_label: "cat7",
+            category_name: "7 - Двухместный номер на 2 этаже в 6 корпусе с удобствами в номере",
+            available_places: 3,
+            price: 4500,
+        }]);
     const [loading, setLoading] = useState(false);
     const [error_r, setError_r] = useState<string | null>(null);
 
@@ -103,57 +115,68 @@ const HotelCategoriesManager = () => {
                 {onClick: () => navigate('/manager/bookings'), text: "Брони", label: "bookings"},
                 {onClick: () => navigate('/manager/guests'), text: "Отдыхающие", label: "guests"},
                 {onClick: () => navigate('/manager/rooms'), text: "Номера", label: "rooms"},
-                {onClick: () => navigate('/manager/info'), text: "Информация", label: "info"}
+                {onClick: () => navigate('/manager/timetable'), text: "Расписания", label: "info"},
+                {onClick: () => navigate('/manager/info'), text: "Информация", label: "info"},
             ]}/>
             <div className={styles['content-container']}>
 
                 <Header name={'Иванова Анастасия Сергеевна'} post={'Менеджер'}/>
 
                 <div className={styles['main-container']}>
-                    <div className={styles['filters-container']}>
-                        <div className={styles['row-container']}>
-                            <DatePicker text={"Выберите дату заезда"} value={checkin} onSelect={handleCheckinChange}
-                                        minDate={minDate} maxDate={maxDate}/>
-                            <DatePicker text={"Выберите дату отъезда"} value={checkout} onSelect={handleCheckoutChange}
-                                        minDate={checkin} maxDate={maxDate}/>
-                            <InputNumber isEdit={false} text={'Введите кол-во дней'}
-                                         value={((new Date(checkout)).getTime() - (new Date(checkin)).getTime()) / 86400000}
-                                         label={''}/>
-                        </div>
-                        <div className={styles['row-container']}>
-                            <DropdownList options={roomTypeList} value={roomType} label={'Выберите тип размещения'}
-                                          text={'Выберите тип размещения из списка'} onSelect={data => {
-                                setRoomType(data);
-                                updateUrl("roomType", data);
-                            }}/>
-                            <DropdownList options={genderList} value={gender} label={'Выберите пол'}
-                                          text={'Выберите пол из списка'} onSelect={data => {
-                                setGender(data);
-                                updateUrl("gender", data);
-                            }}/>
-                            <InputNumber text={'Введите кол-во человек'} value={guests} onChange={data => {
-                                setGuests(data);
-                                updateUrl("guests", data);
-                            }} min={1} max={3} label={''}/>
-                            <Button color={'blue'} text={'Search'} onClick={searchClick}/>
-                        </div>
+
+                    <div className={styles['table-title']}>
+                        Подбор категории номеров
                     </div>
-                    <div className={self_styles['rooms-container']}>
+
+                    <div className={styles['row-container']}>
+                        <DatePicker text={"Выберите дату заезда"} value={checkin} width={180}
+                                    onSelect={handleCheckinChange}
+                                    minDate={minDate} maxDate={maxDate}/>
+                        <DatePicker text={"Выберите дату отъезда"} value={checkout} width={180}
+                                    onSelect={handleCheckoutChange}
+                                    minDate={checkin} maxDate={maxDate}/>
+                        <InputNumber isEdit={false} text={'Кол-во дней'} width={100}
+                                     value={((new Date(checkout)).getTime() - (new Date(checkin)).getTime()) / 86400000}
+                                     label={''}/>
+                        <DropdownList options={roomTypeList} value={roomType} width={250}
+                                      label={'Выберите тип размещения'}
+                                      text={'Выберите тип размещения'} onSelect={data => {
+                            setRoomType(data);
+                            updateUrl("roomType", data);
+                        }}/>
+                        <DropdownList options={genderList} value={gender} width={150} label={'Выберите пол'}
+                                      text={'Выберите пол'} onSelect={data => {
+                            setGender(data);
+                            updateUrl("gender", data);
+                        }}/>
+                        <Button color={'blue'} text={'Применить'} width={200} onClick={searchClick}/>
+                    </div>
+
+
+                    <div className={styles['rooms-container']}>
                         {loading ? (
                             <p>Загрузка...</p>
                         ) : error_r ? (
                             <p style={{color: "red"}}>{error_r}</p>
                         ) : categories.length > 0 ? (
                             categories.map(category => (
-                                <div key={category.category_label} className={self_styles['category-room-container']}>
-                                    <img src="/images/rooms/room1.jpg"/>
-                                    <div className={self_styles['room-description']}>
+                                <div key={category.category_label} className={styles['category-room-container']}>
+                                    <img
+                                        src={category.category_label == "cat3" ? "/images/rooms/img_room_1.png" : "/images/rooms/img_room_2.png"}/>
+                                    <div className={styles['room-description']}>
                                         <div
-                                            className={self_styles['room-title']}>{category.category_name} - {category.available_places}</div>
-                                        <div className={self_styles['price']}>От {category.price} руб.</div>
-                                        <Button color={'green'} text={'Все номера категории'} onClick={() => {
-                                            navigate(`/manager/hotel/rooms-in-category?checkin=${checkin}&checkout=${checkout}&guests=${guests}&category=${category.category_label}&gender=${gender}`);
-                                        }}/>
+                                            className={styles['room-title1']}> <b>Категория:</b> {category.category_name}
+                                        </div>
+                                        <div
+                                            className={styles['room-title2']}><b>Доступно
+                                            мест: </b> {category.available_places} мест
+                                        </div>
+                                        <div className={styles['room-flex']}>
+                                            <div className={styles['price']}>От {category.price} руб.</div>
+                                            <Button color={'green'} text={'Все номера категории'} onClick={() => {
+                                                navigate(`/manager/hotel/rooms-in-category?checkin=${checkin}&checkout=${checkout}&guests=${guests}&category=${category.category_label}&gender=${gender}`);
+                                            }}/>
+                                        </div>
                                     </div>
                                 </div>
                             ))

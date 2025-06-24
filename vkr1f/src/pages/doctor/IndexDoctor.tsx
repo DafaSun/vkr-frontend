@@ -9,8 +9,8 @@ const IndexDoctor = () => {
 
     const sideBarItems: OneItem[] = [
         {onClick: () => navigate('/doctor/timetable'), text: "Расписание", label: "timetable"},
-        {onClick: () => navigate('/doctor/first_visit'), text: "Первичный прием", label: "first_visit"},
-        {onClick: () => navigate('/doctor/second_visit'), text: "Заключительный прием", label: "second_visit"},
+        {onClick: () => navigate('/doctor/first_visit'), text: "Первичн. прием", label: "first_visit"},
+        {onClick: () => navigate('/doctor/second_visit'), text: "Заключит. прием", label: "second_visit"},
         {onClick: () => navigate('/doctor/dairies'), text: "Дневники", label: "dairies"},
         {onClick: () => navigate('/doctor/medical_stories'), text: "Истории болезни", label: "medical_stories"}
     ];
@@ -21,7 +21,7 @@ const IndexDoctor = () => {
             <SideBar activeItem={""} items={sideBarItems}/>
             <div className={styles['content-container']}>
 
-                <Header name={'Иванова Анастасия Сергеевна'} post={'Врач'}/>
+                <Header name={'Фролова Клавдия Алексеевна'} post={'Врач'}/>
 
                 <div className={styles['main-container']}>
                     <h1 className={styles['welcome']}>Добро пожаловать!</h1>

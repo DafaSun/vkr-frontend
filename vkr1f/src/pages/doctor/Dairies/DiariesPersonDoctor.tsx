@@ -1,5 +1,4 @@
-import styles from '../../css/Index.module.css'
-import self_styles from './DiariesDoctor.module.css'
+import styles from './DiariesPersonDoctor.module.css'
 import {SideBar} from "../../../components/SideBar/SideBar.tsx";
 import {Header} from "../../../components/Header/Header.tsx"
 import {OneItem} from "../../../types/SideBarItem.tsx";
@@ -7,9 +6,12 @@ import {useNavigate, useSearchParams} from "react-router-dom";
 import {Button} from "../../../components/buttons/Button/Button.tsx";
 import {useEffect, useState} from "react";
 import axios from "axios";
-import {DatePicker} from "../../../components/inputsInText/DatePicker/DatePicker.tsx";
-import {InputString} from "../../../components/inputsInText/InputString/InputString.tsx";
-import {InputText} from "../../../components/inputsInText/InputText/InputText.tsx";
+import {DatePicker} from "../../../components/inputs/DatePicker/DatePicker.tsx";
+import {InputText} from "../../../components/inputs/InputText/InputText.tsx";
+import {InputBigText} from "../../../components/inputs/InputBigText/InputBigText.tsx";
+import {DropdownList} from "../../../components/inputs/DropdownList/DpropdownList.tsx";
+import {genderList} from "../../../mocks/mock.tsx";
+import {TimePicker} from "../../../components/inputs/TimePicker/TimePicker.tsx";
 
 type PatientData = {
     guest_id: number,
@@ -22,6 +24,8 @@ type PatientData = {
 const DiariesPersonDoctor = () => {
     const navigate = useNavigate();
     const [searchParams, setSearchParams] = useSearchParams();
+    const [generalError, setGeneralError] = useState<string | null>(null);
+    const [doctorCheck, setDoctorCheck] = useState<boolean>();
 
     const viewDate = new Date().toISOString().split("T")[0];
     const [patient, setPatient] = useState<PatientData>({
@@ -37,8 +41,8 @@ const DiariesPersonDoctor = () => {
 
     const sideBarItems: OneItem[] = [
         {onClick: () => navigate('/doctor/timetable'), text: "Расписание", label: "timetable"},
-        {onClick: () => navigate('/doctor/first_visit'), text: "Первичный прием", label: "first_visit"},
-        {onClick: () => navigate('/doctor/second_visit'), text: "Заключительный прием", label: "second_visit"},
+        {onClick: () => navigate('/doctor/first_visit'), text: "Первичн. прием", label: "first_visit"},
+        {onClick: () => navigate('/doctor/second_visit'), text: "Заключит. прием", label: "second_visit"},
         {onClick: () => navigate('/doctor/dairies'), text: "Дневники", label: "dairies"},
         {onClick: () => navigate('/doctor/medical_stories'), text: "Истории болезни", label: "medical_stories"}
     ];
@@ -49,21 +53,52 @@ const DiariesPersonDoctor = () => {
             <SideBar activeItem={"dairies"} items={sideBarItems}/>
             <div className={styles['content-container']}>
 
-                <Header name={'Иванова Анастасия Сергеевна'} post={'Врач'}/>
+                <Header name={'Фролова Клавдия Алексеевна'} post={'Врач'}/>
 
                 <div className={styles['main-container']}>
-                    <h1>Дневник пациента</h1>
-                        <InputString text={'ФИО пациента'}
-                                   value={patient.surname + ' ' + patient.name + ' ' + patient.patronymic}
-                                   isEdit={false}/>
-                    <DatePicker text={'Дата осмотра'} value={viewDate} isEdit={false}/>
+                    <div className={styles['table-title']}>Дневник пациента</div>
 
-                    <InputText text={''} value={description} onChange={setDescription}/>
+                    <div className={styles['person-container']}>
+                        <div className={styles['containers-00']}>
 
-                    <Button color={'orange'} text={'Сохранить'} onClick={() => {
-                    }}/>
+                            <div className={styles['fields-container']}>
+                                <div className={styles['field']}>
+                                    <InputText text={'Фамилия*'} value={'Сидоров'} label={''}/>
+                                </div>
+                                <div className={styles['field']}>
+                                    <InputText text={'Имя*'} value={'Сергей'}/>
+
+                                </div>
+                                <div className={styles['field']}>
+                                    <InputText text={'Отчество'} value={'Алексеевич'}/>
+                                </div>
+                            </div>
 
 
+                            <div className={styles['fields-container']}>
+
+                                <div className={styles['field']}>
+                                    <DatePicker text={"Дата осмотра"} value={'2025-06-18'} isEdit={false}/>
+                                </div>
+                                <div className={styles['field']}>
+                                    <TimePicker text={"Время начала осмотра"} value={'13:27'}/>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <InputBigText text={'Результаты осмотра'} value={description} onChange={setDescription}/>
+
+                        {/*<Checkbox text={'Лечащий врач все проверил'} value={doctorCheck} onChange={setDoctorCheck}/>*/}
+                        {/*{generalError && <p style={{color: "red"}}>{generalError}</p>}*/}
+
+                        <div className={styles['button-container']}>
+                        <Button color={'orange'} text={'Сохранить'}  onClick={() => {
+                        }}/>
+                        </div>
+                    </div>
+                    {/*<Button color={'violet'} text={'На печать'} onClick={() => {*/}
+                    {/*}}/>*/}
                 </div>
             </div>
         </div>
@@ -71,3 +106,6 @@ const DiariesPersonDoctor = () => {
 };
 
 export default DiariesPersonDoctor;
+
+// const DiariesPersonDoctor = () => <div></div>;
+// export default DiariesPersonDoctor;

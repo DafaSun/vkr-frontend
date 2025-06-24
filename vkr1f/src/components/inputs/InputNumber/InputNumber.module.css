@@ -1,5 +1,5 @@
 .input-number-container{
-    margin: 20px;
+    margin: 10px;
     display: flex;
     flex-direction: column;
 }
@@ -9,7 +9,7 @@
     border-radius: var(--border-radius-size);
     padding: var(--normal-padding-size);
     border: 3px solid var(--green);
-    width: calc(var(--button-width)*0.88);
+    width: calc(var(--button-width)*0.91);
     color: black;
     background-color: white;
     font-size: var(--normal-text-size);

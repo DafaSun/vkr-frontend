@@ -3,7 +3,7 @@
     border-radius: var(--border-radius-size);
     padding: var(--normal-text-size);
     border: none;
-    margin: 20px;
+    margin: var(--normal-margin-size);
     font-size: var(--button-text-size);
     }
 

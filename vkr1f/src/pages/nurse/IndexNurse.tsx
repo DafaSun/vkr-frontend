@@ -1,29 +1,17 @@
-import React, {useState} from "react";
-import { useNavigate } from "react-router-dom";
 import styles from '../css/Index.module.css'
 import {SideBar} from "../../components/SideBar/SideBar.tsx";
 import {Header} from "../../components/Header/Header.tsx"
 import {OneItem} from "../../types/SideBarItem.tsx";
+import {useNavigate} from "react-router-dom";
 
-const IndexNurse = () => {
+const IndexDoctor = () => {
     const navigate = useNavigate();
 
     const sideBarItems: OneItem[] = [
-        {
-            onClick: () => {navigate('/nurse/therapy')},
-            text: "Лечение",
-            label: "therapy"
-        },
-        {
-            onClick: () => {navigate('/nurse/reports')},
-            text: "Отчеты",
-            label: "reports"
-        },
-        {
-            onClick: () => {navigate('/nurse/employees')},
-            text: "Сотрудники",
-            label: "employees"
-        }
+        {onClick: () => navigate('/nurse/procedures'), text: "Процедуры", label: "procedures"},
+        {onClick: () => navigate('/nurse/workers-timetable'), text: "Расписание \nработников", label: "workers-timetable"},
+        {onClick: () => navigate('/nurse/guests-timetable'), text: "Расписание \nгостей", label: "guests-timetable"},
+        {onClick: () => navigate('/nurse/self-timetable'), text: "Свое \nрасписание", label: "self-timetable"}
     ];
 
     return (
@@ -32,20 +20,14 @@ const IndexNurse = () => {
             <SideBar activeItem={""} items={sideBarItems}/>
             <div className={styles['content-container']}>
 
-                <Header name={'Иванова Анастасия Сергеевна'} post={'Медсестра'}/>
+                <Header name={'Ефремова Светлана Валерьевна'} post={'Медсестра'}/>
 
                 <div className={styles['main-container']}>
                     <h1 className={styles['welcome']}>Добро пожаловать!</h1>
-
-
-
                 </div>
-
             </div>
-
-
         </div>
     );
 };
 
-export default IndexNurse;
+export default IndexDoctor;

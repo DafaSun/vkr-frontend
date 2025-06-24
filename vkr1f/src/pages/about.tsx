@@ -1,5 +1,5 @@
 import React, {useState} from "react";
-import styles from './home.module.css'
+import styles from './about.module.css'
 
 
 import {Header} from "../components/Header/Header.tsx"
@@ -13,7 +13,7 @@ import {InputNumber} from "../components/inputs/InputNumber/InputNumber.tsx";
 import {Checkbox} from "../components/inputs/Checkbox/Checkbox.tsx"
 
 
-const Home = () => {
+const About = () => {
 
 
     const people = [
@@ -65,4 +65,4 @@ const Home = () => {
     );
 };
 
-export default Home;
+export default About;

@@ -2,7 +2,6 @@ import React, {useState} from 'react';
 import styles from './SideBar.module.css';
 import {Item} from "./components/Item/Item.tsx";
 import {Exit} from "./components/Exit/Exit.tsx";
-import {Logo} from "./components/Logo/Logo.tsx";
 
 type OneItem = {
     onClick: () => void;
@@ -18,6 +17,20 @@ interface ISideBarProps {
 export const SideBar: React.FC<ISideBarProps> = (props) => {
     const {activeItem = "", items = []} = props;
     const [curItem, setCurItem] = useState(activeItem);
+
+    console.log('activeItem=', activeItem);
+
+    items.map((dataItem) =>{
+        console.log('activeItem=', activeItem, '           item=', dataItem.label, '            =?, ', curItem == dataItem?.label);
+    })
+
+    //     (
+    //     <Item text={dataItem?.text} isActive={curItem == dataItem?.label}
+    //           onClick={() => {
+    //               setCurItem(dataItem?.label);
+    //               dataItem?.onClick();
+    //           }}/>
+    // ))
 
     return (
         <div className={styles['side-bar-container']}>

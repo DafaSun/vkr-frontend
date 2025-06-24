@@ -1,6 +1,5 @@
 import {useEffect, useState} from "react";
-import styles from '../../css/Index.module.css';
-import self_styles from './HotelManager.module.css';
+import styles from './HotelBookingManager.module.css';
 import {SideBar} from "../../../components/SideBar/SideBar.tsx";
 import {Header} from "../../../components/Header/Header.tsx";
 import {Button} from "../../../components/buttons/Button/Button.tsx";
@@ -14,7 +13,7 @@ import {InputPhone} from "../../../components/inputs/InputPhone/InputPhone.tsx";
 import {InputEmail} from "../../../components/inputs/InputEmail/InputEmail.tsx";
 import axios from "axios";
 import {InputNumber} from "../../../components/inputs/InputNumber/InputNumber.tsx";
-import {genderList, roomCategoryList} from "../../../mocks/mock.tsx";
+import {genderList, roomCategoryList, typeTourList} from "../../../mocks/mock.tsx";
 
 const HotelBookingNewManager = () => {
     const navigate = useNavigate();
@@ -164,13 +163,15 @@ const HotelBookingNewManager = () => {
         }
     }
 
+
     const sideBarItems: OneItem[] = [
         {onClick: () => navigate('/manager/tour'), text: "Путевки", label: "tour"},
         {onClick: () => navigate('/manager/hotel'), text: "Гостиница", label: "hotel"},
         {onClick: () => navigate('/manager/bookings'), text: "Брони", label: "bookings"},
         {onClick: () => navigate('/manager/guests'), text: "Отдыхающие", label: "guests"},
         {onClick: () => navigate('/manager/rooms'), text: "Номера", label: "rooms"},
-        {onClick: () => navigate('/manager/info'), text: "Информация", label: "info"}
+        {onClick: () => navigate('/manager/timetable'), text: "Расписания", label: "info"},
+        {onClick: () => navigate('/manager/info'), text: "Информация", label: "info"},
     ];
 
     const minDate = "1907-03-04";
@@ -186,45 +187,68 @@ const HotelBookingNewManager = () => {
                 <Header name={'Иванова Анастасия Сергеевна'} post={'Менеджер'}/>
 
                 <div className={styles['main-container']}>
-                    <h1> Забронировать {placeName} </h1>
-                    <div className={self_styles['parameters-container']}>
-                        <div className={self_styles['columns-container']}>
-                            <DatePicker value={checkin} text={'Дата заезда'} isEdit={false}/>
-                            <DatePicker value={checkout} text={'Дата отъезда'} isEdit={false}/>
-                            <InputNumber
-                                value={((new Date(checkout)).getTime() - (new Date(checkin)).getTime()) / 86400000}
-                                text={'Кол-во дней'} isEdit={false}/>
-                        </div>
-                        <div className={self_styles['columns-container']}>
-                            <InputNumber value={guests} text={'Кол-во человек'} isEdit={false}/>
-                            <DropdownList text={'Категория'} value={category} options={roomCategoryList}
-                                          isEdit={false}/>
-                            <DropdownList text={'Пол'} value={gender} options={genderList} isEdit={false}/>
+
+                    <div className={styles['table-title']}>
+                        Бронирование
+                    </div>
+
+                    <div className={styles['book-head']}>
+                        <img
+                            src={"/images/rooms/img_room_3.png"}/>
+                        <div className={styles['descs00']}>
+                            <div className={styles['desc']}>
+                                <span>Место: 102/1</span>
+
+                                <span>Номер: 102</span>
+
+                                <span>Удобства: В блоке</span>
+
+                                <span>Корпус: 4</span>
+                            </div>
+                            <div className={styles['desc']}>
+                                <span>Дата заезда: 17 июня 2025</span>
+
+                                <span>Датат выезда: 24 июня 2025</span>
+
+                                <span>Пол: Мужской</span>
+
+                                <span>Этаж: 1</span>
+                            </div>
                         </div>
                     </div>
-                    <h1>Ввод данных</h1>
-                    <InputText text={'Введите фамилию*'} onChange={changeSurname} label={''}/>
-                    <InputText text={'Введите имя*'} onChange={changeName} label={''}/>
-                    <InputText text={'Введите отчество'} onChange={changePatronymic} label={''}/>
-                    <DropdownList options={[{id: 'male', fullName: "Male"}, {id: 'female', fullName: "Female"}]}
-                                  value={gender} label={'Выберите пол'} text={'Выберите пол*'} onSelect={changeGender}/>
-                    <DatePicker text={"Выберите дату рождения*"} minDate={minDate} maxDate={maxDate} value={birthday}
-                                onSelect={changeBirthday}/>
-                    <InputPhone text={'Введите номер телефона*'} onChange={changePhone} label={''}/>
-                    <InputEmail text={'Введите эл. почту'} onChange={changeEmail} label={''}/>
-                    <Checkbox text={'Завтрак'} value={breakfast} onChange={changeBreakfast}/>
-                    <Checkbox text={'Обед'} value={lunch} onChange={changeLunch}/>
-                    <Checkbox text={'Ужин'} value={dinner} onChange={changeDinner}/>
-                    <div className={self_styles['price']}>{price} руб.</div>
-                    {loading ? (
-                            <p>Загрузка...</p>
-                        ) :
-                        error_r ? (
-                                <p style={{color: "red"}}>{error_r}</p>
-                            ) :
-                            (<p style={{color: "green"}}>{message}</p>)
-                    }
-                    {generalError && <p style={{color: "red"}}>{generalError}</p>}
+
+                    <div className={styles['containers-00']}>
+
+                        <div className={styles['fields-container']}>
+                            <div className={styles['field']}>
+                                <InputText text={'Введите фамилию*'} onChange={changeSurname} label={'Фамилия'}/>
+                            </div>
+                            <div className={styles['field']}>
+                                <InputText text={'Введите имя*'} onChange={changeName} label={'Имя'}/>
+ </div>
+                            <div className={styles['field']}>
+                                <InputText text={'Введите отчество'} onChange={changePatronymic} label={'Отчество'}/>
+                            </div>
+                        </div>
+
+
+                        <div className={styles['fields-container']}>
+                            <div className={styles['field']}>
+                                <DatePicker text={"Выберите дату рождения*"} minDate={minDate} maxDate={maxDate} value={birthday}
+                                            onSelect={changeBirthday}/>
+                            </div>
+                            <div className={styles['field']}>
+                                <InputPhone text={'Введите номер телефона*'} onChange={changePhone} label={''}/>
+                            </div>
+                            <div className={styles['field']}>
+                                <InputEmail text={'Введите эл. почту'} onChange={changeEmail} label={''}/>
+                            </div>
+                        </div>
+
+
+                    </div>
+
+
                     <Button color={'orange'} text={`Забронировать`} onClick={createBooking}/>
                 </div>
             </div>

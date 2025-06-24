@@ -1,6 +1,5 @@
 import {useEffect, useState} from "react";
-import styles from './../../css/Index.module.css'
-import self_styles from './BookingsManager.module.css'
+import styles from './BookingsManager.module.css'
 import {SideBar} from "../../../components/SideBar/SideBar.tsx";
 import {Header} from "../../../components/Header/Header.tsx"
 import {Button} from "../../../components/buttons/Button/Button.tsx";
@@ -82,13 +81,15 @@ const BookingManager = () => {
     maxDate0.setMonth(maxDate0.getMonth() + 18);
     const maxDate = maxDate0.toISOString().split("T")[0];
 
+
     const sideBarItems: OneItem[] = [
         {onClick: () => navigate('/manager/tour'), text: "Путевки", label: "tour"},
         {onClick: () => navigate('/manager/hotel'), text: "Гостиница", label: "hotel"},
         {onClick: () => navigate('/manager/bookings'), text: "Брони", label: "bookings"},
         {onClick: () => navigate('/manager/guests'), text: "Отдыхающие", label: "guests"},
         {onClick: () => navigate('/manager/rooms'), text: "Номера", label: "rooms"},
-        {onClick: () => navigate('/manager/info'), text: "Информация", label: "info"}
+        {onClick: () => navigate('/manager/timetable'), text: "Расписания", label: "info"},
+        {onClick: () => navigate('/manager/info'), text: "Информация", label: "info"},
     ];
 
     return (
@@ -100,36 +101,56 @@ const BookingManager = () => {
                 <Header name={'Иванова Анастасия Сергеевна'} post={'Менеджер'}/>
 
                 <div className={styles['main-container']}>
-                    <div className={self_styles['filters-container']}>
-                        <div className={self_styles['row-container']}>
-                            <DatePicker text={"Выберите дату заезда"} value={checkin} onSelect={selectCheckin}
-                                        minDate={minDate} maxDate={maxDate}/>
-                            <DropdownList options={roomCategoryList} value={roomCategory}
-                                          label={'Выберите категорию номера'}
-                                          text={'Выберите категорию номера из списка'} onSelect={selectRoomCategory}/>
-                            <InputText text={'Введите фамилию'} label={'Введите фамилию'} value={surname}
-                                       onChange={changeSurname}/>
-                            <Button color={'green'} text={'Применить'} onClick={SearchClick}/>
-                        </div>
+                    <div className={styles['row-container']}>
+                        <DatePicker text={"Выберите дату заезда"} value={checkin} onSelect={selectCheckin}
+                                    minDate={minDate} maxDate={maxDate}/>
+                        <DropdownList options={roomCategoryList} value={roomCategory}
+                                      label={'Выберите категорию номера'}
+                                      text={'Выберите категорию номера из списка'} onSelect={selectRoomCategory}/>
+                        <InputText text={'Введите фамилию'} label={'Введите фамилию'} value={surname}
+                                   onChange={changeSurname}/>
+                        <Button color={'green'} text={'Применить'} onClick={SearchClick}/>
                     </div>
 
-                    <div className={self_styles['bookings-list-container']}>
+                    <div className={styles['table-title']}>
+                        Список броней
+                    </div>
+
+                    <div className={styles['people-list-container']}>
                         {loading ? (
                             <p>Загрузка...</p>
                         ) : error_r ? (
                             <p style={{color: "red"}}>{error_r}</p>
-                        ) : bookings.length > 0 ? (
+                        ) :bookings.length > 0 ? (
                             bookings.map(book => (
-                                <div className={self_styles['booking-container']}>
-                                    {book.checkin_date} - {book.surname} {book.name} {book.patronymic} - {book.place_name}
-                                    <Button color={'blue'} text={'Перейти'}
-                                             onClick={() => navigate(`/manager/bookings/info?id=${book.booking_id}`)}/>
+                                <div className={styles['people-container']}>
+                                    <div className={styles['date']}>
+                                        {book.checkin_date}
+                                    </div>
+                                    <div className={styles['place']}>
+                                        {book.place_name}
+                                    </div>
+                                    <div className={styles['fio']}>
+                                        {book.surname} {book.name} {book.patronymic}
+                                    </div>
+                                    <div className={styles['button']}>
+                                        <Button
+                                            color="blue"
+                                            text="Перейти"
+                                            onClick={() => navigate(`/manager/bookings/info?id=${book.booking_id}`)}
+                                        />
+                                    </div>
+                                    {/*{guest.surname} {guest.name} {guest.patronymic} - {guest.birthday}*/}
+                                    {/*<Button color={'green'}*/}
+                                    {/*text={'Перейти'}*/}
+                                    {/*onClick={() => navigate(`/manager/guests/person?id=${guest.guest_id}`)}/>*/}
                                 </div>
                             ))
                         ) : (
-                            <p>Нет доступных броний</p>
+                            <p>Нет подходящих броней</p>
                         )}
                     </div>
+
                 </div>
             </div>
         </div>

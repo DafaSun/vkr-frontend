@@ -1,19 +1,28 @@
-import styles from '../../css/Index.module.css'
-import self_styles from './FirstVisitDoctor.module.css'
+import styles from './FirstVisitPersonDoctor.module.css'
 import {SideBar} from "../../../components/SideBar/SideBar.tsx";
 import {Header} from "../../../components/Header/Header.tsx"
 import {OneItem} from "../../../types/SideBarItem.tsx";
 import {useNavigate} from "react-router-dom";
-import {InputText} from "../../../components/inputsInText/InputText/InputText.tsx";
-import {DatePicker} from "../../../components/inputsInText/DatePicker/DatePicker.tsx";
-import {DropdownList} from "../../../components/inputsInText/DropdownList/DpropdownList.tsx";
+import {InputText} from "../../../components/inputs/InputText/InputText.tsx";
+import {DatePicker} from "../../../components/inputs/DatePicker/DatePicker.tsx";
+import {DropdownList} from "../../../components/inputs/DropdownList/DpropdownList.tsx";
 import {useState} from "react";
-import {TimePicker} from "../../../components/inputsInText/TimePicker/TimePicker.tsx";
-import {Checkbox} from "../../../components/inputsInText/Checkbox/Checkbox.tsx";
-import {InputString} from "../../../components/inputsInText/InputString/InputString.tsx";
-import {InputNumber} from "../../../components/inputsInText/InputNumber/InputNumber.tsx";
+import {TimePicker} from "../../../components/inputs/TimePicker/TimePicker.tsx";
+import {Checkbox} from "../../../components/inputs/Checkbox/Checkbox.tsx";
+import {InputNumber} from "../../../components/inputs/InputNumber/InputNumber.tsx";
 import {Button} from "../../../components/buttons/Button/Button.tsx";
-import {painList, deformList, bodiesList, hepatitisList, statesList, genderList} from "../../../mocks/mock.tsx";
+import {
+    painList,
+    deformList,
+    bodiesList,
+    hepatitisList,
+    statesList,
+    genderList,
+    typeTourList
+} from "../../../mocks/mock.tsx";
+import {InputBigText} from "../../../components/inputs/InputBigText/InputBigText.tsx";
+import {InputPhone} from "../../../components/inputs/InputPhone/InputPhone.tsx";
+import {InputEmail} from "../../../components/inputs/InputEmail/InputEmail.tsx";
 
 const FirstVisitPersonDoctor = () => {
     const navigate = useNavigate();
@@ -196,8 +205,8 @@ const FirstVisitPersonDoctor = () => {
 
     const sideBarItems: OneItem[] = [
         {onClick: () => navigate('/doctor/timetable'), text: "Расписание", label: "timetable"},
-        {onClick: () => navigate('/doctor/first_visit'), text: "Первичный прием", label: "first_visit"},
-        {onClick: () => navigate('/doctor/second_visit'), text: "Заключительный прием", label: "second_visit"},
+        {onClick: () => navigate('/doctor/first_visit'), text: "Первичн. прием", label: "first_visit"},
+        {onClick: () => navigate('/doctor/second_visit'), text: "Заключит. прием", label: "second_visit"},
         {onClick: () => navigate('/doctor/dairies'), text: "Дневники", label: "dairies"},
         {onClick: () => navigate('/doctor/medical_stories'), text: "Истории болезни", label: "medical_stories"}
     ];
@@ -208,105 +217,212 @@ const FirstVisitPersonDoctor = () => {
             <SideBar activeItem={"first_visit"} items={sideBarItems}/>
             <div className={styles['content-container']}>
 
-                <Header name={'Иванова Анастасия Сергеевна'} post={'Врач'}/>
+                <Header name={'Фролова Клавдия Алексеевна'} post={'Врач'}/>
 
                 <div className={styles['main-container']}>
-                    <div className={self_styles['title2']}>Первичный прием</div>
-                    <div className={self_styles['person-container']}>
-                        <InputString text={'ФИО'} value={empty_string} label={''} isEdit={false}/>
-                        <DatePicker text={"Дата рождения"} value={empty_string}
-                                    isEdit={false}/>
-                        <DropdownList text={'Пол'} value={empty_string} label={''} options={genderList} isEdit={false}/>
+
+                    <div className={styles['table-title']}>
+                        Первичный прием
                     </div>
 
-                    <div className={self_styles['container1']}>
-                        <DatePicker text={"Дата осмотра"} value={viewDate} isEdit={false}/>
-                        <TimePicker text={"Время начала осмотра"} value={viewTime} onSelect={setViewTime}/>
+                    <div className={styles['person-container']}>
+                        <div className={styles['containers-00']}>
+
+                            <div className={styles['fields-container']}>
+                                <div className={styles['field']}>
+                                    <InputBigText text={'Фамилия*'} value={'Старушкова'} label={''} />
+                                </div>
+                                <div className={styles['field']}>
+                                    <InputBigText text={'Имя*'} value={'Елена'} />
+
+                                </div>
+                                <div className={styles['field']}>
+                                    <InputBigText text={'Отчество'} value={'Георгиевна'} />
+                                </div>
+                            </div>
+
+
+                            <div className={styles['fields-container']}>
+                                <div className={styles['field']}>
+                                    <DropdownList text={'Пол'} value={'female'} label={''} options={genderList} isEdit={true}/>
+                                </div>
+
+                                <div className={styles['field']}>
+                                    <DatePicker text={"Дата осмотра"} value={viewDate} isEdit={false}/>
+                                </div>
+                                <div className={styles['field']}>
+                                    <TimePicker text={"Время начала осмотра"} value={'12:30'} onSelect={setViewTime}/>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <div className={self_styles['container2']}>
-                        <InputText text={"Жалобы"} value={complaints} label={''} onChange={setComplaints}/>
-                        <InputText text={"История заболевания"} value={medicalStory} label={''}
+
+                    <div className={styles['container2']}>
+                        <InputBigText text={"Жалобы"} value={complaints} label={''} onChange={setComplaints}/>
+                        <InputBigText text={"История заболевания"} value={medicalStory} label={''}
                                    onChange={setMedicalStory}/>
                     </div>
-                    <div className={self_styles['title2']}>Анамнез жизни</div>
-                    <div className={self_styles['container2']}>
-                        <InputText text={"Наследственность"} value={genetics} label={''} onChange={setGenetics}/>
-                        <InputText text={"Аллергологический анамнез"} value={allergy} label={''} onChange={setAllergy}/>
-                        <InputText text={"Перенесенные заболевания"} value={previousIlls} label={''}
-                                   onChange={setPreviousIlls}/>
+                    <div className={styles['table-title']}>Анамнез жизни</div>
+                    <div className={styles['container2']}>
+                        <div className={styles['containers-00']}>
+
+                            <div className={styles['fields-container']}>
+                                <div className={styles['field']}>
+                                    <DropdownList text={'Гепатит'} options={hepatitisList} value={hepatitis} label={''}
+                                                  onSelect={setHepatitis}/>
+                                </div>
+                            </div>
+
+
+                            <div className={styles['fields-container']}>
+                                <div className={styles['field']}>
+                                    <DropdownList text={'Туберкулез'} options={hepatitisList} value={hepatitis} label={''}
+                                                  onSelect={setHepatitis}/>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div className={styles['container2']}>
+                            <InputBigText text={"Аллергологический анамнез"} value={allergy} label={''} onChange={setAllergy}/>
+                            <InputBigText text={"Наследственность"} value={genetics} label={''} onChange={setGenetics}/>
+                            <InputBigText text={"Перенесенные заболевания"} value={previousIlls} label={''}
+                                          onChange={setPreviousIlls}/>
+                            <InputBigText text={'Кожно-венерические заболевания'} value={venerealIlls} label={''}
+                                       onChange={setVenerealIlls}/>
+                            <InputBigText text={'Операции'} value={operations} label={''} onChange={setOperations}/>
+                        </div>
                         <Checkbox text={'Туберкулез'} value={tuberculosis} onChange={setTuberculosis}/>
                         <DropdownList text={'Гепатит'} options={hepatitisList} value={hepatitis} label={''}
                                       onSelect={setHepatitis}/>
-                        <InputString text={'Кожно-венерические заболевания'} value={venerealIlls} label={''}
-                                     onChange={setVenerealIlls}/>
-                        <InputText text={'Операции'} value={operations} label={''} onChange={setOperations}/>
-                        <div className={self_styles['title3']}>Вредные привычки</div>
-                        <div className={self_styles['container3']}>
+
+                        <div className={styles['title3']}>Вредные привычки</div>
+                        <div className={styles['container3']}>
                             <Checkbox text={'Курение'} value={smoking} onChange={setSmoking}/>
                             <Checkbox text={'Алкоголь'} value={alcohol} onChange={setAlcohol}/>
                         </div>
 
-                        <div className={gender == 'male' ? self_styles['hidden'] : self_styles['title3']}>Менструации
+                        <div className={gender == 'male' ? styles['hidden'] : styles['title3']}>Менструации
                         </div>
-                        <div className={gender == 'male' ? self_styles['hidden'] : self_styles['container3']}>
+                        <div className={gender == 'male' ? styles['hidden'] : styles['container3']}>
                             <Checkbox text={'Регулярно'} value={menstruationReg} onChange={setMenstruationReg}/>
                             <DatePicker text={"Последняя менструация"} value={lastMenstruation}
                                         onSelect={setLastMenstruation} maxDate={viewDate}/>
-                            <InputString text={'Менопауза'} value={menopause} label={''} onChange={setMenopause}/>
+                            <InputBigText text={'Менопауза'} value={menopause} label={''} onChange={setMenopause}/>
                         </div>
 
                     </div>
 
-                    <div className={self_styles['title2']}>Данные объективного исследования</div>
+                    <div className={styles['table-title']}>Данные объективного исследования</div>
 
-                    <div className={self_styles['container2']}>
-                        <DropdownList text={'Общее состояние'} options={statesList} value={general} label={''}
-                                      onSelect={setGeneral}/>
-                        <DropdownList text={'Телосложение'} options={bodiesList} value={body} label={''}
-                                      onSelect={setBody}/>
-                        <div className={self_styles['title3']}>Koжные покровы</div>
-                        <div className={self_styles['container3']}>
-                            <div className={self_styles['container4']}>
-                                <DropdownList text={'Кожные покровы'} value={skin} label={''}
-                                              options={[{id: 'clear', fullName: "Чистые"},
-                                                  {id: 'rash', fullName: "С высыпаниями"}]} onSelect={setSkin}/>
-                                <InputString isHidden={skin != 'rash'} value={skinRashDetails} label={''}
-                                             onChange={setSkinRashDetails}/>
-                            </div>
-                            <DropdownList text={'Влажность кожи'} options={[{id: 'normal', fullName: "Нормальная"},
-                                {id: 'dry', fullName: "Пониженная"},
-                                {id: 'wet', fullName: "Повышенная"}]}
-                                          value={skinWetness} label={''} onSelect={setSkinWetness}/>
+                    <div className={styles['container2']}>
+                        <div className={styles['containers-00']}>
 
-                            <InputNumber text={'Пульс, уд. в мин.'} value={pulse} label={''} onChange={setPulse}/>
-                            <InputString text={'Артериальное давление, мм рт. ст.'} value={pressure} label={''}
-                                         onChange={setPressure}/>
-                        </div>
-                        <div className={self_styles['title3']}>Дыхание</div>
+                            <div className={styles['fields-container']}>
+                                <div className={styles['field']}>
+                                    <DropdownList text={'Общее состояние'} options={statesList} value={general} label={''}
+                                        onSelect={setGeneral}/>
+                                </div>
+                                <div className={styles['field']}>
+                                    <DropdownList text={'Кожные покровы'} value={skin} label={''}
+                                                  options={[{id: 'clear', fullName: "Чистые"},
+                                                      {id: 'rash', fullName: "С высыпаниями"}]} onSelect={setSkin}/>
+                                </div>
+                                <div className={styles['field']}>
+                                    <InputNumber text={'Пульс, уд. в мин.'} value={pulse} label={''} onChange={setPulse}/>
+                                </div>
+                            </div>
 
-                        <div className={self_styles['container3']}>
-                            <div className={self_styles['container4']}>
-                                <DropdownList options={[{id: 'vesicular', fullName: "Визикулярное"},
-                                    {id: 'rigid', fullName: "Жёсткое"},
-                                    {id: 'weak', fullName: "Ослабленное"}]}
-                                              value={breathType} label={''} onSelect={setBreathType}/>
-                                <InputString isHidden={breathType != 'rigid' && breathType != 'weak'}
-                                             value={breathTypeDetails} label={''} onChange={setBreathTypeDetails}/>
+
+                            <div className={styles['fields-container']}>
+                                <div className={styles['field']}>
+                                    <DropdownList text={'Телосложение'} options={bodiesList} value={body} label={''}
+                                                  onSelect={setBody}/>
+                                </div>
+                                <div className={styles['field']}>
+                                    <DropdownList text={'Влажность кожи'} options={[{id: 'normal', fullName: "Нормальная"},
+                                        {id: 'dry', fullName: "Пониженная"},
+                                        {id: 'wet', fullName: "Повышенная"}]}
+                                                  value={skinWetness} label={''} onSelect={setSkinWetness}/>
+                                </div>
+                                <div className={styles['field']}>
+                                    <InputBigText text={'Артериальное давление, мм рт. ст.'} value={pressure} label={''}
+                                                  onChange={setPressure}/>
+                                </div>
                             </div>
-                            <div className={self_styles['container4']}>
-                                <DropdownList text={'Хрипы'} options={[{id: 'not', fullName: "Нет"},
-                                    {id: 'dry', fullName: "Сухие"},
-                                    {id: 'wet', fullName: "Влажные"}]}
-                                              value={rales} label={''} onSelect={setRales}/>
-                                <InputString isHidden={rales != 'dry' && rales != 'wet'} value={ralesDetails} label={''}
-                                             onChange={setRalesDetails}/>
-                            </div>
-                            <InputNumber text={'Частота дыхания, в мин.'} value={breathRate} label={''}
-                                         onChange={setBreathRate}/>
                         </div>
 
-                        <div className={self_styles['title3']}>Тоны сердца</div>
-                        <div className={self_styles['container3']}>
+
+                        <div className={styles['table-title--0']}>Дыхание</div>
+
+                        <div className={styles['container3']}>
+                            <div className={styles['containers-00']}>
+
+                                <div className={styles['fields-container']}>
+                                    <div className={styles['field']}>
+                                        <DropdownList text={'Тип дыхания'} options={[{id: 'vesicular', fullName: "Визикулярное"},
+                                            {id: 'rigid', fullName: "Жёсткое"},
+                                            {id: 'weak', fullName: "Ослабленное"}]}
+                                                      value={breathType} label={''} onSelect={setBreathType}/>
+                                    </div>
+                                    <div className={styles['field']}>
+                                        <InputNumber text={'Частота дыхания, в мин.'} value={breathRate} label={''}
+                                                     onChange={setBreathRate}/>
+                                    </div>
+
+                                </div>
+
+
+                                <div className={styles['fields-container']}>
+                                    <div className={styles['field']}>
+                                        <DropdownList text={'Хрипы'} options={[{id: 'not', fullName: "Нет"},
+                                            {id: 'dry', fullName: "Сухие"},
+                                            {id: 'wet', fullName: "Влажные"}]}
+                                                      value={rales} label={''} onSelect={setRales}/>
+                                    </div>
+                                    <div className={styles['field']}>
+
+                                    </div>
+
+                                </div>
+                            </div>
+
+
+                        </div>
+
+                        <div className={styles['table-title--1']}>Тоны сердца</div>
+                        <div className={styles['container3']}>
+
+                            <div className={styles['containers-00']}>
+
+                                <div className={styles['fields-container']}>
+                                    <div className={styles['field']}>
+                                        <InputNumber text={'Частота дыхания, в мин.'} value={breathRate} label={''}
+                                                     onChange={setBreathRate}/>
+
+                                    </div>
+                                    <div className={styles['field']}>
+                                        <DropdownList options={[{id: 'clear', fullName: "Ясные"},
+                                            {id: 'muted', fullName: "Приглушенные"}]} value={heartClarity} label={''}
+                                                      onSelect={setHeartClarity}/>
+                                    </div>
+
+                                </div>
+
+
+                                <div className={styles['fields-container']}>
+                                    <div className={styles['field']}>
+                                        <DropdownList text={'Тоны сердца'}  options={[{id: 'rhythmic', fullName: "Ритмичные"},
+                                            {id: 'arrhythmic', fullName: "Аритмичные"}]}
+                                                      value={heartRhythm} label={''} onSelect={setHeartRhythm}/>
+
+                                    </div>
+                                    <div className={styles['field']}>
+
+                                    </div>
+
+                                </div>
+                            </div>
+
                             <DropdownList options={[{id: 'rhythmic', fullName: "Ритмичные"},
                                 {id: 'arrhythmic', fullName: "Аритмичные"}]}
                                           value={heartRhythm} label={''} onSelect={setHeartRhythm}/>
@@ -316,66 +432,66 @@ const FirstVisitPersonDoctor = () => {
                             <InputNumber text={'Частота сердечных сокращений, в мин.'} value={heartRate} label={''}
                                          onChange={setHeartRate}/>
 
-                            <div className={self_styles['container4']}>
+                            <div className={styles['container4']}>
                                 <DropdownList text={'Шумы'} options={[{id: 'not', fullName: "Нет"},
                                     {id: 'systolic', fullName: "Систолические"},
                                     {id: 'diastolic', fullName: "Диастолические"}]}
                                               value={heartMurmurs} label={''} onSelect={setHeartMurmurs}/>
-                                <InputString isHidden={heartMurmurs != 'systolic' && heartMurmurs != 'diastolic'}
-                                             value={heartMurmursDetails} label={''} onChange={setHeartMurmursDetails}/>
+                                <InputBigText isHidden={heartMurmurs != 'systolic' && heartMurmurs != 'diastolic'}
+                                              value={heartMurmursDetails} label={''} onChange={setHeartMurmursDetails}/>
                             </div>
 
-                            <div className={self_styles['container4']}>
+                            <div className={styles['container4']}>
                                 <DropdownList text={'Акцент'} options={[{id: 'not', fullName: "Нет"},
                                     {id: 'has', fullName: "Есть"}]} value={accents} label={''} onSelect={setAccents}/>
-                                <InputString isHidden={accents != 'has'} value={accentsDetails} label={''}
-                                             onChange={setAccentsDetails}/>
+                                <InputBigText isHidden={accents != 'has'} value={accentsDetails} label={''}
+                                              onChange={setAccentsDetails}/>
                             </div>
                         </div>
 
-                        <div className={self_styles['title3']}>Язык</div>
-                        <div className={self_styles['container3']}>
+                        <div className={styles['title3']}>Язык</div>
+                        <div className={styles['container3']}>
                             <DropdownList options={[{id: 'wet', fullName: "Влажный"},
                                 {id: 'dry', fullName: "Сухой"}]} value={tongueWetness} label={''}
                                           onSelect={setTongueWetness}/>
-                            <div className={self_styles['container4']}>
+                            <div className={styles['container4']}>
                                 <DropdownList text={'Налет'} options={[{id: 'clear', fullName: "Чистый"},
                                     {id: 'raid', fullName: "Обложен налетом"}]} value={tongueRaid} label={''}
                                               onSelect={setTongueRaid}/>
-                                <InputString isHidden={tongueRaid != 'raid'} value={tongueRaidDetails} label={''}
-                                             onChange={setTongueRaidDetails}/>
+                                <InputBigText isHidden={tongueRaid != 'raid'} value={tongueRaidDetails} label={''}
+                                              onChange={setTongueRaidDetails}/>
                             </div>
                         </div>
 
-                        <div className={self_styles['title3']}>Живот при пульпации</div>
-                        <div className={self_styles['container3']}>
+                        <div className={styles['title3']}>Живот при пульпации</div>
+                        <div className={styles['container3']}>
                             <DropdownList options={[{id: 'soft', fullName: "Мягкий"},
                                 {id: 'tense', fullName: "Напряженный"}]} value={bellySoftness} label={''}
                                           onSelect={setBellySoftness}/>
-                            <div className={self_styles['container4']}>
+                            <div className={styles['container4']}>
                                 <DropdownList options={painList} value={bellyPainnnes} label={''}
                                               onSelect={setBellyPainnnes}/>
-                                <InputString isHidden={bellyPainnnes != 'painful'} value={bellyPainnnesDetails}
-                                             label={''} onChange={setBellyPainnnesDetails}/>
+                                <InputBigText isHidden={bellyPainnnes != 'painful'} value={bellyPainnnesDetails}
+                                              label={''} onChange={setBellyPainnnesDetails}/>
                             </div>
                         </div>
 
-                        <div className={self_styles['title3']}>Печень</div>
-                        <div className={self_styles['container3']}>
-                            <div className={self_styles['container4']}>
+                        <div className={styles['title3']}>Печень</div>
+                        <div className={styles['container3']}>
+                            <div className={styles['container4']}>
                                 <DropdownList options={[{id: 'normal', fullName: "Неувеличенная"},
                                     {id: 'increase', fullName: "Увеличенная"}]} value={liverSize} label={''}
                                               onSelect={setLiverSize}/>
-                                <InputString isHidden={liverSize != 'increase'}
-                                             text={'Выступает из-за края ребер на, см'} value={liverSizeDetails}
-                                             label={''} onChange={setLiverSizeDetails}/>
+                                <InputBigText isHidden={liverSize != 'increase'}
+                                              text={'Выступает из-за края ребер на, см'} value={liverSizeDetails}
+                                              label={''} onChange={setLiverSizeDetails}/>
                             </div>
                             <DropdownList options={painList} value={liverPainness} label={''}
                                           onSelect={setLiverPainness}/>
                         </div>
 
-                        <div className={self_styles['title3']}>Почки</div>
-                        <div className={self_styles['container3']}>
+                        <div className={styles['title3']}>Почки</div>
+                        <div className={styles['container3']}>
                             <DropdownList text={'Симпатические покалачивания по поясничной области'}
                                           options={[{id: 'neg', fullName: "Негативное"},
                                               {id: 'left', fullName: "Позитивное слева"},
@@ -390,35 +506,35 @@ const FirstVisitPersonDoctor = () => {
                                 {id: 'difficult', fullName: "Затрудненное"}]} value={urinationFreeness} label={''}
                                           onSelect={setUrinationFreeness}/>
                         </div>
-                        <div className={self_styles['container4']}>
+                        <div className={styles['container4']}>
                             <DropdownList text={'Периферичные отеки'} options={[{id: 'has', fullName: "Есть"},
                                 {id: 'not', fullName: "Нет"}]} value={edema} label={''} onSelect={setEdema}/>
-                            <InputString isHidden={edema != 'has'} value={edemaDetails} label={''}
-                                         onChange={setEdemaDetails}/>
+                            <InputBigText isHidden={edema != 'has'} value={edemaDetails} label={''}
+                                          onChange={setEdemaDetails}/>
                         </div>
 
-                        <div className={self_styles['title3']}>Стул</div>
-                        <div className={self_styles['container3']}>
+                        <div className={styles['title3']}>Стул</div>
+                        <div className={styles['container3']}>
                             <DropdownList options={[{id: 'dec', fullName: "Оформленный"},
                                 {id: 'not_dec', fullName: "Неоформленный"}]} value={chairDec} label={''}
                                           onSelect={setChairDec}/>
-                            <div className={self_styles['container4']}>
+                            <div className={styles['container4']}>
                                 <DropdownList options={[{id: 'regular', fullName: "Регулярный"},
                                     {id: 'not_regular', fullName: "Нерегулярный"}]} value={chairReg} label={''}
                                               onSelect={setChairReg}/>
-                                <InputString isHidden={chairReg != 'not_regular'} value={chairRegDetails} label={''}
-                                             onChange={setChairRegDetails}/>
+                                <InputBigText isHidden={chairReg != 'not_regular'} value={chairRegDetails} label={''}
+                                              onChange={setChairRegDetails}/>
                             </div>
                         </div>
                     </div>
 
-                    <div className={self_styles['title2']}>Неврологическая статистика</div>
-                    <div className={self_styles['container2']}>
-                        <div className={self_styles['container4']}>
+                    <div className={styles['title2']}>Неврологическая статистика</div>
+                    <div className={styles['container2']}>
+                        <div className={styles['container4']}>
                             <DropdownList text={'Сознание'} options={[{id: 'clear', fullName: "Ясное"},
                                 {id: 'not', fullName: "Нет"}]} value={conscience} label={''} onSelect={setConscience}/>
-                            <InputString isHidden={conscience != 'not'} value={conscienceDetails} label={''}
-                                         onChange={setConscienceDetails}/>
+                            <InputBigText isHidden={conscience != 'not'} value={conscienceDetails} label={''}
+                                          onChange={setConscienceDetails}/>
                         </div>
 
                         <DropdownList text={'Ориентирование в месте, времени, своей личности'}
@@ -426,74 +542,74 @@ const FirstVisitPersonDoctor = () => {
                                           {id: 'false', fullName: "Неправильно"}]} value={orientation} label={''}
                                       onSelect={setOrientation}/>
 
-                        <InputString text={'Черепномозговые нервы'} value={cranialNervous} label={''}
-                                     onChange={setCranialNervous}/>
-                        <InputString text={'Мышечный тонус'} value={muscleTone} label={''} onChange={setMuscleTone}/>
-                        <InputString text={'Мышечная сила'} value={musclePower} label={''} onChange={setMusclePower}/>
-                        <InputString text={'Сухожильные рефлексы'} value={tendonReflexes} label={''}
-                                     onChange={setTendonReflexes}/>
+                        <InputBigText text={'Черепномозговые нервы'} value={cranialNervous} label={''}
+                                      onChange={setCranialNervous}/>
+                        <InputBigText text={'Мышечный тонус'} value={muscleTone} label={''} onChange={setMuscleTone}/>
+                        <InputBigText text={'Мышечная сила'} value={musclePower} label={''} onChange={setMusclePower}/>
+                        <InputBigText text={'Сухожильные рефлексы'} value={tendonReflexes} label={''}
+                                      onChange={setTendonReflexes}/>
 
-                        <div className={self_styles['container4']}>
+                        <div className={styles['container4']}>
                             <DropdownList text={'Чувствительность'} options={[{id: 'normal', fullName: "Не нарушена"},
                                 {id: 'hypo', fullName: "Гипостезия"},
                                 {id: 'hyper', fullName: "Гиперстезия"}]} value={sensitivity} label={''}
                                           onSelect={setSensitivity}/>
-                            <InputString isHidden={sensitivity != 'hypo' && sensitivity != 'hyper'}
-                                         value={sensitivityDetails} label={''} onChange={setSensitivityDetails}/>
+                            <InputBigText isHidden={sensitivity != 'hypo' && sensitivity != 'hyper'}
+                                          value={sensitivityDetails} label={''} onChange={setSensitivityDetails}/>
                         </div>
 
-                        <div className={self_styles['container4']}>
+                        <div className={styles['container4']}>
                             <DropdownList text={'В позе ромберга'} options={[{id: 'stable', fullName: "Устойчивый"},
                                 {id: 'unstable', fullName: "Неустойчивый"}]} value={rombergPose} label={''}
                                           onSelect={setRombergPose}/>
-                            <InputString isHidden={rombergPose != 'unstable'} value={rombergPoseDetails} label={''}
-                                         onChange={setRombergPoseDetails}/>
+                            <InputBigText isHidden={rombergPose != 'unstable'} value={rombergPoseDetails} label={''}
+                                          onChange={setRombergPoseDetails}/>
                         </div>
 
-                        <div className={self_styles['container4']}>
+                        <div className={styles['container4']}>
                             <DropdownList text={'Пальценосовая проба'}
                                           options={[{id: 'good', fullName: "Удовлетворительная"},
                                               {id: 'bad', fullName: "Неудовлетворительная"}]} value={fingerTest}
                                           label={''} onSelect={setFingerTest}/>
-                            <InputString isHidden={fingerTest != 'bad'} value={fingerTestDetails} label={''}
-                                         onChange={setFingerTestDetails}/>
+                            <InputBigText isHidden={fingerTest != 'bad'} value={fingerTestDetails} label={''}
+                                          onChange={setFingerTestDetails}/>
                         </div>
 
-                        <div className={self_styles['container4']}>
+                        <div className={styles['container4']}>
                             <DropdownList text={'Позвоночник'} options={deformList} value={spineDeform} label={''}
                                           onSelect={setSpineDeform}/>
-                            <InputString isHidden={spineDeform != 'has'} value={spineDeformDetails} label={''}
-                                         onChange={setSpineDeformDetails}/>
+                            <InputBigText isHidden={spineDeform != 'has'} value={spineDeformDetails} label={''}
+                                          onChange={setSpineDeformDetails}/>
                         </div>
 
-                        <div className={self_styles['title3']}>Движения в позвоночнике</div>
-                        <div className={self_styles['container3']}>
+                        <div className={styles['title3']}>Движения в позвоночнике</div>
+                        <div className={styles['container3']}>
                             <DropdownList options={[{id: 'unlimit', fullName: "Неограничены"},
                                 {id: 'neck_limit', fullName: "Ограничены в шейном отделе"},
                                 {id: 'chest_limit', fullName: "Ограничены в грудном отделе"},
                                 {id: 'back_limit', fullName: "Ограничены в поясничном отделе"}]}
                                           value={spineMotionLimit} label={''} onSelect={setSpineMotionLimit}/>
-                            <div className={self_styles['container4']}>
+                            <div className={styles['container4']}>
                                 <DropdownList options={painList} value={spineMotionPainness} label={''}
                                               onSelect={setSpineMotionPainness}/>
-                                <InputString isHidden={spineMotionPainness != 'painfull'}
-                                             value={spineMotionPainnessDetails} label={''}
-                                             onChange={setSpineMotionPainnessDetails}/>
+                                <InputBigText isHidden={spineMotionPainness != 'painfull'}
+                                              value={spineMotionPainnessDetails} label={''}
+                                              onChange={setSpineMotionPainnessDetails}/>
                             </div>
                         </div>
 
-                        <div className={self_styles['container4']}>
+                        <div className={styles['container4']}>
                             <DropdownList text={'Пульпация паравертебальных точек'}
                                           options={painList} value={paravertebralPoints} label={''}
                                           onSelect={setParavertebralPoints}/>
-                            <InputString isHidden={paravertebralPoints != 'painful'} value={paravertebralPointsDetails}
-                                         label={''} onChange={setParavertebralPointsDetails}/>
+                            <InputBigText isHidden={paravertebralPoints != 'painful'} value={paravertebralPointsDetails}
+                                          label={''} onChange={setParavertebralPointsDetails}/>
                         </div>
 
-                        <div className={self_styles['title3']}>
+                        <div className={styles['title3']}>
                             Симптом Ласега
                         </div>
-                        <div className={self_styles['container3']}>
+                        <div className={styles['container3']}>
                             <InputNumber text={'Справа'} value={lasegaSypthomRight} label={''}
                                          onChange={setLasegaSypthomRight}/>
                             <InputNumber text={'Слева'} value={lasegaSypthomLeft} label={''}
@@ -501,66 +617,66 @@ const FirstVisitPersonDoctor = () => {
                         </div>
 
 
-                        <div className={self_styles['title3']}>
+                        <div className={styles['title3']}>
                             Суставы
                         </div>
-                        <div className={self_styles['container3']}>
-                            <div className={self_styles['container4']}>
+                        <div className={styles['container3']}>
+                            <div className={styles['container4']}>
                                 <DropdownList options={deformList} value={jointsDeform} label={''}
                                               onSelect={setJointsDeform}/>
-                                <InputString isHidden={jointsDeform != 'has'} value={jointsDeformDetails} label={''}
-                                             onChange={setJointsDeformDetails}/>
+                                <InputBigText isHidden={jointsDeform != 'has'} value={jointsDeformDetails} label={''}
+                                              onChange={setJointsDeformDetails}/>
                             </div>
 
-                            <div className={self_styles['container4']}>
+                            <div className={styles['container4']}>
                                 <DropdownList text={'Пульпация суставов'} options={painList}
                                               value={jointsPalpationPainness} label={''}
                                               onSelect={setJointsPalpationPainness}/>
-                                <InputString isHidden={jointsPalpationPainness != 'painful'}
-                                             value={jointsPalpationPainnessDetails} label={''}
-                                             onChange={setJointsPalpationPainnessDetails}/>
+                                <InputBigText isHidden={jointsPalpationPainness != 'painful'}
+                                              value={jointsPalpationPainnessDetails} label={''}
+                                              onChange={setJointsPalpationPainnessDetails}/>
                             </div>
-                            <div className={self_styles['container4']}>
+                            <div className={styles['container4']}>
                                 <DropdownList text={'Активные движения в суставах'} options={painList}
                                               value={jointsMotionPainness} label={''}
                                               onSelect={setJointsMotionPainness}/>
-                                <InputString isHidden={jointsMotionPainness != 'painful'}
-                                             value={jointsMotionPainnessDetails} label={''}
-                                             onChange={setJointsMotionPainnessDetails}/>
+                                <InputBigText isHidden={jointsMotionPainness != 'painful'}
+                                              value={jointsMotionPainnessDetails} label={''}
+                                              onChange={setJointsMotionPainnessDetails}/>
                             </div>
-                            <div className={self_styles['container4']}>
+                            <div className={styles['container4']}>
                                 <DropdownList text={'Активные движения в суставах'}
                                               options={[{id: 'full', fullName: "В полном объеме"},
                                                   {id: 'limit', fullName: "Ограничены"}]} value={jointsMotionVolume}
                                               label={''} onSelect={setJointsMotionVolume}/>
-                                <InputString isHidden={jointsMotionVolume != 'limit'} value={jointsMotionVolumeDetails}
-                                             label={''} onChange={setJointsMotionVolumeDetails}/>
+                                <InputBigText isHidden={jointsMotionVolume != 'limit'} value={jointsMotionVolumeDetails}
+                                              label={''} onChange={setJointsMotionVolumeDetails}/>
                             </div>
                         </div>
                     </div>
 
-                    <div className={self_styles['title2']}>
+                    <div className={styles['title2']}>
                         Основной диагноз
                     </div>
-                    <div className={self_styles['container2']}>
-                        <InputString text={'МКБ-10'} value={mainDiagnosisMKB} label={''}
-                                     onChange={setMainDiagnosisMKB}/>
-                        <InputText text={''} value={mainDiagnosis} onChange={setMainDiagnosis}/>
+                    <div className={styles['container2']}>
+                        <InputBigText text={'МКБ-10'} value={mainDiagnosisMKB} label={''}
+                                      onChange={setMainDiagnosisMKB}/>
+                        <InputBigText text={''} value={mainDiagnosis} onChange={setMainDiagnosis}/>
                     </div>
 
-                    <div className={self_styles['title2']}>
+                    <div className={styles['title2']}>
                         Сопутствующий диагноз
                     </div>
-                    <div className={self_styles['container2']}>
-                        <InputString text={'МКБ-10'} value={concomitantDiagnosisMKB} label={''}
-                                     onChange={setConcomitantDiagnosisMKB}/>
-                        <InputText text={''} value={concomitantDiagnosis} onChange={setConcomitantDiagnosis}/>
+                    <div className={styles['container2']}>
+                        <InputBigText text={'МКБ-10'} value={concomitantDiagnosisMKB} label={''}
+                                      onChange={setConcomitantDiagnosisMKB}/>
+                        <InputBigText text={''} value={concomitantDiagnosis} onChange={setConcomitantDiagnosis}/>
                     </div>
-                    <div className={self_styles['title2']}>
+                    <div className={styles['title2']}>
                         Лист назначения
                     </div>
-                    <div className={self_styles['container2']}>
-                        <InputText text={''} value={therapyPlan} onChange={setTherapyPlan}/>
+                    <div className={styles['container2']}>
+                        <InputBigText text={''} value={therapyPlan} onChange={setTherapyPlan}/>
                     </div>
 
                     <br/>
@@ -570,7 +686,7 @@ const FirstVisitPersonDoctor = () => {
                     <Checkbox text={'Лечащий врач все проверил'} value={doctorCheck} onChange={setDoctorCheck}/>
                     {generalError && <p style={{color: "red"}}>{generalError}</p>}
 
-                    <div className={self_styles['rowContainer']}>
+                    <div className={styles['rowContainer']}>
                         <Button color={'violet'} text={'Сохранить'} onClick={() => {
                         }}/>
 

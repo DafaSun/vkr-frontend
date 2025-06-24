@@ -5,8 +5,8 @@ interface IButtonProps{
     text: string
     color?: number|string
     onClick: () => void;
-    width?: number;
-    height?: number;
+    width?: number | string;
+    height?: number | string;
 }
 
 export const Button: React.FC<IButtonProps> = ({width, height, text, onClick, color}) => {

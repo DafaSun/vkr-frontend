@@ -37,7 +37,19 @@ const UsualTourRoomsManager = () => {
     const [guests, setGuests] = useState(Number(searchParams.get("guests")) || Number(defaultParams.guests));
     const [category, setCategory] = useState(searchParams.get("category") || defaultParams.category);
     const [gender, setGender] = useState(searchParams.get("gender") || defaultParams.gender);
-    const [places, setPlaces] = useState<TourPlace[]>([]);
+    const [places, setPlaces] = useState<TourPlace[]>([{
+        place_id: 5,
+        place_name: 'Место 1',
+        room_name: '5 Номер',
+        price: 6000,
+        category_name: "3 - Двухместный номер на 1 этаже в 4 корпусе с удобствами в номере",
+    },{
+        place_id: 6,
+        place_name: 'Место 2',
+        room_name: '5 Номер',
+        price: 6000,
+        category_name: "3 - Двухместный номер на 1 этаже в 4 корпусе с удобствами в номере",
+    }]);
     const [loading, setLoading] = useState(false);
     const [error_r, setError_r] = useState<string | null>(null);
 
@@ -57,24 +69,25 @@ const UsualTourRoomsManager = () => {
     }, [searchParams, setSearchParams]);
 
     useEffect(() => {
-        setLoading(true);
-        searchPlaces()
+        // setLoading(true);
+        // searchPlaces()
     }, []);
 
     const searchPlaces = async () => {
-        try {
-            const response = await axios.get(`http://localhost:8000/api/manager/categories/places/?checkin=${checkin}&checkout=${checkout}&gender=${gender}&guests=${guests}&category=${category}&tour_type=social`);
-            setPlaces(response.data);
-        } catch (error) {
-            if (error instanceof Error) {
-                setError_r(error.message);
-            } else {
-                setError_r("Произошла ошибка");
-            }
-        } finally {
-            setLoading(false);
-        }
+        // try {
+        //     const response = await axios.get(`http://localhost:8000/api/manager/categories/places/?checkin=${checkin}&checkout=${checkout}&gender=${gender}&guests=${guests}&category=${category}&tour_type=social`);
+        //     setPlaces(response.data);
+        // } catch (error) {
+        //     if (error instanceof Error) {
+        //         setError_r(error.message);
+        //     } else {
+        //         setError_r("Произошла ошибка");
+        //     }
+        // } finally {
+        //     setLoading(false);
+        // }
     };
+
 
     const sideBarItems: OneItem[] = [
         {onClick: () => navigate('/manager/tour'), text: "Путевки", label: "tour"},
@@ -82,7 +95,8 @@ const UsualTourRoomsManager = () => {
         {onClick: () => navigate('/manager/bookings'), text: "Брони", label: "bookings"},
         {onClick: () => navigate('/manager/guests'), text: "Отдыхающие", label: "guests"},
         {onClick: () => navigate('/manager/rooms'), text: "Номера", label: "rooms"},
-        {onClick: () => navigate('/manager/info'), text: "Информация", label: "info"}
+        {onClick: () => navigate('/manager/timetable'), text: "Расписания", label: "info"},
+        {onClick: () => navigate('/manager/info'), text: "Информация", label: "info"},
     ];
 
     return (
@@ -93,20 +107,15 @@ const UsualTourRoomsManager = () => {
                 <Header name={'Иванова Анастасия Сергеевна'} post={'Менеджер'}/>
 
                 <div className={styles['main-container']}>
-                    <div className={self_styles['parameters-container']}>
-                        <div className={self_styles['columns-container']}>
-                            <DatePicker value={checkin} text={'Дата заезда'} isEdit={false}/>
-                            <DatePicker value={checkout} text={'Дата отъезда'} isEdit={false}/>
-                            <InputNumber
+                    <div className={self_styles['row-container']}>
+                            <DatePicker value={checkin} text={'Дата заезда'} width={150} isEdit={false}/>
+                            <DatePicker value={checkout} text={'Дата отъезда'} width={150} isEdit={false}/>
+                            <InputNumber width={100}
                                 value={((new Date(checkout)).getTime() - (new Date(checkin)).getTime()) / 86400000}
                                 text={'Кол-во дней'} isEdit={false}/>
-                        </div>
-                        <div className={self_styles['columns-container']}>
-                            <InputNumber value={guests} text={'Кол-во человек'} isEdit={false}/>
-                            <DropdownList text={'Категория'} value={category} options={roomCategoryList}
+                            <DropdownList text={'Категория'}  width={200} value={category} options={roomCategoryList}
                                           isEdit={false}/>
-                            <DropdownList text={'Пол'} value={gender} options={genderList} isEdit={false}/>
-                        </div>
+                            <DropdownList text={'Пол'} width={150} value={gender} options={genderList} isEdit={false}/>
                     </div>
 
                     <div className={self_styles['rooms-container']}>

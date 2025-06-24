@@ -13,7 +13,8 @@ const IndexManager = () => {
         {onClick: () => navigate('/manager/bookings'), text: "Брони", label: "bookings"},
         {onClick: () => navigate('/manager/guests'), text: "Отдыхающие", label: "guests"},
         {onClick: () => navigate('/manager/rooms'), text: "Номера", label: "rooms"},
-        {onClick: () => navigate('/manager/info'), text: "Информация", label: "info"}
+        {onClick: () => navigate('/manager/timetable'), text: "Расписания", label: "info"},
+        {onClick: () => navigate('/manager/info'), text: "Информация", label: "info"},
     ];
 
     return (

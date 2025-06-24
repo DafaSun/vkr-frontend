@@ -1,6 +1,6 @@
 .side-bar-container {
     background-color: var(--sidebar-not-active);
-    width: 14vw;
+    width: var(--sidebar-width);
     height: 100vh;
     display: flex;
     position: fixed;

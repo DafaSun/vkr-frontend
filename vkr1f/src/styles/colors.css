@@ -5,9 +5,11 @@
     --white: #EEEEEE;
     --black: #000000;
     --bright-blue: #42D5EA;
-    --green: #49C9BD;
-    --orange: #F46A4B;
+    --green: #3ff694;
+    --orange: #fa532e;
     --violet: #A78BE7;
+    --bright-green: #5af31d;
+    --red: #d30404;
 
     --light-blue: #c9e1e7;
     --sky-blue: #a5cbd4;
@@ -15,5 +17,4 @@
     --dark-blue: #00005e;
     --dark-beige: #c09f72;
     --light-beige: #e4cf9b;
-    --red: #d4003b;
 }

@@ -1,13 +1,13 @@
 import React, {useEffect, useState} from "react";
 import styles from "./DropdownList.module.css";
 
-interface Person {
+interface Item {
     id: string;
-    fullName: string;
+    name: string;
 }
 
 interface DropdownListProps {
-    options: Person[];
+    options: Item[];
     text?: string;
     label?: string;
     value?: string;

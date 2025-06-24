@@ -1,7 +1,7 @@
 .header-container{
     background-color: white;
-    width: 86vw;
-    height: 12vh;
+    width: calc(100vw - var(--sidebar-width));
+    height: var(--header-height);
     display: flex;
     position: fixed;
     justify-content: space-between;

@@ -3,19 +3,21 @@
     border-radius: var(--border-radius-size);
     padding: var(--normal-padding-size);
     border: 3px solid var(--violet);
-    width: var(--button-width);
+    width: calc(var(--button-width));
     color: black;
     background-color: white;
     font-size: var(--normal-text-size);
+    margin: 10px;
 }
 
 .text {
-    margin: var(--normal-margin-size);
+    /*margin: var(--normal-margin-size);*/
+    margin-left:  calc(var(--normal-margin-size)*2);
     font-size: var(--normal-text-size);
 }
 
 .dropdown-container {
-    margin: var(--normal-margin-size);
+    /*margin: var(--normal-margin-size);*/
     display: flex;
     flex-direction: column;
 }

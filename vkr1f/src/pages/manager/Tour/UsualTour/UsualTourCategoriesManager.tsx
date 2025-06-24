@@ -36,7 +36,18 @@ const UsualTourCategoriesManager = () => {
     const [roomType, setRoomType] = useState<string>(searchParams.get("roomType") || defaultParams.roomType);
     const [guests, setGuests] = useState(Number(searchParams.get("guests")) || Number(defaultParams.guests));
     const [gender, setGender] = useState<string>(searchParams.get("gender") || defaultParams.gender);
-    const [categories, setCategories] = useState<TourCategory[]>([]);
+    const [categories, setCategories] = useState<TourCategory[]>([{
+        category_label: "cat3",
+        category_name: "3 - Двухместный номер на 1 этаже в 4 корпусе с удобствами в номере",
+        available_places: 5,
+        price: 6000,
+    },
+        {
+            category_label: "cat7",
+            category_name: "7 - Двухместный номер на 2 этаже в 6 корпусе с удобствами в номере",
+            available_places: 3,
+            price: 4500,
+        }]);
     const [loading, setLoading] = useState(false);
     const [error_r, setError_r] = useState<string | null>(null);
 
@@ -95,6 +106,8 @@ const UsualTourCategoriesManager = () => {
     const today = new Date();
     const minDate = today.toISOString().split("T")[0];
     const maxDate = new Date(today.setMonth(today.getMonth() + 18)).toISOString().split("T")[0];
+    const dateWidth = '100px';
+
 
     const sideBarItems: OneItem[] = [
         {onClick: () => navigate('/manager/tour'), text: "Путевки", label: "tour"},
@@ -102,7 +115,8 @@ const UsualTourCategoriesManager = () => {
         {onClick: () => navigate('/manager/bookings'), text: "Брони", label: "bookings"},
         {onClick: () => navigate('/manager/guests'), text: "Отдыхающие", label: "guests"},
         {onClick: () => navigate('/manager/rooms'), text: "Номера", label: "rooms"},
-        {onClick: () => navigate('/manager/info'), text: "Информация", label: "info"}
+        {onClick: () => navigate('/manager/timetable'), text: "Расписания", label: "info"},
+        {onClick: () => navigate('/manager/info'), text: "Информация", label: "info"},
     ];
 
     return (
@@ -115,30 +129,24 @@ const UsualTourCategoriesManager = () => {
                 <div className={styles['main-container']}>
                     <div className={styles['filters-container']}>
                         <div className={styles['row-container']}>
-                            <DatePicker text={"Выберите дату заезда"} value={checkin} onSelect={handleCheckinChange}
+                            <DatePicker text={"Выберите дату заезда"} value={checkin} width={150} onSelect={handleCheckinChange}
                                         minDate={minDate} maxDate={maxDate}/>
-                            <DatePicker text={"Выберите дату отъезда"} value={checkout} onSelect={handleCheckoutChange}
+                            <DatePicker text={"Выберите дату отъезда"} value={checkout} width={150}  onSelect={handleCheckoutChange}
                                         minDate={checkin} maxDate={maxDate}/>
-                            <InputNumber text={'Введите кол-во дней'} isEdit={false}
+                            <InputNumber isEdit={false} text={'Кол-во дней'} width={100}
                                          value={((new Date(checkout)).getTime() - (new Date(checkin)).getTime()) / 86400000}
                                          label={''}/>
-                        </div>
-                        <div className={styles['row-container']}>
-                            <DropdownList options={roomTypeList} value={roomType} label={'Выберите тип размещения'}
-                                          text={'Выберите тип размещения из списка'} onSelect={data => {
+                            <DropdownList options={roomTypeList} value={roomType} width={250} label={'Выберите тип размещения'}
+                                          text={'Выберите тип размещения'} onSelect={data => {
                                 setRoomType(data);
                                 updateUrl("roomType", data);
                             }}/>
-                            <DropdownList options={genderList} value={gender} label={'Выберите пол'}
-                                          text={'Выберите пол из списка'} onSelect={data => {
+                            <DropdownList options={genderList} value={gender} width={150} label={'Выберите пол'}
+                                          text={'Выберите пол'} onSelect={data => {
                                 setGender(data);
                                 updateUrl("gender", data);
                             }}/>
-                            <InputNumber text={'Введите кол-во человек'} value={guests} onChange={data => {
-                                setGuests(data);
-                                updateUrl("guests", data);
-                            }} min={1} max={3} label={''}/>
-                            <Button color={'blue'} text={'Search'} onClick={searchClick}/>
+                            <Button color={'blue'} text={'Search'} width={200} onClick={searchClick}/>
                         </div>
                     </div>
                     <div className={self_styles['rooms-container']}>

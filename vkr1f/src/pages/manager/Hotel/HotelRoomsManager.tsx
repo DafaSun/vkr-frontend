@@ -1,6 +1,5 @@
 import {useEffect, useState} from "react";
-import styles from '../../css/Index.module.css';
-import self_styles from './HotelManager.module.css';
+import styles from './HotelRoomsManager.module.css';
 import {SideBar} from "../../../components/SideBar/SideBar.tsx";
 import {Header} from "../../../components/Header/Header.tsx";
 import {Button} from "../../../components/buttons/Button/Button.tsx";
@@ -10,7 +9,7 @@ import {DatePicker} from "../../../components/inputs/DatePicker/DatePicker.tsx";
 import {DropdownList} from "../../../components/inputs/DropdownList/DpropdownList.tsx";
 import {InputNumber} from "../../../components/inputs/InputNumber/InputNumber.tsx";
 import axios from "axios";
-import {genderList, roomCategoryList} from "../../../mocks/mock.tsx";
+import {genderList, roomCategoryList, roomTypeList} from "../../../mocks/mock.tsx";
 
 interface HotelPlace {
     place_id: number
@@ -37,7 +36,24 @@ const HotelRoomsManager = () => {
     const [guests, setGuests] = useState(Number(searchParams.get("guests")) || Number(defaultParams.guests));
     const [category, setCategory] = useState(searchParams.get("category") || defaultParams.category);
     const [gender, setGender] = useState(searchParams.get("gender") || defaultParams.gender);
-    const [places, setPlaces] = useState<HotelPlace[]>([]);
+    const [places, setPlaces] = useState<HotelPlace[]>([
+        { place_id: 10000,
+            place_name: 'Место 102/1',
+            room_name: 'Номер 102',
+            price: 3000,
+            category_name: '2 - Двухместный номер на 1 этаже в 4 корпусе с удобствами в блоке'},
+        { place_id: 100060,
+            place_name: 'Место 102/2',
+            room_name: 'Номер 102',
+            price: 3000,
+            category_name: '2 - Двухместный номер на 1 этаже в 4 корпусе с удобствами в блоке'},
+        { place_id: 100067,
+            place_name: 'Место 112/1',
+            room_name: 'Номер 112',
+            price: 3000,
+            category_name: '2 - Двухместный номер на 1 этаже в 4 корпусе с удобствами в блоке'
+    },
+    ]);
     const [loading, setLoading] = useState(false);
     const [error_r, setError_r] = useState<string | null>(null);
 
@@ -57,24 +73,25 @@ const HotelRoomsManager = () => {
     }, [searchParams, setSearchParams]);
 
     useEffect(() => {
-        setLoading(true);
-        searchPlaces()
+        // setLoading(true);
+        // searchPlaces()
     }, []);
 
-    const searchPlaces = async () => {
-        try {
-            const response = await axios.get(`http://localhost:8000/api/manager/categories/places/?checkin=${checkin}&checkout=${checkout}&gender=${gender}&guests=${guests}&category=${category}&tour_type=hotel`);
-            setPlaces(response.data);
-        } catch (error) {
-            if (error instanceof Error) {
-                setError_r(error.message);
-            } else {
-                setError_r("Произошла ошибка");
-            }
-        } finally {
-            setLoading(false);
-        }
-    };
+    // const searchPlaces = async () => {
+    //     try {
+    //         const response = await axios.get(`http://localhost:8000/api/manager/categories/places/?checkin=${checkin}&checkout=${checkout}&gender=${gender}&guests=${guests}&category=${category}&tour_type=hotel`);
+    //         setPlaces(response.data);
+    //     } catch (error) {
+    //         if (error instanceof Error) {
+    //             setError_r(error.message);
+    //         } else {
+    //             setError_r("Произошла ошибка");
+    //         }
+    //     } finally {
+    //         setLoading(false);
+    //     }
+    // };
+
 
     const sideBarItems: OneItem[] = [
         {onClick: () => navigate('/manager/tour'), text: "Путевки", label: "tour"},
@@ -82,7 +99,8 @@ const HotelRoomsManager = () => {
         {onClick: () => navigate('/manager/bookings'), text: "Брони", label: "bookings"},
         {onClick: () => navigate('/manager/guests'), text: "Отдыхающие", label: "guests"},
         {onClick: () => navigate('/manager/rooms'), text: "Номера", label: "rooms"},
-        {onClick: () => navigate('/manager/info'), text: "Информация", label: "info"}
+        {onClick: () => navigate('/manager/timetable'), text: "Расписания", label: "info"},
+        {onClick: () => navigate('/manager/info'), text: "Информация", label: "info"},
     ];
 
     return (
@@ -93,50 +111,60 @@ const HotelRoomsManager = () => {
                 <Header name={'Иванова Анастасия Сергеевна'} post={'Менеджер'}/>
 
                 <div className={styles['main-container']}>
-                    <div className={self_styles['parameters-container']}>
-                        <div className={self_styles['columns-container']}>
-                            <DatePicker value={checkin} text={'Дата заезда'} isEdit={false}/>
-                            <DatePicker value={checkout} text={'Дата отъезда'} isEdit={false}/>
-                            <InputNumber
-                                value={((new Date(checkout)).getTime() - (new Date(checkin)).getTime()) / 86400000}
-                                text={'Кол-во дней'} isEdit={false}/>
-                        </div>
-                        <div className={self_styles['columns-container']}>
-                            <InputNumber value={guests} text={'Кол-во человек'} isEdit={false}/>
-                            <DropdownList text={'Категория'} value={category} options={roomCategoryList}
-                                          isEdit={false}/>
-                            <DropdownList text={'Пол'} value={gender} options={genderList} isEdit={false}/>
-                        </div>
+
+                    <div className={styles['table-title']}>
+                        Номера\места в категории
+
                     </div>
 
-                    <div className={self_styles['rooms-container']}>
+                    <div className={styles['table-title00']}>
+                        2 - Двухместный номер на 1 этаже в 4 корпусе с удобствами в блоке
+                    </div>
+
+                    <div className={styles['row-container']}>
+                        <DatePicker value={checkin} text={'Дата заезда'} isEdit={false} width={210}/>
+                        <DatePicker value={checkout} text={'Дата отъезда'} isEdit={false} width={210}/>
+                        <InputNumber
+                            value={((new Date(checkout)).getTime() - (new Date(checkin)).getTime()) / 86400000}
+                            text={'Кол-во дней'} isEdit={false} width={130}/>
+                        <DropdownList text={'Категория'} value={category} options={roomCategoryList}
+                                      isEdit={false} width={290}/>
+                        <DropdownList text={'Пол'} value={gender} options={genderList} isEdit={false} width={180}/>
+                    </div>
+
+                    <div className={styles['rooms-container']}>
                         {loading ? (
                             <p>Загрузка...</p>
                         ) : error_r ? (
                             <p style={{color: "red"}}>{error_r}</p>
                         ) : places.length > 0 ? (
-                            places.map(place => (
-                                <div key={place.place_id} className={self_styles['room-container']}>
-                                    <img src="/images/rooms/room1.jpg"/>
-                                    <div className={self_styles['room-description']}>
-                                        <div className={self_styles['room-title']}>
-                                            {place.room_name} - {place.place_name}
-                                            <br/>
-                                            {place.category_name}
+                            places.map(category => (
+                                <div key={category.place_id} className={styles['category-room-container']}>
+                                    <img
+                                        src={"/images/rooms/img_room_3.png" }/>
+                                    <div className={styles['room-description']}>
+                                        <div
+                                            className={styles['room-title1']}> <b>Место:</b> {category.place_name}
                                         </div>
-                                        <div className={self_styles['price']}>
-                                            {place.price} руб.
+                                        <div
+                                            className={styles['room-title2']}> <b>Номер:</b> {category.room_name}
                                         </div>
-                                        <Button color={'green'} text={'Забронировать'} onClick={() => {
-                                            navigate(`/manager/hotel/rooms-in-category/booking?checkin=${checkin}&checkout=${checkout}&guests=${guests}&category=${category}&place=${place.place_id}&place_name=${place.place_name}&gender=${gender}&price=${place.price}`);
-                                        }}/>
+
+                                        <div className={styles['room-flex']}>
+                                            <div className={styles['price']}>{category.price} руб.</div>
+                                            <Button color={'green'} text={'Забронировать'} onClick={() => {
+                                                navigate(`/manager/hotel/rooms-in-category/booking?checkin=${checkin}&checkout=${checkout}&guests=${guests}&category=${category}&place=${category.place_id}&place_name=${category.place_name}&gender=${gender}&price=${category.price}`);
+                                            }}/>
+                                        </div>
                                     </div>
                                 </div>
                             ))
                         ) : (
-                            <p>Нет доступных номеров</p>
+                            <p>Нет доступных категорий</p>
                         )}
                     </div>
+
+
                 </div>
             </div>
         </div>

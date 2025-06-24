@@ -1,5 +1,4 @@
-import styles from '../../css/Index.module.css'
-import self_styles from './FirstVisitDoctor.module.css'
+import styles from './FirstVisitDoctor.module.css'
 import {SideBar} from "../../../components/SideBar/SideBar.tsx";
 import {Header} from "../../../components/Header/Header.tsx"
 import {OneItem} from "../../../types/SideBarItem.tsx";
@@ -8,21 +7,15 @@ import {InputText} from "../../../components/inputs/InputText/InputText.tsx";
 import {Button} from "../../../components/buttons/Button/Button.tsx";
 import {useEffect, useState} from "react";
 import axios from "axios";
+import {PatientData} from "../../../types/datas.tsx";
 
-type PatientData = {
-    guest_id: number,
-    surname: string,
-    name: string,
-    patronymic: string,
-    birthday: string,
-};
 
 const FirstVisitDoctor = () => {
     const navigate = useNavigate();
     const [searchParams, setSearchParams] = useSearchParams();
 
     const [surname, setSurname] = useState('');
-    const [guests, setGuests] = useState<PatientData[]>([]);
+    const [guests, setGuests] = useState<GuestsData[]>([]);
     const [loading, setLoading] = useState(false);
     const [error_r, setError_r] = useState<string | null>(null);
 
@@ -41,7 +34,7 @@ const FirstVisitDoctor = () => {
     const SearchClick = async () => {
         setLoading(true);
         try {
-            const response = await axios.get(`http://localhost:8000/api/doctor/first_visit/?surname=${surname}`);
+            const response = await axios.get(`http://localhost:8000/api/manager/guests/?surname=${surname}`);
             setGuests(response.data);
         } catch (error) {
             if (error instanceof Error) {
@@ -56,8 +49,8 @@ const FirstVisitDoctor = () => {
 
     const sideBarItems: OneItem[] = [
         {onClick: () => navigate('/doctor/timetable'), text: "Расписание", label: "timetable"},
-        {onClick: () => navigate('/doctor/first_visit'), text: "Первичный прием", label: "first_visit"},
-        {onClick: () => navigate('/doctor/second_visit'), text: "Заключительный прием", label: "second_visit"},
+        {onClick: () => navigate('/doctor/first_visit'), text: "Первичн. прием", label: "first_visit"},
+        {onClick: () => navigate('/doctor/second_visit'), text: "Заключит. прием", label: "second_visit"},
         {onClick: () => navigate('/doctor/dairies'), text: "Дневники", label: "dairies"},
         {onClick: () => navigate('/doctor/medical_stories'), text: "Истории болезни", label: "medical_stories"}
     ];
@@ -68,36 +61,48 @@ const FirstVisitDoctor = () => {
             <SideBar activeItem={"first_visit"} items={sideBarItems}/>
             <div className={styles['content-container']}>
 
-                <Header name={'Иванова Анастасия Сергеевна'} post={'Врач'}/>
+                <Header name={'Фролова Клавдия Алексеевна'} post={'Врач'}/>
 
                 <div className={styles['main-container']}>
-                    <div className={self_styles['filters-container']}>
-                        <div className={self_styles['row-container']}>
-                            <InputText text={'Введите фамилию'} label={'Введите фамилию'} value={surname}
-                                       onChange={changeSurname}/>
-                            <Button color={'green'} text={'Применить'} onClick={SearchClick}/>
-                        </div>
+                    <div className={styles['row-container']}>
+                        <InputText text={'Введите фамилию'} label={'Введите фамилию'} value={surname}
+                                   onChange={changeSurname}/>
+                        <Button color={'violet'} text={'Применить'} onClick={SearchClick}/>
+                        <Button color={'blue'} text={'Добавить человека'} onClick={() => navigate(`/manager/guests/new`)}/>
                     </div>
 
-                    <div className={self_styles['people-list-container']}>
+                    <div className={styles['table-title']}>
+                        Список пациентов на первичный прием
+                    </div>
+
+                    <div className={styles['people-list-container']}>
                         {loading ? (
                             <p>Загрузка...</p>
                         ) : error_r ? (
                             <p style={{color: "red"}}>{error_r}</p>
                         ) : guests.length > 0 ? (
                             guests.map(guest => (
-                                <div className={self_styles['people-container']}>
-                                    {guest.surname} {guest.name} {guest.patronymic} - {guest.birthday}
-                                    <Button color={'violet'}
-                                    text={'Перейти'}
-                                    onClick={() => navigate(`/doctor/first_visit/person?id=${guest.guest_id}`)}/>
+                                <div className={guest.surname=='Сидоров'? styles['hidden']:styles['people-container']}>
+                                    <div className={styles['fio']}>
+                                        {guest.surname} {guest.name} {guest.patronymic}
+                                    </div>
+                                    <div className={styles['birthday']}>
+                                        {guest.birthday}
+                                    </div>
+                                    <div className={styles['button']}>
+                                        <Button
+                                            color="green"
+                                            text="Перейти"
+                                            onClick={() => navigate(`/doctor/first-visit/person?id=${guest.guest_id}`)}
+                                        />
+                                    </div>
+
                                 </div>
                             ))
                         ) : (
                             <p>Нет подходящих отдыхающих</p>
                         )}
                     </div>
-
                 </div>
             </div>
         </div>

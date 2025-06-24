@@ -1,57 +1,88 @@
-.person-container{
-    margin: var(--normal-margin-size);
+.page-style{
     width: 100%;
-}
-
-.container1 {
-    width: 100%;
-    margin: var(--normal-margin-size);
+    height: 100vh;
     display: flex;
+    justify-content: flex-start;
+    background-color: var(--backgroung);
 }
 
-.container2 {
+.content-container{
     width: 100%;
-    margin: var(--normal-margin-size);
     display: flex;
     flex-direction: column;
-    justify-content: start;
-
+    justify-content: flex-start;
+    margin-left: var(--margin-left-page-size);
+    box-sizing: border-box;
 }
 
-.container3 {
-    display: flex;
+.main-container{
+    padding-top: var(--padding-top-main-container);
     width: 100%;
+    display: flex;
     flex-direction: column;
-    justify-content: start;
+    justify-content: center;
+    align-items: center;
+    margin-top: 4vh;
 }
 
-.container4 {
+.row-container {
+    flex-shrink: 0; /* фиксированная высота */
     display: flex;
-    width: 100%;
-    justify-content: start;
+    flex-direction: row;
+    align-items: flex-end;
+    justify-content: space-between;
+    margin-bottom: 8px;
+    padding-top:  5vh;
+    box-sizing: border-box;
 }
 
-.title2 {
+.table-title {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+    font-weight: 700;
+    margin: 15px;
+    margin-bottom: 35px;
+}
+
+.people-container{
+    display: flex;
+    background-color: white;
+    font-size: var(--normal-text-size);
+    color: var(--dark-blue);
+    width: 80vw;
+    padding: var(--normal-padding-size);
+    margin-bottom: var(--big-margin-size);
+    padding-left: 50px;
+    box-sizing: border-box;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.fio{
+    width: 40%;
+    font-size: calc(var(--big-text-size)*1.3);
+}
+
+.birthday{
+    width: 30%;
     font-size: var(--big-text-size);
-    font-weight: bold;
-    display: flex;
-    flex-direction: column;
-    justify-content: start;
 }
 
-.title3 {
-    font-size: var(--not-very-big-text-size);
-    font-weight: bold;
-    display: flex;
-    flex-direction: column;
-    justify-content: start;
-    margin: var(--normal-margin-size);
+.button{
+    width: 30%;
+    font-size: var(--big-text-size);
 }
 
-.hidden {
+
+.text{
+    padding: var(--normal-padding-size);
+    color: var(--dark-blue);
+    font-size: var(--normal-text-size);
+}
+
+.hidden{
     display: none;
-}
-
-.row-container{
-    display: flex;
 }

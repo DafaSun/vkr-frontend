@@ -1,5 +1,5 @@
 import {useEffect, useState} from "react";
-import styles from '../../css/Index.module.css'
+import styles from './GuestsPersonManager.module.css'
 import {SideBar} from "../../../components/SideBar/SideBar.tsx";
 import {Header} from "../../../components/Header/Header.tsx"
 import {Button} from "../../../components/buttons/Button/Button.tsx";
@@ -215,13 +215,15 @@ const GuestPersonManager = () => {
         }
     };
 
+
     const sideBarItems: OneItem[] = [
         {onClick: () => navigate('/manager/tour'), text: "Путевки", label: "tour"},
         {onClick: () => navigate('/manager/hotel'), text: "Гостиница", label: "hotel"},
         {onClick: () => navigate('/manager/bookings'), text: "Брони", label: "bookings"},
         {onClick: () => navigate('/manager/guests'), text: "Отдыхающие", label: "guests"},
         {onClick: () => navigate('/manager/rooms'), text: "Номера", label: "rooms"},
-        {onClick: () => navigate('/manager/info'), text: "Информация", label: "info"}
+        {onClick: () => navigate('/manager/timetable'), text: "Расписания", label: "info"},
+        {onClick: () => navigate('/manager/info'), text: "Информация", label: "info"},
     ];
 
     const minDate = "1907-03-04";
@@ -238,52 +240,123 @@ const GuestPersonManager = () => {
                 <Header name={'Иванова Анастасия Сергеевна'} post={'Менеджер'}/>
 
                 <div className={styles['main-container']}>
-                    <InputText text={'Фамилия*'} value={surname} label={''} isEdit={isEdit} onChange={changeSurname}/>
-                    {formErrors.surname && <span style={{color: 'red'}}>Это поле обязательно для заполнения.</span>}
 
-                    <InputText text={'Имя*'} value={name} label={''} isEdit={isEdit} onChange={changeName}/>
-                    {formErrors.name && <span style={{color: 'red'}}>Это поле обязательно для заполнения.</span>}
+                    <div className={styles['table-title']}>
+                        Информация об отдыхающем
+                    </div>
 
-                    <InputText text={'Отчество'} value={patronymic} label={''} isEdit={isEdit}
-                               onChange={changePatronymic}/>
+                    <div className={styles['buttons-container']}>
+                        <Button color={'blue'} text={'Редактировать'} onClick={() => {
+                            setIsEdit(!isEdit)
+                        }}/>
+                        <Button color={'green'} text={'Сохранить'} onClick={updateGuestPerson}/>
+                        <Button color={'violet'} text={'Удалить'} onClick={deleteGuestPerson}/>
+                    </div>
 
-                    <DatePicker text={"Выберите дату рождения*"}
-                                minDate={minDate}
-                                maxDate={maxDate} value={birthday} onSelect={changeBirthday}/>
-                    {formErrors.birthday && <span style={{color: 'red'}}>Это поле обязательно для заполнения.</span>}
+                    <div className={styles['containers-00']}>
 
-                    <DropdownList text={'Пол'} value={guestInfo.gender} label={''} options={genderList}/>
-                    <DropdownList text={'Тип тура'} value={guestInfo.tour_type} label={''} isEdit={false}
-                                  options={typeTourList}/>
-                    <InputPhone text={'Телефон*'} value={phone} label={''} isEdit={isEdit} onChange={changePhone}/>
-                    {formErrors.phone && <span style={{color: 'red'}}>Это поле обязательно для заполнения.</span>}
+                        <div className={styles['fields-container']}>
+                            <div className={styles['field']}>
+                                <InputText text={'Фамилия*'} value={surname} label={''} isEdit={isEdit}
+                                           onChange={changeSurname}/>
+                                {formErrors.surname &&
+                                    <span style={{color: 'red'}}>Это поле обязательно для заполнения.</span>}
+                            </div>
+                            <div className={styles['field']}>
+                                <InputText text={'Имя*'} value={name} label={''} isEdit={isEdit} onChange={changeName}/>
+                                {formErrors.name &&
+                                    <span style={{color: 'red'}}>Это поле обязательно для заполнения.</span>}
+                            </div>
+                            <div className={styles['field']}>
+                                <InputText text={'Отчество'} value={patronymic} label={''} isEdit={isEdit}
+                                           onChange={changePatronymic}/>
+                            </div>
+                            <div className={styles['field']}>
+                                <InputPhone text={'Телефон*'} value={phone} label={''} isEdit={isEdit} onChange={changePhone}/>
+                                {formErrors.phone && <span style={{color: 'red'}}>Это поле обязательно для заполнения.</span>}
+                            </div>
+                            <div className={styles['field']}>
+                                <InputText text={'Ваша страна'} value={homeAddressCountry} label={''} isEdit={isEdit}
+                                           onChange={changeHomeAddressCountry}/>
+                            </div>
+                            <div className={styles['field']}>
+                                <InputText text={'Ваш город'} value={homeAddressCity} label={''} isEdit={isEdit}
+                                           onChange={changeHomeAddressCity}/>
+                            </div>
+                            <div className={styles['field']}>
+                                <InputText text={'Место работы'} value={workplace} label={''} isEdit={isEdit}
+                                           onChange={changeWorkplace}/>
+                            </div>
+                            <div className={styles['field']}>
 
-                    <InputEmail text={'Электронная почта'} value={email} label={''} isEdit={isEdit}
-                                onChange={changeEmail}/>
-                    <InputText text={'Ваша страна'} value={homeAddressCountry} label={''} isEdit={isEdit}
-                               onChange={changeHomeAddressCountry}/>
-                    <InputText text={'Ваш регион'} value={homeAddressRegion} label={''} isEdit={isEdit}
-                               onChange={changeHomeAddressRegion}/>
-                    <InputText text={'Ваш город'} value={homeAddressCity} label={''} isEdit={isEdit}
-                               onChange={changeHomeAddressCity}/>
-                    <InputText text={'Улица и дом'} value={homeAddressStreet} label={''} isEdit={isEdit}
-                               onChange={changeHomeAddressStreet}/>
-                    <InputText text={'Место работы'} value={workplace} label={''} isEdit={isEdit}
-                               onChange={changeWorkplace}/>
-                    <DatePicker text={'Дата заезда'} value={guestInfo.checkin} isEdit={false}/>
-                    <DatePicker text={'Дата отъезда'} value={guestInfo.checkout} isEdit={false}/>
-                    <InputText text={'Номер'} value={guestInfo.room_name} label={''} isEdit={false} onChange={() => {
-                    }}/>
-                    <DropdownList text={'Категория'} value={guestInfo.category_label} label={''} isEdit={false}
-                                  options={roomCategoryList}/>
-                    <InputText text={'Место'} value={guestInfo.place_name} label={''} isEdit={false} onChange={() => {
-                    }}/>
+                            </div>
+                        </div>
 
-                    <Button color={'blue'} text={'Редактировать'} onClick={() => {
-                        setIsEdit(!isEdit)
-                    }}/>
-                    <Button color={'green'} text={'Сохранить'} onClick={updateGuestPerson}/>
-                    <Button color={'violet'} text={'Удалить'} onClick={deleteGuestPerson}/>
+
+                        <div className={styles['fields-container']}>
+                            <div className={styles['field']}>
+                                <DatePicker text={"Выберите дату рождения*"}
+                                            minDate={minDate}
+                                            maxDate={maxDate} value={birthday} onSelect={changeBirthday}/>
+                                {formErrors.birthday &&
+                                    <span style={{color: 'red'}}>Это поле обязательно для заполнения.</span>}
+                            </div>
+                            <div className={styles['field']}>
+                                <DropdownList text={'Пол'} value={guestInfo.gender} label={''} options={genderList}/>
+                            </div>
+                            <div className={styles['field']}>
+                                <DropdownList text={'Тип тура'} value={guestInfo.tour_type} label={''} isEdit={false}
+                                              options={typeTourList}/>
+                            </div>
+                            <div className={styles['field']}>
+                                <InputEmail text={'Электронная почта'} value={email} label={''} isEdit={isEdit}
+                                            onChange={changeEmail}/>
+                            </div>
+                            <div className={styles['field']}>
+                                <InputText text={'Ваш регион'} value={homeAddressRegion} label={''} isEdit={isEdit}
+                                           onChange={changeHomeAddressRegion}/>
+                            </div>
+                            <div className={styles['field']}>
+                                <InputText text={'Улица и дом'} value={homeAddressStreet} label={''} isEdit={isEdit}
+                                           onChange={changeHomeAddressStreet}/>
+                            </div>
+                            <div className={styles['field']}>
+
+                            </div>
+                            <div className={styles['field']}>
+
+                            </div>
+                        </div>
+
+
+                    </div>
+
+
+
+
+
+                    {/*<InputText text={'Ваш регион'} value={homeAddressRegion} label={''} isEdit={isEdit}*/}
+                    {/*           onChange={changeHomeAddressRegion}/>*/}
+                    {/*<InputText text={'Ваш город'} value={homeAddressCity} label={''} isEdit={isEdit}*/}
+                    {/*           onChange={changeHomeAddressCity}/>*/}
+                    {/*<InputText text={'Улица и дом'} value={homeAddressStreet} label={''} isEdit={isEdit}*/}
+                    {/*           onChange={changeHomeAddressStreet}/>*/}
+                    {/*<InputText text={'Место работы'} value={workplace} label={''} isEdit={isEdit}*/}
+                    {/*           onChange={changeWorkplace}/>*/}
+                    {/*<DatePicker text={'Дата заезда'} value={guestInfo.checkin} isEdit={false}/>*/}
+                    {/*<DatePicker text={'Дата отъезда'} value={guestInfo.checkout} isEdit={false}/>*/}
+                    {/*<InputText text={'Номер'} value={guestInfo.room_name} label={''} isEdit={false} onChange={() => {*/}
+                    {/*}}/>*/}
+                    {/*<DropdownList text={'Категория'} value={guestInfo.category_label} label={''} isEdit={false}*/}
+                    {/*              options={roomCategoryList}/>*/}
+                    {/*<InputText text={'Место'} value={guestInfo.place_name} label={''} isEdit={false} onChange={() => {*/}
+                    {/*}}/>*/}
+
+                    {/*<Button color={'blue'} text={'Редактировать'} onClick={() => {*/}
+                    {/*    setIsEdit(!isEdit)*/}
+                    {/*}}/>*/}
+                    {/*<Button color={'green'} text={'Сохранить'} onClick={updateGuestPerson}/>*/}
+                    {/*<Button color={'violet'} text={'Удалить'} onClick={deleteGuestPerson}/>*/}
                 </div>
             </div>
         </div>

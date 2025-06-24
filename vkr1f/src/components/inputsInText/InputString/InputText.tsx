@@ -12,7 +12,7 @@ interface TextInputProps {
     onChange?: (value: string) => void;
 }
 
-export const InputString: React.FC<TextInputProps> = ({
+export const InputText: React.FC<TextInputProps> = ({
                                                           text = '',
                                                           label = '',
                                                           value = "",

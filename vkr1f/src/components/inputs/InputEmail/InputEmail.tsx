@@ -22,7 +22,6 @@ export const InputEmail: React.FC<EmailInputProps> = ({
                                                           isEdit = true
                                                       }) => {
 
-    if (!isEdit) return;
     const [inputValue, setInputValue] = useState<string>(value);
 
     useEffect(() => {
