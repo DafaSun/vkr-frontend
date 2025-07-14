@@ -4,126 +4,24 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a233fea1-6de7-4fe8-a8b7-e2d3c128615f" name="Changes" comment="commit 09/06/2025 - новый коммит">
-      <change afterPath="$PROJECT_DIR$/vkr1f/public/images/rooms/img_room_1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vkr1f/public/images/rooms/img_room_2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vkr1f/public/images/rooms/img_room_3.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vkr1f/src/assets/img_room_1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vkr1f/src/assets/img_room_2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vkr1f/src/components/inputs/InputBigText/InputBigText.module.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vkr1f/src/components/inputs/InputBigText/InputBigText.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vkr1f/src/pages/doctor/Dairies/DiariesPersonDoctor.module.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vkr1f/src/pages/doctor/FirstVisit/FirstVisitPersonDoctor.module.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vkr1f/src/pages/doctor/SecondVisit/SecondVisitPersonDoctor.module.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vkr1f/src/pages/doctor/Timetable/DoctorTimetable/DoctorTimetableDoctor.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vkr1f/src/pages/doctor/Timetable/DoctorTimetable/DoctorTimetablePersonDoctor.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vkr1f/src/pages/doctor/Timetable/GuestsTimetable/GuestsTimetableDoctor.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vkr1f/src/pages/doctor/Timetable/GuestsTimetable/GuestsTimetablePersonDoctor.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vkr1f/src/pages/doctor/Timetable/SelfTimetableDoctor.module.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vkr1f/src/pages/doctor/Timetable/SelfTimetableDoctor.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vkr1f/src/pages/doctor/Timetable/TimetableDoctor.module.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vkr1f/src/pages/manager/Bookings/BookingInfoManager.module.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vkr1f/src/pages/manager/Guests/GuestsPersonManager.module.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vkr1f/src/pages/manager/Hotel/HotelBookingManager.module.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vkr1f/src/pages/manager/Hotel/HotelCategoriesManager.module.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vkr1f/src/pages/manager/Hotel/HotelRoomsManager.module.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vkr1f/src/pages/manager/Rooms/roomsManager.module.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vkr1f/src/pages/manager/Timetable/GuestTimetable/GuestTimetablePersonManager.module.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vkr1f/src/pages/manager/Timetable/GuestTimetable/GuestsTimetableManager.module.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vkr1f/src/pages/manager/Timetable/GuestTimetable/GuestsTimetableManager.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vkr1f/src/pages/manager/Timetable/GuestTimetable/GuestsTimetablePersonManager.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vkr1f/src/pages/manager/Timetable/TimetableManager.module.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vkr1f/src/pages/manager/Timetable/TimetableManager.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vkr1f/src/pages/manager/Timetable/WorkersTimetable/WorkersTimetableManager.module.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vkr1f/src/pages/manager/Timetable/WorkersTimetable/WorkersTimetableManager.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vkr1f/src/pages/manager/Timetable/WorkersTimetable/WorkersTimetablePersonManager.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vkr1f/src/pages/manager/mock.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vkr1f/src/pages/nurse/ProceduresNurse/OneProcedureNurse.module.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vkr1f/src/pages/nurse/ProceduresNurse/OneProcedureNurse.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vkr1f/src/pages/nurse/ProceduresNurse/ProceduresNurse.module.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vkr1f/src/pages/nurse/ProceduresNurse/ProceduresNurse.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vkr1f/src/pages/nurse/Timetable/GuestsTimetable/GuestTimetablePersonNurse.module.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vkr1f/src/pages/nurse/Timetable/GuestsTimetable/GuestsTimetableNurse.module.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vkr1f/src/pages/nurse/Timetable/GuestsTimetable/GuestsTimetableNurse.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vkr1f/src/pages/nurse/Timetable/GuestsTimetable/GuestsTimetablePersonNurse.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vkr1f/src/pages/nurse/Timetable/SelfTimetable/SelfTimetableNurse.module.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vkr1f/src/pages/nurse/Timetable/SelfTimetable/SelfTimetableNurse.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vkr1f/src/pages/nurse/Timetable/WorkersTimetable/WorkersTimetableNurse.module.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vkr1f/src/pages/nurse/Timetable/WorkersTimetable/WorkersTimetableNurse.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vkr1f/src/pages/nurse/Timetable/WorkersTimetable/WorkersTimetablePersonNurse.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vkr1f/src/types/datas.tsx" afterDir="false" />
+    <list default="true" id="a233fea1-6de7-4fe8-a8b7-e2d3c128615f" name="Changes" comment="finish commit">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vkr1f/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/vkr1f/src/App.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vkr1f/src/components/Header/Header.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/vkr1f/src/components/Header/Header.module.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vkr1f/src/components/SideBar/SideBar.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/vkr1f/src/components/SideBar/SideBar.module.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vkr1f/src/components/SideBar/SideBar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/vkr1f/src/components/SideBar/SideBar.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vkr1f/src/components/SideBar/components/Item/Item.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/vkr1f/src/components/SideBar/components/Item/Item.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vkr1f/src/components/buttons/Button/Button.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/vkr1f/src/components/buttons/Button/Button.module.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vkr1f/src/components/buttons/Button/Button.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/vkr1f/src/components/buttons/Button/Button.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vkr1f/src/components/inputs/DatePicker/DatePicker.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/vkr1f/src/components/inputs/DatePicker/DatePicker.module.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vkr1f/src/components/inputs/DropdownList/DpropdownList.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/vkr1f/src/components/inputs/DropdownList/DpropdownList.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vkr1f/src/components/inputs/DropdownList/DropdownList.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/vkr1f/src/components/inputs/DropdownList/DropdownList.module.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vkr1f/src/components/inputs/InputEmail/InputEmail.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/vkr1f/src/components/inputs/InputEmail/InputEmail.module.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vkr1f/src/components/inputs/InputEmail/InputEmail.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/vkr1f/src/components/inputs/InputEmail/InputEmail.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vkr1f/src/components/inputs/InputNumber/InputNumber.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/vkr1f/src/components/inputs/InputNumber/InputNumber.module.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vkr1f/src/components/inputs/InputPhone/InputPhone.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/vkr1f/src/components/inputs/InputPhone/InputPhone.module.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vkr1f/src/components/inputs/InputText/InputText.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/vkr1f/src/components/inputs/InputText/InputText.module.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vkr1f/src/components/inputs/InputText/InputText.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/vkr1f/src/components/inputs/InputText/InputText.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vkr1f/src/components/inputs/TimePicker/TimePicker.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/vkr1f/src/components/inputs/TimePicker/TimePicker.module.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vkr1f/src/components/inputsInText/InputString/InputString.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/vkr1f/src/components/inputsInText/InputString/InputText.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vkr1f/src/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/vkr1f/src/index.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vkr1f/src/pages/auth/AuthPage.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/vkr1f/src/pages/auth/AuthPage.module.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vkr1f/src/pages/auth/AuthPage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/vkr1f/src/pages/auth/AuthPage.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vkr1f/src/pages/css/Index.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/vkr1f/src/pages/css/Index.module.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vkr1f/src/pages/doctor/Dairies/DiariesDoctor.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/vkr1f/src/pages/doctor/Dairies/DiariesDoctor.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vkr1f/src/pages/doctor/Dairies/DiariesPersonDoctor.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/vkr1f/src/pages/doctor/Dairies/DiariesPersonDoctor.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vkr1f/src/pages/doctor/FirstVisit/FirstVisitDoctor.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/vkr1f/src/pages/doctor/FirstVisit/FirstVisitDoctor.module.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vkr1f/src/pages/doctor/FirstVisit/FirstVisitDoctor.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/vkr1f/src/pages/doctor/FirstVisit/FirstVisitDoctor.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vkr1f/src/pages/doctor/FirstVisit/FirstVisitPersonDoctor.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/vkr1f/src/pages/doctor/FirstVisit/FirstVisitPersonDoctor.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vkr1f/src/pages/doctor/FirstVisit/FirstVisitPersonForPrintDoctor.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vkr1f/src/pages/doctor/IndexDoctor.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/vkr1f/src/pages/doctor/IndexDoctor.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vkr1f/src/pages/doctor/MedicalStories/MedicalStoriesDoctor.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/vkr1f/src/pages/doctor/MedicalStories/MedicalStoriesDoctor.module.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vkr1f/src/pages/doctor/MedicalStories/MedicalStoriesDoctor.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/vkr1f/src/pages/doctor/MedicalStories/MedicalStoriesDoctor.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vkr1f/src/pages/doctor/MedicalStories/MedicalStoriesPersonDoctor.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/vkr1f/src/pages/doctor/MedicalStories/MedicalStoriesPersonDoctor.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vkr1f/src/pages/doctor/MedicalStories/MedicalStoriesPersonForPrintDoctor.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vkr1f/src/pages/doctor/SecondVisit/SecondVisitDoctor.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/vkr1f/src/pages/doctor/SecondVisit/SecondVisitDoctor.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vkr1f/src/pages/doctor/SecondVisit/SecondVisitPersonDoctor.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/vkr1f/src/pages/doctor/SecondVisit/SecondVisitPersonDoctor.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vkr1f/src/pages/doctor/SecondVisit/SecondVisitPersonForPrintDoctor.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vkr1f/src/pages/doctor/Timetable/TimetableDoctor.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/vkr1f/src/pages/doctor/Timetable/TimetableDoctor.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vkr1f/src/pages/home.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/vkr1f/src/pages/about.module.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vkr1f/src/pages/home.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/vkr1f/src/pages/about.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vkr1f/src/pages/manager/Bookings/BookingsInfoManager.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/vkr1f/src/pages/manager/Bookings/BookingsInfoManager.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vkr1f/src/pages/manager/Bookings/BookingsManager.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/vkr1f/src/pages/manager/Bookings/BookingsManager.module.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vkr1f/src/pages/manager/Bookings/BookingsManager.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/vkr1f/src/pages/manager/Bookings/BookingsManager.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vkr1f/src/pages/manager/Guests/GuestsManager.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/vkr1f/src/pages/manager/Guests/GuestsManager.module.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vkr1f/src/pages/manager/Guests/GuestsManager.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/vkr1f/src/pages/manager/Guests/GuestsManager.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vkr1f/src/pages/manager/Guests/GuestsNewPersonManager.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/vkr1f/src/pages/manager/Guests/GuestsNewPersonManager.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vkr1f/src/pages/manager/Guests/GuestsPersonManager.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/vkr1f/src/pages/manager/Guests/GuestsPersonManager.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vkr1f/src/pages/manager/Hotel/HotelBookingManager.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/vkr1f/src/pages/manager/Hotel/HotelBookingManager.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vkr1f/src/pages/manager/Hotel/HotelCategoriesManager.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/vkr1f/src/pages/manager/Hotel/HotelCategoriesManager.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vkr1f/src/pages/manager/Hotel/HotelRoomsManager.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/vkr1f/src/pages/manager/Hotel/HotelRoomsManager.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vkr1f/src/pages/manager/IndexManager.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/vkr1f/src/pages/manager/IndexManager.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vkr1f/src/pages/manager/Info/FunInfoManager.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/vkr1f/src/pages/manager/Info/FunInfoManager.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vkr1f/src/pages/manager/Info/InfoManager.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/vkr1f/src/pages/manager/Info/InfoManager.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vkr1f/src/pages/manager/Info/NutritionInfoManager.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/vkr1f/src/pages/manager/Info/NutritionInfoManager.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vkr1f/src/pages/manager/Info/TherapyInfoManager.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/vkr1f/src/pages/manager/Info/TherapyInfoManager.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vkr1f/src/pages/manager/Rooms/RoomsManager.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/vkr1f/src/pages/manager/Rooms/RoomsManager.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vkr1f/src/pages/manager/Tour/SocialTour/SocialTourBookingNewManager.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/vkr1f/src/pages/manager/Tour/SocialTour/SocialTourBookingNewManager.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vkr1f/src/pages/manager/Tour/SocialTour/SocialTourCategoriesManager.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/vkr1f/src/pages/manager/Tour/SocialTour/SocialTourCategoriesManager.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vkr1f/src/pages/manager/Tour/SocialTour/SocialTourRoomsManager.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/vkr1f/src/pages/manager/Tour/SocialTour/SocialTourRoomsManager.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vkr1f/src/pages/manager/Tour/TourManager.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/vkr1f/src/pages/manager/Tour/TourManager.module.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vkr1f/src/pages/manager/Tour/TourManager.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/vkr1f/src/pages/manager/Tour/TourManager.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vkr1f/src/pages/manager/Tour/UsualTour/UsualTourBookingNewManager.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/vkr1f/src/pages/manager/Tour/UsualTour/UsualTourBookingNewManager.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vkr1f/src/pages/manager/Tour/UsualTour/UsualTourCategoriesManager.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/vkr1f/src/pages/manager/Tour/UsualTour/UsualTourCategoriesManager.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vkr1f/src/pages/manager/Tour/UsualTour/UsualTourRoomsManager.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/vkr1f/src/pages/manager/Tour/UsualTour/UsualTourRoomsManager.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vkr1f/src/pages/nurse/AddCourseProcedureNurse.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vkr1f/src/pages/nurse/AddOneProcedureNurse.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vkr1f/src/pages/nurse/EmployeesNurse.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vkr1f/src/pages/nurse/IndexNurse.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/vkr1f/src/pages/nurse/IndexNurse.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vkr1f/src/pages/nurse/ReportsNurse.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vkr1f/src/pages/nurse/TherapyNurse.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vkr1f/src/styles/colors.css" beforeDir="false" afterPath="$PROJECT_DIR$/vkr1f/src/styles/colors.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vkr1f/src/styles/sizes.css" beforeDir="false" afterPath="$PROJECT_DIR$/vkr1f/src/styles/sizes.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vkr1f/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vkr1f/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vkr1f/eslint.config.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vkr1f/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vkr1f/package-lock.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vkr1f/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vkr1f/public/images/rooms/img_room_1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vkr1f/public/images/rooms/img_room_2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vkr1f/public/images/rooms/img_room_3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vkr1f/public/images/rooms/room1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vkr1f/public/vite.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vkr1f/tsconfig.app.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vkr1f/tsconfig.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vkr1f/tsconfig.node.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vkr1f/vite.config.ts" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -166,23 +64,23 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/Projects/diplom/vkr-frontend/vkr1f/src/pages/manager/Timetable&quot;,
-    &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;,
-    &quot;ts.external.directory.path&quot;: &quot;D:\\Projects\\diplom\\vkr-frontend\\vkr1f\\node_modules\\typescript\\lib&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "master",
+    "last_opened_file_path": "D:/Projects/work/ais-hr-frontend",
+    "list.type.of.created.stylesheet": "CSS",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "preferences.lookFeel",
+    "ts.external.directory.path": "D:\\Programs\\WebStorm\\WebStorm 2024.3.2\\plugins\\javascript-plugin\\jsLanguageServicesImpl\\external",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\Projects\diplom\vkr-frontend\vkr1f\src\pages\manager\Timetable" />
@@ -286,6 +184,11 @@
       <workItem from="1750544561153" duration="1302000" />
       <workItem from="1750608982166" duration="25000" />
       <workItem from="1750616771068" duration="1327000" />
+      <workItem from="1750781926794" duration="1047000" />
+      <workItem from="1751457361483" duration="1163000" />
+      <workItem from="1751892078470" duration="276000" />
+      <workItem from="1752493201174" duration="164000" />
+      <workItem from="1752493486869" duration="77000" />
     </task>
     <task id="LOCAL-00001" summary="commit 02/03/2025 - немного поделала, создала файлы страниц, папки, верстку и компоненты еще не писала">
       <option name="closed" value="true" />
@@ -447,7 +350,15 @@
       <option name="project" value="LOCAL" />
       <updated>1747689489208</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="finish commit">
+      <option name="closed" value="true" />
+      <created>1750782348721</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1750782348721</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -475,7 +386,8 @@
     <MESSAGE value="commit 23/03/2025 - забыла..." />
     <MESSAGE value="commit 20/05/2025 - освежила интерфейс" />
     <MESSAGE value="commit 09/06/2025 - новый коммит" />
-    <option name="LAST_COMMIT_MESSAGE" value="commit 09/06/2025 - новый коммит" />
+    <MESSAGE value="finish commit" />
+    <option name="LAST_COMMIT_MESSAGE" value="finish commit" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
