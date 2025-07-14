@@ -1,0 +1,22 @@
+.box{
+    border: 3px solid var(--grey-blue);
+    border-radius: var(--border-radius-size);
+}
+
+.checkbox-container{
+    height: calc(var(--button-height)*0.5);
+    padding: var(--normal-padding-size);
+    width: calc(var(--button-width)*0.88);
+    color: black;
+    background-color: white;
+    font-size: var(--normal-text-size);
+    margin: 20px;
+    display: flex;
+    align-items: center;
+}
+
+.text{
+    margin-bottom:  var(--normal-margin-size);
+    margin-left:  var(--normal-margin-size);
+    font-size: var(--normal-text-size);
+}

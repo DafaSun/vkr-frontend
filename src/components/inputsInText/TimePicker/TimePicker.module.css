@@ -1,0 +1,20 @@
+.tp{
+    height: calc(var(--small-height)*0.2);
+    border-radius: var(--small-border-radius-size);
+    padding: var(--normal-padding-size);
+    border: 3px solid var(--bright-blue);
+    width: var(--small-width);
+    color: black;
+    background-color: white;
+    font-size: var(--normal-text-size);
+}
+
+.text{
+    margin: var(--normal-margin-size);
+    font-size: var(--normal-text-size);
+}
+
+.time-container{
+    margin: var(--normal-margin-size);
+    display: flex;
+}

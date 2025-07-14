@@ -1,0 +1,19 @@
+.back-container{
+    display: flex;
+    align-items: center;
+    padding-left: var(--normal-padding-size);;
+    padding-top: var(--normal-padding-size);;
+}
+
+.text{
+    padding: var(--normal-padding-size);
+}
+
+.hidden{
+    display: none;
+}
+
+.back-container :hover{
+    font-weight: bold;
+    cursor: pointer;
+}

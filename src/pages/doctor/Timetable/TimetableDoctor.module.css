@@ -1,0 +1,44 @@
+.page-style{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: flex-start;
+    background-color: var(--backgroung);
+}
+
+.content-container{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    margin-left: var(--margin-left-page-size);
+    box-sizing: border-box;
+}
+
+.main-container{
+    padding-top: var(--padding-top-main-container);
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: var(--margin-top-page-size);
+}
+
+.row-container{
+    display: flex;
+    flex-direction: row;
+}
+
+.title{
+    font-size: 3vw;
+    margin-bottom: 5vh;
+}
+
+.welcome{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 100px;
+    color: var(--dark-blue);
+}

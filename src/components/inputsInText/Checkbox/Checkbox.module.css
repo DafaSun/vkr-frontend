@@ -1,0 +1,13 @@
+.checkbox-container{
+    height: var(--small-height);
+    width: var(--small-width);
+    color: black;
+    background-color: white;
+    font-size: var(--normal-text-size);
+    margin: var(--normal-margin-size);
+}
+
+.text{
+    margin: var(--normal-margin-size);
+    font-size: var(--normal-text-size);
+}

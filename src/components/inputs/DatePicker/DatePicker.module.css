@@ -1,0 +1,23 @@
+.dp{
+    height: calc(var(--button-height)*0.5);
+    border-radius:  var(--border-radius-size);
+    padding: var(--normal-padding-size);
+ border: 3px solid var(--bright-blue);
+    width: calc(var(--button-width)*0.915);
+    color: black;
+    background-color: white;
+    font-size: var(--normal-text-size);
+    margin: 10px;
+}
+
+.text{
+    /*margin-bottom: var(--normal-margin-size);*/
+    margin-left:  calc(var(--normal-margin-size)*2);
+    font-size: var(--normal-text-size);
+}
+
+.date-container{
+    /*margin:  var(--normal-margin-size);*/
+    display: flex;
+    flex-direction: column;
+}

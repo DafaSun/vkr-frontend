@@ -1,0 +1,22 @@
+.input-number-container{
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+.input-number{
+    height: calc(var(--button-height)*0.5);
+    border-radius: var(--border-radius-size);
+    padding: var(--normal-padding-size);
+    border: 3px solid var(--green);
+    width: calc(var(--button-width)*0.91);
+    color: black;
+    background-color: white;
+    font-size: var(--normal-text-size);
+}
+
+.text{
+    margin-bottom:  var(--normal-margin-size);
+    margin-left:  var(--normal-margin-size);
+    font-size: var(--normal-text-size);
+}
