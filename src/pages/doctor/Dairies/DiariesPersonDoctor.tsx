@@ -2,42 +2,39 @@ import styles from './DiariesPersonDoctor.module.css'
 import {SideBar} from "../../../components/SideBar/SideBar.tsx";
 import {Header} from "../../../components/Header/Header.tsx"
 import {OneItem} from "../../../types/SideBarItem.tsx";
-import {useNavigate, useSearchParams} from "react-router-dom";
+import {useNavigate} from "react-router-dom";
 import {Button} from "../../../components/buttons/Button/Button.tsx";
-import {useEffect, useState} from "react";
-import axios from "axios";
+import {useState} from "react";
 import {DatePicker} from "../../../components/inputs/DatePicker/DatePicker.tsx";
 import {InputText} from "../../../components/inputs/InputText/InputText.tsx";
 import {InputBigText} from "../../../components/inputs/InputBigText/InputBigText.tsx";
-import {DropdownList} from "../../../components/inputs/DropdownList/DpropdownList.tsx";
-import {genderList} from "../../../mocks/mock.tsx";
 import {TimePicker} from "../../../components/inputs/TimePicker/TimePicker.tsx";
 
-type PatientData = {
-    guest_id: number,
-    surname: string,
-    name: string,
-    patronymic: string,
-    birthday: string,
-};
+// type PatientData = {
+//     guest_id: number,
+//     surname: string,
+//     name: string,
+//     patronymic: string,
+//     birthday: string,
+// };
 
 const DiariesPersonDoctor = () => {
     const navigate = useNavigate();
-    const [searchParams, setSearchParams] = useSearchParams();
-    const [generalError, setGeneralError] = useState<string | null>(null);
-    const [doctorCheck, setDoctorCheck] = useState<boolean>();
+    // const [searchParams, setSearchParams] = useSearchParams();
+    // const [generalError, setGeneralError] = useState<string | null>(null);
+    // const [doctorCheck, setDoctorCheck] = useState<boolean>();
 
-    const viewDate = new Date().toISOString().split("T")[0];
-    const [patient, setPatient] = useState<PatientData>({
-        guest_id: 0,
-        surname: '',
-        name: '',
-        patronymic: '',
-        birthday: '',
-    });
+    // const viewDate = new Date().toISOString().split("T")[0];
+    // const [patient, setPatient] = useState<PatientData>({
+    //     guest_id: 0,
+    //     surname: '',
+    //     name: '',
+    //     patronymic: '',
+    //     birthday: '',
+    // });
     const [description, setDescription] = useState('');
-    const [loading, setLoading] = useState(false);
-    const [error_r, setError_r] = useState<string | null>(null);
+    // const [loading, setLoading] = useState(false);
+    // const [error_r, setError_r] = useState<string | null>(null);
 
     const sideBarItems: OneItem[] = [
         {onClick: () => navigate('/doctor/timetable'), text: "Расписание", label: "timetable"},

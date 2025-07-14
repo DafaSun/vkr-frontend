@@ -36,7 +36,6 @@ import DoctorFirstVisit from "./pages/doctor/FirstVisit/FirstVisitDoctor.tsx";
 import DoctorFirstVisitPerson from "./pages/doctor/FirstVisit/FirstVisitPersonDoctor.tsx";
 import DoctorSecondVisit from "./pages/doctor/SecondVisit/SecondVisitDoctor.tsx";
 import DoctorSecondVisitPerson from "./pages/doctor/SecondVisit/SecondVisitPersonDoctor.tsx";
-import DoctorDiaries from "./pages/doctor/Dairies/DiariesDoctor.tsx";
 import DoctorDiariesPerson from "./pages/doctor/Dairies/DiariesPersonDoctor.tsx";
 import DoctorTimetable from "./pages/doctor/Timetable/TimetableDoctor.tsx";
 import DoctorSelfTimetable from "./pages/doctor/Timetable/SelfTimetableDoctor.tsx";
@@ -45,7 +44,6 @@ import DoctorWorkersTimetablePerson from "./pages/doctor/Timetable/DoctorTimetab
 import DoctorGuestsTimetable from "./pages/doctor/Timetable/GuestsTimetable/GuestsTimetableDoctor.tsx";
 import DoctorGuestsTimetablePerson from "./pages/doctor/Timetable/GuestsTimetable/GuestsTimetablePersonDoctor.tsx";
 import DoctorMedicalStories from "./pages/doctor/MedicalStories/MedicalStoriesDoctor.tsx";
-import DoctorMedicalStoriesPerson from "./pages/doctor/MedicalStories/MedicalStoriesPersonDoctor.tsx";
 //-----------FOR-NURSE-----------
 import NurseIndex from "./pages/nurse/IndexNurse.tsx";
 import NurseWorkersTimetable from "./pages/nurse/Timetable/WorkersTimetable/WorkersTimetableNurse.tsx";

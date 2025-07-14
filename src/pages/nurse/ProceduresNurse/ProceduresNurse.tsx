@@ -3,24 +3,23 @@ import {SideBar} from "../../../components/SideBar/SideBar.tsx";
 import {Header} from "../../../components/Header/Header.tsx"
 import {OneItem} from "../../../types/SideBarItem.tsx";
 import {useNavigate} from "react-router-dom";
-import {InputText} from "../../../components/inputs/InputText/InputText.tsx";
+// import {InputText} from "../../../components/inputs/InputText/InputText.tsx";
 import {Button} from "../../../components/buttons/Button/Button.tsx";
-import {useState} from "react";
-import axios from "axios";
-import {PatientData} from "../../../types/datas.tsx";
+// import {useState} from "react";
+// import axios from "axios";
+// import {PatientData} from "../../../types/datas.tsx";
 
 
-type ProcedureData = {
-    id: number,
-    name: string,
-    patient: string,
-    time: string
-};
+// type ProcedureData = {
+//     id: number,
+//     name: string,
+//     patient: string,
+//     time: string
+// };
 
 const ProceduresNurse = () => {
     const navigate = useNavigate()
-    const [surname, setSurname] = useState('');
-    const [guests, setGuests] = useState<ProcedureData[]>([
+    const guests=[
         {   id: 111,
             name: 'Тренажеры',
             patient: 'группа',
@@ -41,29 +40,29 @@ const ProceduresNurse = () => {
             name: 'ЛФК',
             patient: 'группа',
             time: '11:30 - 12:00'},
-    ]);
-    const [loading, setLoading] = useState(false);
-    const [error_r, setError_r] = useState<string | null>(null);
+    ];
+    const loading=false;
+    const error_r=null;
 
-    const changeSurname = (data: string) => {
-        setSurname(data);
-    };
-
-    const SearchClick = async () => {
-        setLoading(true);
-        try {
-            // const response = await axios.get(`http://localhost:8000/api/doctor/first_visit/?surname=${surname}`);
-            // setGuests(response.data);
-        } catch (error) {
-            if (error instanceof Error) {
-                setError_r(error.response.data.error);
-            } else {
-                setError_r("Произошла ошибка");
-            }
-        } finally {
-            setLoading(false);
-        }
-    };
+    // const changeSurname = (data: string) => {
+    //     setSurname(data);
+    // };
+    //
+    // const SearchClick = async () => {
+    //     setLoading(true);
+    //     try {
+    //         // const response = await axios.get(`http://localhost:8000/api/doctor/first_visit/?surname=${surname}`);
+    //         // setGuests(response.data);
+    //     } catch (error) {
+    //         if (error instanceof Error) {
+    //             // setError_r(error.response.data.error);
+    //         } else {
+    //             setError_r("Произошла ошибка");
+    //         }
+    //     } finally {
+    //         setLoading(false);
+    //     }
+    // };
 
     const sideBarItems: OneItem[] = [
         {onClick: () => navigate('/nurse/procedures'), text: "Процедуры", label: "procedures"},
@@ -95,7 +94,7 @@ const ProceduresNurse = () => {
                             guests.map(procedure => (
                                 <div className={styles['people-container']}>
                                     <div className={styles['name']}>
-                                        {procedure.surname} {procedure.name} {procedure.patronymic}
+                                        {procedure.patient}
                                     </div>
                                     <div className={styles['pr-time']}>
                                         {procedure.time}

@@ -8,7 +8,7 @@ import {OneItem} from "../../../types/SideBarItem.tsx";
 import {DatePicker} from "../../../components/inputs/DatePicker/DatePicker.tsx";
 import {useNavigate, useSearchParams} from "react-router-dom";
 import {DropdownList} from "../../../components/inputs/DropdownList/DpropdownList.tsx";
-import {genderList, roomCategoryList, typeTourList} from "../../../mocks/mock.tsx";
+import {genderList, typeTourList} from "../../../mocks/mock.tsx";
 import axios from "axios";
 import {InputPhone} from "../../../components/inputs/InputPhone/InputPhone.tsx";
 import {InputEmail} from "../../../components/inputs/InputEmail/InputEmail.tsx";
@@ -46,8 +46,8 @@ const GuestPersonManager = () => {
     };
 
     const [guestId, setGuestId] = useState<number>();
-    const [loading, setLoading] = useState(false);
-    const [error_r, setError_r] = useState<string | null>(null);
+    // const [loading, setLoading] = useState(false);
+    // const [error_r, setError_r] = useState<string | null>(null);
     const [isEdit, setIsEdit] = useState(false);
     const [surname, setSurname] = useState<string>();
     const [name, setName] = useState<string>();
@@ -90,9 +90,9 @@ const GuestPersonManager = () => {
     });
 
     useEffect(() => {
-        setLoading(true);
+        // setLoading(true);
         getGuestPerson()
-    }, [guestId]);
+    }, [guestId, setSearchParams()]);
 
     useEffect(() => {
         setGuestId(Number(searchParams.get("id")) || Number(defaultParams.id));
@@ -159,23 +159,23 @@ const GuestPersonManager = () => {
             setHomeAddressStreet(response.data.home_address_street_and_house);
             setWorkplace(response.data.workplace);
         } catch (error) {
-            setError_r(error instanceof Error ? error.message : "Произошла ошибка");
+            // setError_r(error instanceof Error ? error.message : "Произошла ошибка");
         } finally {
-            setLoading(false);
+            // setLoading(false);
         }
     };
 
     const deleteGuestPerson = async () => {
         try {
-            const response = await axios.delete(`http://localhost:8000/api/manager/guests/person/delete/?id=${guestId}`);
+            // const response = await axios.delete(`http://localhost:8000/api/manager/guests/person/delete/?id=${guestId}`);
         } catch (error) {
             if (error instanceof Error) {
-                setError_r(error.message);
+                // setError_r(error.message);
             } else {
-                setError_r("Произошла ошибка");
+                // setError_r("Произошла ошибка");
             }
         } finally {
-            setLoading(false);
+            // setLoading(false);
         }
     };
 
@@ -191,27 +191,28 @@ const GuestPersonManager = () => {
         }
 
         try {
-            const response = await axios.patch(`http://localhost:8000/api/manager/guests/person/update/?id=${Number(guestId)}`, {
-                "surname": surname,
-                "name": name,
-                "patronymic": patronymic,
-                "birthday": birthday,
-                "email": email,
-                "phone": phone,
-                "home_address_country": homeAddressCountry,
-                "home_address_region": homeAddressRegion,
-                "home_address_city": homeAddressCity,
-                "home_address_street_and_house": homeAddressStreet,
-                "workplace": workplace,
-            });
+            // const response = await axios.patch(`http://localhost:8000/api/manager/guests/person/update/?id=${Number(guestId)}`, {
+            //     "surname": surname,
+            //     "name": name,
+            //     "patronymic": patronymic,
+            //     "birthday": birthday,
+            //     "email": email,
+            //     "phone": phone,
+            //     "home_address_country": homeAddressCountry,
+            //     "home_address_region": homeAddressRegion,
+            //     "home_address_city": homeAddressCity,
+            //     "home_address_street_and_house": homeAddressStreet,
+            //     "workplace": workplace,
+            // });
+
         } catch (error) {
             if (error instanceof Error) {
-                setError_r(error.message);
+                // setError_r(error.message);
             } else {
-                setError_r("Произошла ошибка");
+                // setError_r("Произошла ошибка");
             }
         } finally {
-            setLoading(false);
+            // setLoading(false);
         }
     };
 

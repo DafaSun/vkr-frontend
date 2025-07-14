@@ -8,8 +8,7 @@ import {useNavigate, useSearchParams} from "react-router-dom";
 import {DatePicker} from "../../../components/inputs/DatePicker/DatePicker.tsx";
 import {DropdownList} from "../../../components/inputs/DropdownList/DpropdownList.tsx";
 import {InputNumber} from "../../../components/inputs/InputNumber/InputNumber.tsx";
-import axios from "axios";
-import {genderList, roomCategoryList, roomTypeList} from "../../../mocks/mock.tsx";
+import {genderList, roomCategoryList} from "../../../mocks/mock.tsx";
 
 interface HotelPlace {
     place_id: number
@@ -36,7 +35,7 @@ const HotelRoomsManager = () => {
     const [guests, setGuests] = useState(Number(searchParams.get("guests")) || Number(defaultParams.guests));
     const [category, setCategory] = useState(searchParams.get("category") || defaultParams.category);
     const [gender, setGender] = useState(searchParams.get("gender") || defaultParams.gender);
-    const [places, setPlaces] = useState<HotelPlace[]>([
+    const places:HotelPlace[]=[
         { place_id: 10000,
             place_name: 'Место 102/1',
             room_name: 'Номер 102',
@@ -53,9 +52,9 @@ const HotelRoomsManager = () => {
             price: 3000,
             category_name: '2 - Двухместный номер на 1 этаже в 4 корпусе с удобствами в блоке'
     },
-    ]);
-    const [loading, setLoading] = useState(false);
-    const [error_r, setError_r] = useState<string | null>(null);
+    ];
+    const loading=false;
+    const error_r=null;
 
     useEffect(() => {
         setCheckin(searchParams.get("checkin") || defaultParams.checkin);

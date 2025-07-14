@@ -7,13 +7,12 @@ import self_styles from "./WorkersTimetableNurse.module.css";
 import {InputText} from "../../../../components/inputs/InputText/InputText.tsx";
 import {Button} from "../../../../components/buttons/Button/Button.tsx";
 import {useState} from "react";
-import axios from "axios";
 import {DoctorData} from "../../../../types/datas.tsx";
 
 const WorkersTimetableNurse = () => {
     const navigate = useNavigate()
     const [surname, setSurname] = useState('');
-    const [doctors, setDoctors] = useState<DoctorData[]>([]);
+    const doctors:DoctorData[] = [];
     const [loading, setLoading] = useState(false);
     const [error_r, setError_r] = useState<string | null>(null);
 
@@ -28,7 +27,7 @@ const WorkersTimetableNurse = () => {
             // setGuests(response.data);
         } catch (error) {
             if (error instanceof Error) {
-                setError_r(error.response.data.error);
+                // setError_r(error.response.data.error);
             } else {
                 setError_r("Произошла ошибка");
             }

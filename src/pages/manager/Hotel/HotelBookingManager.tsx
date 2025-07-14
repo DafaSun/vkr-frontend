@@ -6,14 +6,10 @@ import {Button} from "../../../components/buttons/Button/Button.tsx";
 import {OneItem} from "../../../types/SideBarItem.tsx";
 import {useNavigate, useSearchParams} from "react-router-dom";
 import {DatePicker} from "../../../components/inputs/DatePicker/DatePicker.tsx";
-import {DropdownList} from "../../../components/inputs/DropdownList/DpropdownList.tsx";
 import {InputText} from "../../../components/inputs/InputText/InputText.tsx";
-import {Checkbox} from "../../../components/inputs/Checkbox/Checkbox.tsx";
 import {InputPhone} from "../../../components/inputs/InputPhone/InputPhone.tsx";
 import {InputEmail} from "../../../components/inputs/InputEmail/InputEmail.tsx";
 import axios from "axios";
-import {InputNumber} from "../../../components/inputs/InputNumber/InputNumber.tsx";
-import {genderList, roomCategoryList, typeTourList} from "../../../mocks/mock.tsx";
 
 const HotelBookingNewManager = () => {
     const navigate = useNavigate();
@@ -41,20 +37,20 @@ const HotelBookingNewManager = () => {
     const [name, setName] = useState('');
     const [patronymic, setPatronymic] = useState('');
     const [birthday, setBirthday] = useState('');
-    const [breakfast, setBreakfast] = useState(false);
-    const [lunch, setLunch] = useState(false);
-    const [dinner, setDinner] = useState(false);
+    const breakfast=false;
+    const lunch=false;
+    const dinner=false;
     const [phone, setPhone] = useState('');
     const [email, setEmail] = useState('');
-    const [error_r, setError_r] = useState<string | null>(null);
     const [message, setMessage] = useState<string | null>(null);
-    const [loading, setLoading] = useState(false);
-    const [errors, setErrors] = useState<{ [key: string]: string }>({});
-    const [generalError, setGeneralError] = useState<string | null>(null);
+    // const [error_r, setError_r] = useState<string | null>(null);
+    // const [loading, setLoading] = useState(false);
+    // const [errors, setErrors] = useState<{ [key: string]: string }>({});
+    // const [generalError, setGeneralError] = useState<string | null>(null);
 
     useEffect(() => {
         getPlaceName()
-    }, []);
+    }, [message, guests, placeName, category]);
 
     useEffect(() => {
         setCheckin(searchParams.get("checkin") || defaultParams.checkin);
@@ -74,35 +70,35 @@ const HotelBookingNewManager = () => {
 
     const changeSurname = (data: string) => {
         setSurname(data);
-        setErrors({});
-        setGeneralError(null);
+        // setErrors({});
+        // setGeneralError(null);
     };
     const changeName = (data: string) => {
         setName(data);
-        setErrors({});
-        setGeneralError(null);
+        // setErrors({});
+        // setGeneralError(null);
     };
     const changePatronymic = (data: string) => setPatronymic(data);
     const changeBirthday = (data: string) => {
         setBirthday(data);
-        setErrors({});
-        setGeneralError(null);
+        // setErrors({});
+        // setGeneralError(null);
     };
-    const changeGender = (data: string) => {
-        setGender(data);
-        setErrors({});
-        setGeneralError(null);
-    };
-    const changeBreakfast = (data: boolean) => setBreakfast(data);
-    const changeLunch = (data: boolean) => setLunch(data);
-    const changeDinner = (data: boolean) => setDinner(data);
+    // const changeGender = (data: string) => {
+    //     setGender(data);
+        // setErrors({});
+        // setGeneralError(null);
+    // };
+    // const changeBreakfast = (data: boolean) => setBreakfast(data);
+    // const changeLunch = (data: boolean) => setLunch(data);
+    // const changeDinner = (data: boolean) => setDinner(data);
     const changeEmail = (data: string) => {
         setEmail(data);
     };
     const changePhone = (data: string) => {
         setPhone(data);
-        setErrors({});
-        setGeneralError(null);
+        // setErrors({});
+        // setGeneralError(null);
     };
 
     const validateFields = () => {
@@ -112,18 +108,18 @@ const HotelBookingNewManager = () => {
         if (!birthday) tempErrors.birthday = "Дата рождения обязательна";
         if (!phone) tempErrors.phone = "Телефон обязателен";
         if (!gender) tempErrors.gender = "Пол обязателен";
-        setErrors(tempErrors);
+        // setErrors(tempErrors);
         return Object.keys(tempErrors).length === 0;
     };
 
     const createBooking = async () => {
         if (!validateFields()) {
-            setGeneralError("Пожалуйста, заполните все обязательные поля!");
+            // setGeneralError("Пожалуйста, заполните все обязательные поля!");
             return;
         }
 
         try {
-            setLoading(true);
+            // setLoading(true);
             const response = await axios.post('http://localhost:8000/api/manager/booking/new/', {
                 "place_id": place,
                 'checkin': checkin,
@@ -144,12 +140,12 @@ const HotelBookingNewManager = () => {
             setMessage(response.data.message);
         } catch (error) {
             if (error instanceof Error) {
-                setError_r(error.response.data.error);
+                // setError_r(error.response.data.error);
             } else {
-                setError_r("Произошла ошибка");
+                // setError_r("Произошла ошибка");
             }
         } finally {
-            setLoading(false);
+            // setLoading(false);
         }
     };
 
@@ -159,7 +155,7 @@ const HotelBookingNewManager = () => {
             const r = response.data;
             setPlaceName(r.place_name);
         } catch (error) {
-            setError_r("Произошла ошибка");
+            // setError_r("Произошла ошибка");
         }
     }
 

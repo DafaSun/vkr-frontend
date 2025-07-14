@@ -34,7 +34,7 @@ const UsualTourCategoriesManager = () => {
     const [checkin, setCheckin] = useState(searchParams.get("checkin") || defaultParams.checkin);
     const [checkout, setCheckout] = useState(searchParams.get("checkout") || defaultParams.checkout);
     const [roomType, setRoomType] = useState<string>(searchParams.get("roomType") || defaultParams.roomType);
-    const [guests, setGuests] = useState(Number(searchParams.get("guests")) || Number(defaultParams.guests));
+    const guests = Number(searchParams.get("guests")) || Number(defaultParams.guests)
     const [gender, setGender] = useState<string>(searchParams.get("gender") || defaultParams.gender);
     const [categories, setCategories] = useState<TourCategory[]>([{
         category_label: "cat3",
@@ -106,7 +106,7 @@ const UsualTourCategoriesManager = () => {
     const today = new Date();
     const minDate = today.toISOString().split("T")[0];
     const maxDate = new Date(today.setMonth(today.getMonth() + 18)).toISOString().split("T")[0];
-    const dateWidth = '100px';
+    // const dateWidth = '100px';
 
 
     const sideBarItems: OneItem[] = [

@@ -10,6 +10,7 @@ interface TextInputProps {
     height?: number;
     onChange?: (value: string) => void;
     isHidden?: boolean;
+    required?: boolean;
 }
 
 export const InputText: React.FC<TextInputProps> = ({

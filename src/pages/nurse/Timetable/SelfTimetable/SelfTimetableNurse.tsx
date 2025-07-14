@@ -4,35 +4,33 @@ import {Header} from "../../../../components/Header/Header.tsx"
 import {OneItem} from "../../../../types/SideBarItem.tsx";
 import {useNavigate} from "react-router-dom";
 import {Button} from "../../../../components/buttons/Button/Button.tsx";
-import {useState} from "react";
-import axios from "axios";
-import {PatientData} from "../../../../types/datas.tsx";
+// import {PatientData} from "../../../../types/datas.tsx";
 import {DatePicker} from "../../../../components/inputs/DatePicker/DatePicker.tsx";
 
 const SelfTimetableNurse = () => {
     const navigate = useNavigate()
-    const [surname, setSurname] = useState('');
-    const [guests, setGuests] = useState<PatientData[]>([]);
-    const [loading, setLoading] = useState(false);
-    const [error_r, setError_r] = useState<string | null>(null);
+    // const [surname, setSurname] = useState('');
+    // const [guests, setGuests] = useState<PatientData[]>([]);
+    // const [loading, setLoading] = useState(false);
+    // const [error_r, setError_r] = useState<string | null>(null);
 
-    const changeSurname = (data: string) => {
-        setSurname(data);
-    };
+    // const changeSurname = (data: string) => {
+    //     setSurname(data);
+    // };
 
     const SearchClick = async () => {
-        setLoading(true);
+        // setLoading(true);
         try {
             // const response = await axios.get(`http://localhost:8000/api/doctor/first_visit/?surname=${surname}`);
             // setGuests(response.data);
         } catch (error) {
             if (error instanceof Error) {
-                setError_r(error.response.data.error);
+                // setError_r(error.response.data.error);
             } else {
-                setError_r("Произошла ошибка");
+                // setError_r("Произошла ошибка");
             }
         } finally {
-            setLoading(false);
+            // setLoading(false);
         }
     };
 

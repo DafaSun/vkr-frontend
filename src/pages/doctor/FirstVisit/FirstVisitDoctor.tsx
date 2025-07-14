@@ -9,13 +9,12 @@ import {useEffect, useState} from "react";
 import axios from "axios";
 import {PatientData} from "../../../types/datas.tsx";
 
-
 const FirstVisitDoctor = () => {
     const navigate = useNavigate();
     const [searchParams, setSearchParams] = useSearchParams();
 
     const [surname, setSurname] = useState('');
-    const [guests, setGuests] = useState<GuestsData[]>([]);
+    const [guests, setGuests] = useState<PatientData[]>([]);
     const [loading, setLoading] = useState(false);
     const [error_r, setError_r] = useState<string | null>(null);
 
@@ -25,7 +24,7 @@ const FirstVisitDoctor = () => {
 
     useEffect(() => {
         setSearchParams({surname});
-    }, [surname, setSearchParams]);
+    }, [surname, setSearchParams, searchParams]);
 
     useEffect(() => {
         SearchClick()
@@ -38,7 +37,7 @@ const FirstVisitDoctor = () => {
             setGuests(response.data);
         } catch (error) {
             if (error instanceof Error) {
-                setError_r(error.response.data.error);
+                // setError_r(error.response.data.error);
             } else {
                 setError_r("Произошла ошибка");
             }

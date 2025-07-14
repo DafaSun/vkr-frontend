@@ -10,6 +10,7 @@ interface DatePickerProps {
     isEdit?: boolean;
     minDate?: string;
     maxDate?: string;
+    required?: boolean;
 }
 
 export const DatePicker: React.FC<DatePickerProps> = ({

@@ -3,7 +3,6 @@ import {SideBar} from "../../../components/SideBar/SideBar.tsx";
 import {Header} from "../../../components/Header/Header.tsx"
 import {OneItem} from "../../../types/SideBarItem.tsx";
 import {useNavigate} from "react-router-dom";
-import {InputText} from "../../../components/inputs/InputText/InputText.tsx";
 import {DatePicker} from "../../../components/inputs/DatePicker/DatePicker.tsx";
 import {DropdownList} from "../../../components/inputs/DropdownList/DpropdownList.tsx";
 import {useState} from "react";
@@ -18,20 +17,15 @@ import {
     hepatitisList,
     statesList,
     genderList,
-    typeTourList
 } from "../../../mocks/mock.tsx";
 import {InputBigText} from "../../../components/inputs/InputBigText/InputBigText.tsx";
-import {InputPhone} from "../../../components/inputs/InputPhone/InputPhone.tsx";
-import {InputEmail} from "../../../components/inputs/InputEmail/InputEmail.tsx";
 
 const FirstVisitPersonDoctor = () => {
     const navigate = useNavigate();
 
-    const empty_string = '';
-
     const viewDate = new Date().toISOString().split("T")[0];
-    const gender = "female";
-    const [viewTime, setViewTime] = useState<string>();
+    // const gender = "female";
+    // const [viewTime, setViewTime] = useState<string>();
     const [complaints, setComplaints] = useState<string>();
     const [medicalStory, setMedicalStory] = useState<string>();
     const [genetics, setGenetics] = useState<string>();
@@ -49,14 +43,11 @@ const FirstVisitPersonDoctor = () => {
     const [general, setGeneral] = useState<string>();
     const [body, setBody] = useState<string>();
     const [skin, setSkin] = useState<string>();
-    const [skinRashDetails, setSkinRashDetails] = useState<string>();
     const [skinWetness, setSkinWetness] = useState<string>();
     const [pulse, setPulse] = useState<number>();
     const [pressure, setPressure] = useState<string>();
     const [breathType, setBreathType] = useState<string>();
-    const [breathTypeDetails, setBreathTypeDetails] = useState<string>();
     const [rales, setRales] = useState<string>();
-    const [ralesDetails, setRalesDetails] = useState<string>();
     const [breathRate, setBreathRate] = useState<number>();
     const [heartRhythm, setHeartRhythm] = useState<string>();
     const [heartClarity, setHeartClarity] = useState<string>();
@@ -119,78 +110,74 @@ const FirstVisitPersonDoctor = () => {
     const [therapyPlan, setTherapyPlan] = useState<string>();
     const [doctorCheck, setDoctorCheck] = useState<boolean>();
 
-    const [loading, setLoading] = useState(false);
-    const [error_r, setError_r] = useState<string | null>(null);
-    const [generalError, setGeneralError] = useState<string | null>(null);
-
-    const [errors, setErrors] = useState({
-        complaints: false,
-        medicalStory: false,
-        genetics: false,
-        allergy: false,
-        previousIlls: false,
-        tuberculosis: false,
-        hepatitis: false,
-        venerealIlls: false,
-        operations: false,
-        smoking: false,
-        alcohol: false,
-        menstruationReg: false,
-        lastMenstruation: false,
-        menopause: false,
-        general: false,
-        body: false,
-        skin: false,
-        skinRash: false,
-        skinWetness: false,
-        pulse: false,
-        pressure: false,
-        breathType: false,
-        rales: false,
-        breathRate: false,
-        heartRhythm: false,
-        heartClarity: false,
-        heartRate: false,
-        heartMurmurs: false,
-        accents: false,
-        tongueWetness: false,
-        tongueRaid: false,
-        bellySoftness: false,
-        bellyPainnnes: false,
-        liverSize: false,
-        liverPainness: false,
-        kidneysShaking: false,
-        urinationPainness: false,
-        urinationFreeness: false,
-        edema: false,
-        chairDec: false,
-        chairReg: false,
-        conscience: false,
-        orientation: false,
-        cranialNervous: false,
-        muscleTone: false,
-        musclePower: false,
-        tendonReflexes: false,
-        sensitivity: false,
-        rombergPose: false,
-        fingerTest: false,
-        spineDeform: false,
-        spineMotionLimit: false,
-        spineMotionPainness: false,
-        paravertebralPoints: false,
-        lasegaSypthomRight: false,
-        lasegaSypthomLeft: false,
-        jointsDeform: false,
-        jointsPalpationPainness: false,
-        jointsMotionPainness: false,
-        jointsMotionVolume: false,
-        mainDiagnosisMKB: false,
-        mainDiagnosis: false,
-        concomitantDiagnosisMKB: false,
-        concomitantDiagnosis: false,
-        therapyPlan: false,
-        doctorCheck: false
-    });
+    // const [errors, setErrors] = useState({
+    //     complaints: false,
+    //     medicalStory: false,
+    //     genetics: false,
+    //     allergy: false,
+    //     previousIlls: false,
+    //     tuberculosis: false,
+    //     hepatitis: false,
+    //     venerealIlls: false,
+    //     operations: false,
+    //     smoking: false,
+    //     alcohol: false,
+    //     menstruationReg: false,
+    //     lastMenstruation: false,
+    //     menopause: false,
+    //     general: false,
+    //     body: false,
+    //     skin: false,
+    //     skinRash: false,
+    //     skinWetness: false,
+    //     pulse: false,
+    //     pressure: false,
+    //     breathType: false,
+    //     rales: false,
+    //     breathRate: false,
+    //     heartRhythm: false,
+    //     heartClarity: false,
+    //     heartRate: false,
+    //     heartMurmurs: false,
+    //     accents: false,
+    //     tongueWetness: false,
+    //     tongueRaid: false,
+    //     bellySoftness: false,
+    //     bellyPainnnes: false,
+    //     liverSize: false,
+    //     liverPainness: false,
+    //     kidneysShaking: false,
+    //     urinationPainness: false,
+    //     urinationFreeness: false,
+    //     edema: false,
+    //     chairDec: false,
+    //     chairReg: false,
+    //     conscience: false,
+    //     orientation: false,
+    //     cranialNervous: false,
+    //     muscleTone: false,
+    //     musclePower: false,
+    //     tendonReflexes: false,
+    //     sensitivity: false,
+    //     rombergPose: false,
+    //     fingerTest: false,
+    //     spineDeform: false,
+    //     spineMotionLimit: false,
+    //     spineMotionPainness: false,
+    //     paravertebralPoints: false,
+    //     lasegaSypthomRight: false,
+    //     lasegaSypthomLeft: false,
+    //     jointsDeform: false,
+    //     jointsPalpationPainness: false,
+    //     jointsMotionPainness: false,
+    //     jointsMotionVolume: false,
+    //     mainDiagnosisMKB: false,
+    //     mainDiagnosis: false,
+    //     concomitantDiagnosisMKB: false,
+    //     concomitantDiagnosis: false,
+    //     therapyPlan: false,
+    //     doctorCheck: false
+    // });
 
     // const validateFields = () => {
     //     let tempErrors: { [key: string]: string } = {};
@@ -251,7 +238,7 @@ const FirstVisitPersonDoctor = () => {
                                     <DatePicker text={"Дата осмотра"} value={viewDate} isEdit={false}/>
                                 </div>
                                 <div className={styles['field']}>
-                                    <TimePicker text={"Время начала осмотра"} value={'12:30'} onSelect={setViewTime}/>
+                                    <TimePicker text={"Время начала осмотра"} value={'12:30'} onSelect={()=>{}}/>
                                 </div>
                             </div>
                         </div>
@@ -301,9 +288,9 @@ const FirstVisitPersonDoctor = () => {
                             <Checkbox text={'Алкоголь'} value={alcohol} onChange={setAlcohol}/>
                         </div>
 
-                        <div className={gender == 'male' ? styles['hidden'] : styles['title3']}>Менструации
+                        <div className={styles['title3']}>Менструации
                         </div>
-                        <div className={gender == 'male' ? styles['hidden'] : styles['container3']}>
+                        <div className={styles['container3']}>
                             <Checkbox text={'Регулярно'} value={menstruationReg} onChange={setMenstruationReg}/>
                             <DatePicker text={"Последняя менструация"} value={lastMenstruation}
                                         onSelect={setLastMenstruation} maxDate={viewDate}/>
@@ -437,14 +424,14 @@ const FirstVisitPersonDoctor = () => {
                                     {id: 'systolic', fullName: "Систолические"},
                                     {id: 'diastolic', fullName: "Диастолические"}]}
                                               value={heartMurmurs} label={''} onSelect={setHeartMurmurs}/>
-                                <InputBigText isHidden={heartMurmurs != 'systolic' && heartMurmurs != 'diastolic'}
+                                <InputBigText text={''} isHidden={heartMurmurs != 'systolic' && heartMurmurs != 'diastolic'}
                                               value={heartMurmursDetails} label={''} onChange={setHeartMurmursDetails}/>
                             </div>
 
                             <div className={styles['container4']}>
                                 <DropdownList text={'Акцент'} options={[{id: 'not', fullName: "Нет"},
                                     {id: 'has', fullName: "Есть"}]} value={accents} label={''} onSelect={setAccents}/>
-                                <InputBigText isHidden={accents != 'has'} value={accentsDetails} label={''}
+                                <InputBigText text={''}  isHidden={accents != 'has'} value={accentsDetails} label={''}
                                               onChange={setAccentsDetails}/>
                             </div>
                         </div>
@@ -458,7 +445,7 @@ const FirstVisitPersonDoctor = () => {
                                 <DropdownList text={'Налет'} options={[{id: 'clear', fullName: "Чистый"},
                                     {id: 'raid', fullName: "Обложен налетом"}]} value={tongueRaid} label={''}
                                               onSelect={setTongueRaid}/>
-                                <InputBigText isHidden={tongueRaid != 'raid'} value={tongueRaidDetails} label={''}
+                                <InputBigText text={''}  isHidden={tongueRaid != 'raid'} value={tongueRaidDetails} label={''}
                                               onChange={setTongueRaidDetails}/>
                             </div>
                         </div>
@@ -471,7 +458,7 @@ const FirstVisitPersonDoctor = () => {
                             <div className={styles['container4']}>
                                 <DropdownList options={painList} value={bellyPainnnes} label={''}
                                               onSelect={setBellyPainnnes}/>
-                                <InputBigText isHidden={bellyPainnnes != 'painful'} value={bellyPainnnesDetails}
+                                <InputBigText text={''}  isHidden={bellyPainnnes != 'painful'} value={bellyPainnnesDetails}
                                               label={''} onChange={setBellyPainnnesDetails}/>
                             </div>
                         </div>
@@ -509,7 +496,7 @@ const FirstVisitPersonDoctor = () => {
                         <div className={styles['container4']}>
                             <DropdownList text={'Периферичные отеки'} options={[{id: 'has', fullName: "Есть"},
                                 {id: 'not', fullName: "Нет"}]} value={edema} label={''} onSelect={setEdema}/>
-                            <InputBigText isHidden={edema != 'has'} value={edemaDetails} label={''}
+                            <InputBigText text={''}  isHidden={edema != 'has'} value={edemaDetails} label={''}
                                           onChange={setEdemaDetails}/>
                         </div>
 
@@ -522,7 +509,7 @@ const FirstVisitPersonDoctor = () => {
                                 <DropdownList options={[{id: 'regular', fullName: "Регулярный"},
                                     {id: 'not_regular', fullName: "Нерегулярный"}]} value={chairReg} label={''}
                                               onSelect={setChairReg}/>
-                                <InputBigText isHidden={chairReg != 'not_regular'} value={chairRegDetails} label={''}
+                                <InputBigText text={''}  isHidden={chairReg != 'not_regular'} value={chairRegDetails} label={''}
                                               onChange={setChairRegDetails}/>
                             </div>
                         </div>
@@ -533,7 +520,7 @@ const FirstVisitPersonDoctor = () => {
                         <div className={styles['container4']}>
                             <DropdownList text={'Сознание'} options={[{id: 'clear', fullName: "Ясное"},
                                 {id: 'not', fullName: "Нет"}]} value={conscience} label={''} onSelect={setConscience}/>
-                            <InputBigText isHidden={conscience != 'not'} value={conscienceDetails} label={''}
+                            <InputBigText text={''}  isHidden={conscience != 'not'} value={conscienceDetails} label={''}
                                           onChange={setConscienceDetails}/>
                         </div>
 
@@ -554,7 +541,7 @@ const FirstVisitPersonDoctor = () => {
                                 {id: 'hypo', fullName: "Гипостезия"},
                                 {id: 'hyper', fullName: "Гиперстезия"}]} value={sensitivity} label={''}
                                           onSelect={setSensitivity}/>
-                            <InputBigText isHidden={sensitivity != 'hypo' && sensitivity != 'hyper'}
+                            <InputBigText text={''}  isHidden={sensitivity != 'hypo' && sensitivity != 'hyper'}
                                           value={sensitivityDetails} label={''} onChange={setSensitivityDetails}/>
                         </div>
 
@@ -562,7 +549,7 @@ const FirstVisitPersonDoctor = () => {
                             <DropdownList text={'В позе ромберга'} options={[{id: 'stable', fullName: "Устойчивый"},
                                 {id: 'unstable', fullName: "Неустойчивый"}]} value={rombergPose} label={''}
                                           onSelect={setRombergPose}/>
-                            <InputBigText isHidden={rombergPose != 'unstable'} value={rombergPoseDetails} label={''}
+                            <InputBigText text={''}  isHidden={rombergPose != 'unstable'} value={rombergPoseDetails} label={''}
                                           onChange={setRombergPoseDetails}/>
                         </div>
 
@@ -571,14 +558,14 @@ const FirstVisitPersonDoctor = () => {
                                           options={[{id: 'good', fullName: "Удовлетворительная"},
                                               {id: 'bad', fullName: "Неудовлетворительная"}]} value={fingerTest}
                                           label={''} onSelect={setFingerTest}/>
-                            <InputBigText isHidden={fingerTest != 'bad'} value={fingerTestDetails} label={''}
+                            <InputBigText text={''}  isHidden={fingerTest != 'bad'} value={fingerTestDetails} label={''}
                                           onChange={setFingerTestDetails}/>
                         </div>
 
                         <div className={styles['container4']}>
                             <DropdownList text={'Позвоночник'} options={deformList} value={spineDeform} label={''}
                                           onSelect={setSpineDeform}/>
-                            <InputBigText isHidden={spineDeform != 'has'} value={spineDeformDetails} label={''}
+                            <InputBigText text={''}  isHidden={spineDeform != 'has'} value={spineDeformDetails} label={''}
                                           onChange={setSpineDeformDetails}/>
                         </div>
 
@@ -592,7 +579,7 @@ const FirstVisitPersonDoctor = () => {
                             <div className={styles['container4']}>
                                 <DropdownList options={painList} value={spineMotionPainness} label={''}
                                               onSelect={setSpineMotionPainness}/>
-                                <InputBigText isHidden={spineMotionPainness != 'painfull'}
+                                <InputBigText  text={''}  isHidden={spineMotionPainness != 'painfull'}
                                               value={spineMotionPainnessDetails} label={''}
                                               onChange={setSpineMotionPainnessDetails}/>
                             </div>
@@ -602,7 +589,7 @@ const FirstVisitPersonDoctor = () => {
                             <DropdownList text={'Пульпация паравертебальных точек'}
                                           options={painList} value={paravertebralPoints} label={''}
                                           onSelect={setParavertebralPoints}/>
-                            <InputBigText isHidden={paravertebralPoints != 'painful'} value={paravertebralPointsDetails}
+                            <InputBigText  text={''}  isHidden={paravertebralPoints != 'painful'} value={paravertebralPointsDetails}
                                           label={''} onChange={setParavertebralPointsDetails}/>
                         </div>
 
@@ -624,7 +611,7 @@ const FirstVisitPersonDoctor = () => {
                             <div className={styles['container4']}>
                                 <DropdownList options={deformList} value={jointsDeform} label={''}
                                               onSelect={setJointsDeform}/>
-                                <InputBigText isHidden={jointsDeform != 'has'} value={jointsDeformDetails} label={''}
+                                <InputBigText  text={''}  isHidden={jointsDeform != 'has'} value={jointsDeformDetails} label={''}
                                               onChange={setJointsDeformDetails}/>
                             </div>
 
@@ -632,7 +619,7 @@ const FirstVisitPersonDoctor = () => {
                                 <DropdownList text={'Пульпация суставов'} options={painList}
                                               value={jointsPalpationPainness} label={''}
                                               onSelect={setJointsPalpationPainness}/>
-                                <InputBigText isHidden={jointsPalpationPainness != 'painful'}
+                                <InputBigText  text={''}  isHidden={jointsPalpationPainness != 'painful'}
                                               value={jointsPalpationPainnessDetails} label={''}
                                               onChange={setJointsPalpationPainnessDetails}/>
                             </div>
@@ -640,7 +627,7 @@ const FirstVisitPersonDoctor = () => {
                                 <DropdownList text={'Активные движения в суставах'} options={painList}
                                               value={jointsMotionPainness} label={''}
                                               onSelect={setJointsMotionPainness}/>
-                                <InputBigText isHidden={jointsMotionPainness != 'painful'}
+                                <InputBigText  text={''}  isHidden={jointsMotionPainness != 'painful'}
                                               value={jointsMotionPainnessDetails} label={''}
                                               onChange={setJointsMotionPainnessDetails}/>
                             </div>
@@ -649,7 +636,7 @@ const FirstVisitPersonDoctor = () => {
                                               options={[{id: 'full', fullName: "В полном объеме"},
                                                   {id: 'limit', fullName: "Ограничены"}]} value={jointsMotionVolume}
                                               label={''} onSelect={setJointsMotionVolume}/>
-                                <InputBigText isHidden={jointsMotionVolume != 'limit'} value={jointsMotionVolumeDetails}
+                                <InputBigText  text={''}  isHidden={jointsMotionVolume != 'limit'} value={jointsMotionVolumeDetails}
                                               label={''} onChange={setJointsMotionVolumeDetails}/>
                             </div>
                         </div>
@@ -684,7 +671,7 @@ const FirstVisitPersonDoctor = () => {
                     <br/>
 
                     <Checkbox text={'Лечащий врач все проверил'} value={doctorCheck} onChange={setDoctorCheck}/>
-                    {generalError && <p style={{color: "red"}}>{generalError}</p>}
+                    {/*{generalError && <p style={{color: "red"}}>{generalError}</p>}*/}
 
                     <div className={styles['rowContainer']}>
                         <Button color={'violet'} text={'Сохранить'} onClick={() => {

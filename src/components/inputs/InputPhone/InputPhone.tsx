@@ -9,6 +9,7 @@ interface PhoneInputProps {
     height?: number;
     isEdit?: boolean;
     onChange?: (value: string) => void;
+    required?: boolean;
 }
 
 export const InputPhone: React.FC<PhoneInputProps> = ({

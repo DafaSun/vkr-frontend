@@ -3,14 +3,11 @@ import {SideBar} from "../../../components/SideBar/SideBar.tsx";
 import {Header} from "../../../components/Header/Header.tsx"
 import {OneItem} from "../../../types/SideBarItem.tsx";
 import {useNavigate, useSearchParams} from "react-router-dom";
-import {InputText} from "../../../components/inputs/InputText/InputText.tsx";
 import {Button} from "../../../components/buttons/Button/Button.tsx";
 import {useEffect, useState} from "react";
 import axios from "axios";
 import {PatientData} from "../../../types/datas.tsx";
 import {DatePicker} from "../../../components/inputs/DatePicker/DatePicker.tsx";
-import {DropdownList} from "../../../components/inputs/DropdownList/DpropdownList.tsx";
-import {roomCategoryList} from "../../../mocks/mock.tsx";
 
 const SelfTimetableDoctor = () => {
     const navigate = useNavigate();
@@ -22,13 +19,13 @@ const SelfTimetableDoctor = () => {
     const [loading, setLoading] = useState(false);
     const [error_r, setError_r] = useState<string | null>(null);
 
-    const changeDate = (data: string) => {
-        setDate(data);
-    };
+    // const changeDate = (data: string) => {
+    //     setDate(data);
+    // };
 
     useEffect(() => {
         setSearchParams({date});
-    }, [date, setSearchParams]);
+    }, [date, setSearchParams, searchParams, setDate, setSDate, guests, loading, error_r]);
 
     useEffect(() => {
         SearchClick()
@@ -41,7 +38,7 @@ const SelfTimetableDoctor = () => {
             setGuests(response.data);
         } catch (error) {
             if (error instanceof Error) {
-                setError_r(error.response.data.error);
+                // setError_r(error.response.data.error);
             } else {
                 setError_r("Произошла ошибка");
             }

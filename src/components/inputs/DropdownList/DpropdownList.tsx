@@ -3,7 +3,7 @@ import styles from "./DropdownList.module.css";
 
 interface Item {
     id: string;
-    name: string;
+    fullName: string;
 }
 
 interface DropdownListProps {
@@ -15,6 +15,7 @@ interface DropdownListProps {
     width?: number;
     height?: number;
     isEdit?: boolean;
+    required?: boolean;
 }
 
 export const DropdownList: React.FC<DropdownListProps> = ({

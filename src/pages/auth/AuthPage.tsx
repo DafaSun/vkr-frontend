@@ -1,12 +1,7 @@
-import React, {useState} from "react";
-import { useNavigate } from "react-router-dom";
-import {LoginInput} from "./components/LoginInput/LoginInput";
-import {PasswordInput} from "./components/PasswordInput/PasswordInput";
+import {useState} from "react";
 import {Button} from "../../components/buttons/Button/Button";
 import styles from './AuthPage.module.css'
 import {InputText} from "../../components/inputs/InputText/InputText.tsx";
-// import { login } from "../../services/authService";
-
 
 const AuthPage = () => {
     const [username, setUsername] = useState("");
@@ -31,16 +26,16 @@ const AuthPage = () => {
     //     }
     // };
 
-    const handleChangeUserName = (event: React.ChangeEvent<HTMLInputElement>) => {
-        const value = event.target.value;
+    const handleChangeUserName = (event: string) => {
+        const value = event;
 
         // if (/^[a-zA-Z.-]*$/.test(value)) {
             setUsername(value);
         //     setError("");
         // }
     };
-    const handleChangePassword = (event: React.ChangeEvent<HTMLInputElement>) => {
-        setPassword(event.target.value);
+    const handleChangePassword = (event: string) => {
+        setPassword(event);
     };
 
     return (
@@ -49,9 +44,9 @@ const AuthPage = () => {
                 <div className={styles['auth-container']}>
                     <div className={styles['table-title']}>Авторизация</div>
                     <form  className={styles['auth-form']}>
-                        <InputText text={'Логин'} label={'Введите логин'} value={username} onChange={handleChangeUserName} autoFocus/>
+                        <InputText text={'Логин'} label={'Введите логин'} value={username} onChange={handleChangeUserName}/>
                         <br/>
-                        <InputText text={'Пароль'} label={'Введите пароль'}  value={password} onChange={handleChangePassword} autoFocus/>
+                        <InputText text={'Пароль'} label={'Введите пароль'}  value={password} onChange={handleChangePassword}/>
                     </form>
                     <br/>
                     <Button color={'orange'} text={'Войти'} onClick={()=>{}} />

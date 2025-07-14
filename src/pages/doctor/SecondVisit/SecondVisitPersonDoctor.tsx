@@ -17,11 +17,7 @@ import {statesList, genderList} from "../../../mocks/mock.tsx";
 const FirstVisitPersonDoctor = () => {
     const navigate = useNavigate();
 
-    const empty_string = '';
-
     const viewDate = new Date().toISOString().split("T")[0];
-    const gender = "female";
-    const [viewTime, setViewTime] = useState<string>();
     const [complaints, setComplaints] = useState<string>();
     const [general, setGeneral] = useState<string>();
     const [pulse, setPulse] = useState<number>();
@@ -36,27 +32,7 @@ const FirstVisitPersonDoctor = () => {
     const [resultReason, setResultReason] = useState<string>();
     const [result, setResult] = useState<string>();
     const [therapy, setTherapy] = useState<string>();
-    const [medicalStory, setMedicalStory] = useState<string>();
-
-    const [loading, setLoading] = useState(false);
-    const [error_r, setError_r] = useState<string | null>(null);
-    const [generalError, setGeneralError] = useState<string | null>(null);
-
-    const [errors, setErrors] = useState({
-        complaints: false,
-        general: false,
-        pulse: false,
-        pressure: false,
-        breathRate: false,
-        mainDiagnosisMKB: false,
-        mainDiagnosis: false,
-        concomitantDiagnosisMKB: false,
-        concomitantDiagnosis: false,
-        therapyPlan: false,
-        doctorCheck: false,
-        recomendation: false,
-        result:false,
-    });
+    const generalError=null;
 
     // const validateFields = () => {
     //     let tempErrors: { [key: string]: string } = {};
@@ -113,7 +89,7 @@ const FirstVisitPersonDoctor = () => {
                                     <DatePicker text={"Дата осмотра"} value={viewDate} isEdit={false}/>
                                 </div>
                                 <div className={styles['field']}>
-                                    <TimePicker text={"Время начала осмотра"} value={'14:42'} onSelect={setViewTime}/>
+                                    <TimePicker text={"Время начала осмотра"} value={'14:42'} onSelect={()=>{}}/>
                                 </div>
                             </div>
                         </div>

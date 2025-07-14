@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from "react";
+import {useEffect, useState} from "react";
 import styles from '../../../css/Index.module.css';
 import self_styles from '../TourManager.module.css';
 import {SideBar} from "../../../../components/SideBar/SideBar.tsx";
@@ -9,7 +9,6 @@ import {useNavigate, useSearchParams} from "react-router-dom";
 import {DatePicker} from "../../../../components/inputs/DatePicker/DatePicker.tsx";
 import {DropdownList} from "../../../../components/inputs/DropdownList/DpropdownList.tsx";
 import {InputNumber} from "../../../../components/inputs/InputNumber/InputNumber.tsx";
-import axios from "axios";
 import {genderList, roomCategoryList} from "../../../../mocks/mock.tsx";
 
 interface TourPlace {
@@ -37,21 +36,23 @@ const UsualTourRoomsManager = () => {
     const [guests, setGuests] = useState(Number(searchParams.get("guests")) || Number(defaultParams.guests));
     const [category, setCategory] = useState(searchParams.get("category") || defaultParams.category);
     const [gender, setGender] = useState(searchParams.get("gender") || defaultParams.gender);
-    const [places, setPlaces] = useState<TourPlace[]>([{
+    const places:TourPlace[]=[{
         place_id: 5,
         place_name: 'Место 1',
         room_name: '5 Номер',
         price: 6000,
         category_name: "3 - Двухместный номер на 1 этаже в 4 корпусе с удобствами в номере",
-    },{
+    }, {
         place_id: 6,
         place_name: 'Место 2',
         room_name: '5 Номер',
         price: 6000,
         category_name: "3 - Двухместный номер на 1 этаже в 4 корпусе с удобствами в номере",
-    }]);
-    const [loading, setLoading] = useState(false);
-    const [error_r, setError_r] = useState<string | null>(null);
+    }];
+    // const [loading, setLoading] = useState(false);
+    // const [error_r, setError_r] = useState<string | null>(null);
+    const loading = false;
+    const error_r = null;
 
     useEffect(() => {
         setCheckin(searchParams.get("checkin") || defaultParams.checkin);
@@ -73,20 +74,20 @@ const UsualTourRoomsManager = () => {
         // searchPlaces()
     }, []);
 
-    const searchPlaces = async () => {
-        // try {
-        //     const response = await axios.get(`http://localhost:8000/api/manager/categories/places/?checkin=${checkin}&checkout=${checkout}&gender=${gender}&guests=${guests}&category=${category}&tour_type=social`);
-        //     setPlaces(response.data);
-        // } catch (error) {
-        //     if (error instanceof Error) {
-        //         setError_r(error.message);
-        //     } else {
-        //         setError_r("Произошла ошибка");
-        //     }
-        // } finally {
-        //     setLoading(false);
-        // }
-    };
+    // const searchPlaces = async () => {
+    // try {
+    //     const response = await axios.get(`http://localhost:8000/api/manager/categories/places/?checkin=${checkin}&checkout=${checkout}&gender=${gender}&guests=${guests}&category=${category}&tour_type=social`);
+    //     setPlaces(response.data);
+    // } catch (error) {
+    //     if (error instanceof Error) {
+    //         setError_r(error.message);
+    //     } else {
+    //         setError_r("Произошла ошибка");
+    //     }
+    // } finally {
+    //     setLoading(false);
+    // }
+    // };
 
 
     const sideBarItems: OneItem[] = [
@@ -108,14 +109,14 @@ const UsualTourRoomsManager = () => {
 
                 <div className={styles['main-container']}>
                     <div className={self_styles['row-container']}>
-                            <DatePicker value={checkin} text={'Дата заезда'} width={150} isEdit={false}/>
-                            <DatePicker value={checkout} text={'Дата отъезда'} width={150} isEdit={false}/>
-                            <InputNumber width={100}
-                                value={((new Date(checkout)).getTime() - (new Date(checkin)).getTime()) / 86400000}
-                                text={'Кол-во дней'} isEdit={false}/>
-                            <DropdownList text={'Категория'}  width={200} value={category} options={roomCategoryList}
-                                          isEdit={false}/>
-                            <DropdownList text={'Пол'} width={150} value={gender} options={genderList} isEdit={false}/>
+                        <DatePicker value={checkin} text={'Дата заезда'} width={150} isEdit={false}/>
+                        <DatePicker value={checkout} text={'Дата отъезда'} width={150} isEdit={false}/>
+                        <InputNumber width={100}
+                                     value={((new Date(checkout)).getTime() - (new Date(checkin)).getTime()) / 86400000}
+                                     text={'Кол-во дней'} isEdit={false}/>
+                        <DropdownList text={'Категория'} width={200} value={category} options={roomCategoryList}
+                                      isEdit={false}/>
+                        <DropdownList text={'Пол'} width={150} value={gender} options={genderList} isEdit={false}/>
                     </div>
 
                     <div className={self_styles['rooms-container']}>

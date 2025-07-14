@@ -9,7 +9,6 @@ import {DropdownList} from "../../../components/inputs/DropdownList/DpropdownLis
 import {InputPhone} from "../../../components/inputs/InputPhone/InputPhone.tsx";
 import {InputEmail} from "../../../components/inputs/InputEmail/InputEmail.tsx";
 import {useNavigate} from "react-router-dom";
-import axios from "axios";
 import {genderList} from "../../../mocks/mock.tsx";
 import {OneItem} from "../../../types/SideBarItem.tsx";
 
@@ -28,17 +27,17 @@ const GuestNewPersonManager = () => {
     const [homeAddressStreet, setHomeAddressStreet] = useState<string>();
     const [workplace, setWorkplace] = useState<string>();
     const [gender, setGender] = useState<string>();
-    const [loading, setLoading] = useState(false);
-    const [error_r, setError_r] = useState<string | null>(null);
+    // const [loading, setLoading] = useState(false);
+    // const [error_r, setError_r] = useState<string | null>(null);
     const [generalError, setGeneralError] = useState<string | null>(null);
 
-    const [errors, seterrors] = useState({
+    const errors ={
         surname: false,
         name: false,
         birthday: false,
         gender: false,
         phone: false,
-    });
+    };
 
     const validateFields = () => {
         let tempErrors: { [key: string]: string } = {};
@@ -47,7 +46,7 @@ const GuestNewPersonManager = () => {
         if (!birthday) tempErrors.birthday = "Дата рождения обязательна";
         if (!phone) tempErrors.phone = "Телефон обязателен";
         if (!gender) tempErrors.gender = "Пол обязателен";
-        seterrors(tempErrors);
+        // seterrors(tempErrors);
         return Object.keys(tempErrors).length === 0;
     };
 
@@ -58,29 +57,29 @@ const GuestNewPersonManager = () => {
         }
 
         try {
-            setLoading(true);
-            const response = await axios.post(`http://localhost:8000/api/manager/guests/new/`, {
-                surname,
-                name,
-                patronymic,
-                birthday,
-                gender,
-                email,
-                phone,
-                home_address_country: homeAddressCountry,
-                home_address_region: homeAddressRegion,
-                home_address_city: homeAddressCity,
-                home_address_street_and_house: homeAddressStreet,
-                workplace,
-            });
+            // setLoading(true);
+            // const response = await axios.post(`http://localhost:8000/api/manager/guests/new/`, {
+            //     surname,
+            //     name,
+            //     patronymic,
+            //     birthday,
+            //     gender,
+            //     email,
+            //     phone,
+            //     home_address_country: homeAddressCountry,
+            //     home_address_region: homeAddressRegion,
+            //     home_address_city: homeAddressCity,
+            //     home_address_street_and_house: homeAddressStreet,
+            //     workplace,
+            // });
         } catch (error) {
             if (error instanceof Error) {
-                setError_r(error.message);
+                // setError_r(error.message);
             } else {
-                setError_r("Произошла ошибка");
+                // setError_r("Произошла ошибка");
             }
         } finally {
-            setLoading(false);
+            // setLoading(false);
         }
     };
 

@@ -1,6 +1,5 @@
 import React from 'react';
 import styles from './Exit.module.css'
-import ExitSvg from "../../../../assets/svg/exit.svg?react"
 
 interface IExitProps {
 }

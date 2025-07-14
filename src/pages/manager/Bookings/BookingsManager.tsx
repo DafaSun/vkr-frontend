@@ -37,7 +37,7 @@ const BookingManager = () => {
 
     useEffect(() => {
         SearchClick()
-    }, []);
+    }, [searchParams]);
 
     useEffect(() => {
         setSearchParams({surname, category: roomCategory, checkin});
@@ -62,7 +62,7 @@ const BookingManager = () => {
             setBookings(response.data);
         } catch (error) {
             if (error instanceof Error) {
-                setError_r(error.response.data.error);
+                // setError_r(error.response.data.error);
             } else {
                 setError_r("Произошла ошибка");
             }

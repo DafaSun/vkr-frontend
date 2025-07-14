@@ -9,6 +9,7 @@ interface TextInputProps {
     width?: number;
     height?: number;
     onChange?: (value: string) => void;
+    isHidden?: boolean;
 }
 
 export const InputBigText: React.FC<TextInputProps> = ({

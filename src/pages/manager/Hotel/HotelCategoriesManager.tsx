@@ -9,7 +9,6 @@ import {DatePicker} from "../../../components/inputs/DatePicker/DatePicker.tsx";
 import {DropdownList} from "../../../components/inputs/DropdownList/DpropdownList.tsx";
 import {InputNumber} from "../../../components/inputs/InputNumber/InputNumber.tsx";
 import {genderList, roomTypeList} from "../../../mocks/mock.tsx";
-import {OneItem} from "../../../types/SideBarItem.tsx";
 
 interface HotelCategory {
     category_label: string;
@@ -34,7 +33,7 @@ const HotelCategoriesManager = () => {
     const [checkin, setCheckin] = useState(searchParams.get("checkin") || defaultParams.checkin);
     const [checkout, setCheckout] = useState(searchParams.get("checkout") || defaultParams.checkout);
     const [roomType, setRoomType] = useState<string>(searchParams.get("roomType") || defaultParams.roomType);
-    const [guests, setGuests] = useState(Number(searchParams.get("guests")) || Number(defaultParams.guests));
+    const guests=Number(searchParams.get("guests")) || Number(defaultParams.guests);
     const [gender, setGender] = useState<string>(searchParams.get("gender") || defaultParams.gender);
     const [categories, setCategories] = useState<HotelCategory[]>([{
         category_label: "cat3",

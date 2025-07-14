@@ -7,8 +7,6 @@ import self_styles from "../../FirstVisit/FirstVisitPersonDoctor.module.css";
 import {InputText} from "../../../../components/inputs/InputText/InputText.tsx";
 import {Button} from "../../../../components/buttons/Button/Button.tsx";
 import {useState} from "react";
-import axios from "axios";
-
 
 type DoctorData = {
     doctor_id: number,
@@ -21,7 +19,7 @@ type DoctorData = {
 const GuestsTimetablePersonDoctor = () => {
     const navigate = useNavigate()
     const [surname, setSurname] = useState('');
-    const [doctors, setDoctors] = useState<DoctorData[]>([]);
+    const doctors:DoctorData[]=[];
     const [loading, setLoading] = useState(false);
     const [error_r, setError_r] = useState<string | null>(null);
 
@@ -36,7 +34,7 @@ const GuestsTimetablePersonDoctor = () => {
             // setGuests(response.data);
         } catch (error) {
             if (error instanceof Error) {
-                setError_r(error.response.data.error);
+                // setError_r(error.response.data.error);
             } else {
                 setError_r("Произошла ошибка");
             }

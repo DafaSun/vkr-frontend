@@ -9,10 +9,6 @@ import {OneItem} from "../../../types/SideBarItem.tsx";
 import {DatePicker} from "../../../components/inputs/DatePicker/DatePicker.tsx";
 import {useNavigate, useSearchParams} from "react-router-dom";
 import axios from "axios";
-import {InputPhone} from "../../../components/inputs/InputPhone/InputPhone.tsx";
-import {DropdownList} from "../../../components/inputs/DropdownList/DpropdownList.tsx";
-import {genderList, typeTourList} from "../../../mocks/mock.tsx";
-import {InputEmail} from "../../../components/inputs/InputEmail/InputEmail.tsx";
 
 type BookingData = {
     guest_surname: string,
@@ -42,8 +38,8 @@ const BookingInfoManager = () => {
     const [prepay_money, setPrepay_money] = useState(0);
     const [status, setStatus] = useState();
     const [bookingId, setBookingId] = useState<number>();
-    const [loading, setLoading] = useState(false);
-    const [error_r, setError_r] = useState<string | null>(null);
+    // const [loading, setLoading] = useState(false);
+    // const [error_r, setError_r] = useState<string | null>(null);
     const [isEdit, setIsEdit] = useState(false);
     const [bookingInfo, setBookingInfo] = useState<BookingData>({
         guest_surname: '',
@@ -62,13 +58,13 @@ const BookingInfoManager = () => {
     });
 
     useEffect(() => {
-        setLoading(true);
+        // setLoading(true);
         getBooking()
     }, [bookingId]);
 
     useEffect(() => {
         setBookingId(Number(searchParams.get("id")) || Number(defaultParams.id));
-    }, [searchParams]);
+    }, [searchParams, setSearchParams]);
 
     const getBooking = async () => {
         if (!bookingId || isNaN(bookingId)) return; // Предотвращаем запрос с undefined
@@ -80,41 +76,41 @@ const BookingInfoManager = () => {
             setStatus(response.data.status);
             setBookingInfo(response.data);
         } catch (error) {
-            setError_r(error instanceof Error ? error.message : "Произошла ошибка");
+            // setError_r(error instanceof Error ? error.message : "Произошла ошибка");
         } finally {
-            setLoading(false);
+            // setLoading(false);
         }
     };
 
     const deleteBooking = async () => {
         try {
-            const response = await axios.delete(`http://localhost:8000/api/manager/bookings/record/delete/?id=${bookingId}`);
+            // const response = await axios.delete(`http://localhost:8000/api/manager/bookings/record/delete/?id=${bookingId}`);
         } catch (error) {
             if (error instanceof Error) {
-                setError_r(error.message);
+                // setError_r(error.message);
             } else {
-                setError_r("Произошла ошибка");
+                // setError_r("Произошла ошибка");
             }
         } finally {
-            setLoading(false);
+            // setLoading(false);
         }
     };
 
     const updateBooking = async () => {
         try {
-            const response = await axios.patch(`http://localhost:8000/api/manager/bookings/record/update/?id=${bookingId}`, {
-                "prepayment_percent": prepay_percent,
-                'prepayment_money': prepay_money,
-                'status': status,
-            });
+            // const response = await axios.patch(`http://localhost:8000/api/manager/bookings/record/update/?id=${bookingId}`, {
+            //     "prepayment_percent": prepay_percent,
+            //     'prepayment_money': prepay_money,
+            //     'status': status,
+            // });
         } catch (error) {
             if (error instanceof Error) {
-                setError_r(error.message);
+                // setError_r(error.message);
             } else {
-                setError_r("Произошла ошибка");
+                // setError_r("Произошла ошибка");
             }
         } finally {
-            setLoading(false);
+            // setLoading(false);
         }
     };
 

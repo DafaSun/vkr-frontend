@@ -44,7 +44,7 @@ const UsualTourBookingNewManager = () => {
     const [phone, setPhone] = useState('');
     const [email, setEmail] = useState('');
 
-    const [errors, setErrors] = useState<{ [key: string]: string }>({});
+    // const [errors, setErrors] = useState<{ [key: string]: string }>({});
     const [generalError, setGeneralError] = useState<string | null>(null);
     const [error_r, setError_r] = useState<string | null>(null);
     const [message, setMessage] = useState<string | null>(null);
@@ -73,13 +73,13 @@ const UsualTourBookingNewManager = () => {
 
     const changeSurname = (data: string) => {
         setSurname(data);
-        setErrors({});
+        // setErrors({});
         setGeneralError(null);
     }
 
     const changeName = (data: string) => {
         setName(data);
-        setErrors({});
+        // setErrors({});
         setGeneralError(null);
     }
 
@@ -89,7 +89,7 @@ const UsualTourBookingNewManager = () => {
 
     const changeBirthday = (data: string) => {
         setBirthday(data);
-        setErrors({});
+        // setErrors({});
         setGeneralError(null);
     }
 
@@ -99,7 +99,7 @@ const UsualTourBookingNewManager = () => {
 
     const changePhone = (data: string) => {
         setPhone(data);
-        setErrors({});
+        // setErrors({});
         setGeneralError(null);
     }
 
@@ -110,7 +110,7 @@ const UsualTourBookingNewManager = () => {
         if (!birthday) tempErrors.birthday = "Дата рождения обязательна";
         if (!phone) tempErrors.phone = "Телефон обязателен";
         if (!gender) tempErrors.gender = "Пол обязателен";
-        setErrors(tempErrors);
+        // setErrors(tempErrors);
         return Object.keys(tempErrors).length === 0;
     };
 
@@ -152,7 +152,7 @@ const UsualTourBookingNewManager = () => {
             setMessage(response.data.message);
         } catch (error) {
             if (error instanceof Error) {
-                setError_r(error.response.data.error);
+                // setError_r(error.response.data.error);
             } else {
                 setError_r("Произошла ошибка");
             }

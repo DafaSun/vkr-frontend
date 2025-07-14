@@ -7,14 +7,13 @@ import self_styles from "../../FirstVisit/FirstVisitPersonDoctor.module.css";
 import {InputText} from "../../../../components/inputs/InputText/InputText.tsx";
 import {Button} from "../../../../components/buttons/Button/Button.tsx";
 import {useState} from "react";
-import axios from "axios";
 
 import {PatientData} from "../../../../types/datas.tsx";
 
 const DoctorTimetableDoctor = () => {
     const navigate = useNavigate()
     const [surname, setSurname] = useState('');
-    const [guests, setGuests] = useState<PatientData[]>([]);
+    const guests:PatientData[]=[];
     const [loading, setLoading] = useState(false);
     const [error_r, setError_r] = useState<string | null>(null);
 
@@ -29,7 +28,7 @@ const DoctorTimetableDoctor = () => {
             // setGuests(response.data);
         } catch (error) {
             if (error instanceof Error) {
-                setError_r(error.response.data.error);
+                // setError_r(error.response.data.error);
             } else {
                 setError_r("Произошла ошибка");
             }
@@ -71,10 +70,10 @@ const DoctorTimetableDoctor = () => {
                         ) : guests.length > 0 ? (
                             guests.map(doctor => (
                                 <div className={self_styles['people-container']}>
-                                    {doctor.surname} {doctor.name} {doctor.patronymic} - {doctor.post}
+                                    {doctor.surname} {doctor.name} {doctor.patronymic} - Врач
                                     <Button color={'violet'}
                                             text={'Перейти'}
-                                            onClick={() => navigate(`/doctor/first_visit/person?id=${doctor.doctor_id}`)}/>
+                                            onClick={() => navigate(`/doctor/first_visit/person?id=${doctor.guest_id}`)}/>
                                 </div>
                             ))
                         ) : (

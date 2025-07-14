@@ -4,24 +4,60 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a233fea1-6de7-4fe8-a8b7-e2d3c128615f" name="Changes" comment="finish commit">
+    <list default="true" id="a233fea1-6de7-4fe8-a8b7-e2d3c128615f" name="Changes" comment="изменила структура vkr1f -&gt; vkr-frontend">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vkr1f/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vkr1f/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vkr1f/eslint.config.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vkr1f/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vkr1f/package-lock.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vkr1f/package.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vkr1f/public/images/rooms/img_room_1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vkr1f/public/images/rooms/img_room_2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vkr1f/public/images/rooms/img_room_3.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vkr1f/public/images/rooms/room1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vkr1f/public/vite.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vkr1f/tsconfig.app.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vkr1f/tsconfig.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vkr1f/tsconfig.node.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vkr1f/vite.config.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/SideBar/components/Exit/Exit.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/SideBar/components/Exit/Exit.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/inputs/DatePicker/DatePicker.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/inputs/DatePicker/DatePicker.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/inputs/DropdownList/DpropdownList.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/inputs/DropdownList/DpropdownList.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/inputs/InputBigText/InputBigText.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/inputs/InputBigText/InputBigText.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/inputs/InputPhone/InputPhone.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/inputs/InputPhone/InputPhone.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/inputs/InputText/InputText.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/inputs/InputText/InputText.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/about.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/about.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/auth/AuthPage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/auth/AuthPage.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/doctor/Dairies/DiariesDoctor.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/doctor/Dairies/DiariesDoctor.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/doctor/Dairies/DiariesPersonDoctor.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/doctor/Dairies/DiariesPersonDoctor.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/doctor/FirstVisit/FirstVisitDoctor.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/doctor/FirstVisit/FirstVisitDoctor.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/doctor/FirstVisit/FirstVisitPersonDoctor.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/doctor/FirstVisit/FirstVisitPersonDoctor.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/doctor/MedicalStories/MedicalStoriesDoctor.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/doctor/MedicalStories/MedicalStoriesDoctor.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/doctor/SecondVisit/SecondVisitDoctor.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/doctor/SecondVisit/SecondVisitDoctor.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/doctor/SecondVisit/SecondVisitPersonDoctor.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/doctor/SecondVisit/SecondVisitPersonDoctor.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/doctor/Timetable/DoctorTimetable/DoctorTimetableDoctor.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/doctor/Timetable/DoctorTimetable/DoctorTimetableDoctor.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/doctor/Timetable/DoctorTimetable/DoctorTimetablePersonDoctor.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/doctor/Timetable/DoctorTimetable/DoctorTimetablePersonDoctor.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/doctor/Timetable/GuestsTimetable/GuestsTimetableDoctor.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/doctor/Timetable/GuestsTimetable/GuestsTimetableDoctor.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/doctor/Timetable/GuestsTimetable/GuestsTimetablePersonDoctor.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/doctor/Timetable/GuestsTimetable/GuestsTimetablePersonDoctor.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/doctor/Timetable/SelfTimetableDoctor.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/doctor/Timetable/SelfTimetableDoctor.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/doctor/Timetable/TimetableDoctor.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/doctor/Timetable/TimetableDoctor.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/manager/Bookings/BookingsInfoManager.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/manager/Bookings/BookingsInfoManager.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/manager/Bookings/BookingsManager.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/manager/Bookings/BookingsManager.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/manager/Guests/GuestsManager.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/manager/Guests/GuestsManager.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/manager/Guests/GuestsNewPersonManager.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/manager/Guests/GuestsNewPersonManager.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/manager/Guests/GuestsPersonManager.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/manager/Guests/GuestsPersonManager.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/manager/Hotel/HotelBookingManager.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/manager/Hotel/HotelBookingManager.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/manager/Hotel/HotelCategoriesManager.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/manager/Hotel/HotelCategoriesManager.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/manager/Hotel/HotelRoomsManager.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/manager/Hotel/HotelRoomsManager.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/manager/Rooms/RoomsManager.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/manager/Rooms/RoomsManager.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/manager/Timetable/GuestTimetable/GuestsTimetableManager.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/manager/Timetable/GuestTimetable/GuestsTimetableManager.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/manager/Timetable/GuestTimetable/GuestsTimetablePersonManager.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/manager/Timetable/GuestTimetable/GuestsTimetablePersonManager.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/manager/Timetable/TimetableManager.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/manager/Timetable/TimetableManager.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/manager/Timetable/WorkersTimetable/WorkersTimetableManager.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/manager/Timetable/WorkersTimetable/WorkersTimetableManager.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/manager/Timetable/WorkersTimetable/WorkersTimetablePersonManager.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/manager/Timetable/WorkersTimetable/WorkersTimetablePersonManager.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/manager/Tour/SocialTour/SocialTourBookingNewManager.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/manager/Tour/SocialTour/SocialTourBookingNewManager.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/manager/Tour/SocialTour/SocialTourCategoriesManager.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/manager/Tour/SocialTour/SocialTourCategoriesManager.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/manager/Tour/SocialTour/SocialTourRoomsManager.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/manager/Tour/SocialTour/SocialTourRoomsManager.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/manager/Tour/UsualTour/UsualTourBookingNewManager.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/manager/Tour/UsualTour/UsualTourBookingNewManager.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/manager/Tour/UsualTour/UsualTourCategoriesManager.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/manager/Tour/UsualTour/UsualTourCategoriesManager.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/nurse/ProceduresNurse/OneProcedureNurse.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/nurse/ProceduresNurse/OneProcedureNurse.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/nurse/ProceduresNurse/ProceduresNurse.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/nurse/ProceduresNurse/ProceduresNurse.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/nurse/Timetable/GuestsTimetable/GuestsTimetableNurse.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/nurse/Timetable/GuestsTimetable/GuestsTimetableNurse.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/nurse/Timetable/GuestsTimetable/GuestsTimetablePersonNurse.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/nurse/Timetable/GuestsTimetable/GuestsTimetablePersonNurse.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/nurse/Timetable/SelfTimetable/SelfTimetableNurse.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/nurse/Timetable/SelfTimetable/SelfTimetableNurse.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/nurse/Timetable/WorkersTimetable/WorkersTimetableNurse.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/nurse/Timetable/WorkersTimetable/WorkersTimetableNurse.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/nurse/Timetable/WorkersTimetable/WorkersTimetablePersonNurse.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/nurse/Timetable/WorkersTimetable/WorkersTimetablePersonNurse.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/reports/IndexReport.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/reports/IndexReport.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/user/IndexUser.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/user/IndexUser.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -77,7 +113,7 @@
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
     "settings.editor.selected.configurable": "preferences.lookFeel",
-    "ts.external.directory.path": "D:\\Programs\\WebStorm\\WebStorm 2024.3.2\\plugins\\javascript-plugin\\jsLanguageServicesImpl\\external",
+    "ts.external.directory.path": "D:\\Projects\\diplom\\vkr-frontend\\node_modules\\typescript\\lib",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -189,6 +225,7 @@
       <workItem from="1751892078470" duration="276000" />
       <workItem from="1752493201174" duration="164000" />
       <workItem from="1752493486869" duration="77000" />
+      <workItem from="1752493689108" duration="5224000" />
     </task>
     <task id="LOCAL-00001" summary="commit 02/03/2025 - немного поделала, создала файлы страниц, папки, верстку и компоненты еще не писала">
       <option name="closed" value="true" />
@@ -358,7 +395,23 @@
       <option name="project" value="LOCAL" />
       <updated>1750782348721</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="изменила структура vkr1f -&gt; vkr-frontend">
+      <option name="closed" value="true" />
+      <created>1752493740016</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1752493740016</updated>
+    </task>
+    <task id="LOCAL-00023" summary="изменила структура vkr1f -&gt; vkr-frontend">
+      <option name="closed" value="true" />
+      <created>1752494035506</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1752494035506</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -387,7 +440,8 @@
     <MESSAGE value="commit 20/05/2025 - освежила интерфейс" />
     <MESSAGE value="commit 09/06/2025 - новый коммит" />
     <MESSAGE value="finish commit" />
-    <option name="LAST_COMMIT_MESSAGE" value="finish commit" />
+    <MESSAGE value="изменила структура vkr1f -&gt; vkr-frontend" />
+    <option name="LAST_COMMIT_MESSAGE" value="изменила структура vkr1f -&gt; vkr-frontend" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

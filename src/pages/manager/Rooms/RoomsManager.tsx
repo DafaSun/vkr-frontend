@@ -34,8 +34,8 @@ const RoomsManager = () => {
     const [roomCategory, setRoomCategory] = useState('');
     const [building, setBuilding] = useState('');
     const [date, setDate] = useState('');
-    const [loading, setLoading] = useState(false);
-    const [error_r, setError_r] = useState<string | null>(null);
+    // const [loading, setLoading] = useState(false);
+    // const [error_r, setError_r] = useState<string | null>(null);
     const [placeTable, setPlaceTable] = useState<BookingData>({
         places: [],
         dates: [],
@@ -44,7 +44,7 @@ const RoomsManager = () => {
 
     useEffect(() => {
         setSearchParams({building, category: roomCategory, date});
-    }, [building, roomCategory, date, setSearchParams]);
+    }, [building, roomCategory, date, setSearchParams, searchParams]);
 
     useEffect(() => {
         if (roomCategory) {
@@ -72,18 +72,18 @@ const RoomsManager = () => {
     };
 
     const getPlacesTable = async () => {
-        setLoading(true);
+        // setLoading(true);
         try {
             const response = await axios.get(`http://localhost:8000/api/manager/rooms/?building=${building}&category=${roomCategory}&date=${date}`);
             setPlaceTable(response.data);
         } catch (error) {
             if (error instanceof Error) {
-                setError_r(error.response.data.error);
+                // setError_r(error.response.data.error);
             } else {
-                setError_r("Произошла ошибка");
+                // setError_r("Произошла ошибка");
             }
         } finally {
-            setLoading(false);
+            // setLoading(false);
         }
     };
 
