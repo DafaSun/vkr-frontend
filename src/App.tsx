@@ -66,7 +66,7 @@ import NurseOneProcedure from "./pages/nurse/ProceduresNurse/OneProcedureNurse.t
 // import ReportsStatisticProcedures from "./pages/reports/Statistics/ProceduresStatisticsReports.tsx";
 function App() {
     return (
-        <Router>
+        <Router  basename="/vkr-frontend">
             <Routes>
                 <Route path="/login" element={<AuthPage/>}/>
                 <Route path="/" element={<About/>}/>
